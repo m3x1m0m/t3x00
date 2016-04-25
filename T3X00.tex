@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%																				%%
+%% File name: 		T3X00.tex													%%
+%% Project name:	Hochleistungsantenne										%%
+%% Type of work:	T3X00 project work											%%
+%% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
+%% Date:			18th January 2016											%%
+%% University:		DHBW Ravensburg Campus Friedrichshafen						%%
+%% Comments:		Created in gedit with tab width = 4							%%
+%%																				%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---- Define document class  -----------------------------------------------------
+
+\documentclass[12pt]{report} % titlepage
+
+%---- Define style ---------------------------------------------------------------
+
+\usepackage{my_report}
+
+%---- Include dynamic data -------------------------------------------------------
+
+\input{./misc/data.tex}
+
+%---- Hyperref -------------------------------------------------------------------
+
+\usepackage{hyperref} 
+\hypersetup{
+	plainpages=false,
+	unicode=false,
+	pdftoolbar=true,
+	pdfmenubar=true,
+	pdffitwindow=false,
+	pdfstartview={FitH},
+	pdftitle={\mytitle},
+	pdfauthor={\myauthora,\space\myauthorb,\space\myauthorc},
+	pdfsubject={\mytypeofwork},
+	pdfcreator={\mytutor},
+	pdfproducer={\LaTeX},
+	pdfkeywords={\mykeywords},
+	pdfnewwindow=true,
+	pdfborder={0 0 0},
+	colorlinks=false,
+	linkcolor=black,
+	citecolor=black,
+	filecolor=black,
+	urlcolor=cyan
+}
+
+%---- Begin of document ----------------------------------------------------------
+
+\begin{document}
+
+%---- Title page -----------------------------------------------------------------
+
+\input{./doc/titlepage.tex}
+
+%---- Abstract -------------------------------------------------------------------
+
+\input{./doc/abstract.tex}
+
+%---- Statement of Authentication ------------------------------------------------
+
+\input{./doc/statement.tex}
+
+%---- Table of contents ----------------------------------------------------------
+
+\tableofcontents
+\clearpage
+
+%---- vvv ROMAN PAGE NUMBERING vvv -----------------------------------------------
+
+\pagenumbering{Roman}
+
+%---- Physical Quantities --------------------------------------------------------
+
+\input{./doc/physical_quantities.tex}
+
+%---- Abbreviations --------------------------------------------------------------
+
+\input{./doc/abbreviations.tex}
+
+%---- vvv ARABIC PAGE NUMBERING vvv ----------------------------------------------
+
+\setcounter{romanPagenumber}{\value{page}}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%---- Introduction ---------------------------------------------------------------
+
+\input{./doc/introduction.tex}
+
+%---- Main part ------------------------------------------------------------------
+
+\input{./doc/01main.tex}
+
+\input{./doc/02main.tex}
+
+%---- Conclusion -----------------------------------------------------------------
+
+\input{./doc/conclusion.tex}
+
+%---- vvv ROMAN PAGE NUMBERING vvv -----------------------------------------------
+
+\pagenumbering{Roman}
+\setcounter{page}{\value{romanPagenumber}}
+
+%---- List of figures ------------------------------------------------------------
+
+\listoffigures
+\clearpage
+
+%---- List of tables -------------------------------------------------------------
+
+\listoftables
+\clearpage
+
+%---- References -----------------------------------------------------------------
+
+% only the references from whom is cited will get listed here !!!
+\printbibliography[heading=bibintoc]
+\clearpage
+
+%---- Appendices -----------------------------------------------------------------
+
+\appendix
+\chapter{Datenblatt XYZ}
+
+%---- End of document ------------------------------------------------------------
+
+\end{document}

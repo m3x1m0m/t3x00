@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%																				%%
+%% File name: 		my_report.sty												%%
+%% Project name:	Hochleistungsantenne										%%
+%% Type of work:	T3X00 project work											%%
+%% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
+%% Date:			25th April 2016		     									%%
+%% University:		DHBW Ravensburg Campus Friedrichshafen						%%
+%% Comments:		Created in gedit with tab width = 4							%%
+%%																				%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---- macros ---------------------------------------------------------------------
+
+\newcommand{\myspacebeforetitle}{-2em}
+\newcommand{\myspaceaftertitle}{1em}
+
+
+%---- packages -------------------------------------------------------------------
+
+% Provide a package to use in a .tex file
+\ProvidesPackage{my_report.sty}
+
+% To amend spacing of titles
+\usepackage{titlesec} 
+
+% Define font encodi\usepackage{hyperref}ng for output
+\usepackage[T1]{fontenc}
+
+% Define font encoding for input (e.g. ä, ö, ü)
+\usepackage[utf8]{inputenc}
+
+% Define language for hyphenation
+\usepackage[ngerman]{babel}
+											
+% DINA4 paper, margins according to DHBW
+\usepackage[a4paper,lmargin={2.5cm},rmargin={2.5cm},tmargin={2.5cm},
+bmargin={2.5cm}]{geometry} 
+
+% To use mathematic symbols (to display symbols)
+\usepackage{amssymb}
+
+% To use mathematic environments (to display equations)
+\usepackage{amsthm}
+
+% To display images
+\usepackage{graphicx}
+
+% To use wrap figures (surrounded by text)
+%\usepackage{wrapfig}
+
+% To use captions
+\usepackage{caption}
+	
+% For citation
+\usepackage{csquotes}
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{bib/bibliography.bib}
+
+% To use tables
+\usepackage{tabularx}
+
+% To use abbreviations
+% Either
+\usepackage[printonlyused,nohyperlinks]{acronym}
+% Or
+%\usepackage[toc,nonumberlist]{glossaries} 
+%\makeglossaries   
+   
+% To create table of contents and list of figures/tables
+\usepackage{tocloft}
+
+%Adding list of figures and list of tables to the toc in a proper way
+\usepackage[nottoc]{tocbibind}   
+
+
+%Head and Foot
+\usepackage{fancyhdr}
+\lhead{\includegraphics[width=3cm]{./images/dhbw_small.png}}\chead{}\rhead{\chaptername\chaptermark}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+\pagestyle{fancy}
+ 
+
+%---- Different defines ----------------------------------------------------------
+
+% Define line spacing
+\linespread{1.5}
+
+% To go on with roman page numbers after main part
+\newcounter{romanPagenumber}
+
+% To display secition name in header
+%\pagestyle{headings}
+
+% Define path of images
+\graphicspath{ {images/} }
+
+% Set indentation of new paragraphs
+\setlength{\parindent}{0pt}
+
+% Remove "Kapitel X" before each chapter
+\titleformat{\chapter}{\bf\Huge}{\thechapter\quad}{0em}{}
+
+% Set spacing of chapter
+\titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
+% http://www.golatex.de/viewtopic,p,51871.html
+% ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
+
+%Optional, page number and chapter is stated in the header
+%\pagestyle{headings}  
+
+% ---- Table of contents ---------------------------------------------------------
+
+% Set spacing before title of toc
+\setlength\cftbeforetoctitleskip{\myspacebeforetitle}
+
+% Set spacing after title of toc
+\setlength\cftaftertoctitleskip{\myspaceaftertitle}
+
+% Set spacing in toc for chapter
+\setlength\cftbeforechapskip{1em}
+
+% Set spacing in toc for section
+\setlength\cftbeforesecskip{0.5em}
+
+% Set spacing in toc for section
+\setlength\cftbeforesecskip{0.5em}
+
+% Set indentation (and numwidth) in toc for chapter
+\cftsetindents{chapter}{0pt}{1em}
+
+% Set indentation (and numwidth) in toc for section
+\cftsetindents{section}{0pt}{2em}
+
+% Set indentation (and numwidth) in toc for subsection
+\cftsetindents{subsection}{0pt}{3em}
+
+% For filling the toc with dots
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+\renewcommand\cftchapleader{\cftdotfill{\cftdotsep}}
+
+% ---- List of figures -----------------------------------------------------------
+
+% Set spacing before title of toc
+\setlength\cftbeforeloftitleskip{\myspacebeforetitle}
+
+% Set spacing after title of toc
+\setlength\cftafterloftitleskip{\myspaceaftertitle}
+
+% Set indentation of lof
+\setlength{\cftfigindent}{0pt}
+
+% ---- List of tables ------------------------------------------------------------
+
+% Set spacing before title of toc
+\setlength\cftbeforelottitleskip{\myspacebeforetitle}
+
+% Set spacing after title of toc
+\setlength\cftafterlottitleskip{\myspaceaftertitle}
+
+% Set indentation of lot
+\setlength{\cfttabindent}{0pt}
