@@ -1,0 +1,6 @@
+MUST:
+- abstract in english
+
+CAN:
+- discuss if "über die fünfte und sechste Theoriephase"
+- check what information is necessary on titlepage

@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%																				%%
+%% File name: 		titlepage.tex												%%
+%% Project name:	Hochleistungsantenne										%%
+%% Type of work:	T3X00 project work											%%
+%% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
+%% Date:			18th January 2016											%%
+%% University:		DHBW Ravensburg Campus Friedrichshafen						%%
+%% Comments:		Created in gedit with tab width = 4							%%
+%%																				%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+% temporary margins only for titlepage
+\newgeometry{lmargin={2cm},rmargin={2cm},tmargin={1cm},bmargin={2cm}}
+
+%---------------------- Figures --------------------------------------------------
+
+\begin{figure}
+	\centering
+%	\begin{minipage}{0.4\textwidth}
+		%\raggedright
+		\includegraphics[width=0.4\textwidth]{dhbw}
+%	\end{minipage}
+%	\hfill
+	%\begin{minipage}{0.55\textwidth}
+%		\raggedleft
+%		\includegraphics[width=1\textwidth]{./images/airbus}
+%	\end{minipage}
+\end{figure}
+
+%---------------------- Text -----------------------------------------------------
+
+\begin{center}
+	\vspace*{0pt}
+	\begin{LARGE}
+		\textbf{\mytitle}\\
+	\end{LARGE}
+	\vspace*{4em}
+	\textbf{\MakeUppercase{\mytypeofwork}\\über das dritte Studienjahr}\\
+	\vspace*{2em}
+	im Studiengang\\
+	\mycourse\\
+	\vspace*{2em}
+	an der \myuniversity\\
+	Campus \myuniversitycampus\\
+	\vspace*{2em}
+	von\\
+	\vspace*{2em}
+	\myauthora,\\\myauthorb\ und\\\myauthorc\\
+	\vspace*{2em}
+	\today\\
+	\vspace*{3em}
+	\vfill
+%---------------------- Table ----------------------------------------------------
+	
+	\setlength{\tabcolsep}{24pt}	% change space between rows
+	\begin{tabular}{ll}
+		Bearbeitungszeitraum:&Oktober - Dezember 2015\\
+		&April - Juni 2016\\
+		%Matrikelnummern:&4167768\\
+		%&1231235\\
+		%&4564567\\
+		Betreuer:&\mytutor\\
+	\end{tabular}
+	\setlength{\tabcolsep}{6pt}		% back to default
+	\restoregeometry
+\end{center}
+\end{titlepage}
+\clearpage
