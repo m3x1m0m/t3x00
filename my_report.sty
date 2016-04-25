@@ -80,6 +80,8 @@ bmargin={2.5cm}]{geometry}
 \lfoot{}\cfoot{\thepage}\rfoot{}
 \pagestyle{fancy}
  
+% For colored text
+\usepackage{color} 
 
 %---- Different defines ----------------------------------------------------------
 
@@ -98,8 +100,35 @@ bmargin={2.5cm}]{geometry}
 % Set indentation of new paragraphs
 \setlength{\parindent}{0pt}
 
-% Remove "Kapitel X" before each chapter
-\titleformat{\chapter}{\bf\Huge}{\thechapter\quad}{0em}{}
+ 
+ % Format chapter 
+ \definecolor{gray75}{gray}{0.75}
+ %
+ \titleformat%
+ {\chapter}%
+ [block]%
+ {\bfseries\Huge}%
+ {\thechapter\hspace{1cm}\textcolor{gray75}{|}\hspace{1cm}}%
+ {0pt}%
+ {\bfseries\Huge}%
+ 
+ % Format section
+ \titleformat%
+ {\section}%
+ [block]%
+ {\bfseries\Large}%
+ {\thesection\hspace{0.5cm}}%
+ {0pt}%
+ {\bfseries\Large}%
+ 
+ % Format subsection
+ \titleformat%
+ {\subsection}%
+ [block]%
+ {\bfseries\large}%
+ {\thesubsection\hspace{0.5cm}}%
+ {0pt}%
+ {\bfseries\large}%
 
 % Set spacing of chapter
 \titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
