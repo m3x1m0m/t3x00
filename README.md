@@ -6,10 +6,8 @@ By cloning this repo you will also download the .gitignore file. You need this f
 
 # Team Members
 
-Sarah Brückner TEN13
-
-Maximilian Stiefel TEN13
-
+Sarah Brückner TEN13\n
+Maximilian Stiefel TEN13\n
 Hannes Bohnengel TEN13
 
 # Standard Workflow
