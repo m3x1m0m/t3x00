@@ -22,9 +22,12 @@
 *.4ct 
 *.4tc 
 *.lg 
+*.lof
+*.lot
 *.xmpi 
 *.tcp 
 *.toc 
 *.tps 
 *blx.bib 
 *.run.xml
+*.synctex.gz
