@@ -10,7 +10,8 @@
 *.bbl 
 *.bcf 
 *.auto 
-*.blg 
+*.blg
+*.md 
 *.dvi 
 *.glo 
 *.out 
