@@ -12,8 +12,20 @@
 
 %---- macros ---------------------------------------------------------------------
 
+\newcommand{\newpar}{\\[1em]}
+
 \newcommand{\myspacebeforetitle}{-2em}
 \newcommand{\myspaceaftertitle}{1em}
+
+% Alternative 1 (wide)
+%\newcommand{\myspacebeforechapintoc}{1.5em}
+%\newcommand{\myspacebeforesecintoc}{1em}
+%\newcommand{\myspacebeforesubsecintoc}{0.4em}
+
+% Alternative 2 (narrow)
+%\newcommand{\myspacebeforechapintoc}{0.5em}
+%\newcommand{\myspacebeforesecintoc}{0.4em}
+%\newcommand{\myspacebeforesubsecintoc}{0.3em}
 
 %---- packages -------------------------------------------------------------------
 
@@ -32,7 +44,7 @@
 % Define language for hyphenation
 \usepackage[ngerman]{babel}
 											
-% DINA4 paper, margins according to DHBW
+% DinA4 paper, margins according to DHBW
 \usepackage[a4paper,lmargin={2.5cm},rmargin={2.5cm},tmargin={2.5cm},
 bmargin={2.5cm}]{geometry} 
 
@@ -55,6 +67,7 @@ bmargin={2.5cm}]{geometry}
 \usepackage{csquotes}
 \usepackage[style=ieee,backend=bibtex]{biblatex}
 \addbibresource{bib/bibliography.bib}
+%\renewcommand{\bibfont}{\small}	% to change the font size of the bib
 
 % To use tables
 \usepackage{tabularx}
@@ -99,35 +112,8 @@ bmargin={2.5cm}]{geometry}
 % Set indentation of new paragraphs
 \setlength{\parindent}{0pt}
 
- 
- % Format chapter 
- \definecolor{gray75}{gray}{0.75}
- %
- \titleformat%
- {\chapter}%
- [block]%
- {\bfseries\Huge}%
- {\thechapter\hspace{1cm}\textcolor{gray75}{|}\hspace{1cm}}%
- {0pt}%
- {\bfseries\Huge}%
- 
- % Format section
- \titleformat%
- {\section}%
- [block]%
- {\bfseries\Large}%
- {\thesection\hspace{0.5cm}}%
- {0pt}%
- {\bfseries\Large}%
- 
- % Format subsection
- \titleformat%
- {\subsection}%
- [block]%
- {\bfseries\large}%
- {\thesubsection\hspace{0.5cm}}%
- {0pt}%
- {\bfseries\large}%
+% Remove "Kapitel X" before each chapter
+\titleformat{\chapter}{\bf\Huge}{\thechapter\quad}{0em}{}
 
 % Set spacing of chapter
 \titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
