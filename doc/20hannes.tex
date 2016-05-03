@@ -4,16 +4,58 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			29th Arpil 2016												%%
+%% Date:			01st May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{./doc/21hannes.tex}
+\chapter{GPredict}
 
-%\input{./doc/22hannes.tex}
+\section{Übersicht}
 
-%\input{./doc/23hannes.tex}
+GPredict ist eine freie Software zur Satellitenverfolgung und Orbitvorhersage und steht als Quellcode oder bereits fertig kompiliertes Programm für Windows, Mac OS und Linux zur Verfügung. Die Software ist in C geschrieben und unter der GNU \ac{GPL} lizenziert, somit kann sie frei verändert und an die entsprechenden Nutzervoraussetzungen angepasst werden.\newpar
+In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfolgungsprogramms zu sehen (die blauen Blöcke stellen hierbei die Funktionalität des Programms dar). Zunächst wird an Hand der Keplerschen Bahnelemente und dem aktuellen Zeitpunkt die absolute Position des Satelliten berechnet. Daraufhin wird der Vektor, der von der Bodenstation zum Satelliten zeigt, bestimmt. Nun können Azimut und Elevation dieses Vektors für die Ansteuerung der Antenne verwendet werden.
 
-%\input{./doc/24hannes.tex}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{gpredict-principle.png}
+	\caption{Prinzip eines Satellitenverfolgungsprogramms \cite{gpredictmanual}}
+	\label{fig:gpredict-principle} 
+\end{figure}
+
+Zur Berechnung der Satellitenposition wird auf den NORAD SGP4/SDP4 Algorithmus zurückgegriffen (siehe Abschnitt XXX). Um hierfür zu jedem Zeitpunkt die aktuellen Kepler-Elemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.
+
+\clearpage
+
+Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie SatPC32 kein Limit an zu verfolgenden Satelliten und Bodenstationen gegeben. Durch die Verwendung von Modulen kann außerdem unkompliziert zwischen verschiedenen Konfigurationen gewechselt werden. Die Orbitvorhersage eines Satelliten lässt sich sowohl grafisch als auch tabellarisch darstellen, wobei durch die Einstellungen verschiedenster Parameter eine sehr individuelle Anzeige erreicht werden kann \cite{gpredictsource}.
+
+\section{Grafische Oberfläche}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{gpredict-startup.png}
+	\caption{Standardoberfläche von GPredict}
+	\label{fig:gpredictstartup} 
+\end{figure}
+
+\clearpage
+
+Abbildung \ref{fig:gpredictstartup}
+
+\begin{itemize}
+	\parskip0pt
+	\item Radio Control
+	\item Rotator Control
+	\item Sky at a Glance
+	\item Time Controller
+	\item Modul-Einstellungen (Configure)
+	\item Polar View
+	\item Single Sat View (Pass Details)
+\end{itemize}
+
+\clearpage
+
+\section{Inbetriebnahme unter Windows}
+
+\section{Inbetriebnahme unter Linux}
