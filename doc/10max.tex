@@ -17,22 +17,59 @@
 \subsection{Die Keplerschen Gesetze}
 Seit der Antike galt die Erklärung der Bewegung der Planeten und die Vorhersage dieser als eine große Herausforderung. Theorien von Ptolemaios mit seinem geozentrischen Weltbild und Kopernikus mit seinem heliozentrischen Weltbild führten bereits im 16. Jahrhundert zu brauchbaren Modellen zur Vorhersage der Planetenbewegungen. Diese Modelle unterlagen jedoch Ungenauigkeiten, „die in mit Instrumenten des 16. Jahrhunderts bereits messbaren Breichen lagen“ (siehe S. 20 in \cite{Raumflugm}). 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]                                                                       %%
+\begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
-	\includegraphics[width=0.3\textwidth]{./images/kepler.jpg}                        %%
-	\caption[Bahnelemente]{Johannes Kepler (1571-1630), Quelle: \cite{Wiki:Kepler}}                        %%
+	\includegraphics[width=0.3\textwidth]{./images/kepler.jpg}                              %%
+	\caption[Bahnelemente]{Johannes Kepler (1571-1630), Quelle: \cite{Wiki:Kepler}}         %%
 	\label{fig:bahnelemente}                                                                %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 Der mathematische Aufwand hinter diesen Modellen war enorm. Selbst das kopernikanische Weltbild, dass einige Vereinfachnugen mit sich brachte, bediente sich der Überlagerung einer Vielzahl von Kreisbwegungen, um das Verhalten der Planeten zu erklären. Resignierend zog sich zu der Zeit die katholische Kirsche und mit ihr viele Gelehrte auf den Standpunkt zurück, dass „die Frage, welche der Theorien die korrekte sei, [...] schlicht unbeantwortbar“ wäre (siehe S. 21 in \cite{Raumflugm}). 
 \newpar
-Ein deutscher Mathematiker und Astronom, Johannes Kepler, war hier anderer Auffassung. Er war überzeugter Kopernikaniker und stand im Dienste des Kaisers Rudolph II. Schließlich gelang es ihm aus seinen Beobachtungen drei einfache Gesetze herzuleiten. Seine Gesetze führten zu Vorhersagen der Planetenbewegungen nie da gewesener Präzision, welche er seinem Dienstherr widmend in den Rudolphinischen Tabellen niederschrieb. Steiner und Schlagerl schreiben in Ihrem Buch Raumflugmechanik, dass ohne die Vorarbeit Keplers keine Weltraumtechnik je existiert hätte (vgl. S. 21 in \cite{Raumflugm}). Die drei Gesetze lauten:
+Ein deutscher Mathematiker und Astronom, Johannes Kepler, war hier anderer Auffassung. Er war überzeugter Kopernikaniker und stand im Dienste des Kaisers Rudolph II. Schließlich gelang es ihm aus seinen Beobachtungen drei einfache Gesetze herzuleiten. Seine Gesetze führten zu Vorhersagen der Planetenbewegungen nie da gewesener Präzision, welche er seinem Dienstherr widmend in den Rudolphinischen Tabellen niederschrieb. Steiner und Schlagerl schreiben in Ihrem Buch „Raumflugmechanik“, dass ohne die Vorarbeit Keplers keine Weltraumtechnik je existiert hätte (vgl. S. 21 in \cite{Raumflugm}). Die drei Gesetze lauten:
 \begin{enumerate}
 	\item Keplersches Gesetz: Die Planeten umlaufen die Sonne auf elliptischen Bahnen. In einem der Brennpunkte dieser Ellipsen befindet sich die Sonne. 
 	\item Keplersches Gesetz: Die Linie von der Sonne zu einem Planeten überstreicht in gleichen Zeiten gleiche Flächen.
 	\item Keplersches Gesetz: Die Quadrate der Umlaufzeiten zweier Planeten verhalten sich zueinander so wie die Kuben der großen Halbachsen ihrer Bahnellipsen. 
 \end{enumerate}   
-Kepler starb 1630 und damit 12 Jahre vor Newtons Geburt. Mit seinen Werken hinterlies Kepler Newton alles, um das Gravitationsgesetz später herleiten zu können. 
+Kepler starb 1630 und damit 12 Jahre vor Newtons Geburt. Mit seinen Werken hinterließ Kepler Newton alles, um das Gravitationsgesetz später herleiten zu können. 
+\subsubsection{Das erste Keplersche Gesetz}
+Durch die Annahme Planeten bewegen sich auf Ellipsen anstatt auf Kreisen, brach Kepler ein tausende Jahre altes Paradigma. Das mit der Ellipse war allerdings nicht seine Idee. Bereits im 11. Jahrhundert nahm ein arabischer Gelehrter namens Al-Zarkali eine elliptische Bahn an, um die unregelmäßige Bewegung des Merkurs erklären zu können. Kepler kannte diese Idee durch die Lehren des Mathematikers und Astronomen Peuerbach, welcher die Ellipsen-Theorie im Abendland verbreitete.  
+\newpar
+Zunächst soll die Ellipse an sich betrachtet werden. Die einfachste Möglichkeit eine Ellipse zu konstruieren besteht darin zwei Nägel in einer Holzplatte mit einem Stück Schnur mit einer Schlaufe zu verbinden. Das Stück Schnur muss länger sein als der Abstand zwischen beiden Nägeln. Nimmt man nun einen Bleistift und drückt ihn in der Schlaufe gegen die Schnur, kann man die beiden Nägel mit Kontakt der Bleistiftspitze zum Holzbrett umrunden. Hält man die Schnur konstant auf Spannung, so ergibt sich eine Ellipse. Darüber hinaus muss der Punkt auf welchem die Schlaufe am Bleistift anliegt höher sein, als der Abschluss der Nagelköpfe. Im übertragenden Sinne beschreibt die folgende Mengendefinition dieses Experiment mit Bezug zu Abbildung \ref{fig:ellipse}. 
+\begin{equation}
+E = \{P | \overline{F_{1}P} + \overline{F_{2}P} = 2a = konstant\}
+\end{equation}
+\ensuremath{F_{1}} und \ensuremath{F_{2}} heißen Brennpunkte der Ellipse. \ensuremath{M} ist der Mittelpunkt der Ellipse. \ensuremath{S_{1}} und \ensuremath{S_{2}} sind die Haupt-, \ensuremath{S_{3}} und \ensuremath{S_{4}} die Nebenscheitel.      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htbp]                                                                       %%
+	\centering                                                                            	%%
+	\includegraphics[width=0.6\textwidth]{./images/ellipse_new.jpg}                             %%
+	\caption[Ellipse]{Ellipse, Quelle: Wikipedia zusätzlich eigener Überarbeitung}                                           %%
+	\label{fig:ellipse}                                                                     %%
+\end{figure}                                                                              	%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
+Die Strecke \ensuremath{\overline{MS_{1}}} ist gleich der Strecke \ensuremath{\overline{MS_{2}}}. Man spricht bei der Länge dieser Strecke von der \textbf{großen Halbachse a}. Beide Strecken ergeben zusammen die Hauptachse \ensuremath{\overline{S_{1}S_{2}}}. Analog gibt es hierzu die Nebenachse, welche durch die Strecke \ensuremath{\overline{S_{3}S_{4}}} bestimmt wird. Die \textbf{kleinen Halbachsen} sind \ensuremath{\overline{MS_{3}}} und \ensuremath{\overline{MS_{4}}}. Diese haben die Längen \textbf{b}. Es ist verständlich, dass eine Ellipse auch als Stauchung eines Kreises mit dem Faktor \ensuremath{\frac{b}{a}} angesehen werden kann. 
+\\Die numerische Exzentrizität e' ist ein Maß für die Schlankheit der Ellipse. Sie ist definiert als
+\begin{equation}
+	e'=\frac{e}{a}
+\end{equation}
+Je größer die lineare Exzentrizität e im Verhältnis zu der großen Halbachse a wird, desto schlanker wird die Ellipse, da die Brennpunkte weiter vom Mittelpunkt entfernt sind. Das Wort numerisch gibt bei der Exzentrizität e an, dass diese sich auf eine andere Größe (die große Halbachse) bezieht. Für eine Ellipse gilt \ensuremath{0 < e' < 1}. Für den Fall \ensuremath{e'=0} hat die Ellipse die selbe Erscheinung wie ein Kreis, da die Brennpunkte \ensuremath{F_1} und \ensuremath{F_2} im Mittelpunkt \ensuremath{M} liegen. Für \ensuremath{e'=1} entartet die Ellipse zu einer Geraden, da die kleine Halbachse b zu 0 wird. Um das zu zeigen wird die obige Gleichung noch mal herangezogen.
+\begin{equation}
+e'^2=\frac{e^2}{a^2}=\frac{a^2-b^2}{a^2}=1-\left(\frac{b}{a}\right)^2 
+\end{equation} 
+\\Des Weiteren besitzt jede Ellipse einen Halbparameter \ensuremath{p}. Geht man davon aus, dass es einen Abstand \ensuremath{p'} gibt, welcher \ensuremath{p} bis zu einer die Ellipse umschließende Kreislinie verlängert, so gelten folgende Gleichungen
+\begin{equation}
+	\frac{p}{p'}=\frac{b}{a}
+\end{equation}
+Mit dem Satz eines alten Freudes folgt
+\begin{equation}
+p' = \sqrt{a^2-e^2}
+\end{equation}
+Jetzt ist klar, dass gilt
+\begin{equation}
+p=\frac{b}{a} \cdot p'= \frac{b}{a} \sqrt{a^2-e^2} = \frac{b^2}{a}
+\end{equation}
 \subsection{Die Bahnelemente}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]                                                                       %%
@@ -48,28 +85,6 @@ Im Folgenden werden die Bahnelemente in Ihrer Bedeutung anhand der Abbildung \re
 
 \subsubsection*{Gestalt der Bahn}
 Um die Gestalt der Bahn zu beschreiben wird die \textbf{numerische Exzentrizität e} und die Angabe der Länge der \textbf{großen Halbachse a} benötigt.
-\\\\Zunächst soll die Ellipse an sich betrachtet werden. Die einfachste Möglichkeit eine Ellipse zu konstruieren besteht darin zwei Nägel in einer Holzplatte mit einem Stück Schnur mit einer Schlaufe zu verbinden. Das Stück Schnur muss länger sein als der Abstand zwischen beiden Nägeln. Nimmt man nun einen Bleistift und drückt ihn in der Schlaufe gegen die Schnur, kann man die beiden Nägel mit Kontakt der Bleistiftspitze zum Holzbrett umrunden. Hält man die Schnur konstant auf Spannung, so ergibt sich eine Ellipse. Nichts anderes besagt die folgende Mengendefinition mit Bezug zu Abbildung \ref{fig:ellipse}. 
-\begin{equation}
-E = \{P | \overline{F_{1}P} + \overline{F_{2}P} = 2a = konstant\}
-\end{equation}
-\ensuremath{F_{1}} und \ensuremath{F_{2}} heißen Brennpunkte der Ellipse. \ensuremath{M} ist der Mittelpunkt der Ellipse. \ensuremath{S_{1}} und \ensuremath{S_{2}} sind die Haupt-, \ensuremath{S_{3}} und \ensuremath{S_{4}} die Nebenscheitel.      
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]                                                                       %%
-	\centering                                                                            	%%
-	\includegraphics[width=0.6\textwidth]{./images/ellipse.jpg}                             %%
-	\caption[Ellipse]{Ellipse, Quelle: Wikipedia}                                           %%
-	\label{fig:ellipse}                                                                     %%
-\end{figure}                                                                              	%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
-Die Strecke \ensuremath{\overline{MS_{1}}} ist gleich der Strecke \ensuremath{\overline{MS_{2}}}. Man spricht bei der Länge dieser Strecke von der großen Halbachse a. Beide Strecken ergeben zusammen die Hauptachse \ensuremath{\overline{S_{1}S_{2}}}. Analog gibt es hierzu die Nebenachse, welche durch die Strecke \ensuremath{\overline{S_{3}S_{4}}} bestimmt wird. Die kleinen Halbachsen sind \ensuremath{\overline{MS_{3}}} und \ensuremath{\overline{MS_{4}}}. Diese haben die Längen b.  Das Wort numerisch gibt bei der Exzentrizität an, dass diese sich auf eine andere Größe (die große Halbachse) bezieht. Der Wert der numerischen Exzentrizität lässt sich in vier Bereiche aufteilen: 
-\begin{itemize}
-	\item Der Wert 0 repräsentiert eine perfekte kreisförmige Bahn.
-	\item Der Bereich von 0 bis 1 beschreibt eine elliptische Bahn.
-	\item Der Wert 1 erzeugt eine exakt parabolische Bahn.
-	\item Jeder Wert größer 1 gehört zu einer immer offener werdenden Hyperbel.  
-\end{itemize}   
-
-Bis zum Wert 1 handelt es sich um eine geschlossene Bahn. Oberhalb von 1 ist die Bahn immer geöffnet. Das bedeutet jeder Punkt der Bahn wird von einem Satellit nur einmal abgeschritten. Für eine elliptische Bahn (\ensuremath{e < 1}) kann aus der Halbachse der Ellipse und der numerischen Exzentrizität ein minimaler (\ensuremath{r_{min}}) und ein maximaler (\ensuremath{r_{max}}) Abstand vom Brennpunkt der Ellipse berechnet werden.     
 
 \subsubsection*{Lage der Bahn}
 
