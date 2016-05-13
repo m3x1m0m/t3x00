@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			01st May 2016												%%
+%% Date:			13th May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -19,7 +19,7 @@ In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfol
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{gpredict-principle.png}
+	\includegraphics[width=1\textwidth]{gpredict-principle}
 	\caption{Prinzip eines Satellitenverfolgungsprogramms \cite{gpredictmanual}}
 	\label{fig:gpredict-principle} 
 \end{figure}
@@ -32,27 +32,49 @@ Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie Sat
 
 \section{Grafische Oberfläche}
 
+In Abbildung \ref{fig:gpredictstartup} ist die grafische Oberfläche von GPredict zu sehen. In der Standardkonfiguration ist dort zunächst die Kartenansicht bzw. Map View (oben), die Polaransicht bwz. Polar View (links unten) und die Einzelsatellitenansicht bzw. Single-Satellite View (rechts unten) zu sehen.
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{gpredict-startup.png}
+	\includegraphics[width=0.75\textwidth]{gpredict-startup.png}
 	\caption{Standardoberfläche von GPredict}
 	\label{fig:gpredictstartup} 
 \end{figure}
 
 \clearpage
 
-Abbildung \ref{fig:gpredictstartup}
+Im Folgenden werden die verschiedenen, möglichen Ansichten genauer beschrieben:\\
+. \hspace{3cm}\textbf{!!! Evtl. ohne itemize !!!}
 
 \begin{itemize}
 	\parskip0pt
-	\item Radio Control
-	\item Rotator Control
-	\item Sky at a Glance
-	\item Time Controller
-	\item Modul-Einstellungen (Configure)
-	\item Polar View
-	\item Single Sat View (Pass Details)
+	\item \textbf{Map View:}
+	\item \textbf{Polar View:}
+	\item \textbf{Single-Satellite View:}
+	\item \textbf{List View:}
+	\item \textbf{Upcoming Passes View:}
+	\item \textbf{Module Pop-Up Menu}
+	\begin{itemize}	
+		\item \textbf{Antenna Control (Rotoren):}
+		\item \textbf{Radio Control}
+		\item \textbf{Sky at a Glance:}
+		\item \textbf{Time Controller:}
+		\item \textbf{Modul-Einstellungen (Configure):}
+	\end{itemize}
 \end{itemize}
+
+\clearpage
+
+\section{HamLib-Programmierschnittstelle}
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{hamlib}
+	\caption{HamLib Design \cite{hamlib}}
+	\label{fig:hamlib} 
+\end{figure}
 
 \clearpage
 
