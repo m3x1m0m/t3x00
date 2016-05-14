@@ -18,7 +18,8 @@
 % User defined way of emphasizing words
 \newcommand{\myemph}[1]{\textsl{#1}}
 
-% User defined spacing before and after titles
+% User defined spacing before and after titles of toc, lof and lot
+% Compare with titlespacing of chapter !
 \newcommand{\myspacebeforetitle}{-2em}
 \newcommand{\myspaceaftertitle}{1em}
 
@@ -118,6 +119,10 @@ bmargin={2.5cm}]{geometry}
 % For colored text
 %\usepackage{color} 
 
+%\titleformat{\chapter}{\bf\Huge}{\thechapter\quad}{0em}{}
+
+%\titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
 % Format the style of chapter
 \titleformat%
 {\chapter}%
@@ -146,7 +151,7 @@ bmargin={2.5cm}]{geometry}
 {\bfseries\large}%
 
 % Set spacing of chapter
-\titlespacing{\chapter}{0cm}{0cm}{0cm}{} %{<left>}{<before>}{<after>}{<right>}
+\titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
 % http://www.golatex.de/viewtopic,p,51871.html
 % ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
 
