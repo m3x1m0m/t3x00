@@ -88,7 +88,7 @@ bmargin={2.5cm}]{geometry}
 
 %Head and Foot
 \usepackage{fancyhdr}
-\lhead{\includegraphics[width=2cm]{./images/dhbw_small.jpg}}\chead{}\rhead{\rightmark}
+\lhead{\includegraphics[width=2cm]{./images/dhbw_small.png}}\chead{}\rhead{\rightmark}
 \lfoot{}\cfoot{\thepage}\rfoot{}
 \pagestyle{fancy}
 
@@ -112,40 +112,11 @@ bmargin={2.5cm}]{geometry}
 % Set indentation of new paragraphs
 \setlength{\parindent}{0pt}
 
-%For color text
-\usepackage{color} 
-
-%chapter
-\definecolor{gray75}{gray}{0.75}
-%
-\titleformat%
-{\chapter}%
-[block]%
-{\bfseries\Huge}%
-{\thechapter\hspace{0.5cm}}%
-{0pt}%
-{\bfseries\Huge}%
-
-%section
-\titleformat%
-{\section}%
-[block]%
-{\bfseries\Large}%
-{\thesection\hspace{0.5cm}}%
-{0pt}%
-{\bfseries\Large}%
-
-%subsection
-\titleformat%
-{\subsection}%
-[block]%
-{\bfseries\large}%
-{\thesubsection\hspace{0.5cm}}%
-{0pt}%
-{\bfseries\large}%
+% Remove "Kapitel X" before each chapter
+\titleformat{\chapter}{\bf\Huge}{\thechapter\quad}{0em}{}
 
 % Set spacing of chapter
-\titlespacing*{\chapter}{0pt}{0pt}{0pt}{} %{<left>}{<before>}{<after>}{<right>}
+\titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
 % http://www.golatex.de/viewtopic,p,51871.html
 % ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
 
