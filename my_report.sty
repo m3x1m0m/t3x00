@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			01st May 2016		     									%%
+%% Date:			14th May 2016		     									%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -12,8 +12,13 @@
 
 %---- macros ---------------------------------------------------------------------
 
+% User defined length of new paragraph
 \newcommand{\newpar}{\\[1em]}
 
+% User defined way of emphasizing words
+\newcommand{\myemph}[1]{\textsl{#1}}
+
+% User defined spacing before and after titles
 \newcommand{\myspacebeforetitle}{-2em}
 \newcommand{\myspaceaftertitle}{1em}
 
@@ -23,9 +28,9 @@
 %\newcommand{\myspacebeforesubsecintoc}{0.4em}
 
 % Alternative 2 (narrow)
-%\newcommand{\myspacebeforechapintoc}{0.5em}
-%\newcommand{\myspacebeforesecintoc}{0.4em}
-%\newcommand{\myspacebeforesubsecintoc}{0.3em}
+\newcommand{\myspacebeforechapintoc}{0.5em}
+\newcommand{\myspacebeforesecintoc}{0.4em}
+\newcommand{\myspacebeforesubsecintoc}{0.3em}
 
 %---- packages -------------------------------------------------------------------
 
@@ -45,7 +50,7 @@
 \usepackage[ngerman]{babel}
 											
 % DinA4 paper, margins according to DHBW
-\usepackage[a4paper,lmargin={2.5cm},rmargin={2.5cm},tmargin={2.5cm},
+\usepackage[head=24pt,a4paper,lmargin={2.5cm},rmargin={2.5cm},tmargin={2.5cm},
 bmargin={2.5cm}]{geometry} 
 
 % To use mathematic symbols (to display symbols)
@@ -88,9 +93,10 @@ bmargin={2.5cm}]{geometry}
 
 %Head and Foot
 \usepackage{fancyhdr}
-\lhead{\includegraphics[width=2cm]{./images/dhbw_small.png}}\chead{}\rhead{\rightmark}
+\lhead{\includegraphics[width=2cm]{dhbw_small}}\chead{}\rhead{\nouppercase\rightmark}
 \lfoot{}\cfoot{\thepage}\rfoot{}
 \pagestyle{fancy}
+%\renewcommand{\headheight}{24pt}
 
 % For colored text
 \usepackage{color}
@@ -102,9 +108,6 @@ bmargin={2.5cm}]{geometry}
 
 % To go on with roman page numbers after main part
 \newcounter{romanPagenumber}
-
-% To display secition name in header
-%\pagestyle{headings}
 
 % Define path of images
 \graphicspath{ {images/} }
@@ -132,13 +135,13 @@ bmargin={2.5cm}]{geometry}
 \setlength\cftaftertoctitleskip{\myspaceaftertitle}
 
 % Set spacing in toc for chapter
-\setlength\cftbeforechapskip{1em}
+\setlength\cftbeforechapskip{\myspacebeforechapintoc}
 
 % Set spacing in toc for section
-\setlength\cftbeforesecskip{0.5em}
+\setlength\cftbeforesecskip{\myspacebeforesecintoc}
 
-% Set spacing in toc for section
-\setlength\cftbeforesecskip{0.5em}
+% Set spacing in toc for subsection
+\setlength\cftbeforesubsecskip{\myspacebeforesubsecintoc}
 
 % Set indentation (and numwidth) in toc for chapter
 \cftsetindents{chapter}{0pt}{1em}
@@ -147,11 +150,11 @@ bmargin={2.5cm}]{geometry}
 \cftsetindents{section}{0pt}{2em}
 
 % Set indentation (and numwidth) in toc for subsection
-\cftsetindents{subsection}{0pt}{3em}
+\cftsetindents{subsection}{2em}{3em}
 
 % For filling the toc with dots
-\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
 \renewcommand\cftchapleader{\cftdotfill{\cftdotsep}}
+%\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
 
 % ---- List of figures -----------------------------------------------------------
 
