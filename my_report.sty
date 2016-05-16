@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			14th May 2016		     									%%
+%% Date:			16th May 2016		     									%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -17,6 +17,9 @@
 
 % User defined way of emphasizing words
 \newcommand{\myemph}[1]{\textsl{#1}}
+
+% Specify user defined symbol
+\newcommand{\myvsymbol}{\includegraphics[width=0.7em]{v-symbol}}
 
 % User defined spacing before and after titles of toc, lof and lot
 % Compare with titlespacing of chapter !
@@ -152,6 +155,13 @@ bmargin={2.5cm}]{geometry}
 
 % Set spacing of chapter
 \titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
+% Set spacing of section
+%\titlespacing*{\section}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
+% Set spacing of subsection
+\titlespacing*{\subsection}{0pt}{-0.5em}{0.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
 % http://www.golatex.de/viewtopic,p,51871.html
 % ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
 

@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			14th May 2016												%%
+%% Date:			16th May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -20,7 +20,7 @@ In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfol
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{gpredict-principle}
-	\caption{Prinzip eines Satellitenverfolgungsprogramms \cite{gpredictmanual}}
+	\caption{Prinzip eines Satellitenverfolgungsprogramms, Quelle: \cite{gpredictmanual}}
 	\label{fig:gpredict-principle} 
 \end{figure}
 
@@ -51,7 +51,7 @@ Diese Ansicht besteht, wie in Abbildung \ref{fig:gpredictstartup} zu sehen, aus 
 \textbf{Polar View}\\
 Die \myemph{Polar View} (siehe Abbildung \ref{fig:gpredictstartup}) stellt eine Draufsicht auf die Bodenstation dar, bei der die Polarachse den Azimutwinkel darstellt und die Radialachse den Elevationswinkel. Mit einem Rechtsklick auf einen Satelliten lässt sich mit der Option \myemph{Show sky track} aktivieren, das die Spur des entsprechenden Satelliten anzeigt wird. Zusätzlich wird das aktuelle Modul links oben angezeigt, der nächste sichtbare Satellit (rechts oben) und die genauen Werte für Azimut und Elevation (links unten) sobald sich der Mauszeiger auf der \myemph{Polar View} befindet.\newpar
 \textbf{Single-Satellite View}\\
-In dieser Ansicht (siehe Abbildung \ref{fig:gpredictstartup}) werden detaillierte Informationen zu einem ausgewählten Satelliten angezeigt, z.B. Azimut, Elevation, Entfernung der direkten Sichtverbindung (\myemph{Slant Range}), Höhe, Geschwindigkeit, Dopplerverschiebung oder Signaldämpfung. Mit einem Klick auf das Dreieck links neben dem Satellitennamen kann zwischen den für dieses Modul ausgewählten Satelliten gewechselt werden.
+In dieser Ansicht (siehe Abbildung \ref{fig:gpredictstartup}) werden detaillierte Informationen zu einem ausgewählten Satelliten angezeigt, z.B. Azimut, Elevation, Entfernung der direkten Sichtverbindung (\myemph{Slant Range}), Höhe, Geschwindigkeit, Dopplerverschiebung oder Signaldämpfung. Mit einem Klick auf das \myvsymbol-Symbol links neben dem Satellitennamen kann zwischen den für dieses Modul ausgewählten Satelliten gewechselt werden.
 
 \clearpage
 
@@ -66,11 +66,11 @@ Die Listenansicht zeigt eine tabellarische Auflistung aller für das aktuelle Mo
 \end{figure}
 
 \textbf{Upcoming Passes View}\\
-Die \myemph{Upcoming Passes View} (siehe Abbildung \ref{fig:upcomingpassesview}) zeigt alle Satelliten des aktuellen Moduls, deren Azimut und Elevation, sowie die Zeit bis zum nächsten Verschwinden des Satelliten, dem sogenannten \myemph{\ac{LOS}} bzw. dem nächsten Auftauchen, auch \myemph{\ac{AOS}} genannt.
+Die \myemph{Upcoming Passes View} (siehe Abbildung \ref{fig:upcomingpassesview}) zeigt alle Satelliten des aktuellen Moduls, deren Azimut und Elevation, sowie die Zeit bis zum nächsten Verschwinden des Satelliten, dem sogenannten \myemph{\ac{LOS}} bzw. dem nächsten Auftauchen, auch \myemph{\ac{AOS}} genannt. Wie bei der \myemph{List View} ist es auch hier möglich nach den verschiedenen Spalten zu sortieren.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.3\textwidth]{upcomingpassesview}
+	\includegraphics[width=0.4\textwidth]{upcomingpassesview}
 	\caption{Upcoming Passes View}
 	\label{fig:upcomingpassesview} 
 \end{figure}
@@ -79,7 +79,19 @@ Die \myemph{Upcoming Passes View} (siehe Abbildung \ref{fig:upcomingpassesview})
 
 \subsection{Weitere Ansichten}
 
-Bei allen Ansichten kann durch einen Klick auf den Satellitennamen (bei der \myemph{Single-Satellite View} ein Klick auf das Dreieck neben dem Namen) ein kleines Pop-Up Menü geöffnet werden, welches den entsprechenden Satellitennamen, die Option \myemph{Show next pass} und die Option \myemph{Future passes} anzeigt.
+Bei allen Ansichten kann durch einen Klick auf den Satellitennamen ein kleines Pop-Up Menü geöffnet werden, welches den entsprechenden Satellitennamen, die Option \myemph{Show next pass} und die Option \myemph{Future passes} anzeigt. Bei einem Klick auf den Satellitennamen öffnet sich ein Fenster mit dem Titel \myemph{Satellite Info}, wie in Abbildung \ref{fig:satinfo} zu sehen. Dort sind unter dem Reiter \myemph{Orbit Info} verschiedene Informationen zum Satellitenorbit und unter dem Reiter \myemph{Transponders} die verfügbaren Transponder zu sehen.
+
+% (bei der \myemph{Single-Satellite View} ein Klick auf das Dreieck neben dem Namen)
+% (oder einen Doppelklick in der entsprechenden Ansicht auf den Satellitennamen)
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{satinfo}
+	\caption{Satellite Info}
+	\label{fig:satinfo} 
+\end{figure}
+
+Mit einem Klick auf die Option \myemph{Show next pass} gelangt man zu einer Übersicht über den nächsten Vorbeiflug des entsprechenden Satelliten. Die Details sind tabellarisch, als Polaransicht und als Verlauf des Azimut- und Elevationswinkels über der Zeit zu sehen (siehe Abbildung \ref{fig:passdetails}).
 
 \begin{figure}[h]
 	\centering
@@ -88,6 +100,10 @@ Bei allen Ansichten kann durch einen Klick auf den Satellitennamen (bei der \mye
 	\label{fig:passdetails} 
 \end{figure}
 
+\clearpage
+
+Die Option \myemph{Future passes} öffnet ein Fenster, in welchem die nächsten Vorbeiflüge des entsprechenden Satelliten tabellarisch dargestellt sind (siehe Abbildung \ref{fig:upcomingpasses}). Hierbei ist die Anzahl der darzustellenden Vorbeiflüge in den GPredict-Einstellungen unter \myemph{Predict} als \myemph{Number of passes to predict} einstellbar.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{upcomingpasses}
@@ -95,25 +111,64 @@ Bei allen Ansichten kann durch einen Klick auf den Satellitennamen (bei der \mye
 	\label{fig:upcomingpasses} 
 \end{figure}
 
+\subsection{Modul Pop-Up Menü}
+
+Um das Modul Pop-Up Menü zu öffnen, klickt man ganz rechts oben im GPredict-Fenster auf das \myvsymbol-Symbol. Im daraufhin erscheinenden Pop-Up Menü ist es möglich die Positionierung eines Moduls innerhalb des GPredict-Fensters einzustellen, ein Modul zu kopieren, zu löschen, zu schließen oder genauer zu konfigurieren. Außerdem sind dort weitere Funktionalitäten, welche im Folgenden genauer beschrieben werden, zugänglich.\newpar
+\textbf{The Sky at a Glance}\\
+Wie in Abbildung \ref{fig:theskyataglance} zu sehen, bietet dieses Fenster eine Übersicht über die Zeiträume in welchen die für das Modul ausgewählten Satelliten sichtbar sind. Der Zeitraum lässt sich hierbei in den GPredict-Einstellungen unter \myemph{Predict} unter dem Reiter \myemph{Sky at a Glance} zwischen einer und 24 Stunden einstellen.
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{satinfo}
-	\caption{Satellite Info}
-	\label{fig:satinfo} 
+	\includegraphics[width=0.5\textwidth]{theskyataglance}
+	\caption{The Sky at a Glance}
+	\label{fig:theskyataglance} 
 \end{figure}
 
 \clearpage
 
-\subsection{Modul Pop-Up Menü}
+\textbf{Time Controller}\\
+(siehe Abbildung \ref{fig:timecontroller})
 
-\begin{itemize}
-	\parskip0pt
-	\item \textbf{Antenna Control (Rotoren):} (noch kein Bild vorhanden)
-	\item \textbf{Radio Control} (noch kein Bild vorhanden)
-	\item \textbf{Sky at a Glance} (theskyataglance.png)
-	\item \textbf{Time Controller} (timecontroller.png)
-	\item \textbf{Modul-Einstellungen} (editmodule.png)
-\end{itemize}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.35\textwidth]{timecontroller}
+	\caption{Time Controller}
+	\label{fig:timecontroller} 
+\end{figure}
+
+\textbf{Moduleinstellungen (Configure)}\\
+(siehe Abbildung \ref{fig:editmodule})
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{editmodule}
+	\caption{Moduleinstellungen}
+	\label{fig:editmodule} 
+\end{figure}
+
+\clearpage
+
+\textbf{Antenna Control}\\
+(siehe Abbildung \ref{fig:rotatorcontrol})
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{rotatorcontrol}
+	\caption{Rotoren-Steuerung \textbf{Bild aktualisieren $\rightarrow$ aktive Steuerung}}
+	\label{fig:rotatorcontrol} 
+\end{figure}
+
+\textbf{Radio Control}\\
+(siehe Abbildung \ref{fig:radiocontrol})
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{radiocontrol}
+	\caption{Funkgerät-Steuerung \textbf{Bild aktualisieren $\rightarrow$ aktive Steuerung}}
+	\label{fig:radiocontrol} 
+\end{figure}
+
+\clearpage
 
 \subsection{GPredict Einstellungen}
 
@@ -125,14 +180,6 @@ Bei allen Ansichten kann durch einen Klick auf den Satellitennamen (bei der \mye
 	\item \textbf{Predict}
 \end{itemize}
 
-
-\iffalse
-\textbf{Map View}\\
-alskfjlöajsf aöfljasldkfj laksjf lkad fasd\newpar
-\textbf{Polar View}\\
-öasjf lasj lkösda fj lfk kajj dj lk fas 
-\fi
-
 \clearpage
 
 \section{HamLib-Programmierschnittstelle}
@@ -140,12 +187,16 @@ alskfjlöajsf aöfljasldkfj laksjf lkad fasd\newpar
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{hamlib}
-	\caption{HamLib Design \cite{hamlib}}
+	\caption{HamLib Design, Quelle: \cite{hamlib}}
 	\label{fig:hamlib} 
 \end{figure}
 
+\clearpage
+
 \section{Inbetriebnahme unter Windows}
 
-Dieser Text soll ein Test sein, ob die .tex File auch online bearbeitet werden kann.
+\textbf{Blockschaltbild von Hard- und Softwarekomponenten}
 
 \section{Inbetriebnahme unter Linux}
+
+\textbf{Blockschaltbild von Hard- und Softwarekomponenten}
