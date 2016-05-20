@@ -70,6 +70,7 @@ p' = \sqrt{a^2-e^2}
 Jetzt ist klar, dass gilt
 \begin{equation}
 p=\frac{b}{a} \cdot p'= \frac{b}{a} \sqrt{a^2-e^2} = \frac{b^2}{a}
+\label{equation_kepler_simple_p}
 \end{equation}
 
 Was nun noch fehlt ist „eine Gleichung, also eine analytische Beschreibung der Punkte einer Ellipse“ (siehe S.22 in \cite{Raumflugm}). Eine solche Gleichung ergibt sich mit dem Schnitt einer Ebene mit einem Kegel. 
@@ -177,8 +178,36 @@ Durch die Bilinearität des Kreuzprodukts folgt
 Die Tatsache, dass das Kreuzprodukt eines Vektors mit sich selbst den Nullvektor ergibt und dem Umstand, dass \ensuremath{\vec{e_r}\perp\vec{e_\theta}\perp\vec{e_z}} ist, führt zu
 \begin{equation}
 \frac{dA}{dt} = \frac{1}{2}\left|r^2\,\dot{\theta}\,\vec{e_z} \right| =  \frac{1}{2}\,r^2\,\dot{\theta}=h=konstant
+\label{equation6_kepler}
 \end{equation}
 
+\subsection{Das dritte Keplersche Gesetz}
+Auf sein drittes Gesetz soll Kepler besonders stolz gewesen sein (vgl. S.27 in \cite{Raumflugm}). Nach seinem Gesetz stehen die Halbachsen \ensuremath{a_1} und \ensuremath{a_2} und die Umlaufzeiten \ensuremath{T_1} und \ensuremath{T_2} in dem Zusammenhang
+\begin{equation}
+	\frac{T_1^2}{T_2^2}=\frac{a_1^3}{a_2^3}
+	\label{equation7_kepler}
+\end{equation} 
+Die Umlaufzeit lässt sich nun leicht mit der Konstanten \ensuremath{h}, welche für das zweite Keplersche Gesetz eingeführt wurde ausdrücken. Es wird hierfür die gesamte Ellipsenfläche (\ensuremath{A_{Ellipse}=ab\pi}) und konsequenterweise dann auch die gesamte Umlaufzeit \ensuremath{T} angenommen. Eingesetzt in Gleichung \ref{equation6_kepler} ergibt sich
+\begin{equation}
+	2ab\pi=hT.
+\end{equation} 
+Daraus folgt
+\begin{equation}
+	T=\frac{2ab\pi}{h}.
+\end{equation}
+Eingesetzt in Gleichung \ref{equation7_kepler} ergibt sich 
+\begin{equation}
+		\frac{T_1^2}{T_2^2}=\frac{a_1^3}{a_2^3}=\frac{a_1^2b_1^2h_2^2}{a_2^2b_2^2h_1^2}
+\end{equation}
+Bringt man nun \ensuremath{a_1^2b_1} und \ensuremath{a_2^2b_2^2} einmal durch Division und einmal durch Multiplikation eins weiter nach links, so kann man die Beziehung aus Gleichung \ref{equation_kepler_simple_p} ausnutzen und schreiben
+\begin{equation}
+\frac{a_1b_2^2}{a_2b_1^2}=\frac{h_2^2}{h_1^2}
+\end{equation}
+Oben und unten multipliziert man jetzt noch jeweils mit \ensuremath{1/a_1} und \ensuremath{1/a_2}.
+\begin{equation}
+\frac{b_2^2/a_2}{b_1^2/a_1}=\frac{h_2^2}{h_1^2}=\frac{p_2}{p_1}
+\end{equation}
+Das Resultat ist ein „Zusammenhang zwischen den Halbparametern \ensuremath{p_1}, \ensuremath{p_2} und den Bewegungskonstatnten \ensuremath{h_1}, \ensuremath{h_2}“ (siehe S.27 in \cite{Raumflugm}). Diese Größen sind aus dem zweiten Keplerschen Gesetz bekannt. 
 \subsection{Die Bahnelemente}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]                                                                       %%
