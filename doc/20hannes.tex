@@ -178,12 +178,12 @@ Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \re
 Hinter der Funktion \myemph{Antenna Control} (siehe Abbildung \ref{fig:rotatorcontrol}) verbirgt sich ein Bedienfeld zur Steuerung der Antennenrotoren. Bevor dieses geöffnet werden kann, muss zunächst in den GPredict-Einstellungen unter \myemph{Interfaces} mindestens eine Schnittstelle zur Rotorsteuerung konfiguriert werden (siehe Abschnitt XXX). 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{rotatorcontrol-active}
-	\caption{Rotorsteuerung}
+	\includegraphics[width=0.6\textwidth]{rotatorcontrol-active}
+	\caption{Rotorsteuerungs-Bedienfeld}
 	\label{fig:rotatorcontrol} 
 \end{figure}
 
-Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der aktuelle Ort des zu verfolgenden Satelliten (dargestellt durch einen Punkt) und die gegenwärtige Ausrichtung der Antenne (dargestellt durch ein Fadenkreuz) zu sehen ist. Zum Anderen sind folgende vier Bereiche verfügbar:
+Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der aktuelle Ort des zu verfolgenden Satelliten (dargestellt durch ein Viereck) und die gegenwärtige Ausrichtung der Antenne (dargestellt durch ein Fadenkreuz) zu sehen ist. Zum Anderen sind folgende vier Bereiche verfügbar:
 
 \begin{itemize}
 	\parskip0pt
@@ -191,36 +191,51 @@ Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der 
 	\item \textbf{Elevation:} In diesem Feld lässt sich die Ausrichtung der Antenne in Elevations-Richtung steuern, vorausgesetzt, dass die \myemph{Track}-Funktion nicht aktiviert ist. Am unteren Ende des Feldes wird unter \myemph{Read} der aktuelle Elevations-Winkel der Antenne angezeigt. Ist keine Verbindung zum Rotor aufgebaut, wird hier ,,-\,-\,-'' angezeigt. Liegt ein Verbindungsproblem vor, erscheint ,,ERROR''.
 	\item \textbf{Target:} Hier lässt sich der zu verfolgende Satellit auswählen. Es stehen hierbei nur die für das aktuelle Modul ausgewählten Satelliten zu Verfügung. Aktiviert man die Schaltfläche \myemph{Track}, wird der ausgewählte Satellit verfolgt. Unter dem Satellitennamen werden die jeweiligen Winkel in Echtzeit dargestellt und hinter $\Delta$T wird die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} angezeigt.
 	\clearpage
-	\item \textbf{Settings:} 
+	\item \textbf{Settings:} Hier lässt sich die in den GPredict-Einstellungen festgelegte Schnittstelle zur Kommunikation mit den Rotoren auswählen. Mit einem Klick auf die Schaltfläche \myemph{Engage} wird die Verbindung zu dieser Schnittstelle aufgebaut bzw. unterbrochen. Unter \myemph{Cycle} kann dabei der Zyklus eingestellt werden, in welchem Kommandos an die Rotor-Schnittstelle gesendet und Winkelwerte von dieser abgefragt werden. Ein sinnvoller Wert liegt hierbei zwischen zwei und fünf Sekunden. Bei \myemph{Tolerance} wird die tolerierte Differenz zwischen abgefragtem und eingestelltem Winkel eingetragen. Sobald diese überschritten wird, wird ein  Kommando an die Rotor-Schnittstelle geschickt. Hierbei sollte sowohl die Winkelauflösung der Rotorsteuerung, als auch die Keulenbreite der Antenne berücksichtigt werden. Nach fünf aufeinanderfolgenden Fehlern bei der Kommunikation mit den Rotoren, wird die Verbindung automatisch unterbrochen.
 \end{itemize}
+
+In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der Schaltflächen \myemph{Track} und \myemph{Engage} und deren Auswirkung beschrieben.
 
 \begin{table}[h]
 	\begin{tabularx}{\textwidth}{|l|l|X|}
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
 		\hline
-		Inaktiv          	& Inaktiv 			& blabla \\
-		Aktiv              	& Inaktiv   		& blabla \\
-		Aktiv              	& Aktiv	            & blabla \\
-		Inaktiv            	& Aktiv   			& blabla \\
+		Inaktiv          	& Inaktiv 			& Es werden weder Kommandos an die Rotoren gesendet, noch wird die aktuelle Ausrichtung der Antenne ausgelesen. Die aktuellen Winkel des zu verfolgenden Satellits werden nicht in die Winkelsteuerungs-Eingabefelder übertragen.\\
+		Aktiv              	& Inaktiv   		& Die aktuellen Winkel des zu verfolgenden Satellits werden in die Winkelsteuerungs-Eingabefelder übertragen, es werden aber keine Kommandos an die Rotoren geschickt und die aktuelle Ausrichtung der Antenne wird nicht ausgelesen.\\
+		Aktiv              	& Aktiv	            & Die aktuellen Winkel des zu verfolgenden Satellits werden in die Winkelsteuerungs-Eingabefelder übertragen und diese werden an die Rotoren geschickt. Die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
+		Inaktiv            	& Aktiv   			& Die Winkel, die in den Winkelsteuerungs-Eingabefelder eingestellt sind, werden an die Rotoren gesendet und die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
 		\hline		
 	\end{tabularx}
-	\caption{Tabelle}
-	\label{tab:test}
+	\caption{Betriebsmodi des \myemph{Antenna Control}-Bedienfelds, Quelle: \cite{gpredictmanual} \vspace{-2em}}
+	\label{tab:rotatorcontrolmodes}
 \end{table}
 
-\myemph{Radio Control}\\
-$\rightarrow$ Nur möglich zu öffnen, wenn mindestens ein Gerät konfiguriert ist\\
-$\rightarrow$ Aktive Steuerung von Dummy auf Bild zu sehen\\
-$\rightarrow$ Tabelle Track -- Engage\\
-(siehe Abbildung \ref{fig:radiocontrol})
+\clearpage
+
+Um dem Funkgerät die entsprechenden Up- und Downlink-Frequenzen inklusive Dopplerschiftkorrektur zu übermitteln, wird das \myemph{Radio Control}-Bedienfeld (siehe Abbildung \ref{fig:radiocontrol}) verwendet. Dieses kann nur geöffnet werden, wenn mindestens eine Funkgerät-Schnittstelle in den GPredict-Einstellungen unter \myemph{Interfaces} konfiguriert ist (siehe Abschnitt XXX).
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{radiocontrol-active}
+	\includegraphics[width=0.6\textwidth]{radiocontrol-active}
 	\caption{Funkgerät-Steuerung}
 	\label{fig:radiocontrol} 
 \end{figure}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\hline
+		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
+		\hline
+		Inaktiv          	& Inaktiv 			& Blabla\\
+		Aktiv              	& Inaktiv   		& Blabla\\
+		Aktiv              	& Aktiv	            & Blabla\\
+		Inaktiv            	& Aktiv   			& Blabla\\
+		\hline		
+	\end{tabularx}
+	\caption{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
+	\label{tab:radiocontrolmodes}
+\end{table}
 
 \clearpage
 
