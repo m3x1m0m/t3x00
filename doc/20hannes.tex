@@ -4,11 +4,38 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			21th May 2016												%%
+%% Date:			24th May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Aufbau der Bodenstation}
+
+Die Bodenstation der DHBW Ravensburg am Standort Friedrichshafen besteht grundsätzlich aus folgenden Komponenten:
+
+\begin{itemize}
+	\parskip0pt
+	\item Antennen (drei Bänder)
+	\begin{itemize}
+		\item Endstufen / Verstärker
+		\item Mast (Steuergerät für Höheneinstellung)
+	\end{itemize}
+	\item Rotoren
+	\begin{itemize}
+		\item Banana Pi + interne Software
+		\item ARSVCOM Software
+		\item Azimut-Rotor + Steuergerät
+		\item Elevations-Rotor + Steuergerät
+	\end{itemize}
+	\item Funkgerät Icom IC-9100
+	\begin{itemize}
+		\item Netcom (2x Seriell zu Ethernet)
+		\item Netcom Manager Software
+		\item Hardware für Sprechfunk ?!
+	\end{itemize}
+\end{itemize}
+
 
 \chapter{GPredict}
 
@@ -111,6 +138,8 @@ Die Option \myemph{Future passes} öffnet ein Fenster, in welchem die nächsten 
 	\label{fig:upcomingpasses} 
 \end{figure}
 
+\vspace{-0.5em}
+
 \subsection{Modul Pop-Up Menü}
 
 Um das Modul Pop-Up Menü zu öffnen, klickt man ganz rechts oben im GPredict-Fenster auf das \myvsymbol-Symbol. Im daraufhin erscheinenden Pop-Up Menü ist es möglich die Positionierung eines Moduls innerhalb des GPredict-Fensters einzustellen, ein Modul zu kopieren, zu löschen, zu schließen oder genauer zu konfigurieren. Außerdem sind dort weitere Funktionen, welche im Folgenden genauer beschrieben werden, zugänglich.\newpar
@@ -146,17 +175,39 @@ Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \re
 
 \clearpage
 
-Hinter der Funktion \myemph{Antenna Control} (siehe Abbildung \ref{fig:rotatorcontrol}) verbirgt sich ein Bedienfeld zur Steuerung der Antennenrotoren.\\
-$\rightarrow$ Nur möglich zu öffnen, wenn mindestens ein Gerät konfiguriert ist\\
-$\rightarrow$ Aktive Steuerung von Dummy auf Bild zu sehen\\
-$\rightarrow$ Tabelle Track -- Engage\\
-
+Hinter der Funktion \myemph{Antenna Control} (siehe Abbildung \ref{fig:rotatorcontrol}) verbirgt sich ein Bedienfeld zur Steuerung der Antennenrotoren. Bevor dieses geöffnet werden kann, muss zunächst in den GPredict-Einstellungen unter \myemph{Interfaces} mindestens eine Schnittstelle zur Rotorsteuerung konfiguriert werden (siehe Abschnitt XXX). 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{rotatorcontrol-active}
-	\caption{Rotoren-Steuerung}
+	\caption{Rotorsteuerung}
 	\label{fig:rotatorcontrol} 
 \end{figure}
+
+Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der aktuelle Ort des zu verfolgenden Satelliten (dargestellt durch einen Punkt) und die gegenwärtige Ausrichtung der Antenne (dargestellt durch ein Fadenkreuz) zu sehen ist. Zum Anderen sind folgende vier Bereiche verfügbar:
+
+\begin{itemize}
+	\parskip0pt
+	\item \textbf{Azimuth:} In diesem Feld lässt sich die Ausrichtung der Antenne in Azimut-Richtung steuern, vorausgesetzt, dass die \myemph{Track}-Funktion nicht aktiviert ist. Am unteren Ende des Feldes wird unter \myemph{Read} der aktuelle Azimut-Winkel der Antenne angezeigt. Ist keine Verbindung zum Rotor aufgebaut, wird hier ,,-\,-\,-'' angezeigt. Liegt ein Verbindungsproblem vor, erscheint ,,ERROR''.
+	\item \textbf{Elevation:} In diesem Feld lässt sich die Ausrichtung der Antenne in Elevations-Richtung steuern, vorausgesetzt, dass die \myemph{Track}-Funktion nicht aktiviert ist. Am unteren Ende des Feldes wird unter \myemph{Read} der aktuelle Elevations-Winkel der Antenne angezeigt. Ist keine Verbindung zum Rotor aufgebaut, wird hier ,,-\,-\,-'' angezeigt. Liegt ein Verbindungsproblem vor, erscheint ,,ERROR''.
+	\item \textbf{Target:} Hier lässt sich der zu verfolgende Satellit auswählen. Es stehen hierbei nur die für das aktuelle Modul ausgewählten Satelliten zu Verfügung. Aktiviert man die Schaltfläche \myemph{Track}, wird der ausgewählte Satellit verfolgt. Unter dem Satellitennamen werden die jeweiligen Winkel in Echtzeit dargestellt und hinter $\Delta$T wird die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} angezeigt.
+	\clearpage
+	\item \textbf{Settings:} 
+\end{itemize}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\hline
+		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
+		\hline
+		Inaktiv          	& Inaktiv 			& blabla \\
+		Aktiv              	& Inaktiv   		& blabla \\
+		Aktiv              	& Aktiv	            & blabla \\
+		Inaktiv            	& Aktiv   			& blabla \\
+		\hline		
+	\end{tabularx}
+	\caption{Tabelle}
+	\label{tab:test}
+\end{table}
 
 \myemph{Radio Control}\\
 $\rightarrow$ Nur möglich zu öffnen, wenn mindestens ein Gerät konfiguriert ist\\
@@ -187,6 +238,8 @@ $\rightarrow$ Tabelle Track -- Engage\\
 
 \section{HamLib-Programmierschnittstelle}
 
+\subsection{Übersicht}
+
 Da es keinen einheitlichen Kommunikationsstandard für die zahlreichen Funkgeräte und Rotoren unterschiedlicher Hersteller gibt, ist für die Verwendung von GPredict eine applikationsspezifische Programmierschnittstelle oder auch \ac{API} erforderlich. Mit den \myemph{Ham Radio Control Libraries} (englisch für Amateurfunk-Kontrollbibliotheken), kurz HamLib, steht dem Benutzer eine solche \ac{API} zur Verfügung. HamLib ist unter der \ac{GPL} lizenziert und steht als freie Software jedem zur Verfügung. Wie in Abbildung \ref{fig:hamlib} zu sehen, ermöglicht HamLib einer Software wie GPredict die Kommunikation mit verschiedenen Funkgeräten und Rotoren, in dem es für jedes dieser Geräte einen eigenen Treiber bzw. ein eigenes \ac{BE} zur Verfügung stellt.
 
 \begin{figure}[h]
@@ -210,10 +263,21 @@ Dabei verwendet man entweder den Quellcode um eine benutzerspezifische Anwendung
 
 Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}'' für  ,,Rig'' (deutsch: Amateurfunkgerät) und das ,,\myemph{d} am Ende von \myemph{rigctld} und \myemph{rotctld} für ,,Deamon'' (deutsch: Hintergrundprozess).
 
+\subsection{Verwendung}
+
+Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctld} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat} und \ref{chap:rotctldbat}). Diese Skripte müssen beide gestartet werden, bevor unter GPredict eine Kommunikation mit den Rotoren bzw. mit dem Funkgerät stattfinden kann. 
+
 \section{Inbetriebnahme unter Windows}
 
-\textbf{Blockschaltbild von Hard- und Softwarekomponenten}
+\begin{itemize}
+	\parskip0pt
+	\item \textbf{Batch-Skripte -> Hinweis auf Dummy-Skripte?!}
+	\item \textbf{Interfaces unter GPredict-Einstellungen}
+	\item \textbf{Konfiguration von rigctld und rotctld}
+	\item \textbf{Hinweis darauf, dass die Skripte auf dem PC, der mit Funkgerät und Rotoren kommuniziert, ausgeführt werden müssen. GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren -> Einstellung der IP-Adresse und des Ports}
+	\item \textbf{Blockschaltbild von (Hard- und) Softwarekomponenten}
+\end{itemize}
 
-\section{Inbetriebnahme unter Linux}
 
-\textbf{Blockschaltbild von Hard- und Softwarekomponenten}
+
+% \section{Inbetriebnahme unter Linux}
