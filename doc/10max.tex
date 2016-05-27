@@ -13,8 +13,9 @@
 \chapter{Hintergründe}
 
 \section{Bahnmechanik}
-
+Es sei zu Beginn diese Absatzes darauf hingewiesen
 \subsection{Die Keplerschen Gesetze}
+\label{subsec:kepler}
 Seit der Antike galt die Erklärung der Bewegung der Planeten und die Vorhersage dieser als eine große Herausforderung. Theorien von Ptolemaios mit seinem geozentrischen Weltbild und Kopernikus mit seinem heliozentrischen Weltbild führten bereits im 16. Jahrhundert zu brauchbaren Modellen zur Vorhersage der Planetenbewegungen. Diese Modelle unterlagen jedoch Ungenauigkeiten, „die in mit Instrumenten des 16. Jahrhunderts bereits messbaren Breichen lagen“ (siehe S. 20 in \cite{Raumflugm}). 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]                                                                           %%
@@ -181,7 +182,7 @@ Die Tatsache, dass das Kreuzprodukt eines Vektors mit sich selbst den Nullvektor
 \label{equation6_kepler}
 \end{equation}
 
-\subsection{Das dritte Keplersche Gesetz}
+\subsubsection{Das dritte Keplersche Gesetz}
 Auf sein drittes Gesetz soll Kepler besonders stolz gewesen sein (vgl. S.27 in \cite{Raumflugm}). Nach seinem Gesetz stehen die Halbachsen \ensuremath{a_1} und \ensuremath{a_2} und die Umlaufzeiten \ensuremath{T_1} und \ensuremath{T_2} in dem Zusammenhang
 \begin{equation}
 	\frac{T_1^2}{T_2^2}=\frac{a_1^3}{a_2^3}
@@ -208,6 +209,7 @@ Oben und unten multipliziert man jetzt noch jeweils mit \ensuremath{1/a_1} und \
 \frac{b_2^2/a_2}{b_1^2/a_1}=\frac{h_2^2}{h_1^2}=\frac{p_2}{p_1}
 \end{equation}
 Das Resultat ist ein „Zusammenhang zwischen den Halbparametern \ensuremath{p_1}, \ensuremath{p_2} und den Bewegungskonstatnten \ensuremath{h_1}, \ensuremath{h_2}“ (siehe S.27 in \cite{Raumflugm}). Diese Größen sind aus dem zweiten Keplerschen Gesetz bekannt. 
+
 \subsection{Die Bahnelemente}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]                                                                       %%
@@ -217,66 +219,22 @@ Das Resultat ist ein „Zusammenhang zwischen den Halbparametern \ensuremath{p_1
 	\label{fig:bahnelemente}                                                                %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-Die Bahnelemente dienen der Beschreibung einer Bewegung eines Himmelskörpers auf einer Umlaufbahn (meist einer Ellipse). Dieser Körper unterliegt den Keplerschen Gesetzen. Wird die Bewegung eines Himmelskörpers durch äußere Einflüsse (z.B. Gravitationskraft der Sonne) nicht gestört, so kann sie durch sechs Größen beschrieben werden. Diese Größen sind die Bahnelemente. Zwei Bahnelemente beschreiben die Form der Bahn, drei legen die Lage der Bahn im dreidimensionalen Raum fest und ein Bahnelement gibt an zu welcher Zeit sich der Himmelskörper wo auf der Bahn befunden hat. 
-\\\\Diese Bahnelemente reichen in der Praxis nicht aus, um die Position eines Himmelskörpers z.B. eines Satelliten mit einem Vorhersagemodell berechnen zu können. Aus diesem Grund werden die Bahnelemente meist um von Vorhersagemodellen benötigten Informationen ergänzt.       
+Die Bahnelemente dienen der Beschreibung einer Bewegung eines Himmelskörpers auf einer Umlaufbahn (meist einer Ellipse). Dieser Körper unterliegt den Keplerschen Gesetzen. Wird die Bewegung eines Himmelskörpers durch äußere Einflüsse (z.B. Gravitationskraft der Sonne) nicht gestört, so kann sie durch sechs Größen beschrieben werden. Diese Größen sind die Bahnelemente. Zwei Bahnelemente beschreiben die \textbf{Form der Bahn}, drei legen die \textbf{Lage der Bahn} im dreidimensionalen Raum fest und ein Bahnelement gibt an zu welcher \textbf{Zeit} sich der Himmelskörper wo auf der Bahn befunden hat. 
+\newpar
+Diese Bahnelemente reichen in der Praxis nicht aus, um die Position eines Himmelskörpers z.B. eines Satelliten mit einem Vorhersagemodell berechnen zu können. Aus diesem Grund werden die Bahnelemente meist um von Vorhersagemodellen benötigten Informationen ergänzt.       
 Im Folgenden werden die Bahnelemente in Ihrer Bedeutung anhand der Abbildung \ref{fig:bahnelemente} erläutert. 
 
-\subsubsection*{Gestalt der Bahn}
-Um die Gestalt der Bahn zu beschreiben wird die \textbf{numerische Exzentrizität e} und die Angabe der Länge der \textbf{großen Halbachse a} benötigt.
-<<<<<<< HEAD
-=======
-\\\\Zunächst soll die Ellipse an sich betrachtet werden. Die einfachste Möglichkeit eine Ellipse zu konstruieren besteht darin zwei Nägel in einer Holzplatte mit einem Stück Schnur mit einer Schlaufe zu verbinden. Das Stück Schnur muss länger sein als der Abstand zwischen beiden Nägeln. Nimmt man nun einen Bleistift und drückt ihn in der Schlaufe gegen die Schnur, kann man die beiden Nägel mit Kontakt der Bleistiftspitze zum Holzbrett umrunden. Hält man die Schnur konstant auf Spannung, so ergibt sich eine Ellipse. Nichts anderes besagt die folgende Mengendefinition mit Bezug zu Abbildung \ref{fig:ellipse}. 
-\begin{equation}
-E = \{P | \overline{F_{1}P} + \overline{F_{2}P} = 2a = konstant\}
-\end{equation}
-\ensuremath{F_{1}} und \ensuremath{F_{2}} heißen Brennpunkte der Ellipse. \ensuremath{M} ist der Mittelpunkt der Ellipse. \ensuremath{S_{1}} und \ensuremath{S_{2}} sind die Haupt-, \ensuremath{S_{3}} und \ensuremath{S_{4}} die Nebenscheitel.      
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]                                                                       %%
-	\centering                                                                            	%%
-	\includegraphics[width=0.6\textwidth]{./images/ellipse.png}                             %%
-	\caption[Ellipse]{Ellipse, Quelle: Wikipedia}                                           %%
-	\label{fig:ellipse}                                                                     %%
-\end{figure}                                                                              	%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
-Die Strecke \ensuremath{\overline{MS_{1}}} ist gleich der Strecke \ensuremath{\overline{MS_{2}}}. Man spricht bei der Länge dieser Strecke von der großen Halbachse a. Beide Strecken ergeben zusammen die Hauptachse \ensuremath{\overline{S_{1}S_{2}}}. Analog gibt es hierzu die Nebenachse, welche durch die Strecke \ensuremath{\overline{S_{3}S_{4}}} bestimmt wird. Die kleinen Halbachsen sind \ensuremath{\overline{MS_{3}}} und \ensuremath{\overline{MS_{4}}}. Diese haben die Längen b.  Das Wort numerisch gibt bei der Exzentrizität an, dass diese sich auf eine andere Größe (die große Halbachse) bezieht. Der Wert der numerischen Exzentrizität lässt sich in vier Bereiche aufteilen: 
-\begin{itemize}
-	\item Der Wert 0 repräsentiert eine perfekte kreisförmige Bahn.
-	\item Der Bereich von 0 bis 1 beschreibt eine elliptische Bahn.
-	\item Der Wert 1 erzeugt eine exakt parabolische Bahn.
-	\item Jeder Wert größer 1 gehört zu einer immer offener werdenden Hyperbel.  
-\end{itemize}   
+\subsubsection{Gestalt der Bahn}
+Um die Gestalt der Bahn zu beschreiben wird die \textbf{numerische Exzentrizität \ensuremath{e'}} und die Angabe der Länge der \textbf{großen Halbachse \ensuremath{a}} benötigt. Diese beiden Größen werden ausführlich im Absatz \ref{subsec:kepler} beschrieben. Es braucht nicht mehr, um eine elliptische Bahn zu definieren. Zur Erinnerung: Die große Halbachse \ensuremath{a} ist die Länge der Strecke vom Mittelpunkt zu den Hauptscheiteln. Die (lineare) Exzentrizität \ensuremath{e} gibt die Schlankeit der Ellipse an. Wobei die numerische Exzentrizität \ensuremath{e'} auf die große Halbachse normiert ist.  
 
-Bis zum Wert 1 handelt es sich um eine geschlossene Bahn. Oberhalb von 1 ist die Bahn immer geöffnet. Das bedeutet jeder Punkt der Bahn wird von einem Satellit nur einmal abgeschritten. Für eine elliptische Bahn (\ensuremath{e < 1}) kann aus der Halbachse der Ellipse und der numerischen Exzentrizität ein minimaler (\ensuremath{r_{min}}) und ein maximaler (\ensuremath{r_{max}}) Abstand vom Brennpunkt der Ellipse berechnet werden.     
->>>>>>> master
+\subsubsection{Lage der Bahn}
+Es erscheint sinnvoll, dass die Lage im Raum als nächstes festgelegt wird. Auch scheint es sinnig, dass man drei Bahnellemente benötigt, um die Lage der Bahn im dreidimensionalen Raum festzulegen. 
+\newpar
+Man stelle sich nun vor, dass die Ellipse, auf welcher der Satellit sich bewegt, in einer Ebene liege.  Diese Ebene schneide man mit einer Referenzebene (z.B. Schnittebene durch den Erdäquator). Die \textbf{Inklination \ensuremath{i}} ist nun ein Winkel, „um den die Bahnebene gegenüber der [Referenzebene] geneigt ist“ (siehe S.88 in \cite{HandRaum}). Um die Nebenachse der Ellipse herum kann durch diese Festlegung keine Rotation mehr stattfinden. Die Ellipse, die ja in der Ebene liegt, kann sich jetzt noch in dieser Ebene um eine zur Ebene orthogonalen Achse drehen. Um das zu unterbinden wird ein weiterer Winkel, das \textbf{Argument des Perigäums \ensuremath{\omega}}, eingeführt. Das Argument des Perigäums ist der Winkel, den die Knotenlinie und die Perigäumsrichtung (Hauptachse) einschließen. Das Perigäum liegt am Ende der Hauptachse, auf welches sich der Satellit zu bewegt, nachdem er den aufsteigenden Knoten passiert hat. Der aufsteigende Knoten ist der Punkt in dem der Satellit die Referenzebene auf seiner elliptischen Umlaufbahn (von Süd nach Nord) durchstößt. Die Knotenlinie ist die Schnittgerade der Ellipse mit der Referenzebene. Darüber hinaus gibt es das Apogäum, welches nach dem absteigenden Knoten durchlaufen wird, der am anderen Ende der Nebenachse beheimatet ist. Eine andere Definition für das Perigäum ist der Punkt des geringsten Abstands des Satelliten zur Erde. Analog lässt sich das Apogäum als Punkt des größten Abstands des Satelliten zur Erde festlegen. Die Ellipse dreht sich nun nicht mehr in der Ebene. Eine Sache wurde jetzt noch nicht betrachtet. Die Ebene kann sich immer noch entlang Ihrer Hauptachse drehen. Die \textbf{Rektaszension des aufsteigenden Knotens \ensuremath{\Omega}} gibt nun den Winkel an, den die Knotenlinie und der Vektor vom Ellipsenmittelpunkt zum Frühlingspunkt \ensuremath{\gamma} einschließen. Doch was ist der Frühlingspunkt? „Als Frühlingspunkt (auch Widderpunkt) wird in der Astronomie der Schnittpunkt des Himmelsäquators mit der Ekliptik bezeichnet, an dem die Sonne zum Frühlingsanfang der Nordhalbkugel (= Herbstanfang der Südhalbkugel) steht“ (siehe \cite{Wiki:Frue}). Die Derehung um die Hauptachse ist jetzt also auch nicht mehr möglich. Der Bahnlage wurden somit alle drei Freiheitsgrade genommen.     
 
-\subsubsection*{Lage der Bahn}
+\subsubsection{Zeitlicher Bezug}
 
 
-\subsubsection*{Zeitlicher Bezug}
-\begin{itemize}
-	
-	%\parskip0pt
-	\item Unter der \textbf{Inklination (i)} versteht man den Winkel zwischen 
-	Bahn- (blau) und Äquatorebene (grün). Der Schnittpunkt mit der Äquatorebene ergibt die
-	Konotenlinie. 
-	\item \textbf{Die Rektaszension des aufsteigenden Knotens (\ensuremath{\Omega})} ist jener Winkel, der zwischen einer Geraden vom Brennpunkt (B) zum Frühlingspunkt (\ensuremath{\gamma}) und einer Geraden vom Brennpunkt zum aufsteigenden Knoten (\includegraphics[scale=1.5]{./images/anode.png}) ausgebildet wird.  
-	\item Die \textbf{Periapsisdistanz \ensuremath{r_{min}}} stellt den Abstand des Perigäums (P) zum Brennpunkt dar. Das Perigäum ist der Punkt auf der Bahn, welcher den geringsten Abstand zum Brennpunkt hat.
-	\item \textbf{Apogäum:} Im Gegenzug zu dem Perigäum definiert das Apogäum 
-	den größten Erdabstand den der Satellit erreichen kann.
-	\item \textbf{Argument des Perigäums:} Unter dem Argument des Perigäum 
-	versteht man den Winkel zwischen der Knotenlinie und der Apsidenlinie, welche 
-	die beiden Punkte Perigäum mit Apogäum verbindet.
-	\item \textbf{Exzentrizität:} Dadurch dass ein Orbit nicht wie ein Kreis 
-	beschreiben lässt, wird ein Maß benötigt, welches die Form beschreibt. Die 
-	Exzentrizität gibt an, wie weit die beiden Brennpunkte vom Mittelpunkt der 
-	Ellipse entfernt sind und beschreibt somit die Form des Orbits.
-	\item \textbf{Mittlere Anomalie:} Die Mittlere Anomalie sagt aus, wo sich 
-	der Satellit vom Referenzpunkt Perigäum auf seiner Bahn befindet.
-	\item \textbf{Große Halbache:} Die Große Halbachse beschreibt die Größe der
-	Bahn.
-	
-\end{itemize}
-
-\subsection{Vorhersagemodelle}
+\section{Vorhersagemodelle}
 
 \clearpage
