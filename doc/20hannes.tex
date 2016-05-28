@@ -222,28 +222,65 @@ Um dem Funkgerät die entsprechenden Up- und Downlink-Frequenzen inklusive Doppl
 	\label{fig:radiocontrol} 
 \end{figure}
 
+Neben einer Anzeige die die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} darstellt (ganz unten im Bedienfeld in fettgedruckten Buchstaben) kann das \myemph{Radio Control}-Bedienfeld in folgende vier Bereiche untergliedert werden:
+
+\begin{itemize}
+	\parskip0pt
+	\item \textbf{Downlink:} In diesem Bereich kann die Frequenzeinstellung für die Downlink-Frequenz vorgenommen werden. Außerdem ist die aktuelle Dopplerfrequenz und ein Feld names \myemph{LO}, welches für eine Offsetfrequenz steht, die im Funkgerät eingestellt werden kann, steht. Die korrigierte Frequenz welche nach \myemph{Radio} angezeigt wird, setzt sich damit beispielsweise wie folgt zusammen: $f_{Radio} = f_{Satellite} + f_{Doppler} - f_{LO}$
+	\item \textbf{Uplink:} Dieser Bereich beinhaltet die Frequenzeinstellungen für die Uplink-Frequenz und besitzt die gleichen Eigenschaften wie der Downlink-Bereich.
+	\item \textbf{Target:} Hier kann der zu verfolgende Satellit und der zu verwendente Transponder eingestellt werden. Mit einem Klick auf \myemph{Track} wird der Dopplerschift des ausgewählten Satelliten bei den Frequenzeinstellungen im Downlink- und Uplink-Bereich korrigiert. Eine wichtige Rolle spielt hierbei die Schaltfläche \myemph{T} (\myemph{Tune}), da die Frequenzen des Transponders nur durch einen Klick auf diese in die Frequenzeinstellungen übertragen werden. Sollte der Transponder beispielsweise nur einen Downlink besitzen, wird auch nur die Frequenz im Downlink-Bereich eingestellt.\clearpage
+	Mit der Schaltfläche \myemph{L} (\myemph{Lock}) lässt sich die Differenz der Downlink- und Uplink-Frequenz sperren, das heißt Änderungen an der einen wirken sich auch auf die andere Frequenz aus. Dies ist nicht für Transponder möglich, die nur einen Up- oder Downlink besitzen.
+	\item \textbf{Settings:} In diesem Bereich lassen sich bis zu zwei Funkgeräte auswählen die in den GPredict-Einstellungen unter \myemph{Interfaces} eingerichtet wurden. Das obere Gerät stellt das Primäre dar und kann für Up- und Downlink verwendet werden. Das Untere kann als sekundäres Gerät verwendet werden, welches nur für den Uplink verwendet werden kann. Mit einem Klick auf \myemph{Engage} wird die Kommunikation zwischen GPredict und Funkgerät(en) aufgebaut. Hierbei kann im Feld neben \myemph{Cycle} der Zyklus eingetragen werden, nach welchem Kommandos an das Funkgerät geschickt werden sollen.
+\end{itemize}
+
+In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschiedenen Betriebsmodi des \myemph{Radio Control}-Bedienfelds zu sehen.
+
 \begin{table}[h]
 	\begin{tabularx}{\textwidth}{|l|l|X|}
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
 		\hline
-		Inaktiv          	& Inaktiv 			& Blabla\\
-		Aktiv              	& Inaktiv   		& Blabla\\
-		Aktiv              	& Aktiv	            & Blabla\\
-		Inaktiv            	& Aktiv   			& Blabla\\
+		Inaktiv          	& Inaktiv 			& Es wird keine Dopplerschiftkorrektur durchgeführt, keine Befehle an das Funkgerät gesendet und die aktuelle Frequenz des Funkgeräts nicht ausgelesen.\\
+		Aktiv              	& Inaktiv   		& Die Dopplerschiftkorrektur wird durchgeführt, es werden aber weder Befehle an das Funkgerät geschickt noch wird die aktuelle Frequenz ausgelesen.\\
+		Aktiv              	& Aktiv	            & Der Dopplerschift wird korrigiert und die eingestellte Frequenz wird zum Funkgerät geschickt. Die aktuelle Frequenz des Funkgeräts wird ausgelesen.\\
+		Inaktiv            	& Aktiv   			& Die Dopplerschiftkorrektur wird nicht ausgeführt. Die eingestellte Frequenz wird an das Funkgerät geschickt und die dort eingestellte Frequenz wird ausgelesen.\\
 		\hline		
 	\end{tabularx}
 	\caption{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
 	\label{tab:radiocontrolmodes}
 \end{table}
 
+Wenn die \myemph{Engage}-Schaltfläche aktiviert ist, wird die Dopplerschiftkorrektur durchgeführt, egal ob der ausgewählte Satellit sichtbar ist oder nicht.
+
 \clearpage
 
-\subsection{GPredict Einstellungen}
+\subsection{GPredict-Einstellungen}
+
+Um in die GPredict-Einstellungen zu gelangen, klickt man links oben unterhalb der Titelleiste auf \myemph{Edit} und anschließend auf \myemph{Preferences}. Nun öffnet sich ein Fenster bei dem standardmäßig die Erste der vier Kategorien zu sehen ist, die Kategorie \myemph{General} (siehe Abbildung \ref{fig:generalsettings}). Nach einer Veränderung in den GPredict-Einstellungen muss GPredict zunächst neugestartet werden, damit diese Änderung wirksam wird. Überall wo die Schaltfläche \myemph{Reset} zu finden ist, können mit einem Klick auf diese, die Standard-Einstellungen wiederhergestellt werden. Bei den meisten Optionen erscheint ein kleines Informations-Fenster, sobald man mit dem Mauszeiger einige Sekunden über der entsprechenden Option verharrt.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{generalsettings}
+	\caption{GPredict-Einstellungen, Kategorie \myemph{General}}
+	\label{fig:generalsettings} 
+\end{figure}
+
+Die Kategorie \myemph{General} ist in folgende vier Reiter untergliedert:
 
 \begin{itemize}
 	\parskip0pt
-	\item \textbf{General}
+	\item \textbf{Number Formats:} Hier lassen sich Einstellungen zum Zeitformat, zu den geografischen Koordinaten und zu den Längen- und Geschwindigkeits-Einheiten vornehmen.
+	\item \textbf{Ground Stations:} Unter diesem Reiter können beliebig viele Bodenstationen eingerichtet werden. Mindestens eine muss jedoch zu jeder Zeit vorhanden sein.
+	\item \textbf{TLE Update:} Hier können Einstellungen zur Aktualisierung der Kepler-Elemente vorgenommen werden.
+	\item \textbf{Message Logs:} Hier können Einstellungen bzgl. des GPredict-Protokolls vorgenommen werden. Unter \myemph{Log browser} im Menü \myemph{File} kann dieses dargestellt werden.
+\end{itemize}
+
+\clearpage
+
+Zur Kategorie \myemph{Modules} gelangt man über zwei Wege. Der erste führt über die 
+
+\begin{itemize}
+	\parskip0pt
 	\item \textbf{Modules}
 	\item \textbf{Interfaces}
 	\item \textbf{Predict}
