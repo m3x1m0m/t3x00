@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			24th May 2016												%%
+%% Date:			29th May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -39,6 +39,8 @@ Die Bodenstation der DHBW Ravensburg am Standort Friedrichshafen besteht grunds�
 
 \chapter{GPredict}
 
+Eine sehr detaillierte Beschreibung der Software GPredict ist unter \cite{gpredictmanual} in englischer Sprache verfügbar. Dieses Kapitel stellt eine kompakte Beschreibung mit ausschließlich für dieses Projekt relevanten Informationen dar. Insofern können gewisse Parallelen nicht ausgeschlossen werden, wobei darauf hingewiesen sei, dass der Mehrwert dieser Zusammenfassung in der Kürze und Relevanz im Vergleich zum englischen Pendant liegt.
+
 \section{Übersicht}
 
 GPredict ist eine freie Software zur Satellitenverfolgung und Orbitvorhersage und steht als Quellcode oder bereits fertig kompiliertes Programm für Windows, Mac OS und Linux zur Verfügung. Die Software ist in C geschrieben und unter der GNU \ac{GPL} lizenziert, somit kann sie frei verändert und an die entsprechenden Nutzervoraussetzungen angepasst werden.\newpar
@@ -51,10 +53,9 @@ In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfol
 	\label{fig:gpredict-principle} 
 \end{figure}
 
-Zur Berechnung der Satellitenposition wird auf den NORAD SGP4/SDP4 Algorithmus zurückgegriffen (siehe Abschnitt XXX). Um hierfür zu jedem Zeitpunkt die aktuellen Kepler-Elemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.
-
 \clearpage
 
+Zur Berechnung der Satellitenposition wird auf den NORAD SGP4/SDP4 Algorithmus zurückgegriffen (siehe Abschnitt XXX). Um hierfür zu jedem Zeitpunkt die aktuellen Kepler-Elemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.\newpar
 Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie SatPC32 kein Limit an zu verfolgenden Satelliten und Bodenstationen gegeben. Durch die Verwendung von Modulen kann außerdem unkompliziert zwischen verschiedenen Konfigurationen gewechselt werden. Die Orbitvorhersage eines Satelliten lässt sich sowohl grafisch als auch tabellarisch darstellen, wobei durch die Einstellungen verschiedenster Parameter eine sehr individuelle Anzeige erreicht werden kann \cite{gpredictsource}.
 
 \section{Grafische Oberfläche}
@@ -63,7 +64,7 @@ In Abbildung \ref{fig:gpredictstartup} ist die grafische Oberfläche von GPredic
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.75\textwidth]{gpredict-startup}
+	\includegraphics[width=0.54\textwidth]{gpredict-startup}
 	\caption{Standardoberfläche von GPredict}
 	\label{fig:gpredictstartup} 
 \end{figure}
@@ -72,7 +73,7 @@ In Abbildung \ref{fig:gpredictstartup} ist die grafische Oberfläche von GPredic
 
 \subsection{Grundansichten}
 
-Zu den oben genannten Ansichten kommen noch zwei Weitere hinzu, die Listenansicht bzw. \myemph{List View} und eine Ansicht für bevorstehende Vorbeiflüge, die sogenannte \myemph{Upcoming Passes View}. Im Folgenden werden die verschiedenen Ansichten genauer beschrieben:\newpar
+Zu den oben genannten Ansichten kommen noch zwei Weitere hinzu, die Listenansicht bzw. \myemph{List View} und eine Ansicht für bevorstehende Durchläufe, die sogenannte \myemph{Upcoming Passes View}. Im Folgenden werden die verschiedenen Ansichten genauer beschrieben:\newpar
 \textbf{Map View}\\
 Diese Ansicht besteht, wie in Abbildung \ref{fig:gpredictstartup} zu sehen, aus einer Weltkarte auf der die aktuellen Standorte der für das aktuelle Modul ausgewählten Satelliten zu sehen ist. Das heißt der Punkt auf dem der entsprechende Satellit senkrecht bezogen auf den Erdmittelpunkt steht. Außerdem ist um diesen Punkt die Fläche umrahmt, von der der Satellit von der Erde aus sichtbar ist. Mit einem Rechtsklick auf einen Satellitennamen kann außerdem die Option \myemph{Ground Track} aktiviert werden, mit welcher die Spur des Satelliten für mehrere Orbits angezeigt wird.\newpar
 \textbf{Polar View}\\
@@ -88,7 +89,7 @@ Die Listenansicht zeigt eine tabellarische Auflistung aller für das aktuelle Mo
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{listview}
-	\caption{Listenansicht bzw. \myemph{List View} von GPredict}
+	\caption{\myemph{List View}}
 	\label{fig:listview} 
 \end{figure}
 
@@ -98,7 +99,7 @@ Die \myemph{Upcoming Passes View} (siehe Abbildung \ref{fig:upcomingpassesview})
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{upcomingpassesview}
-	\caption{Upcoming Passes View}
+	\caption{\myemph{Upcoming Passes View}}
 	\label{fig:upcomingpassesview} 
 \end{figure}
 
@@ -114,27 +115,27 @@ Bei allen Ansichten kann durch einen Klick auf den Satellitennamen ein kleines P
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\textwidth]{satinfo}
-	\caption{Satellite Info}
+	\caption{\myemph{Satellite Info}}
 	\label{fig:satinfo} 
 \end{figure}
 
-Mit einem Klick auf die Option \myemph{Show next pass} gelangt man zu einer Übersicht über den nächsten Vorbeiflug des entsprechenden Satelliten. Die Details sind tabellarisch, als Polaransicht und als Verlauf des Azimut- und Elevationswinkels über der Zeit zu sehen (siehe Abbildung \ref{fig:passdetails}).
+Mit einem Klick auf die Option \myemph{Show next pass} gelangt man zu einer Übersicht über den nächsten Durchlauf des entsprechenden Satelliten. Die Details sind tabellarisch, als Polaransicht und als Verlauf des Azimut- und Elevationswinkels über der Zeit zu sehen (siehe Abbildung \ref{fig:passdetails}).
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{passdetails}
-	\caption{Pass Details}
+	\caption{\myemph{Pass Details}}
 	\label{fig:passdetails} 
 \end{figure}
 
 \clearpage
 
-Die Option \myemph{Future passes} öffnet ein Fenster, in welchem die nächsten Vorbeiflüge des entsprechenden Satelliten tabellarisch dargestellt sind (siehe Abbildung \ref{fig:upcomingpasses}). Hierbei ist die Anzahl der darzustellenden Vorbeiflüge in den GPredict-Einstellungen unter \myemph{Predict} als \myemph{Number of passes to predict} einstellbar.
+Die Option \myemph{Future passes} öffnet ein Fenster, in welchem die nächsten Durchläufe des entsprechenden Satelliten tabellarisch dargestellt sind (siehe Abbildung \ref{fig:upcomingpasses}). Hierbei ist die Anzahl der darzustellenden Durchläufe in den GPredict-Einstellungen unter \myemph{Predict} als \myemph{Number of passes to predict} einstellbar.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{upcomingpasses}
-	\caption{Upcoming Passes}
+	\caption{\myemph{Upcoming Passes}}
 	\label{fig:upcomingpasses} 
 \end{figure}
 
@@ -148,7 +149,7 @@ Wie in Abbildung \ref{fig:theskyataglance} zu sehen, bietet die Funktion \myemph
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{theskyataglance}
-	\caption{The sky at a glance}
+	\caption{\myemph{The sky at a glance}}
 	\label{fig:theskyataglance} 
 \end{figure}
 
@@ -159,17 +160,17 @@ Wie in Abbildung \ref{fig:theskyataglance} zu sehen, bietet die Funktion \myemph
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.35\textwidth]{timecontroller}
-	\caption{Time Controller}
+	\caption{\myemph{Time Controller}}
 	\label{fig:timecontroller} 
 \end{figure}
 
-Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \ref{fig:editmodule} zu sehen. Hier lassen sich die zu verfolgenden Satelliten und die Bodenstation für das aktuelle Modul auswählen. Außerdem gelangt man mit einem Klick auf das Feld \myemph{Properties} in die Modul-Einstellungen. Diese gelten im Gegensatz zu den in den allgemeinen Einstellungen zu findenden Modul-Einstellungen nur für das aktuelle Modul.
-
+Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \ref{fig:editmodule} zu sehen. Hier lassen sich die zu verfolgenden Satelliten und die Bodenstation für das aktuelle Modul auswählen. Außerdem gelangt man mit einem Klick auf das Feld \myemph{Properties} in die Modul-Einstellungen. Diese gelten im Gegensatz zu den in den allgemeinen GPredict-Einstellungen zu findenden Modul-Einstellungen nur für das aktuelle Modul. Auf Seite \pageref{modulesettingsgeneral} sind nähere Infos zu den Modul-Einstellungen zu finden.
+\label{modulesettingsspecific}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{editmodule}
-	\caption{Moduleinstellungen}
+	\caption{\myemph{Edit Module}}
 	\label{fig:editmodule} 
 \end{figure}
 
@@ -201,9 +202,9 @@ In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der 
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
 		\hline
-		Inaktiv          	& Inaktiv 			& Es werden weder Kommandos an die Rotoren gesendet, noch wird die aktuelle Ausrichtung der Antenne ausgelesen. Die aktuellen Winkel des zu verfolgenden Satellits werden nicht in die Winkelsteuerungs-Eingabefelder übertragen.\\
-		Aktiv              	& Inaktiv   		& Die aktuellen Winkel des zu verfolgenden Satellits werden in die Winkelsteuerungs-Eingabefelder übertragen, es werden aber keine Kommandos an die Rotoren geschickt und die aktuelle Ausrichtung der Antenne wird nicht ausgelesen.\\
-		Aktiv              	& Aktiv	            & Die aktuellen Winkel des zu verfolgenden Satellits werden in die Winkelsteuerungs-Eingabefelder übertragen und diese werden an die Rotoren geschickt. Die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
+		Inaktiv          	& Inaktiv 			& Es werden weder Kommandos an die Rotoren gesendet, noch wird die aktuelle Ausrichtung der Antenne ausgelesen. Die aktuellen Winkel des zu verfolgenden Satelliten werden nicht in die Winkelsteuerungs-Eingabefelder übertragen.\\
+		Aktiv              	& Inaktiv   		& Die aktuellen Winkel des zu verfolgenden Satelliten werden in die Winkelsteuerungs-Eingabefelder übertragen, es werden aber keine Kommandos an die Rotoren geschickt und die aktuelle Ausrichtung der Antenne wird nicht ausgelesen.\\
+		Aktiv              	& Aktiv	            & Die aktuellen Winkel des zu verfolgenden Satelliten werden in die Winkelsteuerungs-Eingabefelder übertragen und diese werden an die Rotoren geschickt. Die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
 		Inaktiv            	& Aktiv   			& Die Winkel, die in den Winkelsteuerungs-Eingabefelder eingestellt sind, werden an die Rotoren gesendet und die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
 		\hline		
 	\end{tabularx}
@@ -260,7 +261,7 @@ Um in die GPredict-Einstellungen zu gelangen, klickt man links oben unterhalb de
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{generalsettings}
+	\includegraphics[width=0.65\textwidth]{generalsettings}
 	\caption{GPredict-Einstellungen, Kategorie \myemph{General}}
 	\label{fig:generalsettings} 
 \end{figure}
@@ -277,14 +278,44 @@ Die Kategorie \myemph{General} ist in folgende vier Reiter untergliedert:
 
 \clearpage
 
-Zur Kategorie \myemph{Modules} gelangt man über zwei Wege. Der erste führt über die 
+Zur Kategorie \myemph{Modules} gelangt man über zwei Wege. Der erste führt über die allgemeinen GPredict-Einstellungen, wie in diesem Abschnitt beschrieben. Der Zweite führt über das Modul Pop-Up Menü, wie auf Seite \pageref{modulesettingsspecific} beschrieben. Der Unterschied ist, dass bei den Modul-Einstellungen in den GPredict-Einstellungen die Standardwerte für alle Module eingestellt werden können und beim zweiten Weg nur die für das entsprechende Modul.
+\label{modulesettingsgeneral}
+
+%(siehe Abbildung \ref{fig:modulesettings})
+\iffalse
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{modulesettings}
+	\caption{GPredict-Einstellungen, Kategorie \myemph{Modules}}
+	\label{fig:modulesettings} 
+\end{figure}
+\fi
+Die Modul-Einstellungen sind in folgende sechs Reiter untergliedert:
 
 \begin{itemize}
 	\parskip0pt
-	\item \textbf{Modules}
-	\item \textbf{Interfaces}
-	\item \textbf{Predict}
+	\item \textbf{Layout:} Bei diesem Reiter lässt sich konfigurieren, welche Ansichten in welcher Anordnung im GPredict-Fenster zu sehen sind. Hierbei kann aus verschiedenen Anordnungen ausgewählt werden oder eine völlig benutzerspezifische Anordnung erstellt werden (Hierfür wird an dieser Stelle auf \cite{gpredictmanual} Seite 67f verwiesen).
+	\item \textbf{Refresh Rates:} Hier lässt sich die Zeitspanne auswählen, nach  welcher GPredict die Positions-Berechnungen periodisch für jeden Satelliten durchführt, der für das geöffnete Modul ausgewählt wurde. Außerdem lässt sich einstellen mit welchem ganzzahligem Vielfachen dieser Zeitspanne die einzelnen Ansichten aufgefrischt werden.
+	\item \textbf{List View:} Hier lassen sich die Parameter der \myemph{List View} auswählen.
+	\item \textbf{Map View:} Hier lassen sich Darstellungsoptionen für die \myemph{Map View} konfigurieren.
+	\item \textbf{Polar View:} Hier lassen sich Darstellungsoptionen für die \myemph{Polar View} konfigurieren.
+	\item \textbf{Single Sat View:} Hier lassen sich die Parameter der \myemph{Single Sat View} auswählen.
 \end{itemize}
+
+Die Kategorie \myemph{Interfaces} ist in zwei Reiter untergliedert, \myemph{Radios} und \myemph{Rotators}. Dort wird jeweils eine Liste der bereits eingerichteten Funkgeräte bzw. Rotoren angezeigt, welche standardmäßig leer ist. Die Anzahl der Geräte ist dabei nach oben nicht beschränkt. Die detaillierte Einrichtung ist in Abschnitt \ref{chap:configinterfaces} auf Seite \pageref{configinterfaces} genauer beschrieben.\newpar
+Beim Öffnen der Kategorie \myemph{Predict} wird standardmäßig der Reiter \myemph{Pass Conditions} angezeigt. Unter diesem lassen sich folgende Parameter einstellen:
+
+\begin{itemize}
+	\parskip0pt
+	\item \textbf{Minimum elevation:} Dieser Parameter gibt an, ab welcher Elevation von einem Durchlauf eines Satelliten ausgegangen wird. Das heißt, übersteigt die maximale Elevation diesen Wert, wird dieser Durchlauf in die \myemph{Upcoming Passes}, die \myemph{Pass Details} und die Ansicht \myemph{The sky at a glance} aufgenommen.
+	\item \textbf{Number of passes to predict:} Anzahl der angezeigten zukünftigen Durchläufe.
+	\item \textbf{Passes should occur within:} Dieser Parameter definiert den Zeitraum, in welchem zukünftige Durchläufe von GPredict berücksichtigt werden. So tritt entweder erst die Anzahl der angezeigten zukünftigen Durchläufe ein oder der Zeitraum in welchem zukünftige Durchläufe berücksichtigt werden sollen.
+	\item \textbf{Time resolution:}	
+\item \textbf{Number of entries:} 
+\item \textbf{Twilight threshold:} 
+\end{itemize}
+
+Reiter \myemph{Multiple Passes}, \myemph{Single Pass} und \myemph{Sky at a Glance} beschreiben!
 
 \clearpage
 
@@ -325,6 +356,7 @@ Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichze
 	\parskip0pt
 	\item \textbf{Batch-Skripte -> Hinweis auf Dummy-Skripte?!}
 	\item \textbf{Interfaces unter GPredict-Einstellungen}
+	\label{chap:configinterfaces} \label{configinterfaces}
 	\item \textbf{Konfiguration von rigctld und rotctld}
 	\item \textbf{Hinweis darauf, dass die Skripte auf dem PC, der mit Funkgerät und Rotoren kommuniziert, ausgeführt werden müssen. GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren -> Einstellung der IP-Adresse und des Ports}
 	\item \textbf{Blockschaltbild von (Hard- und) Softwarekomponenten}
