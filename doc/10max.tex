@@ -58,11 +58,13 @@ Die numerische Exzentrizität e' ist ein Maß für die Schlankheit der Ellipse. 
 \end{equation}
 Je größer die lineare Exzentrizität e im Verhältnis zu der großen Halbachse a wird, desto schlanker wird die Ellipse, da die Brennpunkte weiter vom Mittelpunkt entfernt sind. Das Wort numerisch gibt bei der Exzentrizität e' an, dass diese sich auf eine andere Größe (die große Halbachse) bezieht. Für eine Ellipse gilt \ensuremath{0 < e' < 1}. Für den Fall \ensuremath{e'=e=0} hat die Ellipse die selbe Erscheinung wie ein Kreis, da die Brennpunkte \ensuremath{F_1} und \ensuremath{F_2} im Mittelpunkt \ensuremath{M} liegen. Für \ensuremath{e'=1} entartet die Ellipse zu einer Geraden, da die kleine Halbachse b zu 0 wird. Um das zu zeigen wird die obige Gleichung noch mal herangezogen.
 \begin{equation}
-e'^2=\frac{e^2}{a^2}=\frac{a^2-b^2}{a^2}=1-\left(\frac{b}{a}\right)^2 
+	e'^2=\frac{e^2}{a^2}=\frac{a^2-b^2}{a^2}=1-\left(\frac{b}{a}\right)^2 
+	\label{equation_kepler_b}
 \end{equation} 
 \\Des Weiteren besitzt jede Ellipse einen Halbparameter \ensuremath{p}. Geht man davon aus, dass es einen Abstand \ensuremath{p'} gibt, welcher \ensuremath{p} bis zu einer die Ellipse umschließende Kreislinie verlängert, so gelten folgende Gleichungen
 \begin{equation}
 	\frac{p}{p'}=\frac{b}{a}
+	\label{equation_kepler_p}
 \end{equation}
 Mit dem Satz eines alten Freudes folgt
 \begin{equation}
@@ -212,7 +214,7 @@ Das Resultat ist ein „Zusammenhang zwischen den Halbparametern \ensuremath{p_1
 
 \subsection{Die Bahnelemente}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]                                                                       %%
+\begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
 	\includegraphics[width=0.8\textwidth]{./images/bahnelemente.png}                        %%
 	\caption[Bahnelemente]{Bahnelemente, Quelle: \cite{Wiki:Bahnel}}                        %%
@@ -225,16 +227,204 @@ Diese Bahnelemente reichen in der Praxis nicht aus, um die Position eines Himmel
 Im Folgenden werden die Bahnelemente in Ihrer Bedeutung anhand der Abbildung \ref{fig:bahnelemente} erläutert. 
 
 \subsubsection{Gestalt der Bahn}
-Um die Gestalt der Bahn zu beschreiben wird die \textbf{numerische Exzentrizität \ensuremath{e'}} und die Angabe der Länge der \textbf{großen Halbachse \ensuremath{a}} benötigt. Diese beiden Größen werden ausführlich im Absatz \ref{subsec:kepler} beschrieben. Es braucht nicht mehr, um eine elliptische Bahn zu definieren. Zur Erinnerung: Die große Halbachse \ensuremath{a} ist die Länge der Strecke vom Mittelpunkt zu den Hauptscheiteln. Die (lineare) Exzentrizität \ensuremath{e} gibt die Schlankeit der Ellipse an. Wobei die numerische Exzentrizität \ensuremath{e'} auf die große Halbachse normiert ist.  
-
+Um die Gestalt der Bahn zu beschreiben wird die \textbf{numerische Exzentrizität (1) \ensuremath{e'}} und die Angabe der Länge der \textbf{großen Halbachse (2) \ensuremath{a}} benötigt. Diese beiden Größen werden ausführlich im Absatz \ref{subsec:kepler} beschrieben. Es braucht nicht mehr, um eine elliptische Bahn zu definieren. Zur Erinnerung: Die große Halbachse \ensuremath{a} ist die Länge der Strecke vom Mittelpunkt zu den Hauptscheiteln. Die (lineare) Exzentrizität \ensuremath{e} gibt die Schlankeit der Ellipse an. Wobei die numerische Exzentrizität \ensuremath{e'} auf die große Halbachse normiert ist.  
+\newpar
+Die Abhängigkeit der Umlaufzeit eines Satelliten von den Bahndimensionen (v.a. Länge der großen Halbachse ) und die elliptische Bahnform sind der „quadratischen Abnahme der Gravitationsbeschleunigung [geschuldet]“ (siehe S. 87 in \cite{HandRaum}). 
+\begin{equation}
+\ddot{\vec{r}}=-\frac{GM_{Erde}}{r^2}\cdot\frac{\vec{r}}{r}
+\end{equation}    
+\ensuremath{GM_{Erde} \approx 398600,4\,\frac{km^3}{s^2}} ist dabei das konstante Produkt aus Gravitationskonstante und Masse der Erde. Das Stichwort lautet hier Impulserhaltungssatz. In einem geschlossenen System kann Impuls weder vernichtet noch erschaffen werden. Bis zum Perigäumsdurchgang nimmt ein Satellit Impuls von der Erde über die Kraft, die zum Erdmittelpunkt hin wirkt auf. Danach wird Impuls an dier Erde abgegeben \ensuremath{\rightarrow} der Satellit verlangsamt sich. Nach dem Apogäumsdurchgang fängt der Satellit wieder an schneller zu werden. Er nimmt wieder Impuls auf.  
+  
 \subsubsection{Lage der Bahn}
 Es erscheint sinnvoll, dass die Lage im Raum als nächstes festgelegt wird. Auch scheint es sinnig, dass man drei Bahnellemente benötigt, um die Lage der Bahn im dreidimensionalen Raum festzulegen. 
 \newpar
-Man stelle sich nun vor, dass die Ellipse, auf welcher der Satellit sich bewegt, in einer Ebene liege.  Diese Ebene schneide man mit einer Referenzebene (z.B. Schnittebene durch den Erdäquator). Die \textbf{Inklination \ensuremath{i}} ist nun ein Winkel, „um den die Bahnebene gegenüber der [Referenzebene] geneigt ist“ (siehe S.88 in \cite{HandRaum}). Um die Nebenachse der Ellipse herum kann durch diese Festlegung keine Rotation mehr stattfinden. Die Ellipse, die ja in der Ebene liegt, kann sich jetzt noch in dieser Ebene um eine zur Ebene orthogonalen Achse drehen. Um das zu unterbinden wird ein weiterer Winkel, das \textbf{Argument des Perigäums \ensuremath{\omega}}, eingeführt. Das Argument des Perigäums ist der Winkel, den die Knotenlinie und die Perigäumsrichtung (Hauptachse) einschließen. Das Perigäum liegt am Ende der Hauptachse, auf welches sich der Satellit zu bewegt, nachdem er den aufsteigenden Knoten passiert hat. Der aufsteigende Knoten ist der Punkt in dem der Satellit die Referenzebene auf seiner elliptischen Umlaufbahn (von Süd nach Nord) durchstößt. Die Knotenlinie ist die Schnittgerade der Ellipse mit der Referenzebene. Darüber hinaus gibt es das Apogäum, welches nach dem absteigenden Knoten durchlaufen wird, der am anderen Ende der Nebenachse beheimatet ist. Eine andere Definition für das Perigäum ist der Punkt des geringsten Abstands des Satelliten zur Erde. Analog lässt sich das Apogäum als Punkt des größten Abstands des Satelliten zur Erde festlegen. Die Ellipse dreht sich nun nicht mehr in der Ebene. Eine Sache wurde jetzt noch nicht betrachtet. Die Ebene kann sich immer noch entlang Ihrer Hauptachse drehen. Die \textbf{Rektaszension des aufsteigenden Knotens \ensuremath{\Omega}} gibt nun den Winkel an, den die Knotenlinie und der Vektor vom Ellipsenmittelpunkt zum Frühlingspunkt \ensuremath{\gamma} einschließen. Doch was ist der Frühlingspunkt? „Als Frühlingspunkt (auch Widderpunkt) wird in der Astronomie der Schnittpunkt des Himmelsäquators mit der Ekliptik bezeichnet, an dem die Sonne zum Frühlingsanfang der Nordhalbkugel (= Herbstanfang der Südhalbkugel) steht“ (siehe \cite{Wiki:Frue}). Die Derehung um die Hauptachse ist jetzt also auch nicht mehr möglich. Der Bahnlage wurden somit alle drei Freiheitsgrade genommen.     
-
-\subsubsection{Zeitlicher Bezug}
-
-
-\section{Vorhersagemodelle}
+Man stelle sich nun vor, dass die Ellipse, auf welcher der Satellit sich bewegt, in einer Ebene liege.  Diese Ebene schneide man mit einer Referenzebene (z.B. Schnittebene durch den Erdäquator). Die \textbf{Inklination (3) \ensuremath{i}} ist nun ein Winkel, „um den die Bahnebene gegenüber der [Referenzebene] geneigt ist“ (siehe S.88 in \cite{HandRaum}). Um die Nebenachse der Ellipse herum kann durch diese Festlegung keine Rotation mehr stattfinden. Die Ellipse, die ja in der Ebene liegt, kann sich jetzt noch in dieser Ebene um eine zur Ebene orthogonalen Achse drehen. Um das zu unterbinden wird ein weiterer Winkel, das \textbf{Argument des Perigäums (4) \ensuremath{\omega}}, eingeführt. Das Argument des Perigäums ist der Winkel, den die Knotenlinie und die Perigäumsrichtung (Hauptachse) einschließen. Das Perigäum liegt am Ende der Hauptachse, auf welches sich der Satellit zu bewegt, nachdem er den aufsteigenden Knoten passiert hat. Der aufsteigende Knoten ist der Punkt in dem der Satellit die Referenzebene auf seiner elliptischen Umlaufbahn (von Süd nach Nord) durchstößt. Die Knotenlinie ist die Schnittgerade der Ellipse mit der Referenzebene. Darüber hinaus gibt es das Apogäum, welches nach dem absteigenden Knoten durchlaufen wird, der am anderen Ende der Nebenachse beheimatet ist. Eine andere Definition für das Perigäum ist der Punkt des geringsten Abstands des Satelliten zur Erde. Analog lässt sich das Apogäum als Punkt des größten Abstands des Satelliten zur Erde festlegen. Die Ellipse dreht sich nun nicht mehr in der Ebene. Eine Sache wurde jetzt noch nicht betrachtet. Die Ebene kann sich immer noch entlang Ihrer Hauptachse drehen. Die \textbf{Rektaszension des aufsteigenden Knotens (5) \ensuremath{\Omega}} gibt nun den Winkel an, den die Knotenlinie und der Vektor vom Ellipsenmittelpunkt zum Frühlingspunkt \ensuremath{\gamma} einschließen. Doch was ist der Frühlingspunkt? „Als Frühlingspunkt (auch Widderpunkt) wird in der Astronomie der Schnittpunkt des Himmelsäquators mit der Ekliptik bezeichnet, an dem die Sonne zum Frühlingsanfang der Nordhalbkugel (= Herbstanfang der Südhalbkugel) steht“ (siehe \cite{Wiki:Frue}). Die Derehung um die Hauptachse ist jetzt also auch nicht mehr möglich. Der Bahnlage wurden somit alle drei Freiheitsgrade genommen.     
+\newpar
+Die Bewegung eines Satelliten erfolgt in einer nicht veränderbaren Bahnebene mit dem Bahnmittelpunkt gleich dem Erdmittelpunkt. Dies impilziert das erste Keplersche Gesetz. Der Grund hierfür ist „dass die Anziehung der Erde (in erster Näherung) immer zum Erdmittelpunkt gerichtet ist“ (siehe S. 87 in \cite{HandRaum}). Zu keinem Zeitpunkt gibt es somit einen Kraftvektor, der Senkrecht zum Ortsvektor \ensuremath{\vec{r}} wirkt und somit die Bahnebene verschieben könnte (Annahme: Mittelpunkt des Koordinatensystems ist der Erdmittelpunkt). Daraus resultiert wiederum, dass eine einmal eingeschlagene Bahnebene ohne eine äußere Kraft nicht wieder verlassen werden kann.
+ 
+\subsubsection{Zeitlicher Bezug und Kepler-Gleichung}
+Bis jetzt ist alles recht schön und anschaulich. Es ist klar wo die Bahnebene im Raum ist und wie diese aussieht. Wir haben durch das zweite Keplersche Gesetz eine Gleichung, die uns die Position des Satelliten in Abhängigkeit des Winkels \ensuremath{\theta} verrät. Diese ist 
+\begin{equation}
+	r = \frac{p}{1 + e' cos(\theta)} 
+\end{equation}
+\ensuremath{\theta} ist der Winkel, den die Verbindungslinie zwischen einem Brennpunkt und dem Satellit mit der Hauptachse einschließt. Es gibt allerdings noch ein Haar in der Suppe. Aufgrund des Flächensatzes ist die Winkelgeschwindigkeit des Satelliten nicht konstant (bzw. nur für eine in der Natur nicht vorkommende Kreisbahn konstant). \ensuremath{\theta} ist eine Funktion von \ensuremath{t}. Die sog. wahre Anomalie \ensuremath{\theta(t)} schwankt um die mittlere Anomalie \ensuremath{M} (nicht zu verwechseln mit der Erdmasse). Man stößt nun auf das Zweikörperproblem (Keplerproblem). Dies ist die Angabe der wahren Anomalie \ensuremath{\theta(t=t_x)} zu einem vorgegebenen Zeitpunkt \ensuremath{t_x}.  Wie kommt die mittlere Anomalie nun zustande? Zunächst sollte ein genauer Blick auf folgende Abbildung \ref{fig:kepler_gl} geworfen werden. Die Abbildung stellt eine Momentaufnahme einer Situation dar.     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]                                                                           %%
+	\centering                                                                            	%%
+	\includegraphics[width=0.4\textwidth]{./images/keplers_equation.jpg}                    %%
+	\caption[Kepler-Gleichung]{Kepler-Gleichung, Quelle: \cite{Wiki:KeplerGl}, 
+								Grafik ist eigens modifiziert}              				%%
+	\label{fig:kepler_gl}                                                                	%%
+\end{figure}                                                                              	%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+Wie schon bei früheren Betrachtungen wird die Ellipse (Orbit) in einen Umkreis eingeschrieben. Ein fiktiver (mittlerer) Satellit \ensuremath{Y} laufe entlang des Umkreises um den Punkt \ensuremath{C} (Mittelpunkt der Ellipse und des Kreises, kein Ellipsenbrennpunkt). Der wahre Satellit \ensuremath{P} bewege sich entlang der Ellipse. Die Lage des fiktiven Satelliten \ensuremath{Y} wird zum Zeitpunkt \ensuremath{t} mittels des Winkels \ensuremath{M} dargestellt. Hierbei wird unterstellt, dass der Satellit zum Zeitpunkt \ensuremath{t_P} im Perigäum (oft auch Periapsis genannt) \ensuremath{M=0} war. Es gilt nun
+\begin{equation}
+	M=2\pi\,\frac{t-t_P}{U}=n\,(t-t_P)
+\end{equation}   
+Hierbei ist \ensuremath{n} die Winkelgeschwindigkeit. \ensuremath{S} ist der Erdmittelpunkt (Schwerezentrum). Um nun die Kurve zu der Ellipse und dem tatsächlichen Satellit zu bekommen wird das zweite Keplersche Gesetz für diesen konkreten Fall herangezogen. In gleichen Zeiträumen werden gleiche Flächen von den Fahrstrählen der Satelliten unabhängig von der Bahnform (egal ob elliptisch oder kreisförmig mit \ensuremath{e'=e=0}) überstrichen. Hier spricht man von einer bijektiven Abbildung der Ellipsen- und Kreisflächensegmente. Letztere sind leicht zu berechnen. Es wird also praktisch ein Umweg über den Umkreis gegangen. Das zweite Keplersche Gesetz angewandt auf den vorliegenden Fall, führt bezüglich der Zeitspanne einer Überstreichung der gesamten Fläche zu
+\begin{equation}
+	\frac{A_{Kreis}}{A_{Ellipse}}=\frac{\pi\,a^2}{\pi\,a\,b}
+\end{equation}
+Nach dem zweiten Keplerschen Gesetz ist dieses Vehätlnis dasselbe für eine infinitesimale Fläche. So gilt
+\begin{equation}
+	\frac{A_{CYZ}}{A_{SPZ}}=\frac{A_{Kreis}}{A_{Ellipse}}=\frac{a}{b}
+	\label{equation1_kepler_equ}
+\end{equation}
+\newpar
+Kepler führte als eine Hilfsgröße die exzentrische Anomalie \ensuremath{E} ein. Hierzu wird \ensuremath{P} auf den Hilfskreis projeziert. Es entsteht der Punkt \ensuremath{X}. Der Winkel zwischen Hauptachse und \ensuremath{X} ist die exzentrische Anomalie. Durch den in Gleichung \ref{equation1_kepler_equ} hergeleiteten Zusammenhang kann folgende Aussage getroffen werden. 
+\begin{equation}
+	A_{SXZ}=\frac{a}{b}A_{SPZ}	
+	\label{equation2_kepler_equ}
+\end{equation}  
+Setzt man Gleichung \ref{equation1_kepler_equ} in Gleichung \ref{equation2_kepler_equ} ein, so ergibt sich
+\begin{equation}
+	A_{SXZ}=A_{CYZ}	
+	\label{equation3_kepler_equ}
+\end{equation}
+Mit der Gleichung \ref{equation3_kepler_equ} ist ein indirekter Zusammenhang zwischen der mittleren Anomalie (Punkt \ensuremath{Y}) und der exzentrischen Anomalie (Punkt \ensuremath{X}) gefunden. Der Fahrstrahl \ensuremath{\overline{CY}} in der Zeit einer Periode \ensuremath{U} eine Fläche von \ensuremath{\pi\,a^2} überstreicht, so überstreicht er in einer Zeit \ensuremath{t} eine Fläche, die um den Faktor \ensuremath{\frac{M}{2\,\pi}} kleiner ist. Es folgt 
+\begin{equation}
+	A_{CYZ}=\frac{M}{2\,\pi}\,\pi\,a^2=\frac{a^2}{2}M	
+	\label{equation4_kepler_equ}
+\end{equation}  
+Analog gilt dies für den Fahrstrahl \ensuremath{\overline{CX}}.
+\begin{equation}
+	A_{CXZ}=\frac{a^2}{2}E	
+	\label{equation5_kepler_equ}
+\end{equation}
+Weiter geht's mit noch mehr Geometrie. Die Fläche \ensuremath{A_{CXZ}} kann in zwei Teilflächen zerlegt werden.
+\begin{equation}
+	A_{CXZ}=A_{CSX}+A_{SXZ}
+	\label{equation6_kepler_equ}
+\end{equation}
+Die Fläche \ensuremath{A_{CSX}} kann als die Fläche eines Dreiecks aufgefasst werden. Dabei ist \ensuremath{a\cdot e'} die Basis und \ensuremath{a\,sin(E)} die Höhe des Dreiecks. 
+\begin{equation}
+	A_{CSX}=\frac{1}{2}\cdot a\cdot e' \cdot a\,sin(E)=\frac{a^2}{2}\,e'\,sin(E)
+	\label{equation7_kepler_equ}
+\end{equation}
+Als letzten Schritt setze man nun noch Gleichung \ref{equation3_kepler_equ} (unter Beachtung von Gleichung \ref{equation4_kepler_equ}), Gleichung \ref{equation5_kepler_equ} und Gleichung \ref{equation7_kepler_equ} in Gleichung \ref{equation6_kepler_equ} ein.
+\begin{equation}
+	\frac{a^2}{2}E=\frac{a^2}{2}\,e'\,sin(E)+\frac{a^2}{2}M
+	\label{equation8_kepler_equ}
+\end{equation}
+Mit ein paar Tricks aus der Grundschule entsteht die \textbf{Kepler-Gleichung} wie sie im Buche steht.
+\begin{equation}
+	E-e'\,sin(E)=M=U\cdot t
+	\label{equation_kepler_equ_final}
+\end{equation}
+Diese Gleichung kann nicht nach \ensuremath{E} aufgelöst werden und so keine schöne Funktion \ensuremath{E(t)} gewonnen werden. Doch Gott sei dank, schenke er Newton die Eingebung des Newton-Verfahrens zur Nullstellensuche. Das Newton-Verfahren ist im Grunde eine rekursive Folge, wobei jedes Folgeglied allgemein mit
+\begin{equation}
+	x_{n+1}=x_n-\frac{f(x_n)}{f'^{x}(x_n)}
+	\label{equation9_kepler_equ}
+\end{equation}
+zu bestimmen ist. Man stellt also Gleichung \ref{equation_kepler_equ_final} entsprechend um und leite ab.
+\begin{equation}
+	f(E)=E-e'\,sin(E)-M \stackrel{!}{=} 0
+	\label{equation10_kepler_equ}
+\end{equation}
+\begin{equation}
+	f'^{E}(E)=1-e'\,cos(E) 
+	\label{equation11_kepler_equ}
+\end{equation}
+Es folgt die rekursive Folge für die Kepler-Gleichung. 
+\begin{equation}
+	E_{n+1}=E_n-\frac{E-e'\,sin(E)-M}{1-e'\,cos(E) }
+	\label{equation12_kepler_equ}
+\end{equation}
+Als Startwert wird in \cite{HandRaum} \ensuremath{E_0=M} empfohlen. Die rekursive Folge Verhält sich dabei so, dass sie gegen einen entsprechenden Wert für die exzentrische Anomalie \ensuremath{E} konvergiert. Wenn sich entsprechende Nachkommastellen nach gewisser Genauigkeit nicht mehr ändern, so hat man die Nullstelle gefunden. Mit diesem Wert für \ensuremath{E(t=t_x)} kann die wahre Anomalie \ensuremath{\theta(t=t_x)} bestimmt werden. Zu beachten ist, dass in die Kepler-Gleichung natürlich vor der Anwendung des Newton-Verfahrens auch der gewünschte Zeitpunkt \ensuremath{t_p} eingesetzt wird.     
+\newpar
+Wie bestimmt man nun die wahre Anomalie, also den Winkel, der zu dem Zeitpunkt gehört aus welchem wir dann wiederum einen Vektor \ensuremath{r} gewinnen können? Hierzu werden die Größen \ensuremath{x'} und \ensuremath{y'} in Abbildung \ref{fig:kepler_gl} herangezogen. Man sucht nun nach einer Beziehung zwischen diesen Größen und bekannten Größen aus dem Fundus der Bahnelemente die Form der Bahn betreffend (dazu gehören natürlich auch abgeleitete Größen). 
+Es ist nachvollziehbar, dass 
+\begin{equation}
+	x'=r\,cos(\theta)=cos(E)\,a-e=a\left(cos(E)-e'\right)
+\end{equation}
+ist. Für \ensuremath{y'} muss man etwas tiefer in die Trickkiste greifen. Man geht aus von Gleichung \ref{equation_kepler_p}. Diese stelle man nach \ensuremath{p} um.
+\begin{equation}
+	p=p'\,\frac{b}{a}
+\end{equation} 
+Für \ensuremath{p'} kann der Term \ensuremath{sin(E)\,a} eingesetzt werden. Mit dem Satz des Pythagoras kann \ensuremath{b} auch mit den größen \ensuremath{a} und \ensuremath{e} ausgedrückt werden. Es folgt  
+\begin{equation}
+	p=y'=sin(E)\,a\,\frac{\sqrt{a^2-e^2}}{a}=sin(E)\,a\,\sqrt{1-e'^2}
+\end{equation} 
+Aus diesen beiden Größen kann unmittelbar die wahre Anomalie \ensuremath{\theta} zu einem gegebenen Zeitpunkt bestimmt werden.
+\begin{equation}
+	\theta=arctan\left(\frac{y'}{x'}\right)=arctan\left(\frac{sin(E)\,a\,\sqrt{1-e'^2}}{a\left(cos(E)-e'\right)}\right)=arctan\left(\frac{sin(E)\,\sqrt{1-e'^2}}{cos(E)-e'}\right)
+\end{equation}
+\newpar
+Nun ist also der zeitliche Bezug bekannt. Hier nochmal eine kleine Darstellung wie vorzugehen ist.
+\begin{center}
+	\smartdiagram[circular diagram:clockwise]{\ensuremath{t} gegeben, \ensuremath{M=n\cdot (t-t_P)} bestimmen, \ensuremath{E} mit Newton-Verfahren bestimmen, \ensuremath{x'} und \ensuremath{y'} bestimmen, ggf. \ensuremath{\theta} bestimmen, ggf. \ensuremath{r} bestimmen} 
+\end{center}
+Führt man den Vorgang wie oben gezeigt iterativ aus, so erhält man einen zweidimensionalen Vektor \ensuremath{\vec{r}}. Wenn man nun scharf nachdenkt, so fällt einem auf, dass man nochmal eine Information benötigt. Es braucht einen Zeitpunkt \ensuremath{t_P}. Dies muss ein Zeitpunkt sein, bei welchem der Satelliten im Perigäum stand. Als Analogie könnte man die Phase eines Signals in der Elektrotechnik angeben. Genau diesen Zeitpunkt liefern die Bahnelemente als zeitlichen Bezug.
+\newpar
+Die Bahnelemente sind also
+\begin{itemize}
+	\item Gestalt der Bahn
+	\begin{itemize}
+		\item die große Halbachse \ensuremath{a}
+		\item die numerische Exzentrizität \ensuremath{e'}
+	\end{itemize}
+	\item Lage der Bahn
+	\begin{itemize}
+		\item die Inklination \ensuremath{i}
+		\item die Rektaszension des aufsteigenden Knotens \ensuremath{\Omega}
+		\item das Argument des Perigäums \ensuremath{\omega}
+	\end{itemize}
+	\item Zeitlicher Bezug
+	\begin{itemize}
+		\item die Epoche (wann ist der Sattelit im Perigäum gewesen) \ensuremath{t_P}
+	\end{itemize}
+\end{itemize} 
+Zum Schluss trägt man alle Informationen aus den Bahnelementen zusammen, um einen Vektor \ensuremath{\vec{r}} im dreidimensionalen kartesischen Koordinatensystem zu erhalten. Der Ursprung des Koordinatensystems soll im Erdzentrum liegen und der Vektor \ensuremath{\vec{r}} soll ein Ortsvektor des Satelliten sein. Die x-y-Ebene dieses Koordinatensystems ist der Äquator. Das Ergebnis der bisherigen Berechnungen ist der Vektor
+\begin{equation}
+	\vec{r'}=a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right)
+\end{equation}
+Die Satellitenbahn liegt aktuell ist der äquatorialen Ebene. Der Erdmittelpunkt liegt im Brennpunkt der Ellipse. Anstatt die Bahnebene zu drehen. Dreht man nun das Koordinatensystem. Allerdings in die mathematisch entgegengesetzte Richtung. Hierfür können natürlich nur die Winkel verwendet werden, welche in den Bahnelementen für die Lage der Bahn mitgeliefert werden. Bei der Drehung wird auf Drehmatrizen zurückgegriffen. Eine gute Veranschaulichung dieser Drehungen findet man \href{https://www.youtube.com/watch?v=QZrYaKwZwhI}{\textit{in dieser Animation (https://www.youtube.com/watch?v=QZrYaKwZwhI)}}. Der gesuchte Vektor ergibt sich nun zu
+\begin{equation}
+	\vec{r}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right) 
+\end{equation}  
+Hierbei stellen \ensuremath{\mathbf{R_X}} und \ensuremath{\mathbf{R_Z}} folgende Drehmatrizen dar (vgl. S.89 in \cite{HandRaum}). 
+\begin{equation}
+\mathbf{R_X}(\alpha) = 
+	\left(
+		\begin{array}{ccc}
+			1 & 0 & 0 \\
+			0 & +cos\,\alpha & +sin\,\alpha\\
+			0 & -sin\,\alpha & +cos\,\alpha
+		\end{array}
+	\right)
+\end{equation}
+\begin{equation}
+\mathbf{R_Z}(\alpha) = 
+	\left(
+		\begin{array}{ccc}
+			+cos\,\alpha & +sin\,\alpha & 0\\
+			-sin\,\alpha & +cos\,\alpha & 0\\
+			0 & 0 & 1 \\
+		\end{array}
+	\right)
+\end{equation}
+Eine Frage, die sich aufdrängen mag ist: Warum kann die Drehung der Ellipse in der Bahnebene (Argument des Perigäums \ensuremath{\omega}) einfach auf eine Drehung der z-Achse zurüclgeführt werden? Man kann es sich auch so vorstellen, dass zunächst die Ellipse noch in der äquatorialen Ebene liegt, die z-Achse dann um \ensuremath{-\omega} gedreht wird, dann die x-Achse um \ensuremath{-i} und letztendlich die z-Achse nochmal um \ensuremath{-\Omega} gedreht wird.6 
+\newpar
+Nach \cite{HandRaum} ergibt sich nach der Ausführung der Drehungen der Vektor
+\begin{equation}
+\vec{r} = r\cdot  
+	\left(
+		\begin{array}{c}
+				cos(\omega+\theta)\,cos(\Omega)-sin(\omega+\theta)\,cos(i)\,sin(\Omega)\\
+				cos(\omega+\theta)\,sin(\Omega)+sin(\omega+\theta)\,cos(i)\,cos(\Omega)\\
+				sin(\omega+\theta)\,sin(i)				
+		\end{array}
+	\right)
+	\label{equation1_kep_elements}
+\end{equation}
+Durch Ableitung nach der Zeit kommt man wie in \cite{HandRaum} angegeben auf
+\begin{equation}
+	\vec{v}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot\frac{\sqrt{GM_{Erde}\,a}}{r}\cdot\left(\begin{array}{c}-sin(E)\\ cos(E)\,\sqrt{1-e'^2} \\0\end{array}\right) 
+	\label{equation2_kep_elements}
+\end{equation} 
+Gleichung \ref{equation1_kep_elements} lässt sich so interpretieren, dass der Term \ensuremath{\sqrt{\frac{GM_{Erde}}{r^2\,a}}} die zeitliche Ableitung der exzentrischen Anomalie \ensuremath{E} sein muss, da die Kettenregel der Differentialrechnung greift und die Rotationsmatrizen keine zetilichen Abhängigkeiten aufweisen.
+\newpar
+Mit den Gleichungen \ref{equation1_kep_elements} und \ref{equation2_kep_elements} lässt sich nun die Antenne fast ausrichten und nachführen.    
+\subsection{Bahnstörung}
 
 \clearpage
