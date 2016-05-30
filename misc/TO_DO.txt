@@ -1,6 +1,5 @@
-MUST:
-- abstract in english
+- Einheitliche Bezeichnung der Abbildungen bei Bildunterschriften und Abbildungsverzeichnis
+- Einheitliche Verwendung von (siehe Abb. XX) oder (siehe Abbildung XX)
+- Einheitlicher Abstand nach fettgeschriebenen Bezeichnungen im Text (als nichtnummerierte Überschrift)
+- Einheitliche Verwendung von \itemize
 
-CAN:
-- discuss if "über die fünfte und sechste Theoriephase"
-- check what information is necessary on titlepage

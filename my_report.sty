@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			14th May 2016		     									%%
+%% Date:			29th May 2016		     									%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -17,6 +17,9 @@
 
 % User defined way of emphasizing words
 \newcommand{\myemph}[1]{\textsl{#1}}
+
+% Specify user defined symbol
+\newcommand{\myvsymbol}{\includegraphics[width=0.7em]{v-symbol}}
 
 % User defined spacing before and after titles of toc, lof and lot
 % Compare with titlespacing of chapter !
@@ -155,6 +158,13 @@ bmargin={2.5cm}]{geometry}
 
 % Set spacing of chapter
 \titlespacing*{\chapter}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
+% Set spacing of section
+%\titlespacing*{\section}{0pt}{-4em}{1.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
+% Set spacing of subsection
+%\titlespacing*{\subsection}{0pt}{}{0.5em}{} %{<left>}{<before>}{<after>}{<right>}
+
 % http://www.golatex.de/viewtopic,p,51871.html
 % ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
 
@@ -193,22 +203,39 @@ bmargin={2.5cm}]{geometry}
 
 % ---- List of figures -----------------------------------------------------------
 
-% Set spacing before title of toc
+% Set spacing before title of lof
 \setlength\cftbeforeloftitleskip{\myspacebeforetitle}
 
-% Set spacing after title of toc
+% Set spacing after title of lof
 \setlength\cftafterloftitleskip{\myspaceaftertitle}
+
+% Set spacing after lof entries
+%\renewcommand\cftfigafterpnum{\vskip2em\par}
+
+% Set spacing before lof entries
+%\setlength\cftbeforefigskip{2em}
 
 % Set indentation of lof
 \setlength{\cftfigindent}{0pt}
 
 % ---- List of tables ------------------------------------------------------------
 
-% Set spacing before title of toc
+% Set spacing before title of lot
 \setlength\cftbeforelottitleskip{\myspacebeforetitle}
 
-% Set spacing after title of toc
+% Set spacing after title of lot
 \setlength\cftafterlottitleskip{\myspaceaftertitle}
+
+% Set spacing after lot entries
+\renewcommand\cfttabafterpnum{\vskip2em\par}
+
+% Set spacing before lot entries
+%\setlength\cftbeforetabskip{2em}
 
 % Set indentation of lot
 \setlength{\cfttabindent}{0pt}
+
+
+
+
+
