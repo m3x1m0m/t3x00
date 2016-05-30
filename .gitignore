@@ -1,7 +1,8 @@
 # TeX/LaTeX intermediates # 
 ########################### 
 *.*~ 
-*.aux 
+*.aux
+*.backup 
 *.log 
 *.tmp 
 *.xref 
