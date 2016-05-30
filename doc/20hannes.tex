@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			29th May 2016												%%
+%% Date:			30th May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -36,6 +36,9 @@ Die Bodenstation der DHBW Ravensburg am Standort Friedrichshafen besteht grunds�
 	\end{itemize}
 \end{itemize}
 
+\begin{center}
+	\Large{\textbf{--- !!! ---}\\Liste an aktiven Amateurfunksatelliten in Abschnitt Amateurfunk einfügen\\\textbf{--- !!! ---}}
+\end{center}
 
 \chapter{GPredict}
 
@@ -310,14 +313,13 @@ Beim Öffnen der Kategorie \myemph{Predict} wird standardmäßig der Reiter \mye
 	\item \textbf{Minimum elevation:} Dieser Parameter gibt an, ab welcher Elevation von einem Durchlauf eines Satelliten ausgegangen wird. Das heißt, übersteigt die maximale Elevation diesen Wert, wird dieser Durchlauf in die \myemph{Upcoming Passes}, die \myemph{Pass Details} und die Ansicht \myemph{The sky at a glance} aufgenommen.
 	\item \textbf{Number of passes to predict:} Anzahl der angezeigten zukünftigen Durchläufe.
 	\item \textbf{Passes should occur within:} Dieser Parameter definiert den Zeitraum, in welchem zukünftige Durchläufe von GPredict berücksichtigt werden. So tritt entweder erst die Anzahl der angezeigten zukünftigen Durchläufe ein oder der Zeitraum in welchem zukünftige Durchläufe berücksichtigt werden sollen.
-	\item \textbf{Time resolution:}	
-\item \textbf{Number of entries:} 
-\item \textbf{Twilight threshold:} 
+	\item \textbf{Time resolution:}	Hier kann die Zeitauflösung eingetragen werden, mit der der nächste Durchlauf in den \myemph{Pass Details} dargestellt wird. Je geringer die Auflösung, desto mehr Einträge werden angezeigt.
+	\item \textbf{Number of entries:} Mit diesem Parameter kann die Anzahl der Eintrage des nächsten Durchlaufs in den \myemph{Pass Details} eingestellt werden. Hierbei ist zu beachten, dass diese Einstellung eine höhere Priorität als die Zeitauflösung besitzt.
+	\item \textbf{Twilight threshold:} Dieser Parameter gibt an, ab welcher Elevation ein Satellit als sichtbar gilt. Für die Satellitenverfolgung spielt dieser Paramenter keine Rolle.
 \end{itemize}
 
-Reiter \myemph{Multiple Passes}, \myemph{Single Pass} und \myemph{Sky at a Glance} beschreiben!
-
-\clearpage
+Unter den Reitern \myemph{Multiple Passes} und \myemph{Single Pass} lassen sich die Parameter auswählen, die in den Ansichten \myemph{Upcoming Passes} und \myemph{Pass Details} dargestellt werden, wohingegen beim Reiter \myemph{Sky at a Glance} Darstellungsoptionen für die Funktion \myemph{The sky at a glance} eingestellt werden können.\newpar
+Eine detailliertere Beschreibung der GPredict-Einstellungen kann aus \cite{gpredictmanual} auf Seite 23ff entnommen werden.
 
 \section{HamLib-Programmierschnittstelle}
 
@@ -342,26 +344,42 @@ Dabei verwendet man entweder den Quellcode um eine benutzerspezifische Anwendung
 	\item \textbf{rotctld:}  Ein Kommandozeilenprogramm, mit welchem man Befehle über das TCP/IP-Protokoll an die Antennenrotoren senden kann (Unter Windows: \myemph{rigctld.exe})
 \end{itemize}
 
-\clearpage
-
 Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}'' für  ,,Rig'' (deutsch: Amateurfunkgerät) und das ,,\myemph{d} am Ende von \myemph{rigctld} und \myemph{rotctld} für ,,Deamon'' (deutsch: Hintergrundprozess).
 
 \subsection{Verwendung}
 
 Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctld} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat} und \ref{chap:rotctldbat}). Diese Skripte müssen beide gestartet werden, bevor unter GPredict eine Kommunikation mit den Rotoren bzw. mit dem Funkgerät stattfinden kann. 
 
+\subsection{Parameter-Konfiguration}
+
+\textbf{Hinweis darauf, dass die Skripte auf dem PC, der mit Funkgerät und Rotoren kommuniziert, ausgeführt werden müssen. GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren -> Einstellung der IP-Adresse und des Ports}
+
 \section{Inbetriebnahme unter Windows}
+
+\subsection{Aufbau von Hard- und Software}
+
+\textbf{Blockschaltbild von (Hard- und) Softwarekomponenten}
+
+\subsection{Konfiguration der Rotoren}
+	\label{chap:configinterfaces} \label{configinterfaces}
+\subsection{Konfiguration des Funkgeräts}
+
+\subsection{Test der Kommunikation}
+
+Test einiger Befehle mit \myemph{rigctl} und \myemph{rotctl}. 
 
 \begin{itemize}
 	\parskip0pt
-	\item \textbf{Batch-Skripte -> Hinweis auf Dummy-Skripte?!}
-	\item \textbf{Interfaces unter GPredict-Einstellungen}
-	\label{chap:configinterfaces} \label{configinterfaces}
-	\item \textbf{Konfiguration von rigctld und rotctld}
-	\item \textbf{Hinweis darauf, dass die Skripte auf dem PC, der mit Funkgerät und Rotoren kommuniziert, ausgeführt werden müssen. GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren -> Einstellung der IP-Adresse und des Ports}
-	\item \textbf{Blockschaltbild von (Hard- und) Softwarekomponenten}
+	\item Auslesen und Setzen der Frequenz
+	\item Auslesen und Setzen des Winkels
 \end{itemize}
 
+$\rightarrow$ \myemph{rigctl} und \myemph{rotctl} Skripte in Anhang einfügen!
 
+\subsection{Test der Bedienfelder}
+
+Test mit Dummy-Interfaces. $\rightarrow$ Hinweis auf Dummy-Skripte
+
+\subsection{Finaler Test}
 
 % \section{Inbetriebnahme unter Linux}
