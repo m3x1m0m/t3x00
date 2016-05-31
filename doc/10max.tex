@@ -380,7 +380,7 @@ Im nächsten Schritt trägt man alle Informationen aus den Bahnelementen zusamme
 \begin{equation}
 	\vec{r'}=a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right)
 \end{equation}
-Die Satellitenbahn liegt nach der obigen Gleichung in der äquatorialen Ebene. Der Erdmittelpunkt liegt im Brennpunkt der Ellipse. Anstatt die Bahnebene zu drehen. Dreht man nun das Koordinatensystem. Allerdings in die mathematisch entgegengesetzte Richtung. Hierfür können natürlich nur die Winkel verwendet werden, welche in den Bahnelementen für die Lage der Bahn mitgeliefert werden. Bei der Drehung wird auf Drehmatrizen zurückgegriffen. Eine gute Veranschaulichung dieser Drehungen findet man \href{https://www.youtube.com/watch?v=QZrYaKwZwhI}{\textit{in dieser Animation (https://www.youtube.com/watch?v=QZrYaKwZwhI)}}. Der gesuchte Vektor ergibt sich nun zu
+Die Satellitenbahn liegt nach der obigen Gleichung in der äquatorialen Ebene. Der Erdmittelpunkt liegt im Brennpunkt der Ellipse. Anstatt die Bahnebene zu drehen. Dreht man nun das Koordinatensystem. Allerdings in die mathematisch entgegengesetzte Richtung. Hierfür können natürlich nur die Winkel verwendet werden, welche in den Bahnelementen für die Lage der Bahn mitgeliefert werden. Bei der Drehung wird auf Drehmatrizen zurückgegriffen. Eine gute Veranschaulichung dieser Drehungen findet man \href{https://www.youtube.com/watch?v=QZrYaKwZwhI}{\textit{in dieser Animation}}. Der gesuchte Vektor ergibt sich nun zu
 \begin{equation}
 	\vec{r}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right) 
 \end{equation}  
@@ -426,13 +426,50 @@ Durch Ableitung nach der Zeit kommt man wie in \cite{HandRaum} angegeben auf
 \end{equation} 
 Gleichung \ref{equation1_kep_elements} lässt sich so interpretieren, dass der Term \ensuremath{\sqrt{\frac{GM_{Erde}}{r^2\,a}}} die zeitliche Ableitung der exzentrischen Anomalie \ensuremath{E} sein muss, da die Kettenregel der Differentialrechnung greift und die Rotationsmatrizen keine zetilichen Abhängigkeiten aufweisen.
 \newpar
-Mit den Gleichungen \ref{equation1_kep_elements} und \ref{equation2_kep_elements} lässt sich nun die Antenne fast ausrichten und nachführen. Der nächste Schritt ist die Berücksichtigung der Position der Bodenstation auf der Erde. Um sich das Leben nicht unnötig schwer zu machen, verwendet geografische Koordinaten und gewinnt daraus einen Ortsvektor für das kartesische Koordinatensystem im Erdmittelpunkt. Es wird hierbei vernachlässigt, dass die Erde keien Kugel sondern annähernd ein Ellipsoid ist. Ganz korrekt würde man es machen, wenn man sich des World Geodetic System 1984 (WGS84) bedient. Laut \cite{Wiki:Geo} können durch diese Vernachlässigung Orstverschiebungen (der Bodenstation) von bis zu 20km auftreten. Es soll jedoch zunächst möglichst einfach verstanden werden, wie ein Programm wie GPredict vorgeht und auch zur Überprüfung der Daten, die GPredict liefert reicht die Genauigkeit aus, die mit dieser Vernachlässigung erreicht wird .
+Mit den Gleichungen \ref{equation1_kep_elements} und \ref{equation2_kep_elements} lässt sich nun die Antenne fast ausrichten und nachführen. Der nächste Schritt ist die Berücksichtigung der Position der Bodenstation auf der Erde. Um sich das Leben nicht unnötig schwer zu machen, verwendet geografische Koordinaten und gewinnt daraus einen Ortsvektor für das kartesische Koordinatensystem im Erdmittelpunkt. Es wird hierbei vernachlässigt, dass die Erde keine Kugel sondern annähernd ein Ellipsoid ist. Ganz korrekt würde man es machen, wenn man sich des World Geodetic System 1984 (WGS84) bedient. Laut \cite{Wiki:Geo} können durch diese Vernachlässigung Orstverschiebungen (der Bodenstation) von bis zu 20km auftreten. Es soll jedoch zunächst möglichst einfach verstanden werden, wie ein Programm wie GPredict vorgeht und auch zur Überprüfung der Daten, die GPredict liefert reicht die Genauigkeit aus, die mit dieser Vernachlässigung erreicht wird .
 \newpar  
-Im ersten Schritt zur  \textbf{Beschreibung der Bahn im erdfesten System} muss das Koordinatensystem nochmal an der z-Achse gedreht werden. Das liegt daran, dass die x-y-Ebene zwar im Äquator liegt, die x-Achse jedoch nicht stetig auf den nullten Längengrad, sondern auf den Frühlingspunkt zeigt. Bei dieser Achsentransformation wird auch die Rotation der Erde mitberücksichtigt. Die x-Achse wird in den sog. Meridian von Greenwich gezogen. Die Drehung der z-Achse wird mit dem Winkel \ensuremath{\Theta} vollzogen. Dieser Winkel wird dabei als „Sternenzeit bezeichnet und häufig im Stundenmaß (1h entspricht 15\degree) ausgedrückt“ (siehe S. 89 in \cite{HandRaum}). Für diese einfacheren Angelegenheiten kann so in \cite{HandRaum} beschrieben die Sternenzeit nach folgender Gleichung eruiert werden.
+Im ersten Schritt zur  \textbf{Beschreibung der Bahn im erdfesten System} muss das Koordinatensystem nochmal an der z-Achse gedreht werden. Das liegt daran, dass die x-y-Ebene zwar im Äquator liegt, die x-Achse jedoch nicht auf den nullten Längengrad, sondern auf den Frühlingspunkt zeigt. Bei dieser Achsentransformation wird auch die Rotation der Erde mit berücksichtigt. Die x-Achse wird in den sog. Meridian von Greenwich gezogen. Die Drehung der z-Achse wird mit dem Winkel \ensuremath{\Theta} vollzogen. Dieser Winkel wird dabei als „Sternenzeit bezeichnet und häufig im Stundenmaß (1h entspricht 15\degree) ausgedrückt“ (siehe S. 89 in \cite{HandRaum}). Für diese einfacheren Angelegenheiten kann so in \cite{HandRaum} beschrieben die Sternenzeit nach folgender Gleichung eruiert werden.
 \begin{equation}
-	
+	\Theta = 280,4606\degree+360,9856473\degree\cdot d
 \end{equation} 
+In dieser Gleichung stellt \ensuremath{d} die Tage seit dem 1. Januar 2000 dar. Mit gegebener UT1 kann so die genaue Sternzeit berechnet werden. Mit der Sternzeit ergibt sich nun die letzte Drehtransformation. 
+\begin{equation}
+	\vec{r}_{Greenwich}=\mathbf{R_Z}(\Theta) \cdot \vec{r}
+\end{equation} 
+Dadurch ist die erdfeste Position des Satelliten aus den inertialen Koordinaten bestimmt worden. Nach \cite{HandRaum} ergibt sich die erste zeitliche Ableitung zu
+\begin{equation}
+	\vec{v}_{Greenwich}=\mathbf{R_Z}(\Theta)\cdot\vec{v}-\left(\begin{array}{c}0\\0\\\omega_{Erde}\end{array}\right)\times\vec{r}_{Greenwich}
+	\label{equation3_kep_elements}
+\end{equation}   
+Die Interpretation von Gleichung \ref{equation3_kep_elements} ist, dass sich die Geschwindigkeit \ensuremath{\vec{v}_{Greenwich}} im erdfesten System vom inertialen System durch einen Term unterscheidet, der von der Drehgeschwindigkeit \ensuremath{\omega_{Erde}=7,29212\cdot 10^{-5}\frac{rad}{s}} und dem Abstand von der Erde abhängt. 
+\newpar
+Liegt eine Bodenstation von der die Funkverbindung zum Satellit aufgebaut werden soll nicht zufällig auf dem Schnittpunkt zwischen dem nullten Längengrad und dem Äquator, so muss der Vektor \ensuremath{\vec{r}_{Greenwich}} selbstverständlich angepasst werden. Das grobe Vorgehen ist aus der analytischen Geometrie bekannt. Der Vektor \ensuremath{\vec{r}_{Greenwich}} stellt den Ortsvektor zum Satelliten dar. Der Vektor \ensuremath{\vec{r}_{Bodenstation}} stellt den Orstvektor zur Bodenstation dar. Um einen Vektor von der Bodenstation zum Satellit zu erhalten rechne man Spitze minus Anfang.
+\begin{equation}
+	\vec{r}_{Bodenstation,Satellit}=\vec{r}_{Satellit}-\vec{r}_{Bodenstation}
+\end{equation} 
+wobei 
+\begin{center}
+	\begin{math}
+		\vec{r}_{Satellit}=\vec{r}_{Greenwich}
+	\end{math}
+\end{center}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]                                                                           %%
+	\centering                                                                            	%%
+	\includegraphics[width=0.4\textwidth]{./images/geographic_coordinates.jpg}              %%
+	\caption[Geografische Koordinaten]{Geografische Koordinaten, Quelle: \cite{Wiki:Geo}}                        												%%
+	\label{fig:geo}                                                                         %%
+\end{figure}                                                                              	%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Man werfe zunächst einen Blick auf das dem populären Kugelkoordinatensystem nicht ganz unähnlichen geografische Koordinatensystem (Abbildung \ref{fig:geo}). Die Koordinaten der Bodenstation im geografischen Koordinatensystem lassen sich ganz leicht ohne vor Ort zu sein mittels \href{http://www.openstreetmap.org/search?query=47.66530%2C9.44805#map=19/47.66530/9.44805}{\textit{OpenStreetMap}}. Dabei entspricht der erste Wert dem Breiten- der zweite dem Längengrad. Der mittlere Erddurchmesser \ensuremath{d_{Erde}} beträg nach \cite{Wiki:Erde} in etwa \ensuremath{12.742 km}.
+\newpar
+Man stelle sich nun die Bodenstation als einen Punkt auf der Kugeloberfläche vor. Schneidet man entlang des Längengrades der Bodenstation durch die Kugel, so lässt sich mit einfacher Trigonomoetrie die Information des Breitengrades in das kartesische Koordinatensystem übetragen. Die z-Komponente des gesuchten Ortsvektors \ensuremath{\vec{r}_{Bodenstation}} ist der Sinus des Breitengrades multipliziert mit dem halben Erddurchmessser. Die Ankatehte des Dreiecks, dass sich jetzt ausgebildet hat spielt bei der Betrachtung von x- und y-Komponente eine wichtige Rolle. Diese Ankathete hat die Länge des Kosinus des Breitengrads multipliziert mit dem halben Erddruchmesser. Um die x- und die y-Komponente zu ermitteln schneidet man entlang des Äquators durch die Erdkugel hindurch und wirft einen Blick auf die Schnittfläche. Die eben betonte Ankathete definiert mit der x-Achse ein weiteres rechtwinkligen Dreieck. Die Ankathete des ersten Schnitts wurde zur Hypothenuse dieses Dreiecks. Über den Längengrad und die bekannte Länge der Hypothenuse können nun x- und y-Komponente leicht bestimmt werden. Die x-Komponente folgt aus dem Kosinus des Längengrades multipliziert mit der Hypothenuse. Die y-Komponente ist eine Folge der Multiplikation des Sinus des Längengrades mit der Hypothenuse. Aus diesen einfachen und vom Kugelkoordinatensystem bekannten Denkansätzen folgt der Ortsvektor der Bodenstation. 
+\begin{equation}
+	\vec{r}_{Bodenstation}=\frac{d_{Erde}}{2}\,\left(\begin{array} {c}cos(latitude)\,cos(longitude)\\cos(latitude)\,sin(longitude)\\sin(latitude)\end{array}\right)
+\end{equation}     
 \subsection{Bahnstörung}
 
+\subsection{Bahnmodelle}
 \clearpage
