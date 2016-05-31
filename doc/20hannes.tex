@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			30th May 2016												%%
+%% Date:			31th May 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -46,7 +46,7 @@ Eine sehr detaillierte Beschreibung der Software GPredict ist unter \cite{gpredi
 
 \section{Übersicht}
 
-GPredict ist eine freie Software zur Satellitenverfolgung und Orbitvorhersage und steht als Quellcode oder bereits fertig kompiliertes Programm für Windows, Mac OS und Linux zur Verfügung. Die Software ist in C geschrieben und unter der GNU \ac{GPL} lizenziert, somit kann sie frei verändert und an die entsprechenden Nutzervoraussetzungen angepasst werden.\newpar
+GPredict ist eine freie Software zur Satellitenverfolgung und Orbitvorhersage und steht als Quellcode oder bereits fertig kompiliertes Programm für Windows, Mac OS und Linux zur Verfügung. Die Software ist in C geschrieben und unter der GNU \ac{GPL} lizenziert, somit kann sie frei verändert und an die entsprechenden Nutzervoraussetzungen angepasst werden. Im Rahmen dieser Projektarbeit wird Version 1.3 von GPredict verwendet (verfügbar unter \cite{gpredictdownload}).\newpar
 In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfolgungsprogramms zu sehen (die blauen Blöcke stellen hierbei die Funktionalität des Programms dar). Zunächst wird an Hand der Keplerschen Bahnelemente und dem aktuellen Zeitpunkt die absolute Position des Satelliten berechnet. Daraufhin wird der Vektor, der von der Bodenstation zum Satelliten zeigt, bestimmt. Nun können Azimut und Elevation dieses Vektors für die Ansteuerung der Antenne verwendet werden.
 
 \begin{figure}[h]
@@ -59,7 +59,7 @@ In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfol
 \clearpage
 
 Zur Berechnung der Satellitenposition wird auf den NORAD SGP4/SDP4 Algorithmus zurückgegriffen (siehe Abschnitt XXX). Um hierfür zu jedem Zeitpunkt die aktuellen Kepler-Elemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.\newpar
-Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie SatPC32 kein Limit an zu verfolgenden Satelliten und Bodenstationen gegeben. Durch die Verwendung von Modulen kann außerdem unkompliziert zwischen verschiedenen Konfigurationen gewechselt werden. Die Orbitvorhersage eines Satelliten lässt sich sowohl grafisch als auch tabellarisch darstellen, wobei durch die Einstellungen verschiedenster Parameter eine sehr individuelle Anzeige erreicht werden kann \cite{gpredictsource}.
+Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie SatPC32 kein Limit an zu verfolgenden Satelliten und Bodenstationen gegeben. Durch die Verwendung von Modulen kann außerdem unkompliziert zwischen verschiedenen Konfigurationen gewechselt werden. Die Orbitvorhersage eines Satelliten lässt sich sowohl grafisch als auch tabellarisch darstellen, wobei durch die Einstellungen verschiedenster Parameter eine sehr individuelle Anzeige erreicht werden kann.
 
 \section{Grafische Oberfläche}
 
@@ -319,18 +319,18 @@ Beim Öffnen der Kategorie \myemph{Predict} wird standardmäßig der Reiter \mye
 \end{itemize}
 
 Unter den Reitern \myemph{Multiple Passes} und \myemph{Single Pass} lassen sich die Parameter auswählen, die in den Ansichten \myemph{Upcoming Passes} und \myemph{Pass Details} dargestellt werden, wohingegen beim Reiter \myemph{Sky at a Glance} Darstellungsoptionen für die Funktion \myemph{The sky at a glance} eingestellt werden können.\newpar
-Eine detailliertere Beschreibung der GPredict-Einstellungen kann aus \cite{gpredictmanual} auf Seite 23ff entnommen werden.
+Eine detailliertere Beschreibung der GPredict-Einstellungen kann aus \cite{gpredictmanual} Seite 23ff entnommen werden.
 
 \section{HamLib-Programmierschnittstelle}
 
 \subsection{Übersicht}
 
-Da es keinen einheitlichen Kommunikationsstandard für die zahlreichen Funkgeräte und Rotoren unterschiedlicher Hersteller gibt, ist für die Verwendung von GPredict eine applikationsspezifische Programmierschnittstelle oder auch \ac{API} erforderlich. Mit den \myemph{Ham Radio Control Libraries} (englisch für Amateurfunk-Kontrollbibliotheken), kurz HamLib, steht dem Benutzer eine solche \ac{API} zur Verfügung. HamLib ist unter der \ac{GPL} lizenziert und steht als freie Software jedem zur Verfügung. Wie in Abbildung \ref{fig:hamlib} zu sehen, ermöglicht HamLib einer Software wie GPredict die Kommunikation mit verschiedenen Funkgeräten und Rotoren, in dem es für jedes dieser Geräte einen eigenen Treiber bzw. ein eigenes \ac{BE} zur Verfügung stellt.
+Da es keinen einheitlichen Kommunikationsstandard für die zahlreichen Funkgeräte und Rotoren unterschiedlicher Hersteller gibt, ist für die Verwendung von GPredict eine applikationsspezifische Programmierschnittstelle oder auch \ac{API} erforderlich. Mit den \myemph{Ham Radio Control Libraries} (englisch für Amateurfunk-Kontrollbibliotheken), kurz HamLib, steht dem Benutzer eine solche \ac{API} zur Verfügung. HamLib ist unter der \ac{GPL} lizenziert und ist unter \cite{hamlibdownload} in der Version 3.0.1 als Download für Linux und Windows kostenlos verfügbar. Wie in Abbildung \ref{fig:hamlib} zu sehen, ermöglicht HamLib einer Software wie GPredict die Kommunikation mit verschiedenen Funkgeräten und Rotoren, in dem es für jedes dieser Geräte einen eigenen Treiber bzw. ein eigenes \ac{BE} zur Verfügung stellt.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{hamlib}
-	\caption{HamLib Design, Quelle: \cite{hamlib}}
+	\caption{HamLib Design, Quelle: \cite{hamlibmanual}}
 	\label{fig:hamlib} 
 \end{figure}
 
@@ -346,25 +346,110 @@ Dabei verwendet man entweder den Quellcode um eine benutzerspezifische Anwendung
 
 Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}'' für  ,,Rig'' (deutsch: Amateurfunkgerät) und das ,,\myemph{d} am Ende von \myemph{rigctld} und \myemph{rotctld} für ,,Deamon'' (deutsch: Hintergrundprozess).
 
-\subsection{Verwendung}
 
-Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctld} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat} und \ref{chap:rotctldbat}). Diese Skripte müssen beide gestartet werden, bevor unter GPredict eine Kommunikation mit den Rotoren bzw. mit dem Funkgerät stattfinden kann. 
 
 \subsection{Parameter-Konfiguration}
+\label{chap:hamlibconfig}
 
-\textbf{Hinweis darauf, dass die Skripte auf dem PC, der mit Funkgerät und Rotoren kommuniziert, ausgeführt werden müssen. GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren -> Einstellung der IP-Adresse und des Ports}
+Für die erfolgreiche Nutzung der oben genannten Programme müssen einige Optionen und Parameter berücksichtigt werden. Hierfür ist es notwendig die erforderlichen Informationen zu den Rotoren und zum Funkgerät zu kennen. Um eine Übersicht der möglichen Optionen und Befehle zu erhalten, kann das jeweilige Programm einfach mit der Option \texttt{-h} oder \texttt{-\,-help} ausgeführt werden.
+
+\clearpage
+
+Die erste zentrale Information ist die \myemph{Hamlib ID}. Hierfür gibt man folgenden Befehl in die Kommandozeile ein und erhält eine Liste mit allen unterstützten Funkgeräten (für \myemph{rigctld.exe} und \myemph{rotctl(d).exe} analog durchführbar):
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rigctl.exe -l}
+\end{shaded}
+\vspace{-1em}
+
+Im Folgenden sind die beiden Zeilen dargestellt, die für die in diesem Projekt verwendeten Funkgerät und Rotoren relevant sind. Hierbei steht der erste Eintrag für die \myemph{Hamlib ID}, der Zweite für den Hersteller, der Dritte für die Version und der Vierte für den Test-Status:
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{368\qquad Icom\qquad\ IC-9100\qquad 0.7\qquad Untested}\\%[-0.5em]
+	\texttt{601\qquad Yaesu\qquad GS-232A\qquad 0.3\qquad Beta}
+\end{shaded}
+\vspace{-1em}
+
+Als Nächstes muss die Schnittstelle zum Funkgerät bzw. zur Rotorensteuerung angegeben werden. Bei der im Rahmen diesen Projekts verwendeten Software (siehe Abschnitt \ref{chap:software}) werden hierfür serielle Schnittstellen verwendet. Wie diese konfiguriert werden, ist im folgenden Auszug aus der Hilfe, die bei Eingabe der Option \texttt{-h} oder \texttt{-\,-help} erscheint (für \myemph{rigctl.exe}), zu sehen:
+
+\vspace{-1em}
+\begin{shaded}
+	 \texttt{-r, --rig-file=DEVICE\qquad \qquad select radio model number. See model list} \\%[-0.5em]
+	 \texttt{-s, --serial-speed=BAUD\qquad\quad set serial speed of the serial port} \\%[-0.5em]
+	 \texttt{-C, --set-conf=PARM=VAL\qquad \quad set config parameters}
+\end{shaded}
+\vspace{-1em}
+
+Um eine Liste der gültigen Konfigurationsparameter (\texttt{config parameters}) auszugeben, führt man \myemph{rigctl(d).exe} bzw. \myemph{rotctl(d).exe} mit der Option \texttt{-L} oder \texttt{-\,-show-conf} aus. Die genauen Werte sind in Abschnitt \ref{chap:software} aufgeführt.\newpar
+Im Testbetrieb ist die Ausgabe von Statusmeldungen (z.B. Warnungen oder Fehler) oft sehr hilfreich. Hierfür lässt sich mit der Option \texttt{-v} die Intensität der Ausgabe einstellen. Bei \texttt{-v} werden nur grobe Fehler ausgegeben, wohingegen bei \texttt{-vvvvv} alle verfügbaren Statusmeldungen der \ac{API} ausgegeben werden. Bei Weglassen der Option erfolgt keine Ausgabe. Mit diesem Wissen sieht die Ausführung des Programms \myemph{rotctl.exe} im Rahmen dieses Projekts wie folgt aus:
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rotctl.exe -vvvv -m 601 -r COM10 -s 9600 -C stop\_bits=1,data\_bits=8}
+\end{shaded}
+\vspace{-1em}
+
+\clearpage
+
+Da beim Funkgerät IC-9100 das Icom-spezifische Protokoll \acsu{CI-V} (das ,,V'' steht hierbei für die römische Zahl) für die Fernsteuerung verwendet wird, kommt bei der Verwendung von \myemph{rigctl.exe} noch die CI-V-Adresse als Parameter hinzu. Somit sieht die Ausführung des Programms \myemph{rigctl.exe} wie folgt aus: 
+
+\vspace{-1em}
+\begin{shaded}
+	\small{\texttt{rigctl.exe -vvvv -m 368 -r COM5 -c 0x7C -s 19200 -C stop\_bits=1,data\_bits=8}}
+\end{shaded}
+\vspace{-1em}
+
+\subsection{Verwendung}
+
+Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter Abschnitt \ref{chap:hamlibconfig} dargestellten Parametern gestartet wurde, hat man die Möglichkeit Befehle an das Funkgerät bzw. an die Rotorsteuerung zu senden.\newpar
+\textbf{Beschreibung der folgenden Funktion}
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rigctl.exe -m 368 -u}\\
+	\texttt{rotctl.exe -m 601 -u}
+\end{shaded}
+\vspace{-1em}
+
+\textbf{Folgenden Text umschreiben}
+
+Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat}, \ref{chap:rotctldbat}, XXX und YYY). Bei der Verwendung unter Linux können diese ohne Umstände in Bash-Skripte umgeschrieben werden. Diese Skripte müssen beide gestartet werden, bevor unter GPredict eine Kommunikation mit den Rotoren bzw. mit dem Funkgerät stattfinden kann.
 
 \section{Inbetriebnahme unter Windows}
 
-\subsection{Aufbau von Hard- und Software}
+\subsection{Zusätzliche Software}
+\label{chap:software}
 
 \textbf{Blockschaltbild von (Hard- und) Softwarekomponenten}
 
+\clearpage
+
 \subsection{Konfiguration der Rotoren}
-	\label{chap:configinterfaces} \label{configinterfaces}
+\label{chap:configinterfaces} \label{configinterfaces}
+
+\textbf{GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren \-> Einstellung der IP-Adresse und des Ports}	
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rotctld.exe -T 127.0.0.1 -t 4533 \&}
+\end{shaded}
+\vspace{-1em}
+
 \subsection{Konfiguration des Funkgeräts}
 
+\textbf{GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren \-> Einstellung der IP-Adresse und des Ports}
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rigctld.exe -T 127.0.0.1 -t 4532 \&}
+\end{shaded}
+\vspace{-1em}
+
 \subsection{Test der Kommunikation}
+
+Parameter \texttt{post\_write\_delay} etc. erwähnen.\newpar
 
 Test einiger Befehle mit \myemph{rigctl} und \myemph{rotctl}. 
 
