@@ -352,11 +352,11 @@ Aus diesen beiden Größen kann unmittelbar die wahre Anomalie \ensuremath{\thet
 \newpar
 Nun ist also der zeitliche Bezug bekannt. Hier nochmal eine kleine Darstellung wie vorzugehen ist.
 \begin{center}
-	\smartdiagram[circular diagram:clockwise]{\ensuremath{t} gegeben, \ensuremath{M=n\cdot (t-t_P)} bestimmen, \ensuremath{E} mit Newton-Verfahren bestimmen, \ensuremath{x'} und \ensuremath{y'} bestimmen, ggf. \ensuremath{\theta} bestimmen, ggf. \ensuremath{r} bestimmen} 
+	\smartdiagram[circular diagram:clockwise]{\ensuremath{t} gegeben, \ensuremath{M=n\cdot (t-t_P)} bestimmen, \ensuremath{E} bestimmen, \ensuremath{x'} und \ensuremath{y'} bestimmen, \ensuremath{\theta} und \ensuremath{r} bestimmen} 
 \end{center}
 Führt man den Vorgang wie oben gezeigt iterativ aus, so erhält man einen zweidimensionalen Vektor \ensuremath{\vec{r}}. Wenn man nun scharf nachdenkt, so fällt einem auf, dass man nochmal eine Information benötigt. Es braucht einen Zeitpunkt \ensuremath{t_P}. Dies muss ein Zeitpunkt sein, bei welchem der Satelliten im Perigäum stand. Als Analogie könnte man die Phase eines Signals in der Elektrotechnik angeben. Genau diesen Zeitpunkt liefern die Bahnelemente als zeitlichen Bezug.
 \newpar
-Die Bahnelemente sind also
+Hier nochmal eine Übersicht aller Bahnelemente. 
 \begin{itemize}
 	\item Gestalt der Bahn
 	\begin{itemize}
@@ -374,15 +374,17 @@ Die Bahnelemente sind also
 		\item die Epoche (wann ist der Sattelit im Perigäum gewesen) \ensuremath{t_P}
 	\end{itemize}
 \end{itemize} 
-Zum Schluss trägt man alle Informationen aus den Bahnelementen zusammen, um einen Vektor \ensuremath{\vec{r}} im dreidimensionalen kartesischen Koordinatensystem zu erhalten. Der Ursprung des Koordinatensystems soll im Erdzentrum liegen und der Vektor \ensuremath{\vec{r}} soll ein Ortsvektor des Satelliten sein. Die x-y-Ebene dieses Koordinatensystems ist der Äquator. Das Ergebnis der bisherigen Berechnungen ist der Vektor
+
+\subsection{Von den Bahnelementen zum Vektor}
+Im nächsten Schritt trägt man alle Informationen aus den Bahnelementen zusammen, um einen Vektor \ensuremath{\vec{r}} im dreidimensionalen kartesischen Koordinatensystem zu erhalten. Der Ursprung des Koordinatensystems soll im Erdzentrum liegen und der Vektor \ensuremath{\vec{r}} soll ein Ortsvektor des Satelliten sein. Die x-y-Ebene dieses Koordinatensystems ist der Äquator. Das Ergebnis der bisherigen Berechnungen ist der Vektor
 \begin{equation}
 	\vec{r'}=a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right)
 \end{equation}
-Die Satellitenbahn liegt aktuell ist der äquatorialen Ebene. Der Erdmittelpunkt liegt im Brennpunkt der Ellipse. Anstatt die Bahnebene zu drehen. Dreht man nun das Koordinatensystem. Allerdings in die mathematisch entgegengesetzte Richtung. Hierfür können natürlich nur die Winkel verwendet werden, welche in den Bahnelementen für die Lage der Bahn mitgeliefert werden. Bei der Drehung wird auf Drehmatrizen zurückgegriffen. Eine gute Veranschaulichung dieser Drehungen findet man \href{https://www.youtube.com/watch?v=QZrYaKwZwhI}{\textit{in dieser Animation (https://www.youtube.com/watch?v=QZrYaKwZwhI)}}. Der gesuchte Vektor ergibt sich nun zu
+Die Satellitenbahn liegt nach der obigen Gleichung in der äquatorialen Ebene. Der Erdmittelpunkt liegt im Brennpunkt der Ellipse. Anstatt die Bahnebene zu drehen. Dreht man nun das Koordinatensystem. Allerdings in die mathematisch entgegengesetzte Richtung. Hierfür können natürlich nur die Winkel verwendet werden, welche in den Bahnelementen für die Lage der Bahn mitgeliefert werden. Bei der Drehung wird auf Drehmatrizen zurückgegriffen. Eine gute Veranschaulichung dieser Drehungen findet man \href{https://www.youtube.com/watch?v=QZrYaKwZwhI}{\textit{in dieser Animation (https://www.youtube.com/watch?v=QZrYaKwZwhI)}}. Der gesuchte Vektor ergibt sich nun zu
 \begin{equation}
 	\vec{r}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right) 
 \end{equation}  
-Hierbei stellen \ensuremath{\mathbf{R_X}} und \ensuremath{\mathbf{R_Z}} folgende Drehmatrizen dar (vgl. S.89 in \cite{HandRaum}). 
+Hierbei stellen \ensuremath{\mathbf{R_X}} und \ensuremath{\mathbf{R_Z}} folgende Drehmatrizen dar (nachzuschlagen auf S.89 in \cite{HandRaum}). 
 \begin{equation}
 \mathbf{R_X}(\alpha) = 
 	\left(
@@ -403,7 +405,7 @@ Hierbei stellen \ensuremath{\mathbf{R_X}} und \ensuremath{\mathbf{R_Z}} folgende
 		\end{array}
 	\right)
 \end{equation}
-Eine Frage, die sich aufdrängen mag ist: Warum kann die Drehung der Ellipse in der Bahnebene (Argument des Perigäums \ensuremath{\omega}) einfach auf eine Drehung der z-Achse zurüclgeführt werden? Man kann es sich auch so vorstellen, dass zunächst die Ellipse noch in der äquatorialen Ebene liegt, die z-Achse dann um \ensuremath{-\omega} gedreht wird, dann die x-Achse um \ensuremath{-i} und letztendlich die z-Achse nochmal um \ensuremath{-\Omega} gedreht wird.6 
+Eine Frage, die sich aufdrängen mag ist: Warum kann die Drehung der Ellipse in der Bahnebene (Argument des Perigäums \ensuremath{\omega}) einfach auf eine Drehung der z-Achse zurüclgeführt werden? Man kann es sich auch so vorstellen, dass zunächst die Ellipse noch in der äquatorialen Ebene liegt, die z-Achse dann um \ensuremath{-\omega} gedreht wird, dann die x-Achse um \ensuremath{-i} und letztendlich die z-Achse nochmal um \ensuremath{-\Omega} gedreht wird.
 \newpar
 Nach \cite{HandRaum} ergibt sich nach der Ausführung der Drehungen der Vektor
 \begin{equation}
@@ -424,7 +426,13 @@ Durch Ableitung nach der Zeit kommt man wie in \cite{HandRaum} angegeben auf
 \end{equation} 
 Gleichung \ref{equation1_kep_elements} lässt sich so interpretieren, dass der Term \ensuremath{\sqrt{\frac{GM_{Erde}}{r^2\,a}}} die zeitliche Ableitung der exzentrischen Anomalie \ensuremath{E} sein muss, da die Kettenregel der Differentialrechnung greift und die Rotationsmatrizen keine zetilichen Abhängigkeiten aufweisen.
 \newpar
-Mit den Gleichungen \ref{equation1_kep_elements} und \ref{equation2_kep_elements} lässt sich nun die Antenne fast ausrichten und nachführen.    
+Mit den Gleichungen \ref{equation1_kep_elements} und \ref{equation2_kep_elements} lässt sich nun die Antenne fast ausrichten und nachführen. Der nächste Schritt ist die Berücksichtigung der Position der Bodenstation auf der Erde. Um sich das Leben nicht unnötig schwer zu machen, verwendet geografische Koordinaten und gewinnt daraus einen Ortsvektor für das kartesische Koordinatensystem im Erdmittelpunkt. Es wird hierbei vernachlässigt, dass die Erde keien Kugel sondern annähernd ein Ellipsoid ist. Ganz korrekt würde man es machen, wenn man sich des World Geodetic System 1984 (WGS84) bedient. Laut \cite{Wiki:Geo} können durch diese Vernachlässigung Orstverschiebungen (der Bodenstation) von bis zu 20km auftreten. Es soll jedoch zunächst möglichst einfach verstanden werden, wie ein Programm wie GPredict vorgeht und auch zur Überprüfung der Daten, die GPredict liefert reicht die Genauigkeit aus, die mit dieser Vernachlässigung erreicht wird .
+\newpar  
+Im ersten Schritt zur  \textbf{Beschreibung der Bahn im erdfesten System} muss das Koordinatensystem nochmal an der z-Achse gedreht werden. Das liegt daran, dass die x-y-Ebene zwar im Äquator liegt, die x-Achse jedoch nicht stetig auf den nullten Längengrad, sondern auf den Frühlingspunkt zeigt. Bei dieser Achsentransformation wird auch die Rotation der Erde mitberücksichtigt. Die x-Achse wird in den sog. Meridian von Greenwich gezogen. Die Drehung der z-Achse wird mit dem Winkel \ensuremath{\Theta} vollzogen. Dieser Winkel wird dabei als „Sternenzeit bezeichnet und häufig im Stundenmaß (1h entspricht 15\degree) ausgedrückt“ (siehe S. 89 in \cite{HandRaum}). Für diese einfacheren Angelegenheiten kann so in \cite{HandRaum} beschrieben die Sternenzeit nach folgender Gleichung eruiert werden.
+\begin{equation}
+	
+\end{equation} 
+
 \subsection{Bahnstörung}
 
 \clearpage
