@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			30th May 2016		     									%%
+%% Date:			31th May 2016		     									%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -76,7 +76,7 @@ bmargin={2.5cm}]{geometry}
 \usepackage{csquotes}
 \usepackage[style=ieee,backend=bibtex]{biblatex}
 \addbibresource{bib/bibliography.bib}
-%\renewcommand{\bibfont}{\small}	% to change the font size of the bib
+\renewcommand{\bibfont}{\small}	% to change the font size of the bib
 
 % To use tables
 \usepackage{tabularx}
@@ -107,6 +107,13 @@ bmargin={2.5cm}]{geometry}
 
 %For easy diagramms
 \usepackage{smartdiagram}
+
+% To highlight commandline instrucions
+\usepackage{framed} 
+\usepackage{xcolor} 
+\colorlet{shadecolor}{gray!25}
+\colorlet{TFFrameColor}{gray!25}
+\colorlet{TFTitleColor}{black}
 
 %---- Different defines ----------------------------------------------------------
 
