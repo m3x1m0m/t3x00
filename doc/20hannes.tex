@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			31th May 2016												%%
+%% Date:			01st June 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -179,11 +179,11 @@ Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \re
 
 \clearpage
 
-Hinter der Funktion \myemph{Antenna Control} (siehe Abbildung \ref{fig:rotatorcontrol}) verbirgt sich ein Bedienfeld zur Steuerung der Antennenrotoren. Bevor dieses geöffnet werden kann, muss zunächst in den GPredict-Einstellungen unter \myemph{Interfaces} mindestens eine Schnittstelle zur Rotorsteuerung konfiguriert werden (siehe Abschnitt XXX). 
+Hinter der Funktion \myemph{Antenna Control} (siehe Abbildung \ref{fig:rotatorcontrol}) verbirgt sich ein Bedienfeld zur Steuerung der Antennenrotoren. Bevor dieses geöffnet werden kann, muss zunächst in den GPredict-Einstellungen unter \myemph{Interfaces} mindestens eine Schnittstelle zur Rotorensteuerung konfiguriert werden (siehe Abschnitt XXX). 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{rotatorcontrol-active}
-	\caption{Rotorsteuerungs-Bedienfeld}
+	\caption{Rotorensteuerungs-Bedienfeld}
 	\label{fig:rotatorcontrol} 
 \end{figure}
 
@@ -195,7 +195,7 @@ Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der 
 	\item \textbf{Elevation:} In diesem Feld lässt sich die Ausrichtung der Antenne in Elevations-Richtung steuern, vorausgesetzt, dass die \myemph{Track}-Funktion nicht aktiviert ist. Am unteren Ende des Feldes wird unter \myemph{Read} der aktuelle Elevations-Winkel der Antenne angezeigt. Ist keine Verbindung zum Rotor aufgebaut, wird hier ,,-\,-\,-'' angezeigt. Liegt ein Verbindungsproblem vor, erscheint ,,ERROR''.
 	\item \textbf{Target:} Hier lässt sich der zu verfolgende Satellit auswählen. Es stehen hierbei nur die für das aktuelle Modul ausgewählten Satelliten zu Verfügung. Aktiviert man die Schaltfläche \myemph{Track}, wird der ausgewählte Satellit verfolgt. Unter dem Satellitennamen werden die jeweiligen Winkel in Echtzeit dargestellt und hinter $\Delta$T wird die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} angezeigt.
 	\clearpage
-	\item \textbf{Settings:} Hier lässt sich die in den GPredict-Einstellungen festgelegte Schnittstelle zur Kommunikation mit den Rotoren auswählen. Mit einem Klick auf die Schaltfläche \myemph{Engage} wird die Verbindung zu dieser Schnittstelle aufgebaut bzw. unterbrochen. Unter \myemph{Cycle} kann dabei der Zyklus eingestellt werden, in welchem Kommandos an die Rotor-Schnittstelle gesendet und Winkelwerte von dieser abgefragt werden. Ein sinnvoller Wert liegt hierbei zwischen zwei und fünf Sekunden. Bei \myemph{Tolerance} wird die tolerierte Differenz zwischen abgefragtem und eingestelltem Winkel eingetragen. Sobald diese überschritten wird, wird ein  Kommando an die Rotor-Schnittstelle geschickt. Hierbei sollte sowohl die Winkelauflösung der Rotorsteuerung, als auch die Keulenbreite der Antenne berücksichtigt werden. Nach fünf aufeinanderfolgenden Fehlern bei der Kommunikation mit den Rotoren, wird die Verbindung automatisch unterbrochen.
+	\item \textbf{Settings:} Hier lässt sich die in den GPredict-Einstellungen festgelegte Schnittstelle zur Kommunikation mit den Rotoren auswählen. Mit einem Klick auf die Schaltfläche \myemph{Engage} wird die Verbindung zu dieser Schnittstelle aufgebaut bzw. unterbrochen. Unter \myemph{Cycle} kann dabei der Zyklus eingestellt werden, in welchem Kommandos an die Rotor-Schnittstelle gesendet und Winkelwerte von dieser abgefragt werden. Ein sinnvoller Wert liegt hierbei zwischen zwei und fünf Sekunden. Bei \myemph{Tolerance} wird die tolerierte Differenz zwischen abgefragtem und eingestelltem Winkel eingetragen. Sobald diese überschritten wird, wird ein  Kommando an die Rotor-Schnittstelle geschickt. Hierbei sollte sowohl die Winkelauflösung der Rotorensteuerung, als auch die Keulenbreite der Antenne berücksichtigt werden. Nach fünf aufeinanderfolgenden Fehlern bei der Kommunikation mit den Rotoren, wird die Verbindung automatisch unterbrochen.
 \end{itemize}
 
 In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der Schaltflächen \myemph{Track} und \myemph{Engage} und deren Auswirkung beschrieben.
@@ -382,7 +382,7 @@ Als Nächstes muss die Schnittstelle zum Funkgerät bzw. zur Rotorensteuerung an
 \end{shaded}
 \vspace{-1em}
 
-Um eine Liste der gültigen Konfigurationsparameter (\texttt{config parameters}) auszugeben, führt man \myemph{rigctl(d).exe} bzw. \myemph{rotctl(d).exe} mit der Option \texttt{-L} oder \texttt{-\,-show-conf} aus. Die genauen Werte sind in Abschnitt \ref{chap:software} aufgeführt.\newpar
+Um eine Liste der möglichen Konfigurationsparameter (\texttt{config parameters}) auszugeben, führt man \myemph{rigctl(d).exe} bzw. \myemph{rotctl(d).exe} mit der Option \texttt{-L} oder \texttt{-\,-show-conf} aus. Die genauen Werte sind in Abschnitt \ref{chap:software} aufgeführt.\newpar
 Im Testbetrieb ist die Ausgabe von Statusmeldungen (z.B. Warnungen oder Fehler) oft sehr hilfreich. Hierfür lässt sich mit der Option \texttt{-v} die Intensität der Ausgabe einstellen. Bei \texttt{-v} werden nur grobe Fehler ausgegeben, wohingegen bei \texttt{-vvvvv} alle verfügbaren Statusmeldungen der \ac{API} ausgegeben werden. Bei Weglassen der Option erfolgt keine Ausgabe. Mit diesem Wissen sieht die Ausführung des Programms \myemph{rotctl.exe} im Rahmen dieses Projekts wie folgt aus:
 
 \vspace{-1em}
@@ -399,12 +399,12 @@ Da beim Funkgerät IC-9100 das Icom-spezifische Protokoll \acsu{CI-V} (das ,,V''
 \begin{shaded}
 	\small{\texttt{rigctl.exe -vvvv -m 368 -r COM5 -c 0x7C -s 19200 -C stop\_bits=1,data\_bits=8}}
 \end{shaded}
-\vspace{-1em}
+%\vspace{-1em}
 
 \subsection{Verwendung}
 
-Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter Abschnitt \ref{chap:hamlibconfig} dargestellten Parametern gestartet wurde, hat man die Möglichkeit Befehle an das Funkgerät bzw. an die Rotorsteuerung zu senden.\newpar
-\textbf{Beschreibung der folgenden Funktion}
+Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter Abschnitt \ref{chap:hamlibconfig} dargestellten Parametern gestartet wurde, hat man die Möglichkeit Befehle an das Funkgerät bzw. an die Rotorensteuerung zu senden. Eine Übersicht der Befehle lässt sich der Ausgabe der Programmausführung mit dem Parameter \texttt{-h} bzw. \texttt{-\,-help} entnehmen.\newpar
+Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befehle unterstützt, ist es wissenswert welche Befehle von den in diesem Projekt verwendeten Geräten unterstützt werden. Unter Angabe der \myemph{Hamlib ID} und der Option \texttt{-u} bzw. \texttt{-\,-dump-caps} kann eine Übersicht der \myemph{capabilities} (Fähigkeiten), z.B. der unterstützten Befehle oder der Standard-Parameter ausgegeben werden:
 
 \vspace{-1em}
 \begin{shaded}
@@ -413,16 +413,27 @@ Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter 
 \end{shaded}
 \vspace{-1em}
 
-\textbf{Folgenden Text umschreiben}
+Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat}, \ref{chap:rotctldbat}, XXX und YYY). Bei der Verwendung unter Linux können diese ohne großen Aufwand in Bash-Skripte umgeschrieben werden. 
 
-Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat}, \ref{chap:rotctldbat}, XXX und YYY). Bei der Verwendung unter Linux können diese ohne Umstände in Bash-Skripte umgeschrieben werden. Diese Skripte müssen beide gestartet werden, bevor unter GPredict eine Kommunikation mit den Rotoren bzw. mit dem Funkgerät stattfinden kann.
+\clearpage
 
 \section{Inbetriebnahme unter Windows}
 
 \subsection{Zusätzliche Software}
 \label{chap:software}
 
-\textbf{Blockschaltbild von (Hard- und) Softwarekomponenten}
+Wie in Abschnitt XXX zu sehen, werden sowohl das Funkgerät als auch die Rotorensteuerung über das Hochschul-Netzwerk angesteuert. Für die Kommunikation mit den notwendigen Hardwarekomponenten (Banana Pi und NetCOM 211) stehen bereits Programme für Windows zur Verfügung.\newpar
+Auf Banana Pi Software eingehen\newpar
+Grün: Hardware\\
+Blau: Software\\
+(siehe Abbildung \ref{fig:swhwcom})
+
+\begin{figure}[h]
+	\centering
+	\input{./images/swhwcom.tex}
+	\caption{Kommunikation zwischen Hard- und Software}
+	\label{fig:swhwcom} 
+\end{figure}
 
 \clearpage
 
