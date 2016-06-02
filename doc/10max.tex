@@ -13,7 +13,6 @@
 \chapter{Hintergründe}
 
 \section{Bahnmechanik}
-Es sei zu Beginn diese Absatzes darauf hingewiesen
 \subsection{Die Keplerschen Gesetze}
 \label{subsec:kepler}
 Seit der Antike galt die Erklärung der Bewegung der Planeten und die Vorhersage dieser als eine große Herausforderung. Theorien von Ptolemaios mit seinem geozentrischen Weltbild und Kopernikus mit seinem heliozentrischen Weltbild führten bereits im 16. Jahrhundert zu brauchbaren Modellen zur Vorhersage der Planetenbewegungen. Diese Modelle unterlagen jedoch Ungenauigkeiten, „die in mit Instrumenten des 16. Jahrhunderts bereits messbaren Breichen lagen“ (siehe S. 20 in \cite{Raumflugm}). 
@@ -22,7 +21,7 @@ Seit der Antike galt die Erklärung der Bewegung der Planeten und die Vorhersage
 	\centering                                                                            	%%
 	\includegraphics[width=0.3\textwidth]{./images/kepler.jpg}                              %%
 	\caption[Bahnelemente]{Johannes Kepler (1571-1630), Quelle: \cite{Wiki:Kepler}}         %%
-	\label{fig:bahnelemente}                                                                %%
+	\label{fig:kepler}                                                                %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 Der mathematische Aufwand hinter diesen Modellen war enorm. Selbst das kopernikanische Weltbild, dass einige Vereinfachnugen mit sich brachte, bediente sich der Überlagerung einer Vielzahl von Kreisbwegungen, um das Verhalten der Planeten zu erklären. Resignierend zog sich zu der Zeit die katholische Kirsche und mit ihr viele Gelehrte auf den Standpunkt zurück, dass „die Frage, welche der Theorien die korrekte sei, [...] schlicht unbeantwortbar“ wäre (siehe S. 21 in \cite{Raumflugm}). 
@@ -82,7 +81,7 @@ Was nun noch fehlt ist „eine Gleichung, also eine analytische Beschreibung der
 	\centering                                                                            	%%
 	\includegraphics[width=0.8\textwidth]{./images/keplers_law1.jpg}                        %%
 	\caption[Kegelschnitt]{Kegelschnitt, Quelle: S.24 in \cite{Raumflugm}}                  %%
-	\label{fig:kegelsch}                                                                    %%
+	\label{fig:kegelsch_1}                                                                  %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
 Die Neigung der Schnittebene zur Kegelgrundfläche sei \ensuremath{\alpha}. Der Öffnungswinkel des Kegels sei \ensuremath{\epsilon}. Jetzt passiert etwas, dass das räumliche Denkvermögen herausfordert. In den Kegel wird eine (Dandelinsche) Kugel eingeschrieben. Diese Kugel berühre die Ebene im Punkt \ensuremath{F} und tangiere den Kegelmantel entlang eines Breitenkreises. Es ist einzusehen, dass der Punkt \ensuremath{F} auf der Hauptachse der Ellipse liegt. Der Schnittpunkt der entstehenden Ellipse und der Normale zur Hauptachse im Punkt \ensuremath{F} ist der Punkt \ensuremath{Q}. \ensuremath{P} stellt einen beliebigen Punkt auf der Ellipse dar. Die Verbindungslinie zwischen \ensuremath{F} und \ensuremath{P} hat zur Hauptachse die Neigung \ensuremath{\theta}. Der Abstand zwischen \ensuremath{F} und \ensuremath{P} ist \ensuremath{r}. \ensuremath{s} und \ensuremath{s_0} sind die Abstände der Punkte P und Q zum Berührkreis der Kugel gemessen entlang des Kegelmantels. 
@@ -128,7 +127,7 @@ Fertig ist die mathematische Version des ersten Keplerschen Gesetzes.
 	\centering                                                                            	%%
 	\includegraphics[width=0.6\textwidth]{./images/keplers_law2.jpg}                        %%
 	\caption[Kegelschnitt]{Kegelschnitt, Quelle: S.26 in \cite{Raumflugm}}                  %%
-	\label{fig:kegelsch}                                                                    %%
+	\label{fig:kegelsch_2}                                                                  %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
 Gleichung \ref{equation3_kepler} liefert noch keine Aussage über die zeitliche Änderung von \ensuremath{r} und \ensuremath{\theta}. Um eine Aussage über die zeitliche Änderung dieser Variablen treffen zu können, kann Keplers zweites Gesetz herangezogen werden: Die Fläche, welche die Verbindungslinie zwischen Sonne und einem Planet überstreicht ist zeitlich konstant. Die Fläche \ensuremath{\Delta A}, die in einem Zeitintervall \ensuremath{\Delta t} durch strichen wird ist genau
@@ -197,10 +196,11 @@ Die Umlaufzeit lässt sich nun leicht mit der Konstanten \ensuremath{h}, welche 
 Daraus folgt
 \begin{equation}
 	T=\frac{2ab\pi}{h}.
+	\label{equation8_kepler}
 \end{equation}
 Eingesetzt in Gleichung \ref{equation7_kepler} ergibt sich 
 \begin{equation}
-		\frac{T_1^2}{T_2^2}=\frac{a_1^3}{a_2^3}=\frac{a_1^2b_1^2h_2^2}{a_2^2b_2^2h_1^2}
+		\frac{T_1^2}{T_2^2}=\frac{a_1^3}{a_2^3}=\frac{a_1^2b_1^2h_2^2}{a_2^2b_2^2h_1^2}.
 \end{equation}
 Bringt man nun \ensuremath{a_1^2b_1} und \ensuremath{a_2^2b_2^2} einmal durch Division und einmal durch Multiplikation eins weiter nach links, so kann man die Beziehung aus Gleichung \ref{equation_kepler_simple_p} ausnutzen und schreiben
 \begin{equation}
@@ -211,13 +211,33 @@ Oben und unten multipliziert man jetzt noch jeweils mit \ensuremath{1/a_1} und \
 \frac{b_2^2/a_2}{b_1^2/a_1}=\frac{h_2^2}{h_1^2}=\frac{p_2}{p_1}
 \end{equation}
 Das Resultat ist ein „Zusammenhang zwischen den Halbparametern \ensuremath{p_1}, \ensuremath{p_2} und den Bewegungskonstatnten \ensuremath{h_1}, \ensuremath{h_2}“ (siehe S.27 in \cite{Raumflugm}). Diese Größen sind aus dem zweiten Keplerschen Gesetz bekannt. 
-
+\newpar
+Die Bewegungskonstante \ensuremath{h} ist eine wichtige Größe, um die Umlaufzeit \ensuremath{T} und auch um die Mittlere Anomalie \ensuremath{M(t)} bzw. die Kreisfrequenz \ensuremath{n} dieser zu bestimmen. Um an diese Größe zu gelangen leitet man nach S.87 in \cite{HandRaum} aus der Zentrifugalkraft und der Gravitationskraft für einen Sonderfall das dritte Keplersche Gesetz her. Man tut so als bewege sich ein Körper mit der Masse \ensuremath{m_{Sat}} auf einer Kreisbahn mit dem Radius \ensuremath{a}, was für eine (numerische und lineare) Exzentrizität von 0 zutrifft. Da der Körper nicht ins Schwerezentrum im Mittelpunkt der Bahn abstürzt, muss die Gravitationskraft gleich der Zentrifugalkraft sein. Es folgt
+\begin{equation}
+	F_{Z}=F_{G}
+\end{equation}     
+\begin{equation}
+	m_{Sat}\cdot n^2 \cdot a= G \cdot \frac{m_{Sat}\,M_{Erde}}{a^2}
+\end{equation} 
+\begin{equation}
+	 a^3\,\left(\frac{2\pi}{T}\right)^2= G\,M_{Erde}
+\end{equation}     
+Aus dieser Gleichung folgt durch ein paar geschickte Umformungen, die aus Platzgründen an dieser Stelle nicht niedergeschrieben wurden, und Umstellen nach \ensuremath{T}
+\begin{equation}
+	T=\frac{2\,a^2\,\pi}{\sqrt{G\,M_{Erde}\,a}}
+\end{equation}
+Im Zähler steht die doppelte von der Verbindungslinie zwischen Schwerezentrum und Satellit in einer Umlaufperiode \ensuremath{T} überschrittenen Fläche. Durch die Verwandschaft der obigen Gleichung mit Gleichung \ref{equation8_kepler}, kann man schlussfolgern, dass die Bewegungskonstante in diesem Fall sich zu 
+\begin{equation}
+	h=\sqrt{G\,M_{Erde}\,a}
+\end{equation}   
+ergibt. Die Berechnung der mittleren Anomalie \ensuremath{M(t)} stellt nun kein Problem mehr da.
 \subsection{Die Bahnelemente}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
-	\includegraphics[width=0.8\textwidth]{./images/bahnelemente.png}                        %%
-	\caption[Bahnelemente]{Bahnelemente, Quelle: \cite{Wiki:Bahnel}}                        %%
+	\includegraphics[width=0.8\textwidth]{./images/bahnelemente.jpg}                        %%
+	\caption[Bahnelemente]{Bahnelemente, Quelle: \cite{Wiki:Bahnel}, 
+		Grafik ist eigens modifiziert}              
 	\label{fig:bahnelemente}                                                                %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
@@ -247,7 +267,7 @@ Bis jetzt ist alles recht schön und anschaulich. Es ist klar wo die Bahnebene i
 \begin{equation}
 	r = \frac{p}{1 + e' cos(\theta)} 
 \end{equation}
-\ensuremath{\theta} ist der Winkel, den die Verbindungslinie zwischen einem Brennpunkt und dem Satellit mit der Hauptachse einschließt. Es gibt allerdings noch ein Haar in der Suppe. Aufgrund des Flächensatzes ist die Winkelgeschwindigkeit des Satelliten nicht konstant (bzw. nur für eine in der Natur nicht vorkommende Kreisbahn konstant). \ensuremath{\theta} ist eine Funktion von \ensuremath{t}. Die sog. wahre Anomalie \ensuremath{\theta(t)} schwankt um die mittlere Anomalie \ensuremath{M} (nicht zu verwechseln mit der Erdmasse). Man stößt nun auf das Zweikörperproblem (Keplerproblem). Dies ist die Angabe der wahren Anomalie \ensuremath{\theta(t=t_x)} zu einem vorgegebenen Zeitpunkt \ensuremath{t_x}.  Wie kommt die mittlere Anomalie nun zustande? Zunächst sollte ein genauer Blick auf folgende Abbildung \ref{fig:kepler_gl} geworfen werden. Die Abbildung stellt eine Momentaufnahme einer Situation dar.     
+\ensuremath{\theta} ist der Winkel, den die Verbindungslinie zwischen einem Brennpunkt und dem Satellit mit der Hauptachse einschließt. Es gibt allerdings noch ein Haar in der Suppe. Aufgrund des Flächensatzes ist die Winkelgeschwindigkeit des Satelliten nicht konstant (bzw. nur für eine in der Natur nicht vorkommende Kreisbahn konstant). \ensuremath{\theta} ist eine Funktion von \ensuremath{t}. Die sog. wahre Anomalie \ensuremath{\theta(t)} schwankt um die mittlere Anomalie \ensuremath{M} (nicht zu verwechseln mit der Erdmasse). Man stößt nun auf das Zweikörperproblem (Keplerproblem). Dies ist die Angabe der wahren Anomalie \ensuremath{\theta(t=t_x)} zu einem vorgegebenen Zeitpunkt \ensuremath{t_x}.  Wie kommt die mittlere Anomalie nun zustande? Zunächst sollte ein genauer Blick auf Abbildung \ref{fig:kepler_gl} geworfen werden. Die Abbildung stellt eine Momentaufnahme einer Situation dar.     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
@@ -259,9 +279,10 @@ Bis jetzt ist alles recht schön und anschaulich. Es ist klar wo die Bahnebene i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 Wie schon bei früheren Betrachtungen wird die Ellipse (Orbit) in einen Umkreis eingeschrieben. Ein fiktiver (mittlerer) Satellit \ensuremath{Y} laufe entlang des Umkreises um den Punkt \ensuremath{C} (Mittelpunkt der Ellipse und des Kreises, kein Ellipsenbrennpunkt). Der wahre Satellit \ensuremath{P} bewege sich entlang der Ellipse. Die Lage des fiktiven Satelliten \ensuremath{Y} wird zum Zeitpunkt \ensuremath{t} mittels des Winkels \ensuremath{M} dargestellt. Hierbei wird unterstellt, dass der Satellit zum Zeitpunkt \ensuremath{t_P} im Perigäum (oft auch Periapsis genannt) \ensuremath{M=0} war. Es gilt nun
 \begin{equation}
-	M=2\pi\,\frac{t-t_P}{U}=n\,(t-t_P)
+	M=2\pi\,\frac{t-t_P}{T}=n\,(t-t_P)
 \end{equation}   
-Hierbei ist \ensuremath{n} die Winkelgeschwindigkeit. \ensuremath{S} ist der Erdmittelpunkt (Schwerezentrum). Um nun die Kurve zu der Ellipse und dem tatsächlichen Satellit zu bekommen wird das zweite Keplersche Gesetz für diesen konkreten Fall herangezogen. In gleichen Zeiträumen werden gleiche Flächen von den Fahrstrählen der Satelliten unabhängig von der Bahnform (egal ob elliptisch oder kreisförmig mit \ensuremath{e'=e=0}) überstrichen. Hier spricht man von einer bijektiven Abbildung der Ellipsen- und Kreisflächensegmente. Letztere sind leicht zu berechnen. Es wird also praktisch ein Umweg über den Umkreis gegangen. Das zweite Keplersche Gesetz angewandt auf den vorliegenden Fall, führt bezüglich der Zeitspanne einer Überstreichung der gesamten Fläche zu
+Hierbei ist \ensuremath{n} die Winkelgeschwindigkeit und \ensuremath{T} die Umlaufzeit des Satelliten um das Schwerezentrum. \ensuremath{S} ist der Erdmittelpunkt (Schwerezentrum). 
+Um nun die Kurve zu der Ellipse und dem tatsächlichen Satellit zu erhalten wird das zweite Keplersche Gesetz für diesen konkreten Fall herangezogen. In gleichen Zeiträumen werden gleiche Flächen von den Fahrstrählen der Satelliten unabhängig von der Bahnform (egal ob elliptisch oder kreisförmig mit \ensuremath{e'=e=0}) überstrichen. Hier spricht man von einer bijektiven Abbildung der Ellipsen- und Kreisflächensegmente. Letztere sind leicht zu berechnen. Es wird also praktisch ein Umweg über den Umkreis gegangen. Das zweite Keplersche Gesetz angewandt auf den vorliegenden Fall, führt bezüglich der Zeitspanne einer Überstreichung der gesamten Fläche zu
 \begin{equation}
 	\frac{A_{Kreis}}{A_{Ellipse}}=\frac{\pi\,a^2}{\pi\,a\,b}
 \end{equation}
@@ -308,7 +329,7 @@ Als letzten Schritt setze man nun noch Gleichung \ref{equation3_kepler_equ} (unt
 \end{equation}
 Mit ein paar Tricks aus der Grundschule entsteht die \textbf{Kepler-Gleichung} wie sie im Buche steht.
 \begin{equation}
-	E-e'\,sin(E)=M=U\cdot t
+	E-e'\,sin(E)=M=n\cdot (t-t_P)
 	\label{equation_kepler_equ_final}
 \end{equation}
 Diese Gleichung kann nicht nach \ensuremath{E} aufgelöst werden und so keine schöne Funktion \ensuremath{E(t)} gewonnen werden. Doch Gott sei dank, schenke er Newton die Eingebung des Newton-Verfahrens zur Nullstellensuche. Das Newton-Verfahren ist im Grunde eine rekursive Folge, wobei jedes Folgeglied allgemein mit
@@ -356,7 +377,7 @@ Nun ist also der zeitliche Bezug bekannt. Hier nochmal eine kleine Darstellung w
 \end{center}
 Führt man den Vorgang wie oben gezeigt iterativ aus, so erhält man einen zweidimensionalen Vektor \ensuremath{\vec{r}}. Wenn man nun scharf nachdenkt, so fällt einem auf, dass man nochmal eine Information benötigt. Es braucht einen Zeitpunkt \ensuremath{t_P}. Dies muss ein Zeitpunkt sein, bei welchem der Satelliten im Perigäum stand. Als Analogie könnte man die Phase eines Signals in der Elektrotechnik angeben. Genau diesen Zeitpunkt liefern die Bahnelemente als zeitlichen Bezug.
 \newpar
-Hier nochmal eine Übersicht aller Bahnelemente. 
+Als Zusammenfassung hier nochmal eine Übersicht aller Bahnelemente. 
 \begin{itemize}
 	\item Gestalt der Bahn
 	\begin{itemize}
@@ -441,9 +462,9 @@ Dadurch ist die erdfeste Position des Satelliten aus den inertialen Koordinaten 
 	\vec{v}_{Greenwich}=\mathbf{R_Z}(\Theta)\cdot\vec{v}-\left(\begin{array}{c}0\\0\\\omega_{Erde}\end{array}\right)\times\vec{r}_{Greenwich}
 	\label{equation3_kep_elements}
 \end{equation}   
-Die Interpretation von Gleichung \ref{equation3_kep_elements} ist, dass sich die Geschwindigkeit \ensuremath{\vec{v}_{Greenwich}} im erdfesten System vom inertialen System durch einen Term unterscheidet, der von der Drehgeschwindigkeit \ensuremath{\omega_{Erde}=7,29212\cdot 10^{-5}\frac{rad}{s}} und dem Abstand von der Erde abhängt. 
+Die Interpretation von Gleichung \ref{equation3_kep_elements} ist, dass sich die Geschwindigkeit \ensuremath{\vec{v}_{Greenwich}} im erdfesten System vom inertialen System durch einen Term unterscheidet, der von der Drehgeschwindigkeit \ensuremath{\omega_{Erde}=7,29212\cdot 10^{-5}\frac{rad}{s}} und dem Abstand des Satelliten von der Erde abhängt. 
 \newpar
-Liegt eine Bodenstation von der die Funkverbindung zum Satellit aufgebaut werden soll nicht zufällig auf dem Schnittpunkt zwischen dem nullten Längengrad und dem Äquator, so muss der Vektor \ensuremath{\vec{r}_{Greenwich}} selbstverständlich angepasst werden. Das grobe Vorgehen ist aus der analytischen Geometrie bekannt. Der Vektor \ensuremath{\vec{r}_{Greenwich}} stellt den Ortsvektor zum Satelliten dar. Der Vektor \ensuremath{\vec{r}_{Bodenstation}} stellt den Orstvektor zur Bodenstation dar. Um einen Vektor von der Bodenstation zum Satellit zu erhalten rechne man Spitze minus Anfang.
+Liegt eine Bodenstation von der die Funkverbindung zum Satellit aufgebaut werden soll nicht zufällig auf dem Schnittpunkt zwischen dem nullten Längengrad und dem Satellitenortsverktor, so muss der Vektor \ensuremath{\vec{r}_{Greenwich}} für die Antenne selbstverständlich angepasst werden. Das grobe Vorgehen ist aus der analytischen Geometrie bekannt. Der Vektor \ensuremath{\vec{r}_{Greenwich}} stellt den Ortsvektor zum Satelliten dar. Der Vektor \ensuremath{\vec{r}_{Bodenstation}} stellt den Orstvektor zur Bodenstation dar. Um einen Vektor von der Bodenstation zum Satellit zu erhalten rechne man die Spitze minus den Anfang.
 \begin{equation}
 	\vec{r}_{Bodenstation,Satellit}=\vec{r}_{Satellit}-\vec{r}_{Bodenstation}
 \end{equation} 
@@ -453,8 +474,6 @@ wobei
 		\vec{r}_{Satellit}=\vec{r}_{Greenwich}
 	\end{math}
 \end{center}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
@@ -463,13 +482,37 @@ wobei
 	\label{fig:geo}                                                                         %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Man werfe zunächst einen Blick auf das dem populären Kugelkoordinatensystem nicht ganz unähnlichen geografische Koordinatensystem (Abbildung \ref{fig:geo}). Die Koordinaten der Bodenstation im geografischen Koordinatensystem lassen sich ganz leicht ohne vor Ort zu sein mittels \href{http://www.openstreetmap.org/search?query=47.66530%2C9.44805#map=19/47.66530/9.44805}{\textit{OpenStreetMap}}. Dabei entspricht der erste Wert dem Breiten- der zweite dem Längengrad. Der mittlere Erddurchmesser \ensuremath{d_{Erde}} beträg nach \cite{Wiki:Erde} in etwa \ensuremath{12.742 km}.
+Für die Berechnung des Vektors \ensuremath{\vec{r}_{Bodenstation}} werfe man zunächst einen Blick auf das dem populären Kugelkoordinatensystem nicht ganz unähnlichen geografische Koordinatensystem (Abbildung \ref{fig:geo}). Die Koordinaten der Bodenstation im geografischen Koordinatensystem lassen sich ganz leicht ohne vor Ort zu sein mittels \href{http://www.openstreetmap.org/search?query=47.66530%2C9.44805#map=19/47.66530/9.44805}{\textit{OpenStreetMap}} herausfinden. Dabei entspricht der erste Wert dem Breiten- der zweite dem Längengrad. Der mittlere Erddurchmesser \ensuremath{d_{Erde}} beträg nach \cite{Wiki:Erde} in etwa \ensuremath{12.742 km}.
 \newpar
-Man stelle sich nun die Bodenstation als einen Punkt auf der Kugeloberfläche vor. Schneidet man entlang des Längengrades der Bodenstation durch die Kugel, so lässt sich mit einfacher Trigonomoetrie die Information des Breitengrades in das kartesische Koordinatensystem übetragen. Die z-Komponente des gesuchten Ortsvektors \ensuremath{\vec{r}_{Bodenstation}} ist der Sinus des Breitengrades multipliziert mit dem halben Erddurchmessser. Die Ankatehte des Dreiecks, dass sich jetzt ausgebildet hat spielt bei der Betrachtung von x- und y-Komponente eine wichtige Rolle. Diese Ankathete hat die Länge des Kosinus des Breitengrads multipliziert mit dem halben Erddruchmesser. Um die x- und die y-Komponente zu ermitteln schneidet man entlang des Äquators durch die Erdkugel hindurch und wirft einen Blick auf die Schnittfläche. Die eben betonte Ankathete definiert mit der x-Achse ein weiteres rechtwinkligen Dreieck. Die Ankathete des ersten Schnitts wurde zur Hypothenuse dieses Dreiecks. Über den Längengrad und die bekannte Länge der Hypothenuse können nun x- und y-Komponente leicht bestimmt werden. Die x-Komponente folgt aus dem Kosinus des Längengrades multipliziert mit der Hypothenuse. Die y-Komponente ist eine Folge der Multiplikation des Sinus des Längengrades mit der Hypothenuse. Aus diesen einfachen und vom Kugelkoordinatensystem bekannten Denkansätzen folgt der Ortsvektor der Bodenstation. 
+Man stelle sich nun die Bodenstation als einen Punkt auf der Kugeloberfläche vor. Schneidet man entlang des Längengrades der Bodenstation durch die Kugel, so lässt sich mit einfacher Trigonomoetrie die Information des Breitengrades in das kartesische Koordinatensystem übetragen. Die z-Komponente des gesuchten Ortsvektors \ensuremath{\vec{r}_{Bodenstation}} ist der Sinus des Breitengrades multipliziert mit dem halben Erddurchmessser. Die Ankathete des Dreiecks, dass sich jetzt ausgebildet hat spielt bei der Betrachtung von x- und y-Komponente eine wichtige Rolle. Diese Ankathete hat die Länge des Kosinus des Breitengrads multipliziert mit dem halben Erddruchmesser. Um die x- und die y-Komponente zu ermitteln schneidet man entlang des Äquators durch die Erdkugel hindurch und wirft einen Blick auf die Schnittfläche. Die eben betonte Ankathete definiert mit der x-Achse ein weiteres rechtwinkligen Dreieck. Die Ankathete des ersten Schnitts wurde zur Hypothenuse dieses Dreiecks. Über den Längengrad und die bekannte Länge der Hypothenuse können nun x- und y-Komponente leicht bestimmt werden. Die x-Komponente folgt aus dem Kosinus des Längengrades multipliziert mit der Hypothenuse. Die y-Komponente ist eine Folge der Multiplikation des Sinus des Längengrades mit der Hypothenuse. Aus diesen einfachen und vom Kugelkoordinatensystem bekannten Denkansätzen folgt der Ortsvektor der Bodenstation. 
 \begin{equation}
 	\vec{r}_{Bodenstation}=\frac{d_{Erde}}{2}\,\left(\begin{array} {c}cos(latitude)\,cos(longitude)\\cos(latitude)\,sin(longitude)\\sin(latitude)\end{array}\right)
-\end{equation}     
-\subsection{Bahnstörung}
+\end{equation} 
+Mit diesem Vektor ist das letzte Fragment gefunden, um die Antenne über die beschriebene Vorgehensweise auszurichten und nachzufahren. Es sei darauf hingewiesen, dass die hier beschriebene Vorehensweise nicht mit einem Bahnmodell wie dem \ac{SGP4} mithalten kann. Es dient lediglich dem Verständnis. Bisher wurden auch keine Bahnstörungen berücksichtigt. Die Größte Stödas Magnetfeldrung ist dabei keine Störung der Bahn im eigentlichen Sinne, sondern die tatsache, dass die Abziehungskraft der Erde durch die Abplattung der Erde inhomogen ist. Dadurch driftet beispielsweise die Rektaszension des aufsetiegnden Knotens mit der Zeit ab.      
+%\subsection{Bahnstörung}
 
 \subsection{Bahnmodelle}
-\clearpage
+\label{chap:models}
+Eines der populärsten Bahnmodelle ist das \textbf{\ac{SGP4}}. Das Bahnmodell wurde einst für das \ac{NORAD} entwickelt. Diese Institution hat u.a. die Aufgabe der Überwachung erdnaher Flugkörper. \ac{NORAD} bestimmt in regelmäßigen Zeitabständen die Bahnelemente aller katalogisierten Satelliten. Diese Informationen sind in einem bestimmten Rahmen auch zivilen Nutzern zugänglich (z.B. über \href{http://celestrak.com/}{\textit{Celestrak}}). Hiervon profitieren eben solche Amateurfunk-Bodenstationen wie die der DHBW Friedrichshafen. Die Distribution der \ac{NORAD}-Bahnelemente „erfolgt in einem zweizeiligen Datenformat, was zu dem Beinamen \ac{TLE} geführt hat“ (siehe S. 95 in \cite{HandRaum}). Das Format der \ac{TLE} ist in Abbildung \ref{fig:tle} gut beschrieben. Es ist zu beachten, dass es sich bei den Bahnelementen, welche von \ac{NORAD} geliefert werden um mittlere Bahnelemente handelt. Diese sind im Gegensatz zu den tatsächlichen (oskulierenden) Bahnelementen nicht für eine Auswertung mit dem oben beschriebenen Keplerschen Bahnmodell verwendbar, sondern nur für die Verwendung in dem analytischen Modell mit welchem sie generiert wurden verwertbar. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]                                                                           %%
+	\centering                                                                            	%%
+	\includegraphics[width=0.9\textwidth]{./images/tle.jpg}              			            %%
+	\caption[\ac{TLE}]{\ac{TLE}, Quelle: S.96 in \cite{HandRaum}}                           %%
+	\label{fig:tle}                                                                         %%
+\end{figure}                                                                              	%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+Das \ac{SGP4} entstand um 1970 und basiert auf einem analytischen Model von Lane und Crawford. Deren Modell verband zu deren Zeit die gravitativen Störungen mit einem analytischen Modell zur Beschreibung des Luftwiderstands. Für den operationellen Einsatz haben Lane und Hoots die vollständige Theorie vereinfacht und so in da \ac{SGP4} überführt. 
+\newpar
+Außer dem \ac{SGP4} verwendet  GPredict auch das \ac{SDP4}. „Es erfasst zusätzlich Störungen durch die Gravitationskraft von Sonne und Mond, sowie [Informationen], die bei Bahnen mit einer Umlaufzeit von 12 h (GPS) und 24 h ([bei ]geostationäre[n] Satelliten) von Bedeutung sind“ (siehe S. 96 in \cite{HandRaum}). Das \ac{SDP4} kommt bei Satelliten mit einer Umlaufzeit von mehr als 225 Minuten zum Zug. Derartige Satelliten bewegen sich auf sog. „Deep Space“-Bahnen. 
+\newpar
+Aus Abbildung \ref{fig:sgp4} ist ein Gefühl für die Genauigkeit des \ac{SGP4} entnehmbar. Nahe an der Epoche liegt die Abweichung im Bereich von wenigen Kilometern. Die Abweichung kommt von mehreren kurzperiodischen Störungen, die das Bahnmodell unterschlägt. Innerhalb von mehreren Tagen nimmt die Abweichung mit quadratischer Abhängigkeit zu. Laut \cite{HandRaum} ist der Grund dieses Fehlers die nicht vorhersagbare Atmosphärendichte. Bei höhren Flugbahnen sind die Fehler deswegen allgemein deutlich kleiner. Eine ziehmlich genaue Bahnprediktion über mehrere Wochen ist so,it nicht unrealistisch. Als Fazit lässt sich sagen, dass die Bahnelemente mit den GPredict arbeitet regelmäßig aktualisiert werden sollten, um eine optimale Leistungsfähigkeit der Bodenstation zu erreichen.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]                                                                           %%
+	\centering                                                                            	%%
+	\includegraphics[width=0.6\textwidth]{./images/sgp4_error.jpg}              			%%
+	\caption[Vorhersagegenauigkeit]{Vorhersagegenauigkeit des Satelliten CHAMP 
+	im Mai 2001, Quelle: S.96 in \cite{HandRaum}}                        					%%
+	\label{fig:sgp4}                                                                        %%
+\end{figure}                                                                              	%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
