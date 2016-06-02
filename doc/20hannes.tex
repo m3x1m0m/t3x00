@@ -58,6 +58,7 @@ In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfol
 
 \clearpage
 
+% \label{chap:models} für XXX
 Zur Berechnung der Satellitenposition wird auf den NORAD SGP4/SDP4 Algorithmus zurückgegriffen (siehe Abschnitt XXX). Um hierfür zu jedem Zeitpunkt die aktuellen Kepler-Elemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.\newpar
 Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie SatPC32 kein Limit an zu verfolgenden Satelliten und Bodenstationen gegeben. Durch die Verwendung von Modulen kann außerdem unkompliziert zwischen verschiedenen Konfigurationen gewechselt werden. Die Orbitvorhersage eines Satelliten lässt sich sowohl grafisch als auch tabellarisch darstellen, wobei durch die Einstellungen verschiedenster Parameter eine sehr individuelle Anzeige erreicht werden kann.
 
@@ -422,11 +423,8 @@ Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichze
 \subsection{Zusätzliche Software}
 \label{chap:software}
 
-Wie in Abschnitt XXX zu sehen, werden sowohl das Funkgerät als auch die Rotorensteuerung über das Hochschul-Netzwerk angesteuert. Für die Kommunikation mit den notwendigen Hardwarekomponenten (Banana Pi und NetCOM 211) stehen bereits Programme für Windows zur Verfügung.\newpar
-Auf Banana Pi Software eingehen\newpar
-Grün: Hardware\\
-Blau: Software\\
-(siehe Abbildung \ref{fig:swhwcom})
+%\ref{chap:bodenstation} für XXX einfügen
+Wie in Abschnitt XXX zu sehen, werden sowohl das Funkgerät als auch die Rotorensteuerung über das Hochschul-Netzwerk angesteuert. Für die Kommunikation mit den notwendigen Hardwarekomponenten (Banana Pi und \myemph{NetCOM 211}) stehen bereits Programme für Windows zur Verfügung. In Abbildung \ref{fig:swhwcom} ist eine Übersicht zu sehen, wie GPredict mit dem Funkgerät und den Rotoren kommuniziert. Hierbei sind reine Software-Komponenten in blau und Hardware-Komponenten in rot dargestellt. Der Banana Pi liegt zwar als Hardware-Komponente vor, jedoch ist die Software selbst erstellt worden und kann jederzeit angepasst werden, deshalb ist er in blau-rot dargestellt.
 
 \begin{figure}[h]
 	\centering
@@ -435,31 +433,28 @@ Blau: Software\\
 	\label{fig:swhwcom} 
 \end{figure}
 
-\clearpage
+Hierbei kommuniziert GPredict über eine IP-basierte Schnittstelle nur mit den HamLib-Programmen \myemph{rigctld.exe} und \myemph{rotctld.exe}. Diese werden unter Berücksichtigung der notwendigen Parameter als Batch-Skripte ausgeführt und müssen solange eine Kommunikation zwischen GPredict und Funkgeräten bzw. Rotoren bestehen soll, aktiv sein.\newpar
+Durch das \myemph{NetCOM 211}-Modul und die dazugehörige Software \myemph{NetCOM Manager} ist es nicht nötig das Funkgerät per serieller Schnittstelle direkt an den verwendeten Computer anzuschließen, sondern es kann über das Hochschul-Netzwerk eine Verbindung aufgebaut werden.
 
-\subsection{Konfiguration der Rotoren}
-\label{chap:configinterfaces} \label{configinterfaces}
+\textbf{Auf Banana Pi Software eingehen}
 
-\textbf{GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren \-> Einstellung der IP-Adresse und des Ports}	
+\subsection{Test der Bedienfelder}
 
-\vspace{-1em}
-\begin{shaded}
-	\texttt{rotctld.exe -T 127.0.0.1 -t 4533 \&}
-\end{shaded}
-\vspace{-1em}
+Um sich mit den Bedienfeldern zur Funkgerät- bzw. Rotorensteuerung vertraut zu machen, kann auf zwei sogenannte \myemph{Dummy}-Schnittstellen zugegriffen werden. Diese sind sowohl bei \myemph{rigctl.exe}, als auch bei \myemph{rotctl.exe} unter der \myemph{Hamlib ID} 1 erreichbar. In Abbildung \ref{fig:dummysettings} ist eine beispielhafte Konfiguration zu sehen, die in den \myemph{Interface}-Einstellungen zur Kommunikation mit den \myemph{Dummy}-Schnittstellen vorgenommen werden kann.
 
-\subsection{Konfiguration des Funkgeräts}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{dummy-settings}
+	\caption{Schnittstellenkonfiguration für das Dummy-Interface}
+	\label{fig:dummysettings} 
+\end{figure}
 
-\textbf{GPredict kann auch von anderem PC ausgeführt werden und über das Netzwerk mit HamLib kommunizieren \-> Einstellung der IP-Adresse und des Ports}
+Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotctld.exe} ebenfalls eigene Batch-Skripte erstellt (siehe Anhang \ref{chap:rigctlddummybat} und \ref{chap:rotctlddummybat}). Die hierfür verwendeten Optionen unterscheiden sich lediglich im Port, für \myemph{rigctld.exe} ist standardmäßig der Port 4532 und für \myemph{rotctld.exe} der Port 4533 vorgesehen. Dieser kann jedoch nach Belieben angepasst werden.\newpar
+Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLib-Programmen fünf Mal in Folge aufgetreten ist, wird aus Sicherheitsgründen die Kommunikation automatisch abgebrochen.
 
-\vspace{-1em}
-\begin{shaded}
-	\texttt{rigctld.exe -T 127.0.0.1 -t 4532 \&}
-\end{shaded}
-\vspace{-1em}
+\subsection{Test der Kommunikation zum Funkgerät}
 
-\subsection{Test der Kommunikation}
-
+Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen
 Parameter \texttt{post\_write\_delay} etc. erwähnen.\newpar
 
 Test einiger Befehle mit \myemph{rigctl} und \myemph{rotctl}. 
@@ -470,14 +465,32 @@ Test einiger Befehle mit \myemph{rigctl} und \myemph{rotctl}.
 	\item Auslesen und Setzen des Winkels
 \end{itemize}
 
-$\rightarrow$ \myemph{rigctl} und \myemph{rotctl} Skripte in Anhang einfügen!
+siehe Anhang \ref{chap:rigctlbat} und \ref{chap:rotctlbat}
 
-\subsection{Test der Bedienfelder}
+\clearpage
 
-Test mit Dummy-Interfaces. $\rightarrow$ Hinweis auf Dummy-Skripte\newpar
+\subsection{Konfiguration der Rotoren}
+\label{chap:configinterfaces} \label{configinterfaces}	
 
-Bei 5x Error $\rightarrow$ Abbruch der Kommunikation
+Für \myemph{rotctld.exe} ist unter Windows die Angabe der Localhost-IP-Adresse notwendig, da standardmäßig ,,localhost'' als IP-Adresse konfiguriert ist.\\
+Auf COM-Port eingehen!
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rotctld.exe -T 127.0.0.1 -t 4533 \&}
+\end{shaded}
+\vspace{-1em}
+
+\subsection{Konfiguration des Funkgeräts}
+
+Für \myemph{rigctld.exe} ist unter Windows die Angabe der Localhost-IP-Adresse notwendig, da standardmäßig ,,localhost'' als IP-Adresse konfiguriert ist.\\
+Auf COM-Port eingehen!
+
+\vspace{-1em}
+\begin{shaded}
+	\texttt{rigctld.exe -T 127.0.0.1 -t 4532 \&}
+\end{shaded}
+\vspace{-1em}
 
 \subsection{Finaler Test}
 
-% \section{Inbetriebnahme unter Linux}
