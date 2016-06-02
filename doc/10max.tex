@@ -497,7 +497,7 @@ Eines der populärsten Bahnmodelle ist das \textbf{\ac{SGP4}}. Das Bahnmodell wu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
-	\includegraphics[width=0.9\textwidth]{./images/tle.jpg}              			            %%
+	\includegraphics[width=0.96\textwidth]{./images/tle.jpg}              			            %%
 	\caption[\ac{TLE}]{\ac{TLE}, Quelle: S.96 in \cite{HandRaum}}                           %%
 	\label{fig:tle}                                                                         %%
 \end{figure}                                                                              	%%
@@ -515,4 +515,78 @@ Aus Abbildung \ref{fig:sgp4} ist ein Gefühl für die Genauigkeit des \ac{SGP4} 
 	im Mai 2001, Quelle: S.96 in \cite{HandRaum}}                        					%%
 	\label{fig:sgp4}                                                                        %%
 \end{figure}                                                                              	%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\subsection{Der Doppler-Effekt}
+Der folgende Abschnitt entstammt einer Seminararbeit der Autoren eben dieser Arbeit vom 16. November 2015 aus der Vorlesung Radartechnik von Jürgen Göbel. 
+
+Ein Beobachter, der sich relativ zu einem Wellensender bewegt, registriert 
+eine andere Frequenz als die von der Quelle gesendete Frequenz. Bei der 
+Näherung von Sender und Empfänger scheint die Frequenz erhöht und bei einer 
+Entfernung verkleinert. Dieses Phänomen wurde 1842 von C.J.Doppler entdeckt. 
+
+\subsubsection{Der Doppler-Effekt in der Akustik}
+Wollen wir die Wellenlänge oder die Frequenz berechnen, müssen wir 
+unterscheiden, ob die Quelle sich bewegt und der Empfänger ruht oder ob sich 
+der Empfänger bewegt und die Quelle ruht.\\
+\textbf {1. Bewegte Quelle und ruhender Empfänger:}\\
+Eine Quelle bewegt sich mit einer Geschwindigkeit und sendet Wellen mit einer 
+Wellenlänge aus, die sich mit der Lichtgeschwindigkeit ausbreiten.  
+Nun nähert sich die Wellenfront auf den Empfänger zu. 
+Er registriert eine verkleinerte Wellenlänge, als die ausgesandte.\\
+\textbf {2. Bewegter Empfänger und ruhende Quelle:}\\
+Bewegt sich der Empfänger und ruht die Quelle, ändert sich die Wellenlänge 
+nicht, jedoch die Frequenz vom  Empfänger registrierten Wellen. 
+Bewegt sich der Empfänger zu der ruhenden Quelle, ist die Frequenz erhöht 
+und wendet es sich ab, ist sie verringert. Ruht der Empfänger, treffen ihn die 
+Wellen die auf der Strecke zu finden sind. 
+Bewegt er sich zu der Quelle, kommen zusätzlich Wellenzüge von hinzu. \\
+Die Beschreibung entspricht weitgehend derjenigen bei elektromagnetischen 
+Wellen mit einer Ausnahme:\\ 
+\textbf{Das Licht benötigt kein Medium um sich auszubreiten und breitet sich 
+	immer gleich schnell aus, unabhängig von dem Bewegungszustand der Lichtquelle}
+(Postulat von der Konstanz der Vakuumlichtgeschwindigkeit c, Albert Einstein 
+1905).
+
+\subsubsection{Physikalische Hintergründe und Herleitung}
+Um ein grundlegendes  physikalisches Verständnis für den Doppler-Effekt zu entwickeln, 
+gehe man zunächst von einem akustischen Beispiel aus dem Alltag aus: Ein Rennwagen fahre auf einem Beobachter 
+mit der Geschwindigkeit \begin{math}v_R=70 \frac{m}{s}\end{math} zu. Der Beobachter habe dabei 
+keine Eigengeschwindigkeit \begin{math}v_B=0 \end{math} relativ zum Bezugsystem Rennstrecke. Im 
+Spektrum des vom Auto emittierten akustischen Signals sei ein Sinussignal der Frequenz \begin{math}f_R=1kHz\end{math} 
+enthalten. Aus Sicht des Rennwagenfahrers hat das emittierte Signal die Wellenlänge
+\begin{math}\lambda_R=\frac{c_S}{f_R}=\frac{340\frac{m}{s}}{1kHz}=0,34m\end{math}.
+Aus Sicht des Beobachters sieht das Ganze etwas anders aus. 
+Man nehme an, der Rennwagen emittiere zunächst einen Wellenberg.
+Bis der zweite Wellenberg emittiert wird ist der Rennwagen allerdings schon ein Stück \begin{math}\delta s_R\end{math} auf den Beobachter zu gefahren. Diese Bewegung relativ
+zum Beobachter hat zur Folge, dass sich die Wellenlänge um genau dieses Stück verkürzt bzw. verlängert, wenn der Rennwagen sich vom Beobachter fortbewegt.
+Die Wellenlänge aus Sicht des Beobachters ist nun wie folgt zu beschreiben.
+\begin{equation}
+\label{lambda_b}
+\lambda_B=\lambda_R -\delta s_{R}=\lambda_R - v_R \cdot T_{R}=\lambda_R - \frac{v_R}{f_{R}}
+\end{equation} 
+Mit den gegebenen Werten ergibt sich eine neue Wellenlänge \begin{math}{\lambda_B=0,27m} \end{math}. Da \begin{math}{\lambda_B \sim \frac{1}{f_B}} \end{math}  
+ergibt sich auch eine neue Frequenz von \begin{math}{f_B \approx 1260 Hz} \end{math}. Nun geht man noch ein Stück weiter, so dass man eine Funktion 
+\begin{math}{f_B(f_R,v_R)} \end{math} erhält. Hierzu wird Gleichung \ref{lambda_b} herangezogen. Es muss nur noch die Beziehung \begin{math}{\lambda=\frac{c_S}{f}} \end{math} 
+einmal für die Wellenlänge des Rennwagens und einmal für die Wellenlänge des Beobachters eingesetzt werden. Dann ist die Gleichung nach \begin{math}{f_B} \end{math} aufzulösen.  
+Das Ergebnis ist dann         
+\begin{equation}
+\label{freq_b}
+f_B=\frac{f_R}{1-\frac{v_R}{c_S}}
+\end{equation}
+Entfernt sich der Rennwagen ist für die Geschwindigkeit des selbigen einfach ein negativer Wert einzusetzen. \textbf{Achtung:} Soll der Doppler-Effekt auf eine sich in einem Medium fortbewegende
+Welle angewandt werden, ist von den Gleichungen her immer zwischen bewegtem Sender, bewegtem Empfänger und bewegtem Sender, sowie bewegtem Empfänger zu unterscheiden. 
+Die oben aufgeführten Gleichungen beziehen sich ausschließlich auf den Fall, dass sich der Sender bewegt. 
+\\Elektromagnetische Wellen brauchen wie seit dem 20 Jahrhundert allgemein bekannt kein Medium, um sich fortzupflanzen. Bewegen sich Sender oder Empfänger relativ zueinander, so kommt es auch bei elektromagnetischen Wellen zum Dopplereffekt. Aufgrund dessen, dass die Ausbreitung nicht auf das Medium angewiesen ist, spielt es keine Rolle, ob sich Empfänger, Sender oder beide bewegen. Die Frequenzverschiebung ist nur noch von der Relativgeschwindigkeit abhängig. Das Relativitätsprinzip besagt nun, dass sich jeder Übertragungsteilnehmer als ruhend betrachten darf. (Aus physikalischer Sicht kann man tatsächlich behaupten, dass jemand einem vor der Diskothek "`in die Faust gelaufen"' ist). Dank diesen Prinzips ist der obige akustische Fall (siehe Gleichung \ref{freq_b}) universell direkt auf eine Übertragung mit elektromagnetischen Wellen umsetzbar. 
+\\Das ist allerdings nur die halbe Wahrheit. Es gibt leider keine absolute Zeit. Die Gleichzeitigkeit von räumlich getrennten Ereignissen ist eine Frage der Relativgeschwindigkeit des Beobachters. 
+\\Der relativistische Effekt der Zeitdillitation ist beim Doppler-Effekt mitzubetrachten, da die Periodendauer des emittierten Signals aus Sicht des Beobachters auf der Erde aufgedehnt wird. Somit wird die Wellenlänge des Sendesignals \begin{math}{\lambda_S}\end{math} größer und die Frequenz des selbigen \begin{math}{f_S}\end{math} kleiner. Mit dieser Erkenntnis folgt nun die tatsächliche Gleichung für den Dopplereffekt.  
+\begin{equation}
+\label{freq_e1}
+f_E=\frac{f_S}{1-\frac{v_r}{c_L}}\cdot \frac{1}{\gamma}=\frac{f_S\sqrt{1-\left(\frac{v}{c_L}\right)^2}}{1-\frac{v_r}{c_L}}
+\end{equation} 
+Hierbei ist \begin{math}{f_E}\end{math} die vom Empfänger empfangene Frequenz, \begin{math}{v_r}\end{math} die radiale Relativgeschwindigkeit von Sender und Empfänger und \begin{math}{c_L}\end{math} die Lichtgeschwindigkeit. Die tangentialen Anteile der Bewegung interessieren den Beobachter im nicht relativistischen Teil der Gleichung natürlich nicht. Es sind nur die radialen Anteile für den Doppler-Effekt relevant. Filtert man also den tangentialen Anteil mittels des Kosinus aus der Relativgeschwindigkeit aus, so kann man für die Geschwindigkeit einfach die betragsmäßige Relativgeschwindigkeit einsetzen.   
+\begin{equation}
+\label{freq_e2}
+f_E=\frac{f_S\sqrt{1-\left(\frac{v}{c_L}\right)^2}}{1-\frac{v}{c_L} \cdot cos(\alpha)}
+\end{equation}
+Bewegt sich nun der Sender rein tangential zum Empfänger würde man keinen Doppler-Effekt erwarten. Aufgrund der Relativgeschwindigkeit von Sender und Empfänger tritt jedoch die Zeitdillitation nach wie vor auf. Man spricht in diesem Fall vom transversalen Doppler-Effekt.    
