@@ -517,38 +517,14 @@ Aus Abbildung \ref{fig:sgp4} ist ein Gefühl für die Genauigkeit des \ac{SGP4} 
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\subsection{Der Doppler-Effekt}
-Der folgende Abschnitt entstammt einer Seminararbeit der Autoren eben dieser Arbeit vom 16. November 2015 aus der Vorlesung Radartechnik von Jürgen Göbel. 
-
+\section{Doppler-Effekt}
+\textit{Der folgende Abschnitt entstammt der Seminararbeit der Autoren eben dieser Arbeit vom 16. November 2015 aus der Vorlesung Radartechnik gelesen von Jürgen Göbel and der DHBW Friedrichshafen.} 
+\newpar
 Ein Beobachter, der sich relativ zu einem Wellensender bewegt, registriert 
 eine andere Frequenz als die von der Quelle gesendete Frequenz. Bei der 
 Näherung von Sender und Empfänger scheint die Frequenz erhöht und bei einer 
 Entfernung verkleinert. Dieses Phänomen wurde 1842 von C.J.Doppler entdeckt. 
-
-\subsubsection{Der Doppler-Effekt in der Akustik}
-Wollen wir die Wellenlänge oder die Frequenz berechnen, müssen wir 
-unterscheiden, ob die Quelle sich bewegt und der Empfänger ruht oder ob sich 
-der Empfänger bewegt und die Quelle ruht.\\
-\textbf {1. Bewegte Quelle und ruhender Empfänger:}\\
-Eine Quelle bewegt sich mit einer Geschwindigkeit und sendet Wellen mit einer 
-Wellenlänge aus, die sich mit der Lichtgeschwindigkeit ausbreiten.  
-Nun nähert sich die Wellenfront auf den Empfänger zu. 
-Er registriert eine verkleinerte Wellenlänge, als die ausgesandte.\\
-\textbf {2. Bewegter Empfänger und ruhende Quelle:}\\
-Bewegt sich der Empfänger und ruht die Quelle, ändert sich die Wellenlänge 
-nicht, jedoch die Frequenz vom  Empfänger registrierten Wellen. 
-Bewegt sich der Empfänger zu der ruhenden Quelle, ist die Frequenz erhöht 
-und wendet es sich ab, ist sie verringert. Ruht der Empfänger, treffen ihn die 
-Wellen die auf der Strecke zu finden sind. 
-Bewegt er sich zu der Quelle, kommen zusätzlich Wellenzüge von hinzu. \\
-Die Beschreibung entspricht weitgehend derjenigen bei elektromagnetischen 
-Wellen mit einer Ausnahme:\\ 
-\textbf{Das Licht benötigt kein Medium um sich auszubreiten und breitet sich 
-	immer gleich schnell aus, unabhängig von dem Bewegungszustand der Lichtquelle}
-(Postulat von der Konstanz der Vakuumlichtgeschwindigkeit c, Albert Einstein 
-1905).
-
-\subsubsection{Physikalische Hintergründe und Herleitung}
+\newpar
 Um ein grundlegendes  physikalisches Verständnis für den Doppler-Effekt zu entwickeln, 
 gehe man zunächst von einem akustischen Beispiel aus dem Alltag aus: Ein Rennwagen fahre auf einem Beobachter 
 mit der Geschwindigkeit \begin{math}v_R=70 \frac{m}{s}\end{math} zu. Der Beobachter habe dabei 
@@ -577,7 +553,8 @@ f_B=\frac{f_R}{1-\frac{v_R}{c_S}}
 Entfernt sich der Rennwagen ist für die Geschwindigkeit des selbigen einfach ein negativer Wert einzusetzen. \textbf{Achtung:} Soll der Doppler-Effekt auf eine sich in einem Medium fortbewegende
 Welle angewandt werden, ist von den Gleichungen her immer zwischen bewegtem Sender, bewegtem Empfänger und bewegtem Sender, sowie bewegtem Empfänger zu unterscheiden. 
 Die oben aufgeführten Gleichungen beziehen sich ausschließlich auf den Fall, dass sich der Sender bewegt. 
-\\Elektromagnetische Wellen brauchen wie seit dem 20 Jahrhundert allgemein bekannt kein Medium, um sich fortzupflanzen. Bewegen sich Sender oder Empfänger relativ zueinander, so kommt es auch bei elektromagnetischen Wellen zum Dopplereffekt. Aufgrund dessen, dass die Ausbreitung nicht auf das Medium angewiesen ist, spielt es keine Rolle, ob sich Empfänger, Sender oder beide bewegen. Die Frequenzverschiebung ist nur noch von der Relativgeschwindigkeit abhängig. Das Relativitätsprinzip besagt nun, dass sich jeder Übertragungsteilnehmer als ruhend betrachten darf. (Aus physikalischer Sicht kann man tatsächlich behaupten, dass jemand einem vor der Diskothek "`in die Faust gelaufen"' ist). Dank diesen Prinzips ist der obige akustische Fall (siehe Gleichung \ref{freq_b}) universell direkt auf eine Übertragung mit elektromagnetischen Wellen umsetzbar. 
+\newpar
+Elektromagnetische Wellen brauchen wie seit dem 20 Jahrhundert allgemein bekannt kein Medium, um sich fortzupflanzen. Bewegen sich Sender oder Empfänger relativ zueinander, so kommt es auch bei elektromagnetischen Wellen zum Dopplereffekt. Aufgrund dessen, dass die Ausbreitung nicht auf das Medium angewiesen ist, spielt es keine Rolle, ob sich Empfänger, Sender oder beide bewegen. Die Frequenzverschiebung ist nur noch von der Relativgeschwindigkeit abhängig. Das Relativitätsprinzip besagt nun, dass sich jeder Übertragungsteilnehmer als ruhend betrachten darf. (Aus physikalischer Sicht kann man tatsächlich behaupten, dass jemand einem vor der Diskothek "`in die Faust gelaufen"' ist). Dank diesen Prinzips ist der obige akustische Fall (siehe Gleichung \ref{freq_b}) universell direkt auf eine Übertragung mit elektromagnetischen Wellen umsetzbar. 
 \\Das ist allerdings nur die halbe Wahrheit. Es gibt leider keine absolute Zeit. Die Gleichzeitigkeit von räumlich getrennten Ereignissen ist eine Frage der Relativgeschwindigkeit des Beobachters. 
 \\Der relativistische Effekt der Zeitdillitation ist beim Doppler-Effekt mitzubetrachten, da die Periodendauer des emittierten Signals aus Sicht des Beobachters auf der Erde aufgedehnt wird. Somit wird die Wellenlänge des Sendesignals \begin{math}{\lambda_S}\end{math} größer und die Frequenz des selbigen \begin{math}{f_S}\end{math} kleiner. Mit dieser Erkenntnis folgt nun die tatsächliche Gleichung für den Dopplereffekt.  
 \begin{equation}
