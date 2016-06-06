@@ -452,6 +452,8 @@ Um sich mit den Bedienfeldern zur Funkgerät- bzw. Rotorensteuerung vertraut zu 
 Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotctld.exe} ebenfalls eigene Batch-Skripte erstellt (siehe Anhang \ref{chap:rigctlddummybat} und \ref{chap:rotctlddummybat}). Die hierfür verwendeten Optionen unterscheiden sich lediglich im Port, für \myemph{rigctld.exe} ist standardmäßig der Port 4532 und für \myemph{rotctld.exe} der Port 4533 vorgesehen. Dieser kann jedoch nach Belieben angepasst werden.\newpar
 Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLib-Programmen fünf Mal in Folge aufgetreten ist, wird aus Sicherheitsgründen die Kommunikation automatisch abgebrochen.
 
+\clearpage
+
 \subsection{Test der Kommunikation zum Funkgerät}
 
 Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen
@@ -462,10 +464,17 @@ Test einiger Befehle mit \myemph{rigctl} und \myemph{rotctl}.
 \begin{itemize}
 	\parskip0pt
 	\item Auslesen und Setzen der Frequenz
-	\item Auslesen und Setzen des Winkels
+	\item Setzen Satmodus
+	\item weitere Befehle
 \end{itemize}
 
-siehe Anhang \ref{chap:rigctlbat} und \ref{chap:rotctlbat}
+siehe Anhang \ref{chap:rigctlbat}
+
+\subsection{Test der Kommunikation zu den Rotoren}
+
+siehe Anhang \ref{chap:rotctlbat}
+
+Auslesen und Setzen des Winkels
 
 \clearpage
 
@@ -473,7 +482,8 @@ siehe Anhang \ref{chap:rigctlbat} und \ref{chap:rotctlbat}
 \label{chap:configinterfaces} \label{configinterfaces}	
 
 Für \myemph{rotctld.exe} ist unter Windows die Angabe der Localhost-IP-Adresse notwendig, da standardmäßig ,,localhost'' als IP-Adresse konfiguriert ist.\\
-Auf COM-Port eingehen!
+Auf COM-Port eingehen!\\
+
 
 \vspace{-1em}
 \begin{shaded}
@@ -484,7 +494,9 @@ Auf COM-Port eingehen!
 \subsection{Konfiguration des Funkgeräts}
 
 Für \myemph{rigctld.exe} ist unter Windows die Angabe der Localhost-IP-Adresse notwendig, da standardmäßig ,,localhost'' als IP-Adresse konfiguriert ist.\\
-Auf COM-Port eingehen!
+Auf COM-Port eingehen!\\
+Satmodus: Duplex TRX\\
+Sub-Band: senden und Main-Band: empfangen!!\\
 
 \vspace{-1em}
 \begin{shaded}
@@ -494,3 +506,6 @@ Auf COM-Port eingehen!
 
 \subsection{Finaler Test}
 
+rigctld.exe schickt falsche Befehle (Vor allem bei Satmodus aktivieren schlecht)\\
+
+Azimut: -180 bis 180 oder 0 bis 360 je nachdem ob Flip notwendig ist oder nicht!\\
