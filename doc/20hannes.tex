@@ -414,7 +414,7 @@ Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befeh
 \end{shaded}
 \vspace{-1em}
 
-Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat}, \ref{chap:rotctldbat}, XXX und YYY). Bei der Verwendung unter Linux können diese ohne großen Aufwand in Bash-Skripte umgeschrieben werden. 
+Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat}, \ref{chap:rigctlbat}, \ref{chap:rotctldbat} und \ref{chap:rotctlbat}). Bei der Verwendung unter Linux können diese ohne großen Aufwand in Bash-Skripte umgeschrieben werden. 
 
 \clearpage
 
@@ -434,9 +434,8 @@ Wie in Abschnitt XXX zu sehen, werden sowohl das Funkgerät als auch die Rotoren
 \end{figure}
 
 Hierbei kommuniziert GPredict über eine IP-basierte Schnittstelle nur mit den HamLib-Programmen \myemph{rigctld.exe} und \myemph{rotctld.exe}. Diese werden unter Berücksichtigung der notwendigen Parameter als Batch-Skripte ausgeführt und müssen solange eine Kommunikation zwischen GPredict und Funkgeräten bzw. Rotoren bestehen soll, aktiv sein.\newpar
-Durch das \myemph{NetCOM 211}-Modul und die dazugehörige Software \myemph{NetCOM Manager} ist es nicht nötig das Funkgerät per serieller Schnittstelle direkt an den verwendeten Computer anzuschließen, sondern es kann über das Hochschul-Netzwerk eine Verbindung aufgebaut werden.
-
-\textbf{Auf Banana Pi Software eingehen}
+Die Software \myemph{NetCOM Manager} stellt eine virtuelle serielle Schnittstelle (COM5) zur Verfügung, auf die von \myemph{rigctl(d).exe} zugegriffen werden kann. Das \myemph{NetCOM 211}-Modul ist wiederum per serieller Schnittstelle mit dem Funkgerät verbunden und ermöglicht die Kommunikation über das Netzwerk mit der Software \myemph{NetCOM Manager}. Somit muss man sich lediglich im Hochschul-Netzwerk befinden, um mit dem Funkgerät kommunizieren zu können. Wird hierbei die Möglichkeit einer VPN-Verbindung wahrgenommen, kann quasi von jedem beliebigen Ort mit Internetanbindung mit dem Funkgerät kommuniziert werden.\newpar
+Für die Kommunikation mit den Rotoren, wird auf die Software \myemph{ARSVCOM} zurückgegriffen. Diese emuliert eine Rotorensteuerung vom Typ \myemph{Yaeso RS232A}, wofür ebenfalls ein virtueller, beliebig einstellbarer COM-Port erstellt wird. Der COM-Port und der Rotorensteurungs-Typ werden als Parameter bei \myemph{rotctl(d).exe} angegeben. Die Software \myemph{ARSVCOM} kommuniziert über das Netzwerk mit dem Banana Pi, an welchem wiederum die Steuerungseinheiten des Azimut- und Elevations-Rotors angeschlossen sind (siehe Abschnitt XXX).
 
 \subsection{Test der Bedienfelder}
 

@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			06th June 2016		     									%%
+%% Date:			07th June 2016		     									%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -24,9 +24,8 @@
 	child { node[sw]{rotctld.bat}
 		child { node[sw]{ARSVCOM}
 			child { node[hwsw]{Banana Pi} 
-				child { node[hw, yshift=-3.25em]{Elevations-\\[-0.5em]Rotor} }
-				child { node[hw]{ARS-USB} 
-					child { node[hw]{Azimut-\\[-0.5em]Rotor} } } } } };
+				child { node[hw, yshift=-0.5em]{Steuerung\\[-0.5em]Elevation} }
+				child { node[hw, yshift=-0.5em]{Steuerung\\[-0.5em]Azimut} } } } };
 	\node[label] at (2,-0.6) {TCP/IP};
 	\node[label,left] at (-2,-0.6) {TCP/IP};
 	\node[label] at (-3.2,-2.05) {Seriell};
