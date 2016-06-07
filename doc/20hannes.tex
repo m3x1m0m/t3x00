@@ -10,36 +10,6 @@
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Aufbau der Bodenstation}
-
-Die Bodenstation der DHBW Ravensburg am Standort Friedrichshafen besteht grundsätzlich aus folgenden Komponenten:
-
-\begin{itemize}
-	\parskip0pt
-	\item Antennen (drei Bänder)
-	\begin{itemize}
-		\item Endstufen / Verstärker
-		\item Mast (Steuergerät für Höheneinstellung)
-	\end{itemize}
-	\item Rotoren
-	\begin{itemize}
-		\item Banana Pi + interne Software
-		\item ARSVCOM Software
-		\item Azimut-Rotor + Steuergerät
-		\item Elevations-Rotor + Steuergerät
-	\end{itemize}
-	\item Funkgerät Icom IC-9100
-	\begin{itemize}
-		\item Netcom (2x Seriell zu Ethernet)
-		\item Netcom Manager Software
-		\item Hardware für Sprechfunk ?!
-	\end{itemize}
-\end{itemize}
-
-\begin{center}
-	\Large{\textbf{--- !!! ---}\\Liste an aktiven Amateurfunksatelliten in Abschnitt Amateurfunk einfügen\\\textbf{--- !!! ---}}
-\end{center}
-
 \chapter{GPredict}
 
 Eine sehr detaillierte Beschreibung der Software GPredict ist unter \cite{gpredictmanual} in englischer Sprache verfügbar. Dieses Kapitel stellt eine kompakte Beschreibung mit ausschließlich für dieses Projekt relevanten Informationen dar. Insofern können gewisse Parallelen nicht ausgeschlossen werden, wobei darauf hingewiesen sei, dass der Mehrwert dieser Zusammenfassung in der Kürze und Relevanz im Vergleich zum englischen Pendant liegt.
@@ -306,7 +276,7 @@ Die Modul-Einstellungen sind in folgende sechs Reiter untergliedert:
 	\item \textbf{Single Sat View:} Hier lassen sich die Parameter der \myemph{Single Sat View} auswählen.
 \end{itemize}
 
-Die Kategorie \myemph{Interfaces} ist in zwei Reiter untergliedert, \myemph{Radios} und \myemph{Rotators}. Dort wird jeweils eine Liste der bereits eingerichteten Funkgeräte bzw. Rotoren angezeigt, welche standardmäßig leer ist. Die Anzahl der Geräte ist dabei nach oben nicht beschränkt. Die detaillierte Einrichtung ist in Abschnitt \ref{chap:configinterfaces} auf Seite \pageref{configinterfaces} genauer beschrieben.\newpar
+Die Kategorie \myemph{Interfaces} ist in zwei Reiter untergliedert, \myemph{Radios} und \myemph{Rotators}. Dort wird jeweils eine Liste der bereits eingerichteten Funkgeräte bzw. Rotoren angezeigt, welche standardmäßig leer ist. Die Anzahl der Geräte ist dabei nach oben nicht beschränkt. Die detaillierte Einrichtung ist in Abschnitt \ref{chap:radioconfig} und \ref{chap:rotatorconfig} genauer beschrieben.\newpar
 Beim Öffnen der Kategorie \myemph{Predict} wird standardmäßig der Reiter \myemph{Pass Conditions} angezeigt. Unter diesem lassen sich folgende Parameter einstellen:
 
 \begin{itemize}
@@ -352,7 +322,7 @@ Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}
 \subsection{Parameter-Konfiguration}
 \label{chap:hamlibconfig}
 
-Für die erfolgreiche Nutzung der oben genannten Programme müssen einige Optionen und Parameter berücksichtigt werden. Hierfür ist es notwendig die erforderlichen Informationen zu den Rotoren und zum Funkgerät zu kennen. Um eine Übersicht der möglichen Optionen und Befehle zu erhalten, kann das jeweilige Programm einfach mit der Option \texttt{-h} oder \texttt{-\,-help} ausgeführt werden.
+Für die erfolgreiche Nutzung der oben genannten Programme müssen einige Optionen und Parameter berücksichtigt werden. Hierfür ist es notwendig die erforderlichen Informationen zu den Rotoren und zum Funkgerät zu kennen. Um eine Übersicht der möglichen Optionen und Befehle zu erhalten, kann das jeweilige Programm einfach mit der Option \texttt{-h} oder \texttt{-\,-help} ausgeführt werden (siehe Anhang XXX und YYY).
 
 \clearpage
 
@@ -372,6 +342,7 @@ Im Folgenden sind die beiden Zeilen dargestellt, die für die in diesem Projekt 
 	\texttt{601\qquad Yaesu\qquad GS-232A\qquad 0.3\qquad Beta}
 \end{shaded}
 \vspace{-1em}
+\label{hamlibbackend}
 
 Als Nächstes muss die Schnittstelle zum Funkgerät bzw. zur Rotorensteuerung angegeben werden. Bei der im Rahmen diesen Projekts verwendeten Software (siehe Abschnitt \ref{chap:software}) werden hierfür serielle Schnittstellen verwendet. Wie diese konfiguriert werden, ist im folgenden Auszug aus der Hilfe, die bei Eingabe der Option \texttt{-h} oder \texttt{-\,-help} erscheint (für \myemph{rigctl.exe}), zu sehen:
 
@@ -405,7 +376,7 @@ Da beim Funkgerät IC-9100 das Icom-spezifische Protokoll \acsu{CI-V} (das ,,V''
 \subsection{Verwendung}
 
 Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter Abschnitt \ref{chap:hamlibconfig} dargestellten Parametern gestartet wurde, hat man die Möglichkeit Befehle an das Funkgerät bzw. an die Rotorensteuerung zu senden. Eine Übersicht der Befehle lässt sich der Ausgabe der Programmausführung mit dem Parameter \texttt{-h} bzw. \texttt{-\,-help} entnehmen.\newpar
-Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befehle unterstützt, ist es wissenswert welche Befehle von den in diesem Projekt verwendeten Geräten unterstützt werden. Unter Angabe der \myemph{Hamlib ID} und der Option \texttt{-u} bzw. \texttt{-\,-dump-caps} kann eine Übersicht der \myemph{capabilities} (Fähigkeiten), z.B. der unterstützten Befehle oder der Standard-Parameter ausgegeben werden:
+Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befehle unterstützt, ist es wissenswert welche Befehle von den in diesem Projekt verwendeten Geräten unterstützt werden. Unter Angabe der \myemph{Hamlib ID} und der Option \texttt{-u} bzw. \texttt{-\,-dump-caps} kann eine Übersicht der \myemph{capabilities} (Fähigkeiten), z.B. der unterstützten Befehle oder der Standard-Parameter ausgegeben werden (siehe Anhang XXX und YYY):
 
 \vspace{-1em}
 \begin{shaded}
@@ -448,63 +419,85 @@ Um sich mit den Bedienfeldern zur Funkgerät- bzw. Rotorensteuerung vertraut zu 
 	\label{fig:dummysettings} 
 \end{figure}
 
-Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotctld.exe} ebenfalls eigene Batch-Skripte erstellt (siehe Anhang \ref{chap:rigctlddummybat} und \ref{chap:rotctlddummybat}). Die hierfür verwendeten Optionen unterscheiden sich lediglich im Port, für \myemph{rigctld.exe} ist standardmäßig der Port 4532 und für \myemph{rotctld.exe} der Port 4533 vorgesehen. Dieser kann jedoch nach Belieben angepasst werden.\newpar
-Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLib-Programmen fünf Mal in Folge aufgetreten ist, wird aus Sicherheitsgründen die Kommunikation automatisch abgebrochen.
-
+Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotctld.exe} ebenfalls eigene Batch-Skripte erstellt (siehe Anhang \ref{chap:rigctlddummybat} und \ref{chap:rotctlddummybat}). Die hierfür verwendeten Optionen unterscheiden sich lediglich im Port, für \myemph{rigctld.exe} ist standardmäßig der Port 4532 und für \myemph{rotctld.exe} der Port 4533 vorgesehen. Dieser kann jedoch nach Belieben angepasst werden.
 \clearpage
+Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLib-Programmen fünf Mal in Folge aufgetreten ist, wird aus Sicherheitsgründen die Kommunikation automatisch abgebrochen.
 
 \subsection{Test der Kommunikation zum Funkgerät}
 
-Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen
-Parameter \texttt{post\_write\_delay} etc. erwähnen.\newpar
-
-Test einiger Befehle mit \myemph{rigctl} und \myemph{rotctl}. 
+Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen, werden zunächst einzelne Kommandos mit Hilfe des Skripts \myemph{rigctl.bat} an das Funkgerät geschickt. Somit kann sichergestellt werden, ob das HamLib-\acl{BE} für das Funkgerät IC-9100 richtig implementiert wurde. Hierbei kann nicht davon ausgegangen werden, dass ein reibungsloser Betrieb möglich ist, da als Test-Status des HamLib-\acl{BE}s für das Funkgerät IC-9100 ,,Untested'' angegeben ist (siehe Seite \pageref{hamlibbackend}).\newpar
+In der Betriebsanleitung des Funkgeräts IC-9100 (siehe \cite{radiomanual}) ist auf Seite 183ff eine Übersicht der Befehlsstruktur und der zulässigen Kommandos des ICOM-spezifischen Protokolls CI-V dargestellt. Zur Kontrolle, ob die HamLib-Befehle auch den richtigen CI-V-Kommandos entsprechen, wird mit dem Windows-Programm \myemph{Serial Port Monitor} (hierfür kann auch ein anderes Programm verwendet werden) der serielle Port COM5 abgehört, während über \myemph{rigctl.bat} verschiedene Befehle an das Funkgerät geschickt werden.\newpar
+Bei folgende Befehlen konnte eine Übereinstimmung der von HamLib verwendeten mit den in \cite{radiomanual} zu findenden CI-V Befehlen und damit eine einwandfreie Funktionalität festgestellt werden:
 
 \begin{itemize}
 	\parskip0pt
-	\item Auslesen und Setzen der Frequenz
-	\item Setzen Satmodus
-	\item weitere Befehle
+	\item \texttt{F: set\_freq} (Setzen der Frequenz des \myemph{Main}-Bandes)
+	\item \texttt{f: get\_freq} (Auslesen der Frequenz des \myemph{Main}-Bandes)
+	\item \texttt{M: set\_mode} ()
+	\item \texttt{m: get\_mode} ()
 \end{itemize}
 
-siehe Anhang \ref{chap:rigctlbat}
+\clearpage
+
+Bei einigen Befehlen wurde festgestellt, dass die CI-V-Kommandos, die von HamLib verwendet werden, nicht mit den tatsächlichen Befehlen aus \cite{radiomanual} übereinstimmen. Da es mit dem fertig kompilierten Programm \myemph{rigctl(d).exe} keine Möglichkeit gibt einen ,,rohen'' Befehl zu versenden, ist es somit nicht möglich, die Funktionalität der betroffenen Befehle ohne Eingriff in den Quellcode von HamLib zu erreichen. In Tabelle \ref{tab:civcommands} sind die betroffenen Befehle aufgelistet, wobei die Ausschnitte, die nicht übereinstimmen, rot markiert sind.
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{|X|l|l|}
+		\hline
+		\textbf{HamLib Befehl (rigctl)}	& \textbf{CI-V (Verwendet)}			&\textbf{CI-V (Tatsächlich)}\\
+		\hline
+		\texttt{U SATMODE 1}	& \texttt{fe fe 7c e0 \myredtext{1a 07} 01 fd}	& \texttt{fe fe 7c 00 16 5a 01 fd}\\
+		\hline		
+	\end{tabularx}
+	\caption{Fehlerhafte CI-V Kommandos von \myemph{rigctl(d).exe}}
+	\label{tab:civcommands}
+\end{table}
 
 \subsection{Test der Kommunikation zu den Rotoren}
 
-siehe Anhang \ref{chap:rotctlbat}
+Beim Test der Bedienelemente kann der Ausgabe des Skripts \myemph{rotctld-dummy.bat} bei Verwendung der höchsten Ausgabeintensität \texttt{-vvvvv} entnommen werden, dass lediglich die Befehle \texttt{set\_pos} und \texttt{get\_pos} beim Verfolgen eines Satelliten verwendet werden. Diese beiden Befehle konnten mit dem Skript \myemph{rotctl.bat} erfolgreich für die Steuerung der beiden Rotoren getestet werden. Grundsätzlich sind bei der Steuerung der Rotoren einige Aspekte zu beachten. Beispielsweise, dass die Rotorgeschwindigkeit reduziert wird, sobald der Ist-Winkel in gewisser Nähe zum Soll-Winkel. Diese Punkte werden jedoch alle entweder von den Steuerungsmodulen oder von der Software \myemph{ARSVCOM} übernommen, sodass in GPredict lediglich die jeweiligen Winkel ausgelesen und gesetzt werden müssen.
 
-Auslesen und Setzen des Winkels
+\clearpage
+
+\subsection{Konfiguration des Funkgeräts}
+\label{chap:radioconfig}
+
+Dem Abschnitt XXX kann entnommen werden, dass das Funkgerät IC-9100 vollduplexfähig ist und im \myemph{Sub}-Band sendet und im \myemph{Main}-Band empfängt. Diese Informationen können in den \myemph{Interface}-Einstellungen wie in Abbildung \ref{fig:radioconfig} zu sehen, eingestellt werden. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{radiosettings}
+	\caption{Funkgerät-Konfiguration}
+	\label{fig:radioconfig} 
+\end{figure}
+
+Bei \myemph{Host} muss die IP-Adresse angegeben werden unter der aktive \myemph{rigctld.exe}-Prozess zu erreichen ist. Hier ist standardmäßig \myemph{localhost} eingetragen, was für den Computer steht, auf dem GPredict ausgeführt wird. Da im Rahmen dieses Projekts GPredict und \myemph{rigctld.bat} immer auf dem gleichen Computer ausgeführt werden, wird sowohl unter GPredict als auch beim Skript \myemph{rigctld.bat} die IP-Adresse 127.0.0.1 (\myemph{localhost}) eingestellt. Hierbei ist darauf zu achten, dass die Verwendung der Zeichenkette \myemph{localhost} unter Windows bei der Verwendung von \myemph{rigctld.exe} nicht funktioniert. Die Angabe des Ports der \myemph{Interface}-Einstellungen muss ebenfalls dem in \myemph{rigctld.bat} eingestellten Port entsprechen. Die Felder \myemph{LO Down} und \myemph{LO Up} ermöglichen die Berücksichtigung eines Transverters, welcher zur Veränderung der Empfangs- oder Sendefrequenz eingesetzt wird. Somit kann beispielsweise mit einem 28\,MHz-Empfänger ein Signal von einem Satellit der mit 144\,MHz sendet, empfangen werden, in dem 144\,MHz -- 28\,MHz = 116\,MHz bei \myemph{LO Down} eingetragen wird. Beim Feld \myemph{PTT status} wird \myemph{None} eingetragen, da bei vollduplexfähigen Funkgeräten die Abfrage des \ac{PTT}-Status nicht nötig ist (siehe \cite{gpredictmanual} Seite 58).
 
 \clearpage
 
 \subsection{Konfiguration der Rotoren}
-\label{chap:configinterfaces} \label{configinterfaces}	
+\label{chap:rotatorconfig}	
 
-Für \myemph{rotctld.exe} ist unter Windows die Angabe der Localhost-IP-Adresse notwendig, da standardmäßig ,,localhost'' als IP-Adresse konfiguriert ist.\\
-Auf COM-Port eingehen!\\
+Bei der Konfiguration der Rotorensteuerung ist die Angabe der IP-Adresse und des Ports analog wie bei der Funkgerät-Konfiguration vorzunehmen, bis auf die Ausnahme, dass hier ein anderer Port eingestellt werden muss (siehe Abbildung \ref{fig:rotatorconfig}). 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{rotatorsettings180}
+	\caption{Konfiguration der Rotorensteuerung}
+	\label{fig:rotatorconfig} 
+\end{figure}
+
+Wie in Abschnitt XXX zu sehen, besitzt der Azimut-Rotor seinen Anschlag bei 180\mydegree\ (Süden), das heißt er lässt sich von 0\mydegree\ (Norden) aus jeweils um 180\mydegree\ in Richtung Süden drehen. Deshalb muss beim Feld \myemph{Az type} der Bereich von -180\mydegree\ bis +180\mydegree\ ausgewählt werden. Der Elevations-Rotor lässt sich von 0\mydegree\ bis 180\mydegree\ steuern, dementsprechend wird die Einstellung bei \myemph{Min El} und \myemph{Max El} gewählt.
+
+\subsection{Probelauf und Testergebnisse}
+
+\textbf{Probleme:}
+\begin{itemize}
+	\parskip0pt
+	\item Wenn die Frequenzen im Main- und Sub-Band vertauscht werden müssten, bricht die Kommunikation ab. Nach manuellem Vertauschen ist Steuerung möglich.
+	\item Nicht möglich den Satmodus zu aktivieren (muss manuell aktiviert werden)
+	\item Rotor-Flip: Möglich bei -180 bis 180; Nicht möglich bei 0 bis 360
+\end{itemize}
 
 
-\vspace{-1em}
-\begin{shaded}
-	\texttt{rotctld.exe -T 127.0.0.1 -t 4533 \&}
-\end{shaded}
-\vspace{-1em}
 
-\subsection{Konfiguration des Funkgeräts}
-
-Für \myemph{rigctld.exe} ist unter Windows die Angabe der Localhost-IP-Adresse notwendig, da standardmäßig ,,localhost'' als IP-Adresse konfiguriert ist.\\
-Auf COM-Port eingehen!\\
-Satmodus: Duplex TRX\\
-Sub-Band: senden und Main-Band: empfangen!!\\
-
-\vspace{-1em}
-\begin{shaded}
-	\texttt{rigctld.exe -T 127.0.0.1 -t 4532 \&}
-\end{shaded}
-\vspace{-1em}
-
-\subsection{Finaler Test}
-
-rigctld.exe schickt falsche Befehle (Vor allem bei Satmodus aktivieren schlecht)\\
-
-Azimut: -180 bis 180 oder 0 bis 360 je nachdem ob Flip notwendig ist oder nicht!\\
