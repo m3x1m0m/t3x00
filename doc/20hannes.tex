@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			01st June 2016												%%
+%% Date:			12th June 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -374,6 +374,7 @@ Da beim Funkgerät IC-9100 das Icom-spezifische Protokoll \acsu{CI-V} (das ,,V''
 %\vspace{-1em}
 
 \subsection{Verwendung}
+\label{chap:hamlibusage}
 
 Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter Abschnitt \ref{chap:hamlibconfig} dargestellten Parametern gestartet wurde, hat man die Möglichkeit Befehle an das Funkgerät bzw. an die Rotorensteuerung zu senden. Eine Übersicht der Befehle lässt sich der Ausgabe der Programmausführung mit dem Parameter \texttt{-h} bzw. \texttt{-\,-help} entnehmen.\newpar
 Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befehle unterstützt, ist es wissenswert welche Befehle von den in diesem Projekt verwendeten Geräten unterstützt werden. Unter Angabe der \myemph{Hamlib ID} und der Option \texttt{-u} bzw. \texttt{-\,-dump-caps} kann eine Übersicht der \myemph{capabilities} (Fähigkeiten), z.B. der unterstützten Befehle oder der Standard-Parameter ausgegeben werden (siehe Anhang XXX und YYY):
@@ -427,29 +428,31 @@ Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLi
 
 Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen, werden zunächst einzelne Kommandos mit Hilfe des Skripts \myemph{rigctl.bat} an das Funkgerät geschickt. Somit kann sichergestellt werden, ob das HamLib-\acl{BE} für das Funkgerät IC-9100 richtig implementiert wurde. Hierbei kann nicht davon ausgegangen werden, dass ein reibungsloser Betrieb möglich ist, da als Test-Status des HamLib-\acl{BE}s für das Funkgerät IC-9100 ,,Untested'' angegeben ist (siehe Seite \pageref{hamlibbackend}).\newpar
 In der Betriebsanleitung des Funkgeräts IC-9100 (siehe \cite{radiomanual}) ist auf Seite 183ff eine Übersicht der Befehlsstruktur und der zulässigen Kommandos des ICOM-spezifischen Protokolls CI-V dargestellt. Zur Kontrolle, ob die HamLib-Befehle auch den richtigen CI-V-Kommandos entsprechen, wird mit dem Windows-Programm \myemph{Serial Port Monitor} (hierfür kann auch ein anderes Programm verwendet werden) der serielle Port COM5 abgehört, während über \myemph{rigctl.bat} verschiedene Befehle an das Funkgerät geschickt werden.\newpar
-Bei folgende Befehlen konnte eine Übereinstimmung der von HamLib verwendeten mit den in \cite{radiomanual} zu findenden CI-V Befehlen und damit eine einwandfreie Funktionalität festgestellt werden:
+Für die folgenden grundlegenden Befehle konnte eine Übereinstimmung der von HamLib verwendeten mit den in \cite{radiomanual} zu findenden CI-V Befehlen festgestellt und damit eine korrekte Funktionalität sichergestellt werden:
 
 \begin{itemize}
 	\parskip0pt
 	\item \texttt{F: set\_freq} (Setzen der Frequenz des \myemph{Main}-Bandes)
 	\item \texttt{f: get\_freq} (Auslesen der Frequenz des \myemph{Main}-Bandes)
-	\item \texttt{M: set\_mode} ()
-	\item \texttt{m: get\_mode} ()
+	\item \texttt{M: set\_mode} (Setzen des Modus und der entsprechenden Bandbreite)
+	\item \texttt{m: get\_mode} (Auslesen des Modus und der zugehörigen Bandbreite)
 \end{itemize}
+
+Eine Übersicht der gültigen Eingabeparameter kann über die Option \texttt{-\,-dump-caps} ausgegeben werden (siehe Abschnitt \ref{chap:hamlibusage}).
 
 \clearpage
 
-Bei einigen Befehlen wurde festgestellt, dass die CI-V-Kommandos, die von HamLib verwendet werden, nicht mit den tatsächlichen Befehlen aus \cite{radiomanual} übereinstimmen. Da es mit dem fertig kompilierten Programm \myemph{rigctl(d).exe} keine Möglichkeit gibt einen ,,rohen'' Befehl zu versenden, ist es somit nicht möglich, die Funktionalität der betroffenen Befehle ohne Eingriff in den Quellcode von HamLib zu erreichen. In Tabelle \ref{tab:civcommands} sind die betroffenen Befehle aufgelistet, wobei die Ausschnitte, die nicht übereinstimmen, rot markiert sind.
+Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im Satellitenmodus betrieben werden muss, ist es essentiell, dass dieser über \myemph{rigctl(d).exe} aktiviert werden kann. Beim Test des entsprechenden Befehls, wurde jedoch festgestellt, dass das CI-V-Kommando, dass an das Funkgerät geschickt wird, nicht dem Korrekten aus \cite{radiomanual} entspricht. Da es mit dem fertig kompilierten Programm \myemph{rigctl(d).exe} keine Möglichkeit gibt einen ,,rohen'' Befehl zu versenden, ist es somit nicht möglich, diese Funktionalität ohne Eingriff in den Quellcode von HamLib zu implementieren. In Tabelle \ref{tab:civcommands} ist der HamLib-Befehl zur Aktivierung des Satellitenmodus, das verwendete CI-V-Kommando und das tatsächliche CI-V-Kommando dargestellt. Die Ausschnitte, die nicht übereinstimmen, sind rot markiert.
 
-\begin{table}[h]
-	\begin{tabularx}{\textwidth}{|X|l|l|}
+\begin{table}[h]	 
+	\small\begin{tabularx}{\textwidth}{|X|l|l|}
 		\hline
-		\textbf{HamLib Befehl (rigctl)}	& \textbf{CI-V (Verwendet)}			&\textbf{CI-V (Tatsächlich)}\\
+		\textbf{HamLib-Befehl \myemph{rigctl(d).exe}}	& \textbf{CI-V (Verwendet)}			&\textbf{CI-V (Tatsächlich)}\\
 		\hline
-		\texttt{U SATMODE 1}	& \texttt{fe fe 7c e0 \myredtext{1a 07} 01 fd}	& \texttt{fe fe 7c 00 16 5a 01 fd}\\
+		\texttt{U SATMODE 1}	& \texttt{fe fe 7c e0 \myredtext{1a 07} 01 fd}	& \texttt{fe fe 7c e0 16 5a 01 fd}\\
 		\hline		
 	\end{tabularx}
-	\caption{Fehlerhafte CI-V Kommandos von \myemph{rigctl(d).exe}}
+	\caption{Fehlerhaftes CI-V Kommando beim Aktivieren des Satellitenmodus}
 	\label{tab:civcommands}
 \end{table}
 
