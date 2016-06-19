@@ -348,7 +348,7 @@ zu bestimmen ist. Man stellt also Gleichung \ref{equation_kepler_equ_final} ents
 \end{equation}
 Es folgt die rekursive Folge für die Kepler-Gleichung. 
 \begin{equation}
-	E_{n+1}=E_n-\frac{E-e'\,sin(E)-M}{1-e'\,cos(E) }
+	E_{n+1}=E_n-\frac{E_n-e'\,sin(E_n)-M}{1-e'\,cos(E_n) }
 	\label{equation12_kepler_equ}
 \end{equation}
 Als Startwert wird in \cite{HandRaum} \ensuremath{E_0=M} empfohlen. Die rekursive Folge Verhält sich dabei so, dass sie gegen einen entsprechenden Wert für die exzentrische Anomalie \ensuremath{E} konvergiert. Wenn sich entsprechende Nachkommastellen nach gewisser Genauigkeit nicht mehr ändern, so hat man die Nullstelle gefunden. Mit diesem Wert für \ensuremath{E(t=t_x)} kann die wahre Anomalie \ensuremath{\theta(t=t_x)} bestimmt werden. Zu beachten ist, dass in die Kepler-Gleichung natürlich vor der Anwendung des Newton-Verfahrens auch der gewünschte Zeitpunkt \ensuremath{t_p} eingesetzt wird.     
