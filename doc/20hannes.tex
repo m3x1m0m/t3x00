@@ -53,7 +53,7 @@ Diese Ansicht besteht, wie in Abbildung \ref{fig:gpredictstartup} zu sehen, aus 
 \textbf{Polar View}\\
 Die \myemph{Polar View} (siehe Abbildung \ref{fig:gpredictstartup}) stellt eine Draufsicht auf die Bodenstation dar, bei der die Polarachse den Azimutwinkel darstellt und die Radialachse den Elevationswinkel. Mit einem Rechtsklick auf einen Satelliten lässt sich mit der Option \myemph{Show sky track} aktivieren, das die Spur des entsprechenden Satelliten anzeigt wird. Zusätzlich wird das aktuelle Modul links oben angezeigt, der nächste sichtbare Satellit (rechts oben) und die genauen Werte für Azimut und Elevation (links unten) sobald sich der Mauszeiger auf der \myemph{Polar View} befindet.\newpar
 \textbf{Single-Satellite View}\\
-In dieser Ansicht (siehe Abbildung \ref{fig:gpredictstartup}) werden detaillierte Informationen zu einem ausgewählten Satelliten angezeigt, z.B. Azimut, Elevation, Entfernung der direkten Sichtverbindung (\myemph{Slant Range}), Höhe, Geschwindigkeit, Dopplerverschiebung oder Signaldämpfung. Mit einem Klick auf das \myvsymbol-Symbol links neben dem Satellitennamen kann zwischen den für dieses Modul ausgewählten Satelliten gewechselt werden.
+In dieser Ansicht (siehe Abbildung \ref{fig:gpredictstartup}) werden detaillierte Informationen zu einem ausgewählten Satelliten angezeigt, z.B. Azimut, Elevation, Entfernung der direkten Sichtverbindung (\myemph{Slant Range}), Höhe, Geschwindigkeit, Doppler-Verschiebung oder Signaldämpfung. Mit einem Klick auf das \myvsymbol-Symbol links neben dem Satellitennamen kann zwischen den für dieses Modul ausgewählten Satelliten gewechselt werden.
 
 \clearpage
 
@@ -186,9 +186,9 @@ In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der 
 	\label{tab:rotatorcontrolmodes}
 \end{table}
 
-\clearpage
+\newpage
 
-Um dem Funkgerät die entsprechenden Up- und Downlink-Frequenzen inklusive Dopplerschiftkorrektur zu übermitteln, wird das \myemph{Radio Control}-Bedienfeld (siehe Abbildung \ref{fig:radiocontrol}) verwendet. Dieses kann nur geöffnet werden, wenn mindestens eine Funkgerät-Schnittstelle in den GPredict-Einstellungen unter \myemph{Interfaces} konfiguriert ist (siehe Abschnitt XXX).
+Um dem Funkgerät die entsprechenden Up- und Downlink-Frequenzen inklusive Korrektur der Doppler-Verschiebung zu übermitteln, wird das \myemph{Radio Control}-Bedienfeld (siehe Abbildung \ref{fig:radiocontrol}) verwendet. Dieses kann nur geöffnet werden, wenn mindestens eine Funkgerät-Schnittstelle in den GPredict-Einstellungen unter \myemph{Interfaces} konfiguriert ist (siehe Abschnitt XXX).
 
 \begin{figure}[h]
 	\centering
@@ -203,7 +203,7 @@ Neben einer Anzeige die die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} darste
 	\parskip0pt
 	\item \textbf{Downlink:} In diesem Bereich kann die Frequenzeinstellung für die Downlink-Frequenz vorgenommen werden. Außerdem ist die aktuelle Dopplerfrequenz und ein Feld names \myemph{LO}, welches für eine Offsetfrequenz steht, die im Funkgerät eingestellt werden kann, steht. Die korrigierte Frequenz welche nach \myemph{Radio} angezeigt wird, setzt sich damit beispielsweise wie folgt zusammen: $f_{Radio} = f_{Satellite} + f_{Doppler} - f_{LO}$
 	\item \textbf{Uplink:} Dieser Bereich beinhaltet die Frequenzeinstellungen für die Uplink-Frequenz und besitzt die gleichen Eigenschaften wie der Downlink-Bereich.
-	\item \textbf{Target:} Hier kann der zu verfolgende Satellit und der zu verwendente Transponder eingestellt werden. Mit einem Klick auf \myemph{Track} wird der Dopplerschift des ausgewählten Satelliten bei den Frequenzeinstellungen im Downlink- und Uplink-Bereich korrigiert. Eine wichtige Rolle spielt hierbei die Schaltfläche \myemph{T} (\myemph{Tune}), da die Frequenzen des Transponders nur durch einen Klick auf diese in die Frequenzeinstellungen übertragen werden. Sollte der Transponder beispielsweise nur einen Downlink besitzen, wird auch nur die Frequenz im Downlink-Bereich eingestellt.\clearpage
+	\item \textbf{Target:} Hier kann der zu verfolgende Satellit und der zu verwendente Transponder eingestellt werden. Mit einem Klick auf \myemph{Track} wird die Doppler-Verschiebung des ausgewählten Satelliten bei den Frequenzeinstellungen im Downlink- und Uplink-Bereich korrigiert. Eine wichtige Rolle spielt hierbei die Schaltfläche \myemph{T} (\myemph{Tune}), da die Frequenzen des Transponders nur durch einen Klick auf diese in die Frequenzeinstellungen übertragen werden. Sollte der Transponder beispielsweise nur einen Downlink besitzen, wird auch nur die Frequenz im Downlink-Bereich eingestellt.
 	Mit der Schaltfläche \myemph{L} (\myemph{Lock}) lässt sich die Differenz der Downlink- und Uplink-Frequenz sperren, das heißt Änderungen an der einen wirken sich auch auf die andere Frequenz aus. Dies ist nicht für Transponder möglich, die nur einen Up- oder Downlink besitzen.
 	\item \textbf{Settings:} In diesem Bereich lassen sich bis zu zwei Funkgeräte auswählen die in den GPredict-Einstellungen unter \myemph{Interfaces} eingerichtet wurden. Das obere Gerät stellt das Primäre dar und kann für Up- und Downlink verwendet werden. Das Untere kann als sekundäres Gerät verwendet werden, welches nur für den Uplink verwendet werden kann. Mit einem Klick auf \myemph{Engage} wird die Kommunikation zwischen GPredict und Funkgerät(en) aufgebaut. Hierbei kann im Feld neben \myemph{Cycle} der Zyklus eingetragen werden, nach welchem Kommandos an das Funkgerät geschickt werden sollen.
 \end{itemize}
@@ -215,19 +215,17 @@ In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschieden
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
 		\hline
-		Inaktiv          	& Inaktiv 			& Es wird keine Dopplerschiftkorrektur durchgeführt, keine Befehle an das Funkgerät gesendet und die aktuelle Frequenz des Funkgeräts nicht ausgelesen.\\
-		Aktiv              	& Inaktiv   		& Die Dopplerschiftkorrektur wird durchgeführt, es werden aber weder Befehle an das Funkgerät geschickt noch wird die aktuelle Frequenz ausgelesen.\\
-		Aktiv              	& Aktiv	            & Der Dopplerschift wird korrigiert und die eingestellte Frequenz wird zum Funkgerät geschickt. Die aktuelle Frequenz des Funkgeräts wird ausgelesen.\\
-		Inaktiv            	& Aktiv   			& Die Dopplerschiftkorrektur wird nicht ausgeführt. Die eingestellte Frequenz wird an das Funkgerät geschickt und die dort eingestellte Frequenz wird ausgelesen.\\
+		Inaktiv          	& Inaktiv 			& Es wird keine Korrektur der Doppler-Verschiebung durchgeführt, keine Befehle an das Funkgerät gesendet und die aktuelle Frequenz des Funkgeräts nicht ausgelesen.\\
+		Aktiv              	& Inaktiv   		& Die Korrektur der Doppler-Verschiebung wird durchgeführt, es werden aber weder Befehle an das Funkgerät geschickt noch wird die aktuelle Frequenz ausgelesen.\\
+		Aktiv              	& Aktiv	            & Die Doppler-Verschiebung wird korrigiert und die eingestellte Frequenz wird zum Funkgerät geschickt. Die aktuelle Frequenz des Funkgeräts wird ausgelesen.\\
+		Inaktiv            	& Aktiv   			& Die Korrektur der Doppler-Verschiebung wird nicht ausgeführt. Die eingestellte Frequenz wird an das Funkgerät geschickt und die dort eingestellte Frequenz wird ausgelesen.\\
 		\hline		
 	\end{tabularx}
 	\caption{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
 	\label{tab:radiocontrolmodes}
 \end{table}
 
-Wenn die \myemph{Engage}-Schaltfläche aktiviert ist, wird die Dopplerschiftkorrektur durchgeführt, egal ob der ausgewählte Satellit sichtbar ist oder nicht.
-
-\clearpage
+Wenn die \myemph{Engage}-Schaltfläche aktiviert ist, wird die Korrektur der Doppler-Verschiebung durchgeführt, egal ob der ausgewählte Satellit sichtbar ist oder nicht.
 
 \subsection{GPredict-Einstellungen}
 
@@ -249,8 +247,6 @@ Die Kategorie \myemph{General} ist in folgende vier Reiter untergliedert:
 	\item \textbf{TLE Update:} Hier können Einstellungen zur Aktualisierung der Kepler-Elemente vorgenommen werden.
 	\item \textbf{Message Logs:} Hier können Einstellungen bzgl. des GPredict-Protokolls vorgenommen werden. Unter \myemph{Log browser} im Menü \myemph{File} kann dieses dargestellt werden.
 \end{itemize}
-
-\clearpage
 
 Zur Kategorie \myemph{Modules} gelangt man über zwei Wege. Der erste führt über die allgemeinen GPredict-Einstellungen, wie in diesem Abschnitt beschrieben. Der Zweite führt über das Modul Pop-Up Menü, wie auf Seite \pageref{modulesettingsspecific} beschrieben. Der Unterschied ist, dass bei den Modul-Einstellungen in den GPredict-Einstellungen die Standardwerte für alle Module eingestellt werden können und beim zweiten Weg nur die für das entsprechende Modul.
 \label{modulesettingsgeneral}
@@ -322,10 +318,7 @@ Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}
 \subsection{Parameter-Konfiguration}
 \label{chap:hamlibconfig}
 
-Für die erfolgreiche Nutzung der oben genannten Programme müssen einige Optionen und Parameter berücksichtigt werden. Hierfür ist es notwendig die erforderlichen Informationen zu den Rotoren und zum Funkgerät zu kennen. Um eine Übersicht der möglichen Optionen und Befehle zu erhalten, kann das jeweilige Programm einfach mit der Option \texttt{-h} oder \texttt{-\,-help} ausgeführt werden (siehe Anhang XXX und YYY).
-
-\clearpage
-
+Für die erfolgreiche Nutzung der oben genannten Programme müssen einige Optionen und Parameter berücksichtigt werden. Hierfür ist es notwendig die erforderlichen Informationen zu den Rotoren und zum Funkgerät zu kennen. Um eine Übersicht der möglichen Optionen und Befehle zu erhalten, kann das jeweilige Programm einfach mit der Option \texttt{-h} oder \texttt{-\,-help} ausgeführt werden (siehe Anhang XXX und YYY).\newpar
 Die erste zentrale Information ist die \myemph{Hamlib ID}. Hierfür gibt man folgenden Befehl in die Kommandozeile ein und erhält eine Liste mit allen unterstützten Funkgeräten (für \myemph{rigctld.exe} und \myemph{rotctl(d).exe} analog durchführbar):
 
 \vspace{-1em}
@@ -362,8 +355,6 @@ Im Testbetrieb ist die Ausgabe von Statusmeldungen (z.B. Warnungen oder Fehler) 
 	\texttt{rotctl.exe -vvvv -m 601 -r COM10 -s 9600 -C stop\_bits=1,data\_bits=8}
 \end{shaded}
 \vspace{-1em}
-
-\clearpage
 
 Da beim Funkgerät IC-9100 das Icom-spezifische Protokoll \acsu{CI-V} (das ,,V'' steht hierbei für die römische Zahl) für die Fernsteuerung verwendet wird, kommt bei der Verwendung von \myemph{rigctl.exe} noch die CI-V-Adresse als Parameter hinzu. Somit sieht die Ausführung des Programms \myemph{rigctl.exe} wie folgt aus: 
 
@@ -425,6 +416,7 @@ Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotc
 Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLib-Programmen fünf Mal in Folge aufgetreten ist, wird aus Sicherheitsgründen die Kommunikation automatisch abgebrochen.
 
 \subsection{Test der Kommunikation zum Funkgerät}
+\label{chap:rigtest}
 
 Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen, werden zunächst einzelne Kommandos mit Hilfe des Skripts \myemph{rigctl.bat} an das Funkgerät geschickt. Somit kann sichergestellt werden, ob das HamLib-\acl{BE} für das Funkgerät IC-9100 richtig implementiert wurde. Hierbei kann nicht davon ausgegangen werden, dass ein reibungsloser Betrieb möglich ist, da als Test-Status des HamLib-\acl{BE}s für das Funkgerät IC-9100 ,,Untested'' angegeben ist (siehe Seite \pageref{hamlibbackend}).\newpar
 In der Betriebsanleitung des Funkgeräts IC-9100 (siehe \cite{radiomanual}) ist auf Seite 183ff eine Übersicht der Befehlsstruktur und der zulässigen Kommandos des ICOM-spezifischen Protokolls CI-V dargestellt. Zur Kontrolle, ob die HamLib-Befehle auch den richtigen CI-V-Kommandos entsprechen, wird mit dem Windows-Programm \myemph{Serial Port Monitor} (hierfür kann auch ein anderes Programm verwendet werden) der serielle Port COM5 abgehört, während über \myemph{rigctl.bat} verschiedene Befehle an das Funkgerät geschickt werden.\newpar
@@ -442,7 +434,7 @@ Eine Übersicht der gültigen Eingabeparameter kann über die Option \texttt{-\,
 
 \clearpage
 
-Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im Satellitenmodus betrieben werden muss, ist es essentiell, dass dieser über \myemph{rigctl(d).exe} aktiviert werden kann. Beim Test des entsprechenden Befehls, wurde jedoch festgestellt, dass das CI-V-Kommando, dass an das Funkgerät geschickt wird, nicht dem Korrekten aus \cite{radiomanual} entspricht. Da es mit dem fertig kompilierten Programm \myemph{rigctl(d).exe} keine Möglichkeit gibt einen ,,rohen'' Befehl zu versenden, ist es somit nicht möglich, diese Funktionalität ohne Eingriff in den Quellcode von HamLib zu implementieren. In Tabelle \ref{tab:civcommands} ist der HamLib-Befehl zur Aktivierung des Satellitenmodus, das verwendete CI-V-Kommando und das tatsächliche CI-V-Kommando dargestellt. Die Ausschnitte, die nicht übereinstimmen, sind rot markiert.
+Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im Satellitenmodus betrieben werden muss, ist es essentiell, dass dieser über \myemph{rigctl(d).exe} aktiviert werden kann.\label{satmode} Beim Test des entsprechenden Befehls, wurde jedoch festgestellt, dass das CI-V-Kommando, dass an das Funkgerät geschickt wird, nicht dem Korrekten aus \cite{radiomanual} entspricht. Da es mit dem fertig kompilierten Programm \myemph{rigctl(d).exe} keine Möglichkeit gibt einen ,,rohen'' Befehl zu versenden, ist es somit nicht möglich, diese Funktionalität ohne Eingriff in den Quellcode von HamLib zu implementieren. In Tabelle \ref{tab:civcommands} ist der HamLib-Befehl zur Aktivierung des Satellitenmodus, das verwendete CI-V-Kommando und das tatsächliche CI-V-Kommando dargestellt. Die Ausschnitte, die nicht übereinstimmen, sind rot markiert.
 
 \begin{table}[h]	 
 	\small\begin{tabularx}{\textwidth}{|X|l|l|}
@@ -465,7 +457,7 @@ Beim Test der Bedienelemente kann der Ausgabe des Skripts \myemph{rotctld-dummy.
 \subsection{Konfiguration des Funkgeräts}
 \label{chap:radioconfig}
 
-Dem Abschnitt XXX kann entnommen werden, dass das Funkgerät IC-9100 vollduplexfähig ist und im \myemph{Sub}-Band sendet und im \myemph{Main}-Band empfängt. Diese Informationen können in den \myemph{Interface}-Einstellungen wie in Abbildung \ref{fig:radioconfig} zu sehen, eingestellt werden. 
+Dem Abschnitt XXX kann entnommen werden, dass das Funkgerät IC-9100 vollduplexfähig ist und bei Betrieb im Satellitenmodus nur im \myemph{Sub}-Band senden und im \myemph{Main}-Band empfangen darf. Diese Informationen können in den \myemph{Interface}-Einstellungen wie in Abbildung \ref{fig:radioconfig} zu sehen, eingestellt werden. 
 
 \begin{figure}[h]
 	\centering
@@ -485,20 +477,38 @@ Bei der Konfiguration der Rotorensteuerung ist die Angabe der IP-Adresse und des
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.3\textwidth]{rotatorsettings180}
-	\caption{Konfiguration der Rotorensteuerung}
+	\includegraphics[width=0.6\textwidth]{rotatorsettings}
+	\caption{Mögliche Konfigurationen der Rotorensteuerung}
 	\label{fig:rotatorconfig} 
 \end{figure}
 
-Wie in Abschnitt XXX zu sehen, besitzt der Azimut-Rotor seinen Anschlag bei 180\mydegree\ (Süden), das heißt er lässt sich von 0\mydegree\ (Norden) aus jeweils um 180\mydegree\ in Richtung Süden drehen. Deshalb muss beim Feld \myemph{Az type} der Bereich von -180\mydegree\ bis +180\mydegree\ ausgewählt werden. Der Elevations-Rotor lässt sich von 0\mydegree\ bis 180\mydegree\ steuern, dementsprechend wird die Einstellung bei \myemph{Min El} und \myemph{Max El} gewählt.
+Der Elevations-Rotor lässt sich von 0\mydegree\ bis 180\mydegree\ auslenken, dementsprechend wird die Einstellung bei \myemph{Min El} und \myemph{Max El} gewählt. Der Azimut-Rotor lässt sich um 360\mydegree\ auslenken und besitzt einen Anschlag bei 180\mydegree\ (Süden), das heißt er lässt sich von 0\mydegree\ (Norden) aus jeweils um 180\mydegree\ in Richtung Süden drehen. Deshalb scheint es zunächst naheliegend beim Feld \myemph{Az type} den Bereich von -180\mydegree\ bis 180\mydegree\ einzustellen, woraufhin automatisch bei \myemph{Min Az} -180\mydegree\ und bei \myemph{Max Az} 180\mydegree\ eingetragen wird. Jedoch wurde bei verschiedenen Tests festgestellt, dass es bei der Steuerung darauf ankommt, wie der Azimut-Verlauf des Satelliten aussieht (näheres auf Seite \pageref{rotatorflip2}). Passiert ein Satellit, wie in Abbildung \ref{fig:rotatorflip} beispielhaft zu sehen, die Linie zwischen dem Mittelpunkt des Polardiagramms und der südlichen Richtung (also den Anschlag des Azimut-Rotors), ist ein Rotorflip notwendig.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{rotatorflip}
+	\caption{Verlauf eines Satelliten über \\den Anschlag des Azimut-Rotors}
+	\label{fig:rotatorflip} 
+\end{figure}
+
+Bei einem Rotorflip wird der Elevations-Rotor über die 90\mydegree-Schwelle gekippt, womit der Anschlag des Azimut-Rotors um 180\mydegree, also nach Norden, verlegt wird. Somit ist es möglich einen Satelliten mit dem in Abbildung \ref{fig:rotatorflip} zu sehenden Verlauf zu verfolgen.
 
 \subsection{Probelauf und Testergebnisse}
+\label{chap:probelauf}
 
-\textbf{Probleme:}
+Für den korrekten Betrieb von GPredict ist es notwendig folgende Softwarekomponenten zu starten:
+
 \begin{itemize}
 	\parskip0pt
-	\item Wenn die Frequenzen im Main- und Sub-Band vertauscht werden müssten, bricht die Kommunikation ab. Nach manuellem Vertauschen ist Steuerung möglich.
-	\item Nicht möglich den Satmodus zu aktivieren (muss manuell aktiviert werden)
-	\item Rotor-Flip: Möglich bei -180 bis 180; Nicht möglich bei 0 bis 360
+	\item Die beiden Skripte \myemph{rigctld.bat} und \myemph{rotctld.bat}
+	\item Die Software ARSVCOM
+	\item Die Standard-Benutzeroberfläche von GPredict
+	\item Die Bedienfelder für die Funkgerät- und Rotorensteuerung
 \end{itemize}
+
+Es konnte durch mehrere Probeläufe der grundsätzliche Betrieb von GPredict sichergestellt werden. Dazu gehören das erfolgreiche Ausrichten der Antenne, also des Azimut- und Elevations-Rotors, sowie die Übermittlung der korrekten Frequenz (inklusive Korrektur der Doppler-Verschiebung) zum Funkgerät. Allerdings muss an dieser Stelle auf gewisse Einschränkungen hingewiesen werden, die den reibungslosen Betrieb der Bodenstation mit GPredict noch nicht ganz ermöglichen. Diese sind im Folgenden näher erläutert:\newpar
+Möchte man, nachdem die Kommunikation zwischen GPredict und dem Funkgerät erfolgreich aufgebaut ist und diese auch schon eine gewisse Zeit ohne Unterbrechung läuft, von einem Transponder des aktuellen Satelliten auf einen anderen Transponder wechseln, bei dem die \myemph{Down-} und \myemph{Uplink-}Frequenz genau vertauscht sind, bricht die Kommunikation zum Funkgerät ab. Das hat damit zu tun, dass es nicht erlaubt ist, im Satellitenmodus des Funkgeräts die gleiche Frequenz im \myemph{Sub-} und \myemph{Main-}Band einzustellen. Dafür gibt es beim CI-V Protokoll einen speziellen Befehl, der einen Tausch der Frequenzen im \myemph{Sub-} und \myemph{Main-}Band veranlasst. Dieser Befehl wird nicht von dem HamLib-Programm \myemph{rigctld.exe} geschickt. Beim Test unter SatPC32 ist dieser Wechsel möglich und es konnte nachgewiesen werden, dass dort dieser Befehl gesendet wird. Um diese Funktionalität in GPredict zu implementieren, ist ein Eingriff in den Quellcode nötig.\newpar
+
+Wie bereits unter Abschnitt \ref{chap:rigtest} auf Seite \pageref{satmode} beschrieben, ist der Befehl zur Aktivierung des Satellitenmodus des Funkgeräts in HamLib fehlerhaft implementiert. Außerdem wurde festgestellt, dass dieser Befehl beim Kommunikationsaufbau auch nicht vom Skript \myemph{rigctld.bat} an das Funkgerät geschickt wird (bei SatPC32 konnte dies nachgewiesen werden). Somit ist es notwendig, das Funkgerät manuell in den Satellitenmodus zu setzen um eine fehlerfreie Kommunikation zu gewährleisten. Um diese Funktionalität zu gewährleisten, führt ebenfalls kein Weg daran vorbei, den Quellcode von HamLib anzupassen anschließend das Programm \myemph{rigctl.exe} neu zu kompilieren.\newpar
+Der letzte Punkt, der einem reibungslosen Betrieb von GPredict im Weg steht, hat mit der Konfiguration der Rotorensteuerung zu tun (siehe Abschnitt \ref{chap:rotatorconfig}).\label{rotatorflip2} Hier wurde bereits darauf hingewiesen, dass es bei  entsprechendem Verlauf eines Satelliten notwendig ist, einen Rotorflip durchzuführen. Diesbezüglich konnte nach mehreren Probeläufen mit verschiedenen Satellitenverläufen festgestellt werden, dass die linke Konfiguration auf Abbildung \ref{fig:rotatorconfig} auf Seite \pageref{fig:rotatorconfig} nur dann zu einem fehlerfreien Betrieb führt, wenn der zu verfolgende Satellit den Anschlag des Azimut-Rotors überschreitet (siehe Abbildung \ref{fig:rotatorflip}, Seite \pageref{fig:rotatorflip}). Möchte man mit dieser Konfiguration einen Satelliten verfolgen, der nicht den Anschlag überschreitet, wird dem Azimut-Rotor ein um 180\mydegree\ versetzter Winkel mitgeteilt, was zu einer Fehlpositionierung der Antenne führt. Wählt man die rechte Konfiguration auf Abbildung \ref{fig:rotatorconfig} auf Seite \pageref{fig:rotatorconfig}, so verhält es sich genau umgekehrt, das heißt hiermit ist nur die Verfolgung eine Satelliten möglich, der nicht den Anschlag des Azimut-Rotors passiert. Somit muss vor der Verfolgung eines Satelliten, dessen Verlauf analysiert werden und die entsprechende Konfiguration der Rotorensteuerung ausgewählt werden.
 
