@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%																				%%
+%% File name: 		swhwcom.tex													%%
+%% Project name:	Hochleistungsantenne										%%
+%% Type of work:	T3X00 project work											%%
+%% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
+%% Date:			07th June 2016		     									%%
+%% University:		DHBW Ravensburg Campus Friedrichshafen						%%
+%% Comments:		Created in gedit with tab width = 4							%%
+%%																				%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}[every node/.style = {shape=rectangle, rounded corners, draw, align=center, scale=1}, line width=0.3mm, level distance=1.8\baselineskip, level 1/.style = {sibling distance=16em}, level 2/.style = {sibling distance=8em}]
+	\tikzstyle{top} = [fill=cyan!30, inner sep=8pt, font=\bfseries\large]
+	\tikzstyle{sw} = [fill=cyan!30, inner sep=5pt]
+	\tikzstyle{hw} = [fill=red!30, inner sep=5pt]
+	\tikzstyle{hwsw} = [top color=cyan!30, bottom color=red!30, inner sep=5pt]
+	\tikzstyle{label} = [draw=none, font=\scriptsize, right]
+	\node[top]{GPredict}
+	child { node[sw]{rigctld.bat} 
+		child { node[sw]{NetCOM Manager} 
+				child { node[hw]{NetCOM 211}
+					child { node[hw, yshift=-0.5em]{Funkgerät\\[-0.5em]IC-9100} } } } }
+	child { node[sw]{rotctld.bat}
+		child { node[sw]{ARSVCOM}
+			child { node[hwsw]{Banana Pi} 
+				child { node[hw, yshift=-0.5em]{Steuerung\\[-0.5em]Elevation} }
+				child { node[hw, yshift=-0.5em]{Steuerung\\[-0.5em]Azimut} } } } };
+	\node[label] at (2,-0.6) {TCP/IP};
+	\node[label,left] at (-2,-0.6) {TCP/IP};
+	\node[label] at (-3.2,-2.05) {Seriell};
+	\node[label] at (3.4,-2.05) {Seriell};
+	\node[label] at (-3.2,-3.5) {TCP/IP};
+	\node[label] at (3.4,-3.5) {TCP/IP};
+	\node[label] at (-3.2,-4.8) {Seriell};	
+\end{tikzpicture}
