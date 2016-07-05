@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			29th May 2016		     									%%
+%% Date:			12th June 2016		     									%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -17,6 +17,15 @@
 
 % User defined way of emphasizing words
 \newcommand{\myemph}[1]{\textsl{#1}}
+
+% User defined way for colored text
+\newcommand{\myredtext}[1]{\textcolor{red}{#1}}
+\newcommand{\mygreentext}[1]{\textcolor{green!80!black!70}{#1}}
+
+% Specify user defined degree symbol without using additional packages (requires amsthm)
+\newcommand{\mydegree}{$^\circ$}
+
+
 
 % Specify user defined symbol
 \newcommand{\myvsymbol}{\includegraphics[width=0.7em]{v-symbol}}
@@ -76,7 +85,7 @@ bmargin={2.5cm}]{geometry}
 \usepackage{csquotes}
 \usepackage[style=ieee,backend=bibtex]{biblatex}
 \addbibresource{bib/bibliography.bib}
-%\renewcommand{\bibfont}{\small}	% to change the font size of the bib
+\renewcommand{\bibfont}{\small}	% to change the font size of the bib
 
 % To use tables
 \usepackage{tabularx}
@@ -105,8 +114,21 @@ bmargin={2.5cm}]{geometry}
 % For colored text
 \usepackage{color}
 
-%For easy diagramms
+% For easy diagrams
 \usepackage{smartdiagram}
+
+%For different symbols like °
+\usepackage{gensymb}
+
+% To highlight commandline instrucions
+\usepackage{framed} 
+\usepackage{xcolor} 
+\colorlet{shadecolor}{gray!25}
+\colorlet{TFFrameColor}{gray!25}
+\colorlet{TFTitleColor}{black}
+
+% For complex diagrams
+
 
 %---- Different defines ----------------------------------------------------------
 
