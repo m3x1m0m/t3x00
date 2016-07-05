@@ -50,7 +50,7 @@ ist der 14. Oktober 2015 und endet am 15. Juli 2016. Für die Studierenden der K
 \section{Anforderungsdefinition}
 Implementierung einer quelloffenen, kostenfreien Software zur Antennennachführung für das Verfolgen von erdnahen Satelliten. Die zur Antennennachführung
 benötigten Schnittstellen werden von der Hochschule zur Verfügung gestellt und sollen für diese Arbeit verwendet werden. Die Software soll die 
-Satellitenposition mit Hilfe der Keplerelemente und den Doppler-Shift berechnen und ausgeben. Die Ausgabe soll grafisch erfolgen und anzeigen, wann
+Satellitenposition mit Hilfe der Keplerelemente berechnen und ausgeben. Die Ausgabe soll grafisch erfolgen und anzeigen, wann
 der gewählte Satellit verfügbar ist. Ist der gewählte Satellit verfügbar, soll die Antenne in die richtige Position nachgeführt werden. 
 \newpar
 
@@ -65,19 +65,19 @@ gegliedert. Für diese Projektarbeit ergibt sich folgender Projektstrukturplan
 \ref{fig:projektstruktur}:\\
 \begin{figure}[h]
  \centering
-\includegraphics[width=0.6\linewidth]{./images/00tasks}
+\includegraphics[width=0.5\linewidth]{./images/00tasks}
 \caption{Projektstrukturplan}
  \label{fig:projektstruktur}
 \end{figure}
 \\
-Die Studienarbeit ist in vier Themen aufgeteilt: Technische Grundlagen, Technische Umsetzung, 
+Die Studienarbeit ist in vier Themen aufgeteilt: Physikalische Grundlagen, Technische Umsetzung, 
 Projektmanagement und Dokumentenoptimierung. Bei dem Thema ``Technische Grundlagen'' soll der 
-theoretische Hintergrund beleuchtet werden. Fragen wie, ``Was ist unter den Keplerelemente zu 
+physikalische Hintergrund beleuchtet werden. Fragen wie, ``Was ist unter den Keplerelemente zu 
 verstehen und wie kann aus ihnen Azimut und Elevation bestimmt werden?'', müssen beantwortet 
 werden. Diese Beschreibung ist grundlegend zum Verständnis der zu implementierenden Software 
-zur Antennennachführung. Das Implementieren der Software wird in der ``Technischen Umsetzung'' 
+für die Antennennachführung. Das Inbetriebnehmen der Software wird in der ``Technischen Umsetzung'' 
 durchgeführt. Dabei muss im ersten Schritt eine geeignete Software validiert werden. Die 
-Implementierung setzt auch das Wissen über die Hard- und Softwareumgebung voraus, welche zu 
+Inbetriebnahme setzt auch das Wissen über die Hard- und Softwareumgebung voraus, welche zu 
 verwenden sind. Es folgt die Konfiguration und Tests der geeigneten Software mit den definierten 
 Schnittstellen.
 \newpar
@@ -91,22 +91,17 @@ Versionsverwaltung wird das freie Softwaretool ``Git'' verwendet. Je vier Termin
 ``Merge'' (engl., Zusammenführen) werden zur Versionsverwaltung genutzt und dabei Änderungen von 
 Formatierung oder Ähnliches diskutiert.
 \newpar
-In den folgenden zwei Grafiken \ref{fig:arbeitspaket} sind alle für die Studienarbeit benötigten 
+In der folgenden Grafik \ref{fig:arbeitspaket} sind alle für die Studienarbeit benötigten 
 Arbeitspakete mit Titel (Name), Verantwortlichem (Responisble), Zuweisung (Allocation) und 
 Arbeitszeit (Estimate) aufgeführt.
 \begin{figure}[h] 
  \centering
-\includegraphics[width=1.0\linewidth]{./images/01tasks}
+\includegraphics[width=1.0\linewidth]{./images/03task}
 \caption{Arbeitspakete}
  \label{fig:arbeitspaket}
 \end{figure}
 \newpage
-\begin{figure}[t] 
- \centering
-\includegraphics[width=1.0\linewidth]{./images/02tasks}
-\caption{Arbeitspakete}
- \label{fig:arbeitspaket}
-\end{figure}
+
 Der Arbeitspaketverantwortliche besitzt die Verantwortung für die Arbeitspaketdurchführung in 
 Qualität, Zeit und Kosten. Dieser Steuert und hat die Kontrolle aller Arbeiten in seinem 
 Arbeitspaket. Ebenso Koordiniert der Verantwortliche seine im Arbeitspaket beteiligten Mitarbeiter. 
@@ -116,5 +111,22 @@ Die Berichterstattung über den Status im Arbeitspaket folgt bei einem der ``Mer
 \section{Gantt-Diagramm}
 Um die einzelnen Arbeitspakete koordinieren zu können werden aus diesen ein Gantt-Diagramm 
 erstellt. Hier werden die einzuhaltenden Endtermine der einzelnen Arbeiten sowie die 
-Parallelisierung von unabhängig zueinander liegenden Arbeiten geplant. Außerdem werden Meilensteine 
-gesetzt um wichtige Teilziele festzulegen. 
+Parallelisierung von unabhängig zueinander liegenden Arbeiten geplant. Die Erstellung eines Gantt-Diagramms erfolgt mit dem Programm ``Plan'' zur 
+Projektplanung und -verwaltung. 
+\begin{figure}[h] 
+ \centering
+\includegraphics[width=1.0\linewidth]{./images/gantt}
+\caption{Gantt-Diagramm}
+ \label{fig:gantt}
+\end{figure}
+In der Grafik \ref{fig:gantt} wird die Parallelisierung der Arbeitspakete deutlich. Die drei Einheiten Physikalische Grundlagen, Technische Umsetzung 
+und Projektmanagement können parallel bearbeitet werden. Begonnen wird mit einer umfassenden Recherche über die Keplerelemente und deren Berechnung. 
+Parallel dazu kann über die  Realisierung der Software für die Satellitenverfolgung recherchiert werden. Die dadurch gewonnenen Erkenntnisse führen 
+zu der Anforderungsdefinition. Analog zum V-Modell kann nun der nächste Schritt eingeleitet werden. Dieser entspricht in dieser Studienarbeit der 
+Inbetriebnahme von der Software ``GPredict''. Zu diesem Arbeitspaket gehören die Aufgaben Konfiguration der Software und Konfiguration der 
+Schnittstellen. Darüber hinaus muss sich der Verantwortliche umfassend mit der Software auseinander setzen um im nächsten Schritt die Integration 
+beider Komponenten, Software und Hardware, durchzuführen. Ist eine funktionsfähige Kommunikation beider Komponenten bereitgestellt, können Tests, wie 
+das Verfolgen von Satelliten, geprüft werden. Bei den Tests wird unterschieden in Modultest, das Testen der einzelnen Komponenten auf ihre 
+Funktionsfähigkeit, Integrationstest, Kommunikationsfähigkeit der Software mit der Hardware und Systemtest, das Verfolgen von Satelliten und 
+Antennennachführung. Alle Erkenntnisse die in den Arbeitspaketen gewonnen wurden müssen dokumentiert werden. Daraus schließt sich das letzte 
+Arbeitspaket, die Dokumentation und die damit einhergehende Dokumentenoptimierung.
