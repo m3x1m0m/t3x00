@@ -10,7 +10,8 @@
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Amateurfunksatelliten}
+\chapter{Einführung}
+\section{Amateurfunksatelliten}
 Seit den sechziger Jahren sind Amateurfunker an der Raumfahrt beteiligt. Nur vier Jahre nach dem 
 Start des ersten Satelliten Sputnik 1 wurde der erste Amateurfunksatellit OSCAR-1 am 12. Dezember 
 1961 erfolgreich gestartet. OSCAR bedeutet Orbiting Satellite Carrying Amateur Radio und war 22 
@@ -34,10 +35,10 @@ Amateurfunksatelliten kommunizieren im 2-Meter- und 70-Zentimeterband \cite{Wiki
 internationalen Sprech- und Datenfunk. Außerdem senden diese Satelliten
 auch Messwerte der Betriebsdaten des Satelliten. Diese Satelliten werden meist von Hochschulen oder Amateurfunkvereinigungen gebaut und mit weiteren 
 Satelliten an Board einer Rakete in das All geschossen. Dabei handelt es sich um kleine, leichte Satelliten, auch ``Cubesat'' genannt.
-\clearpage
+
 \begin{figure}[h]
  \centering
- \includegraphics[width=0.8\linewidth]{./images/cubesat}
+ \includegraphics[width=0.7\linewidth]{./images/cubesat}
  \caption{Cubesat, Quelle: \cite{cubesat}}
  \label{fig:cubesat}
 \end{figure}
@@ -47,14 +48,8 @@ einer Spannweite von 20 Meter und einem Gewicht von 4,5 Tonnen. Erdnahe Satellit
 Erde ständig und haben daher nur ein beschränktes 
 Zeitfenster, in dem man mit einem solchen Satelliten arbeiten kann. Davor befindet sich der Satellit durch die Erdkrümmung hinter dem Horizont und 
 ist daher unerreichbar. Daher ist es für die Bodenstation wichtig zu wissen wann der Satellit am Horizont auftaucht um die Antenne in die richtige 
-<<<<<<< HEAD
-Position nachzuführen. Nach der korrekten Nachführung folgt die Kontaktaufnahme. Die Amateurfunksatelliten arbeiten in einem bestimmten Modus. 
-Der Modus gibt an, in welchem Frequenzbereich der Satellit hört und auf welchem er sendet. Ein Signal,
-das der Satellit zur Erde schickt nennt man ``Downlink'' und von der Basisstation zum Satelliten ``Uplink''. Das für diese Studienarbeit 
-verwendete Funkgerät IC-9100 kann mit den Modi B und J arbeiten \cite[S.153]{radiomanual}
-=======
-Position nach zuführen. Nach der korrekten Nachführung folgt die Kontaktaufnahme. Die 
-Amateurfunksatelliten arbeiten in einem bestimmten Modus. 
+Position nach zuführen. Nach der korrekten Nachführung folgt die Kontaktaufnahme. Dafür besitzt jeder Satellit einen Transponder um Daten zu 
+empfangen und wieder abzustrahlen. In der folgenden Tabelle sind die Transpodermodi der Amateurfunksatelliten gelistet. 
 \begin{table}[h]
 	\centering
 	\caption[Abkürzungen der Transpondermodi]{Abkürzungen der Transpondermodi, Quelle: \cite{amateursat}}
@@ -68,18 +63,30 @@ Amateurfunksatelliten arbeiten in einem bestimmten Modus.
 	\end{tabular} 
 	\label{tab:modi}
 \end{table}
-\clearpage
+
 Der Modus gibt an, in welchem Frequenzbereich der Satellit hört und auf welchem er sendet. Ein Transponder in dem 
 Modus VU empfängt im 2-m-Band und sendet im 70-cm-Band. Ein Signal, das der Satellit zur Erde schickt nennt man ``Downlink'' und von der Basisstation 
 zum Satelliten ``Uplink''.
 Historisch wurden die Uplink- und Downlink- Bänder mit folgenden Buchstaben codiert: Modus A,B oder J.
 Das für diese Studienarbeit verwendete Funkgerät IC-9100 kann in den Modi B und J arbeiten \cite[S.153]{radiomanual}
->>>>>>> fcf4449935e50bc10ce6ab721623f2ddb1bcb798
 \begin{itemize}
  \item Mode B: Uplink: 70 cm - Downlink:  2  m 
  \item Mode J: Uplink:  2  m - Downlink: 70 cm
 \end{itemize}
 Einige Cubesats senden in \ac{CW} das Rufzeichen sowie ihre Telemetriedaten aus und dienen der Funktionskontrolle.
+Um Informationen zu empfangen oder zu senden, gibt es einige Möglichkeiten im Amateurfunk. Es werden im Folgenden die wichtigsten Betriebsarten 
+vorgestellt. 
+\begin{itemize}
+ \item SSB -- Single Side Band: Eine von den Amateurfunkern eingeführten Betriebsart für das Fernsprechen. Diese ist eine leistungsfährigere und 
+effizientere Weiterentwicklung der Amplitudenmodulation. Bei der Amplitudenmodulation werden zwei Seitenbänder mit den Informationen und ein Träger 
+benötigt. Daher ist ein AM-Signal sehr breit und störanfällig. Anders bei der SSB Betriebsart. Hier wird auf den Träger und dem zweiten Seitenband 
+verzichtet. Trotz dessen kann ein gutes Sprachsignal übertragen werden.  
+ \item FM -- Frequenzmodulation: Bei der Frequenzmodulation wird die Information in eine Frequenz gepackt und die Amplitude bleibt dabei 
+konstant. FM ermöglicht eine qualitativ gute, störungsfreie Übertragung von Sprache.   
+ \item Packet Radio -- Datenübertragung: Diese Betriebsart überträgt digitale Daten in dem kurze Datenpackete ausgesendet werden und am Emfänger 
+wieder zusammen gesetzt werden. Dadurch können Funkamateure mit ihren üblichen UKW-Funkgeräten untereinander Daten austauschen. Für die Kommunikation 
+zwischen Amateurfunksatelliten und den Bodenstationen wird vorwiegend das Packet-Radio-Protokoll mit FSK-Modulation (Frequenzumtastung) verwendet.
+\end{itemize}
 
 \newpage
 Die 1969 gegründete Organisation AMSAT ist eine Vereinigung von Funkamateuren, welche Raumfahrtsatelliten entwickeln und kostengünstige 
@@ -93,7 +100,7 @@ Raumfahrtmissionen realisieren. Unter anderem dokumentiert AMSAT auch alle Amate
 In der Grafik \ref{fig:amsat} sind die Satelliten mit dem aktuellen Statusbericht (04. Juni 2016) gelistet. Diejenigen Satelliten mit blauer 
 Markierung sind aktiv, wohingegen die roten Satelliten kein Signal zu dem jeweiligen Zeitpunkt von sich gegeben haben. Gelb bedeutet, dass nur die 
 Telemetriedaten empfangen wurden und orange, dass Konflikte bestehen. Für die Studienarbeit sind diese Informationen sehr nützlich, um Satelliten 
-tracken zu können. 
+tracken zu verfolgen. 
 %betriebsarten
 %http://www.hobbyfunk.de/cb/betriebsarten.html
 %http://www.ov-lennestadt.de/amateurfunk/auf-ultrakurzwelle
