@@ -2,4 +2,5 @@
 - Einheitliche Verwendung von (siehe Abb. XX) oder (siehe Abbildung XX)
 - Einheitlicher Abstand nach fettgeschriebenen Bezeichnungen im Text (als nichtnummerierte Überschrift)
 - Einheitliche Verwendung von \itemize
-- Einheitliche Notation in bibliography.bib
+- Abstand vor Inhaltsverzeichnis bei chapter
+
