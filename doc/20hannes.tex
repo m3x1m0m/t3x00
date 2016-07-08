@@ -225,6 +225,8 @@ In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschieden
 	\label{tab:radiocontrolmodes}
 \end{table}
 
+\newpage
+
 Wenn die \myemph{Engage}-Schaltfläche aktiviert ist, wird die Korrektur der Doppler-Verschiebung durchgeführt, egal ob der ausgewählte Satellit sichtbar ist oder nicht.
 
 \subsection{GPredict-Einstellungen}
@@ -312,8 +314,6 @@ Dabei verwendet man entweder den Quellcode um eine benutzerspezifische Anwendung
 \end{itemize}
 
 Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}'' für  ,,Rig'' (deutsch: Amateurfunkgerät) und das ,,\myemph{d} am Ende von \myemph{rigctld} und \myemph{rotctld} für ,,Deamon'' (deutsch: Hintergrundprozess).
-
-
 
 \subsection{Parameter-Konfiguration}
 \label{chap:hamlibconfig}
@@ -430,18 +430,18 @@ Für die folgenden grundlegenden Befehle konnte eine Übereinstimmung der von Ha
 	\item \texttt{m: get\_mode} (Auslesen des Modus und der zugehörigen Bandbreite)
 \end{itemize}
 
-Eine Übersicht der gültigen Eingabeparameter kann über die Option \texttt{-\,-dump-caps} ausgegeben werden (siehe Abschnitt \ref{chap:hamlibusage}).
+Eine Übersicht der gültigen Eingabeparameter von \myemph{rigctl(d).exe} kann über die Option \texttt{-\,-dump-caps} ausgegeben werden (siehe Abschnitt \ref{chap:hamlibusage}).
 
 \clearpage
 
-Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im Satellitenmodus betrieben werden muss, ist es essentiell, dass dieser über \myemph{rigctl(d).exe} aktiviert werden kann.\label{satmode} Beim Test des entsprechenden Befehls, wurde jedoch festgestellt, dass das CI-V-Kommando, dass an das Funkgerät geschickt wird, nicht dem Korrekten aus \cite{radiomanual} entspricht. Da es mit dem fertig kompilierten Programm \myemph{rigctl(d).exe} keine Möglichkeit gibt einen ,,rohen'' Befehl zu versenden, ist es somit nicht möglich, diese Funktionalität ohne Eingriff in den Quellcode von HamLib zu implementieren. In Tabelle \ref{tab:civcommands} ist der HamLib-Befehl zur Aktivierung des Satellitenmodus, das verwendete CI-V-Kommando und das tatsächliche CI-V-Kommando dargestellt. Die Ausschnitte, die nicht übereinstimmen, sind rot markiert.
+Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im Satellitenmodus betrieben werden muss, ist es essentiell, dass dieser über \myemph{rigctl(d).exe} aktiviert werden kann.\label{satmode} Beim Test des entsprechenden Befehls (siehe Tabelle \ref{tab:civcommands}), wurde jedoch festgestellt, dass das CI-V-Kommando, dass an das Funkgerät geschickt wird, nicht dem Korrekten aus \cite{radiomanual} entspricht. Für das fertig kompilierte Programm \myemph{rigctl(d).exe} gibt es zwar den Befehl \texttt{send\_cmd} mit dem laut \cite{hamlibmanual} ASCII-Zeichen geschickt werden können, dieser konnte im Rahmen dieses Projektes jedoch nicht erfolgreich verwendet werden. Es konnte hierbei auch nach Testen verschiedener Teile des CI-V-Kommandos der Satellitenmodus am Funkgerät nicht aktiviert werden. Somit ist es nicht möglich einen ,,rohen'' Befehl zu versenden, ohne einen Eingriff in den Quellcode von HamLib vorzunehmen. In Tabelle \ref{tab:civcommands} ist der HamLib-Befehl zur Aktivierung des Satellitenmodus, das verwendete CI-V-Kommando und das tatsächliche CI-V-Kommando dargestellt. Die Ausschnitte, die nicht übereinstimmen, sind rot markiert.
 
 \begin{table}[h]	 
 	\small\begin{tabularx}{\textwidth}{|X|l|l|}
 		\hline
 		\textbf{HamLib-Befehl \myemph{rigctl(d).exe}}	& \textbf{CI-V (Verwendet)}			&\textbf{CI-V (Tatsächlich)}\\
 		\hline
-		\texttt{U SATMODE 1}	& \texttt{fe fe 7c e0 \myredtext{1a 07} 01 fd}	& \texttt{fe fe 7c e0 16 5a 01 fd}\\
+		\texttt{U SATMODE 1}	& \texttt{FE FE 7C E0 \myredtext{1A 07} 01 FD}	& \texttt{FE FE 7C E0 16 5A 01 FD}\\
 		\hline		
 	\end{tabularx}
 	\caption{Fehlerhaftes CI-V Kommando beim Aktivieren des Satellitenmodus}
@@ -450,7 +450,7 @@ Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im
 
 \subsection{Test der Kommunikation zu den Rotoren}
 
-Beim Test der Bedienelemente kann der Ausgabe des Skripts \myemph{rotctld-dummy.bat} bei Verwendung der höchsten Ausgabeintensität \texttt{-vvvvv} entnommen werden, dass lediglich die Befehle \texttt{set\_pos} und \texttt{get\_pos} beim Verfolgen eines Satelliten verwendet werden. Diese beiden Befehle konnten mit dem Skript \myemph{rotctl.bat} erfolgreich für die Steuerung der beiden Rotoren getestet werden. Grundsätzlich sind bei der Steuerung der Rotoren einige Aspekte zu beachten. Beispielsweise, dass die Rotorgeschwindigkeit reduziert wird, sobald der Ist-Winkel in gewisser Nähe zum Soll-Winkel. Diese Punkte werden jedoch alle entweder von den Steuerungsmodulen oder von der Software \myemph{ARSVCOM} übernommen, sodass in GPredict lediglich die jeweiligen Winkel ausgelesen und gesetzt werden müssen.
+Beim Test der Bedienelemente kann der Ausgabe des Skripts \myemph{rotctld-dummy.bat} bei Verwendung der höchsten Ausgabeintensität \texttt{-vvvvv} entnommen werden, dass lediglich die Befehle \texttt{set\_pos} und \texttt{get\_pos} beim Verfolgen eines Satelliten verwendet werden. Diese beiden Befehle konnten mit dem Skript \myemph{rotctl.bat} erfolgreich für die Steuerung der beiden Rotoren getestet werden. Grundsätzlich sind bei der Steuerung der Rotoren einige Aspekte zu beachten, beispielsweise, dass die Rotorgeschwindigkeit reduziert wird, sobald sich der Ist-Winkel in gewisser Nähe zum Soll-Winkel befindet. Diese Punkte werden jedoch alle entweder von den Steuerungsmodulen oder von der Software \myemph{ARSVCOM} übernommen, sodass in GPredict lediglich die jeweiligen Winkel ausgelesen und gesetzt werden müssen.
 
 \clearpage
 
@@ -491,7 +491,18 @@ Der Elevations-Rotor lässt sich von 0\mydegree\ bis 180\mydegree\ auslenken, de
 	\label{fig:rotatorflip} 
 \end{figure}
 
-Bei einem Rotorflip wird der Elevations-Rotor über die 90\mydegree-Schwelle gekippt, womit der Anschlag des Azimut-Rotors um 180\mydegree, also nach Norden, verlegt wird. Somit ist es möglich einen Satelliten mit dem in Abbildung \ref{fig:rotatorflip} zu sehenden Verlauf zu verfolgen.
+\newpage
+
+Bei einem Rotorflip wird der Elevations-Rotor über die 90\mydegree-Schwelle gekippt, womit der Anschlag des Azimut-Rotors um 180\mydegree, also nach Norden, verlegt wird. Somit ist es möglich einen Satelliten mit dem in Abbildung \ref{fig:rotatorflip} zu sehenden Verlauf zu verfolgen.\newpar
+
+\textbf{Ich habe den Rotctl-Treiber modifiziert damit er Richtungen von -180 bis 180 Grad aktzeptiert.}\\
+Zeile 141\\
+Zeile 171\\
+Zeile 224\\
+file befindet sich unter hamlib-3.0.1/gs232a/gs232.c
+
+
+\newpage
 
 \subsection{Probelauf und Testergebnisse}
 \label{chap:probelauf}
