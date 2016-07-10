@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			12th June 2016												%%
+%% Date:			10th July 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -482,11 +482,12 @@ Bei der Konfiguration der Rotorensteuerung ist die Angabe der IP-Adresse und des
 	\label{fig:rotatorconfig} 
 \end{figure}
 
-Der Elevations-Rotor lässt sich von 0\mydegree\ bis 180\mydegree\ auslenken, dementsprechend wird die Einstellung bei \myemph{Min El} und \myemph{Max El} gewählt. Der Azimut-Rotor lässt sich um 360\mydegree\ auslenken und besitzt einen Anschlag bei 180\mydegree\ (Süden), das heißt er lässt sich von 0\mydegree\ (Norden) aus jeweils um 180\mydegree\ in Richtung Süden drehen. Deshalb scheint es zunächst naheliegend beim Feld \myemph{Az type} den Bereich von -180\mydegree\ bis 180\mydegree\ einzustellen, woraufhin automatisch bei \myemph{Min Az} -180\mydegree\ und bei \myemph{Max Az} 180\mydegree\ eingetragen wird. Jedoch wurde bei verschiedenen Tests festgestellt, dass es bei der Steuerung je nach Azimut-Verlauf des Satelliten zu einem Fehlverhalten kommt (näheres unter Abschnitt \ref{chap:hamlibmod}). Passiert ein Satellit, wie in Abbildung \ref{fig:rotatorflip} beispielhaft zu sehen, die Linie zwischen dem Mittelpunkt des Polardiagramms und der südlichen Richtung (also den Anschlag des Azimut-Rotors), ist ein Rotorflip notwendig.
+Der Elevations-Rotor lässt sich von 0\mydegree\ bis 180\mydegree\ auslenken, dementsprechend wird die Einstellung bei \myemph{Min El} und \myemph{Max El} gewählt. Der Azimut-Rotor lässt sich um 360\mydegree\ auslenken und besitzt einen Anschlag bei 180\mydegree\ (Süden), das heißt er lässt sich von 0\mydegree\ (Norden) aus jeweils um 180\mydegree\ in Richtung Süden drehen. Deshalb wird beim Feld \myemph{Az type} der Bereich von -180\mydegree\ bis 180\mydegree\ eingestellt, woraufhin automatisch bei \myemph{Min Az} -180\mydegree\ und bei \myemph{Max Az} 180\mydegree\ eingetragen wird.\newpar
+Passiert ein Satellit, wie in Abbildung \ref{fig:rotatorflip} beispielhaft zu sehen, die Linie zwischen dem Mittelpunkt des Polardiagramms und der südlichen Richtung (also den Anschlag des Azimut-Rotors), ist ein Rotorflip notwendig.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.26\textwidth]{rotatorflip}
+	\includegraphics[width=0.35\textwidth]{rotatorflip}
 	\caption{Verlauf eines Satelliten über \\den Anschlag des Azimut-Rotors}
 	\label{fig:rotatorflip} 
 \end{figure}
@@ -498,12 +499,40 @@ Bei einem Rotorflip wird der Elevations-Rotor über die 90\mydegree-Schwelle gek
 \subsection{Modifizierung des HamLib-Quellcodes}
 \label{chap:hamlibmod}
 
-Um erfolgreich einen Rotorflip durchführen zu können, ist es notwendig die Quelldatei, in der das Backend für die verwendete Rotorschnittstelle implementiert ist, anzupassen. Um diese Anpassungen des Quellcodes im Programm \myemph{rotctl(d).exe} nutzen zu können, ist es erforderlich den Quellcode von HamLib erneut für Windows zu kompilieren. Wie dabei vorgegangen werden muss, ist im Folgenden schrittweise aufgeführt. Hierfür wurde ein Rechner, auf dem Debian 8.5 (64 bit) installiert ist, verwendet.
+Um fehlerlos einen Rotorflip durchführen zu können, ist es notwendig die Quelldatei, in der das Backend für die verwendete Rotorschnittstelle implementiert ist, anzupassen. Dafür wurden insgesamt drei Änderungen in der Datei \myemph{gs232.c}, die unter dem Pfad \texttt{hamlib-3.0.1/gs232a/} des HamLib-Quellcodes zu finden ist, vorgenommen. Die modifizierte Datei ist im Anhang \ref{chap:hamlibmodification} zu finden.\newpar
+Die erste Änderung wurde in der Funktion \texttt{gs232\_rot\_set\_position()} in Zeile 141 vorgenommen. Hier wurde die folgende Zeile eingefügt um sicherzustellen, dass der Azimutwert, der an den Rotor geschickt wird, immer zwischen 0\mydegree\ und 360\mydegree\ liegt:
+
+\vspace{-1em}
+\begin{shaded}
+	\normalsize{\texttt{if (az < 0.0) az += 360.0;}}
+\end{shaded}
+\vspace{-1em}
+
+Die zweite Änderung wurde in der Funktion \texttt{gs232\_rot\_get\_position()} in Zeile 171 vorgenommen. Durch Einfügen der folgenden Zeile, wird sichergestellt, dass der vom Rotor gelesene Azimutwert immer zwischen -180\mydegree\ und 180\mydegree\ liegt, sodass er der Rotorkonfiguration von GPredict entspricht:
+
+\vspace{-1em}
+\begin{shaded}
+	\normalsize{\texttt{if (*az > 180.0) *az -= 360.0;}}
+\end{shaded}
+\vspace{-1em}
+
+Die dritte Änderung befindet sich in Zeile 224. Hier wurde bei den Fähigkeiten des Rotor-Backends der minimale Azimutwert von 0\mydegree\ auf -180\mydegree\ abgeändert, wie es im Folgenden zu sehen ist:
+
+\vspace{-1em}
+\begin{shaded}
+	\normalsize{\texttt{.min\_az = -180.0,}}
+\end{shaded}
+%\vspace{-1em}
+
+\subsection{Kompilieren der modifizierten HamLib für Windows}
+\label{chap:winbuild}
+
+Um diese Anpassungen des Quellcodes im Programm \myemph{rotctl(d).exe} nutzen zu können, ist es erforderlich den Quellcode von HamLib nachdem die Änderungen vorgenommen wurden für Windows zu kompilieren. Wie dabei vorgegangen werden muss, ist im Folgenden schrittweise aufgeführt. Hierfür wurde ein Rechner, auf dem Debian 8.5 (64 bit) installiert ist, verwendet.
 
 \begin{enumerate}
 	\parskip0pt
-	\item Zuerst lädt man den HamLib-Quellcode, der unter \cite{hamlibdownload} verfügbar ist, herunter, entpackt das Archiv \myemph{hamlib-3.0.1.tar.gz} und verschiebt den darin enthaltenen Ordner \myemph{hamlib-3.0.1} ins Verzeichnis \texttt{/home/<username>/builds/}. Das beim Schritt XXX verwendete Skript bezieht sich auf diesen absoluten Pfad.
-	\item Als nächstes lädt man das Archiv \myemph{libusb-win32-bin-1.2.4.0.zip} (siehe XXX) herunter und entpackt es ebenfalls ins im vorherigen Schritt genannte Verzeichnis.
+	\item Zuerst lädt man den HamLib-Quellcode, der unter \cite{hamlibdownload} verfügbar ist, herunter, entpackt das Archiv \myemph{hamlib-3.0.1.tar.gz} und verschiebt den darin enthaltenen Ordner \myemph{hamlib-3.0.1} ins Verzeichnis \texttt{/home/<username>/builds/}. Das bei Schritt 5 erwähnte Skript bezieht sich auf diesen absoluten Pfad.
+	\item Als nächstes lädt man das Archiv \myemph{libusb-win32-bin-1.2.4.0.zip} herunter (siehe \cite{libusbdownload}) und entpackt es ebenfalls in das im vorherigen Schritt genannte Verzeichnis.
 	\item Da der Quellcode für die Verwendung unter Windows kompiliert werden soll, müssen unter Linux entsprechende Softwarekomponenten installiert sein. Diese können mit folgenden Befehlen installiert werden:
 	\vspace{-1em}
 	\begin{shaded}
@@ -517,44 +546,27 @@ Um erfolgreich einen Rotorflip durchführen zu können, ist es notwendig die Que
 		\texttt{\$ ./configure --host=i586-mingw32msvc}
 	\end{shaded}
 	\vspace{-1em}
-	\newpage
 	\item Anschließend markiert man das Bash-Skript \myemph{build-win32.sh} im Verzeichnis \texttt{./scripts/} mit folgendem Befehl als ausführbar:
 	\vspace{-1em}
 	\begin{shaded}
 		\texttt{\$ chmod +x build-win32.sh}
 	\end{shaded}
 	\vspace{-1em}	
-	\item Als letztes führt man das Bash-Skript \myemph{build-win32.sh} mit folgendem Befehl aus und erhält
+	\item Als letztes führt man das Bash-Skript \myemph{build-win32.sh} mit folgendem Befehl aus und findet nach erfolgreichem Erstellungsvorgang das Archiv \myemph{hamlib-win32-3.0.1.zip} im Ordner \myemph{hamlib-3.0.1}. In diesem Archiv ist nun die vollständige HamLib für Windows enthalten.
+	\vspace{-1em}
+	\begin{shaded}
+		\texttt{\$ ./build-win32.sh hamlib-3.0.1}
+	\end{shaded}
+	\vspace{-1em}	
 \end{enumerate}
 
-\newpage
+Nähere Details zu den oben genannten Schritten können aus folgenden Dateien des HamLib-Quellcodes (im Ordner \myemph{hamlib-3.0.1}) entnommen werden:
 
-Ich habe den Rotctl-Treiber modifiziert damit er Richtungen von -180 bis 180 Grad aktzeptiert.\\
-Zeile 141\\
-Zeile 171\\
-Zeile 224\\
-file befindet sich unter hamlib-3.0.1/gs232a/gs232.c\\
-siehe Anhang \ref{chap:hamlibmodification}
-
-\vspace{-1em}
-\begin{shaded}
-	\normalsize{\texttt{if (az < 0.0) az += 360.0;}}
-\end{shaded}
-%\vspace{-1em}
-
-\vspace{-1em}
-\begin{shaded}
-	\normalsize{\texttt{if (*az > 180.0) *az -= 360.0;}}
-\end{shaded}
-%\vspace{-1em}
-
-\vspace{-1em}
-\begin{shaded}
-	\normalsize{\texttt{.min\_az = -180.0,}}
-\end{shaded}
-%\vspace{-1em}
-
-\newpage
+\begin{itemize}
+	\parskip0pt
+	\item \texttt{INSTALL} (Abschnitt ,,MS Windows'')
+	\item \texttt{scripts/README.build-win32} (gesamte Datei)
+\end{itemize}
 
 \subsection{Probelauf und Testergebnisse}
 \label{chap:probelauf}
