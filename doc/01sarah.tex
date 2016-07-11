@@ -14,7 +14,7 @@
 \section{Amateurfunksatelliten}
 Seit den sechziger Jahren sind Amateurfunker an der Raumfahrt beteiligt. Nur vier Jahre nach dem 
 Start des ersten Satelliten Sputnik 1 wurde der erste Amateurfunksatellit OSCAR-1 am 12. Dezember 
-1961 erfolgreich gestartet. OSCAR bedeutet Orbiting Satellite Carrying Amateur Radio und war 22 
+1961 erfolgreich gestartet. OSCAR bedeutet Orbiting Satellite Carrying Amateur Radio und dieser Satellit war 22 
 Tage in seinem Orbit. Dabei konnten 570 Funkamateure in 28 Ländern ihre Beobachtungen zum 
 OSCAR-Projekt melden.
 In dieser Studienarbeit soll die Bodenstation erdnahe Satelliten verfolgen können. 
@@ -49,7 +49,8 @@ Erde ständig und haben daher nur ein beschränktes
 Zeitfenster, in dem man mit einem solchen Satelliten arbeiten kann. Davor befindet sich der Satellit durch die Erdkrümmung hinter dem Horizont und 
 ist daher unerreichbar. Daher ist es für die Bodenstation wichtig zu wissen wann der Satellit am Horizont auftaucht um die Antenne in die richtige 
 Position nach zuführen. Nach der korrekten Nachführung folgt die Kontaktaufnahme. Dafür besitzt jeder Satellit einen Transponder um Daten zu 
-empfangen und wieder abzustrahlen. In der folgenden Tabelle sind die Transpodermodi der Amateurfunksatelliten gelistet. 
+empfangen und wieder abzustrahlen. Dabei wird der Datenstrom ohne qualitative Veränderung weitergeleitet. In der Tabelle \ref{tab:modi} sind die 
+Transpodermodi der Amateurfunksatelliten gelistet. 
 \begin{table}[h]
 	\centering
 	\caption[Abkürzungen der Transpondermodi]{Abkürzungen der Transpondermodi, Quelle: \cite{amateursat}}
@@ -63,26 +64,21 @@ empfangen und wieder abzustrahlen. In der folgenden Tabelle sind die Transpoderm
 	\end{tabular} 
 	\label{tab:modi}
 \end{table}
-
 Der Modus gibt an, in welchem Frequenzbereich der Satellit hört und auf welchem er sendet. Ein Transponder in dem 
 Modus VU empfängt im 2-m-Band und sendet im 70-cm-Band. Ein Signal, das der Satellit zur Erde schickt nennt man ``Downlink'' und von der Basisstation 
 zum Satelliten ``Uplink''.
-Historisch wurden die Uplink- und Downlink- Bänder mit folgenden Buchstaben codiert: Modus A,B oder J.
-Das für diese Studienarbeit verwendete Funkgerät IC-9100 kann in den Modi B und J arbeiten \cite[S.153]{radiomanual}
-\begin{itemize}
- \item Mode B: Uplink: 70 cm - Downlink:  2  m 
- \item Mode J: Uplink:  2  m - Downlink: 70 cm
-\end{itemize}
 Einige Cubesats senden in \ac{CW} das Rufzeichen sowie ihre Telemetriedaten aus und dienen der Funktionskontrolle.
-Um Informationen zu empfangen oder zu senden, gibt es einige Möglichkeiten im Amateurfunk. Es werden im Folgenden die wichtigsten Betriebsarten 
+\newpar
+Um Informationen zu empfangen oder zu senden, gibt es einige Möglichkeiten im Amateurfunk. Es werden im Folgenden die wichtigsten 
+Betriebsarten 
 vorgestellt. 
 \begin{itemize}
  \item SSB -- Single Side Band: Eine von den Amateurfunkern eingeführten Betriebsart für das Fernsprechen. Diese ist eine leistungsfährigere und 
 effizientere Weiterentwicklung der Amplitudenmodulation. Bei der Amplitudenmodulation werden zwei Seitenbänder mit den Informationen und ein Träger 
 benötigt. Daher ist ein AM-Signal sehr breit und störanfällig. Anders bei der SSB Betriebsart. Hier wird auf den Träger und dem zweiten Seitenband 
-verzichtet. Trotz dessen kann ein gutes Sprachsignal übertragen werden.  
+verzichtet. Trotz dessen kann ein gutes Sprachsignal übertragen werden. 
  \item FM -- Frequenzmodulation: Bei der Frequenzmodulation wird die Information in eine Frequenz gepackt und die Amplitude bleibt dabei 
-konstant. FM ermöglicht eine qualitativ gute, störungsfreie Übertragung von Sprache.   
+konstant. FM ermöglicht eine qualitativ gute, störungsfreie Übertragung von Sprache.
  \item Packet Radio -- Datenübertragung: Diese Betriebsart überträgt digitale Daten in dem kurze Datenpackete ausgesendet werden und am Emfänger 
 wieder zusammen gesetzt werden. Dadurch können Funkamateure mit ihren üblichen UKW-Funkgeräten untereinander Daten austauschen. Für die Kommunikation 
 zwischen Amateurfunksatelliten und den Bodenstationen wird vorwiegend das Packet-Radio-Protokoll mit FSK-Modulation (Frequenzumtastung) verwendet.
