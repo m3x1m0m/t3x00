@@ -16,7 +16,7 @@ Eine sehr detaillierte Beschreibung der Software GPredict ist unter \cite{gpredi
 
 \section{Übersicht}
 
-GPredict ist eine freie Software zur Satellitenverfolgung und Orbitvorhersage und steht als Quellcode oder bereits fertig kompiliertes Programm für Windows, Mac OS und Linux zur Verfügung. Die Software ist in C geschrieben und unter der GNU \ac{GPL} lizenziert, somit kann sie frei verändert und an die entsprechenden Nutzervoraussetzungen angepasst werden. Im Rahmen dieser Projektarbeit wird Version 1.3 von GPredict verwendet (verfügbar unter \cite{gpredictdownload}).\newpar
+GPredict ist eine freie Software zur Satellitenverfolgung und Orbitvorhersage und steht als Quellcode oder bereits fertig kompiliertes Programm für Windows, Mac OS und Linux zur Verfügung. Die Software ist in C geschrieben und unter der GNU \ac{GPL} lizenziert. Somit kann sie frei verändert und an die entsprechenden Nutzervoraussetzungen angepasst werden. Im Rahmen dieser Projektarbeit wird Version 1.3 von GPredict verwendet (verfügbar unter \cite{gpredictdownload}).\newpar
 In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfolgungsprogramms zu sehen (die blauen Blöcke stellen hierbei die Funktionalität des Programms dar). Zunächst wird an Hand der Keplerschen Bahnelemente und dem aktuellen Zeitpunkt die absolute Position des Satelliten berechnet. Daraufhin wird der Vektor, der von der Bodenstation zum Satelliten zeigt, bestimmt. Nun können Azimut und Elevation dieses Vektors für die Ansteuerung der Antenne verwendet werden.
 
 \begin{figure}[h]
@@ -50,7 +50,7 @@ Zu den oben genannten Ansichten kommen noch zwei Weitere hinzu, die Listenansich
 \textbf{Map View}\\
 Diese Ansicht besteht, wie in Abbildung \ref{fig:gpredictstartup} zu sehen, aus einer Weltkarte auf der die aktuellen Standorte der für das aktuelle Modul ausgewählten Satelliten zu sehen ist. Das heißt der Punkt auf dem der entsprechende Satellit senkrecht bezogen auf den Erdmittelpunkt steht. Außerdem ist um diesen Punkt die Fläche umrahmt, von der der Satellit von der Erde aus sichtbar ist. Mit einem Rechtsklick auf einen Satellitennamen kann außerdem die Option \myemph{Ground Track} aktiviert werden, mit welcher die Spur des Satelliten für mehrere Orbits angezeigt wird.\newpar
 \textbf{Polar View}\\
-Die \myemph{Polar View} (siehe Abbildung \ref{fig:gpredictstartup}) stellt eine Draufsicht auf die Bodenstation dar, bei der die Polarachse den Azimutwinkel darstellt und die Radialachse den Elevationswinkel. Mit einem Rechtsklick auf einen Satelliten lässt sich mit der Option \myemph{Show sky track} aktivieren, das die Spur des entsprechenden Satelliten anzeigt wird. Zusätzlich wird das aktuelle Modul links oben angezeigt, der nächste sichtbare Satellit (rechts oben) und die genauen Werte für Azimut und Elevation (links unten) sobald sich der Mauszeiger auf der \myemph{Polar View} befindet.\newpar
+Die \myemph{Polar View} (siehe Abbildung \ref{fig:gpredictstartup}) stellt eine Draufsicht auf die Bodenstation dar, bei der die Polarachse den Azimutwinkel darstellt und die Radialachse den Elevationswinkel. Mit einem Rechtsklick auf einen Satelliten lässt sich mit der Option \myemph{Show sky track} aktivieren, dass die Spur des entsprechenden Satelliten anzeigt wird. Zusätzlich wird das aktuelle Modul links oben angezeigt, der nächste sichtbare Satellit (rechts oben) und die genauen Werte für Azimut und Elevation (links unten) sobald sich der Mauszeiger auf der \myemph{Polar View} befindet.\newpar
 \textbf{Single-Satellite View}\\
 In dieser Ansicht (siehe Abbildung \ref{fig:gpredictstartup}) werden detaillierte Informationen zu einem ausgewählten Satelliten angezeigt, z.B. Azimut, Elevation, Entfernung der direkten Sichtverbindung (\myemph{Slant Range}), Höhe, Geschwindigkeit, Doppler-Verschiebung oder Signaldämpfung. Mit einem Klick auf das \myvsymbol-Symbol links neben dem Satellitennamen kann zwischen den für dieses Modul ausgewählten Satelliten gewechselt werden.
 
@@ -176,7 +176,7 @@ In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der 
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
 		\hline
 		Inaktiv          	& Inaktiv 			& Es werden weder Kommandos an die Rotoren gesendet, noch wird die aktuelle Ausrichtung der Antenne ausgelesen. Die aktuellen Winkel des zu verfolgenden Satelliten werden nicht in die Winkelsteuerungs-Eingabefelder übertragen.\\
-		Aktiv              	& Inaktiv   		& Die aktuellen Winkel des zu verfolgenden Satelliten werden in die Winkelsteuerungs-Eingabefelder übertragen, es werden aber keine Kommandos an die Rotoren geschickt und die aktuelle Ausrichtung der Antenne wird nicht ausgelesen.\\
+		Aktiv              	& Inaktiv   		& Die aktuellen Winkel des zu verfolgenden Satelliten werden in die Winkelsteuerungs-Eingabefelder übertragen. Allerdings werden keine Kommandos an die Rotoren geschickt und die aktuelle Ausrichtung der Antenne wird nicht ausgelesen.\\
 		Aktiv              	& Aktiv	            & Die aktuellen Winkel des zu verfolgenden Satelliten werden in die Winkelsteuerungs-Eingabefelder übertragen und diese werden an die Rotoren geschickt. Die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
 		Inaktiv            	& Aktiv   			& Die Winkel, die in den Winkelsteuerungs-Eingabefelder eingestellt sind, werden an die Rotoren gesendet und die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
 		\hline		
@@ -202,7 +202,7 @@ Neben einer Anzeige die die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} darste
 	\parskip0pt
 	\item \textbf{Downlink:} In diesem Bereich kann die Frequenzeinstellung für die Downlink-Frequenz vorgenommen werden. Außerdem ist die aktuelle Dopplerfrequenz und ein Feld names \myemph{LO}, welches für eine Offsetfrequenz steht, die im Funkgerät eingestellt werden kann, steht. Die korrigierte Frequenz welche nach \myemph{Radio} angezeigt wird, setzt sich damit beispielsweise wie folgt zusammen: $f_{Radio} = f_{Satellite} + f_{Doppler} - f_{LO}$
 	\item \textbf{Uplink:} Dieser Bereich beinhaltet die Frequenzeinstellungen für die Uplink-Frequenz und besitzt die gleichen Eigenschaften wie der Downlink-Bereich.
-	\item \textbf{Target:} Hier kann der zu verfolgende Satellit und der zu verwendente Transponder eingestellt werden. Mit einem Klick auf \myemph{Track} wird die Doppler-Verschiebung des ausgewählten Satelliten bei den Frequenzeinstellungen im Downlink- und Uplink-Bereich korrigiert. Eine wichtige Rolle spielt hierbei die Schaltfläche \myemph{T} (\myemph{Tune}), da die Frequenzen des Transponders nur durch einen Klick auf diese in die Frequenzeinstellungen übertragen werden. Sollte der Transponder beispielsweise nur einen Downlink besitzen, wird auch nur die Frequenz im Downlink-Bereich eingestellt.
+	\item \textbf{Target:} Hier kann der zu verfolgende Satellit und der zu verwendente Transponder eingestellt werden. Mit einem Klick auf \myemph{Track} wird die Doppler-Verschiebung des ausgewählten Satelliten bei den Frequenzeinstellungen im Downlink- und Uplink-Bereich korrigiert. Eine wichtige Rolle spielt hierbei die Schaltfläche \myemph{T} (\myemph{Tune}), da die Frequenzen des Transponders nur durch einen Klick auf diese in die Frequenzeinstellungen übertragen werden. Sollte der Transponder beispielsweise nur einen Down\-link besitzen, wird auch nur die Frequenz im Downlink-Bereich eingestellt.
 	Mit der Schaltfläche \myemph{L} (\myemph{Lock}) lässt sich die Differenz der Downlink- und Uplink-Frequenz sperren, das heißt Änderungen an der einen wirken sich auch auf die andere Frequenz aus. Dies ist nicht für Transponder möglich, die nur einen Up- oder Downlink besitzen.
 	\item \textbf{Settings:} In diesem Bereich lassen sich bis zu zwei Funkgeräte auswählen die in den GPredict-Einstellungen unter \myemph{Interfaces} eingerichtet wurden. Das obere Gerät stellt das Primäre dar und kann für Up- und Downlink verwendet werden. Das Untere kann als sekundäres Gerät verwendet werden, welches nur für den Uplink verwendet werden kann. Mit einem Klick auf \myemph{Engage} wird die Kommunikation zwischen GPredict und Funkgerät(en) aufgebaut. Hierbei kann im Feld neben \myemph{Cycle} der Zyklus eingetragen werden, nach welchem Kommandos an das Funkgerät geschickt werden sollen.
 \end{itemize}
@@ -274,7 +274,7 @@ Die Modul-Einstellungen sind in folgende sechs Reiter untergliedert:
 \end{itemize}
 
 Die Kategorie \myemph{Interfaces} ist in zwei Reiter untergliedert, \myemph{Radios} und \myemph{Rotators}. Dort wird jeweils eine Liste der bereits eingerichteten Funkgeräte bzw. Rotoren angezeigt, welche standardmäßig leer ist. Die Anzahl der Geräte ist dabei nach oben nicht beschränkt. Die detaillierte Einrichtung ist in Abschnitt \ref{chap:radioconfig} und \ref{chap:rotatorconfig} genauer beschrieben.\newpar
-Beim Öffnen der Kategorie \myemph{Predict} wird standardmäßig der Reiter \myemph{Pass Conditions} angezeigt. Unter diesem lassen sich folgende Parameter einstellen:
+Beim Öffnen der Kategorie \myemph{Predict} wird der Reiter \myemph{Pass Conditions} angezeigt. Unter diesem lassen sich folgende Parameter einstellen:
 
 \begin{itemize}
 	\parskip0pt
@@ -286,7 +286,7 @@ Beim Öffnen der Kategorie \myemph{Predict} wird standardmäßig der Reiter \mye
 	\item \textbf{Twilight threshold:} Dieser Parameter gibt an, ab welcher Elevation ein Satellit als sichtbar gilt. Für die Satellitenverfolgung spielt dieser Paramenter keine Rolle.
 \end{itemize}
 
-Unter den Reitern \myemph{Multiple Passes} und \myemph{Single Pass} lassen sich die Parameter auswählen, die in den Ansichten \myemph{Upcoming Passes} und \myemph{Pass Details} dargestellt werden, wohingegen beim Reiter \myemph{Sky at a Glance} Darstellungsoptionen für die Funktion \myemph{The sky at a glance} eingestellt werden können.\newpar
+Unter den Reitern \myemph{Multiple Passes} und \myemph{Single Pass} lassen sich die Parameter auswählen, die in den Ansichten \myemph{Upcoming Passes} und \myemph{Pass Details} dargestellt werden. Beim Reiter \myemph{Sky at a Glance} können Darstellungsoptionen für die Funktion \myemph{The sky at a glance} eingestellt werden.\newpar
 Eine detailliertere Beschreibung der GPredict-Einstellungen kann aus \cite{gpredictmanual} Seite 23ff entnommen werden.
 
 \section{HamLib-Programmierschnittstelle}
@@ -306,10 +306,10 @@ Dabei verwendet man entweder den Quellcode um eine benutzerspezifische Anwendung
 
 \begin{itemize}
 	\parskip0pt
-	\item \textbf{rigctl:} Ein Kommandozeilenprogramm, mit welchem man Befehle über die Kommandozeile an das Funkgerät senden kann. (Unter Windows: \myemph{rigctl.exe})
-	\item \textbf{rotctl:} Ein Kommandozeilenprogramm, mit welchem man Befehle über die Kommandozeile an die Antennenrotoren senden kann. (Unter Windows: \myemph{rotctl.exe})
-	\item \textbf{rigctld:} Ein Kommandozeilenprogramm, mit welchem man Befehle über das TCP/IP-Protokoll an das Funkgerät senden kann (Unter Windows: \myemph{rigctld.exe})
-	\item \textbf{rotctld:}  Ein Kommandozeilenprogramm, mit welchem man Befehle über das TCP/IP-Protokoll an die Antennenrotoren senden kann (Unter Windows: \myemph{rigctld.exe})
+	\item \textbf{rigctl:} Ein Kommandozeilenprogramm um Befehle über die Kommandozeile an das Funkgerät zu senden (Unter Windows: \myemph{rigctl.exe}).
+	\item \textbf{rotctl:} Ein Kommandozeilenprogramm um Befehle über die Kommandozeile an die Antennenrotoren zu senden (Unter Windows: \myemph{rotctl.exe}).
+	\item \textbf{rigctld:} Ein Kommandozeilenprogramm um Befehle über das TCP/IP-Protokoll an das Funkgerät zu senden (Unter Windows: \myemph{rigctld.exe}).
+	\item \textbf{rotctld:}  Ein Kommandozeilenprogramm um Befehle über das TCP/IP-Protokoll an die Antennenrotoren zu senden (Unter Windows: \myemph{rigctld.exe}).
 \end{itemize}
 
 Hierbei steht ,,\myemph{rot}'' für ,,Rotator'' (deutsch: Rotor), ,,\myemph{rig}'' für  ,,Rig'' (deutsch: Amateurfunkgerät) und das ,,\myemph{d} am Ende von \myemph{rigctld} und \myemph{rotctld} für ,,Deamon'' (deutsch: Hintergrundprozess).
@@ -326,7 +326,7 @@ Die erste zentrale Information ist die \myemph{Hamlib ID}. Hierfür gibt man fol
 \end{shaded}
 \vspace{-1em}
 
-Im Folgenden sind die beiden Zeilen dargestellt, die für die in diesem Projekt verwendeten Funkgerät und Rotoren relevant sind. Hierbei steht der erste Eintrag für die \myemph{Hamlib ID}, der Zweite für den Hersteller, der Dritte für die Version und der Vierte für den Test-Status:
+Im Folgenden sind die beiden Zeilen dargestellt, die für das in diesem Projekt verwendete Funkgerät, sowie für die verwendete Rotorschnittstelle relevant sind. Hierbei steht der erste Eintrag für die \myemph{Hamlib ID}, der Zweite für den Hersteller, der Dritte für die Version und der Vierte für den Test-Status:
 
 \vspace{-1em}
 \begin{shaded}
