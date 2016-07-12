@@ -4,15 +4,50 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			07th July 2016												%%
+%% Date:			12th July 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% add "Anhang" in toc
+\addcontentsline{toc}{chapter}{Anhang}
+
+% start appendicies
 \appendix
 
-\chapter{Batch-Skript: \myemph{rigctld.bat}}
+% to suppress titles of appendices in toc
+\addtocontents{toc}{\setcounter{tocdepth}{-1}}
+
+\renewcommand{\thechapter}{Anhang \Alph{chapter}:}
+
+%---------------------------------------------------------------------------------
+
+\chapter{CD}
+\label{chap:cdappendix}
+
+\section*{Inhalt}
+
+\begin{itemize}
+	\parskip0pt
+	\item Studienarbeit: \myemph{T3X00.pdf}
+	\item Präsentations-Handout zur Studienarbeit: \myemph{T3X00-Handout.pdf}
+	\item Skripte:
+	\begin{itemize}
+		\item \myemph{rigctld.bat}
+		\item \myemph{rigctl.bat}
+		\item \myemph{rotctld.bat}
+		\item \myemph{rotctl.bat}
+		\item \myemph{rigctld-dummy.bat}
+		\item \myemph{rotctld-dummy.bat}
+	\end{itemize}
+	\item Modifizierte Datei: \myemph{gs232.c}
+	\item Kompilierter HamLib-Quellcode für Windows: \myemph{hamlib-3.0.1.zip}
+\end{itemize}
+
+%---------------------------------------------------------------------------------
+
+\chapter{Skript: \myemph{rigctld.bat}}
 \label{chap:rigctldbat}
 
 \begin{center}
@@ -21,7 +56,7 @@
 
 %---------------------------------------------------------------------------------
 
-\chapter{Batch-Skript: \myemph{rigctl.bat}}
+\chapter{Skript: \myemph{rigctl.bat}}
 \label{chap:rigctlbat}
 
 \begin{center}
@@ -30,7 +65,7 @@
 
 %---------------------------------------------------------------------------------
 
-\chapter{Batch-Skript: \myemph{rotctld.bat}}
+\chapter{Skript: \myemph{rotctld.bat}}
 \label{chap:rotctldbat}
 
 \begin{center}
@@ -39,7 +74,7 @@
 
 %---------------------------------------------------------------------------------
 
-\chapter{Batch-Skript: \myemph{rotctl.bat}}
+\chapter{Skript: \myemph{rotctl.bat}}
 \label{chap:rotctlbat}
 
 \begin{center}
@@ -48,7 +83,7 @@
 
 %---------------------------------------------------------------------------------
 
-\chapter{Batch-Skript: \myemph{rigctld-dummy.bat}}
+\chapter{Skript: \myemph{rigctld-dummy.bat}}
 \label{chap:rigctlddummybat}
 
 \begin{center}
@@ -57,7 +92,7 @@
 
 %---------------------------------------------------------------------------------
 
-\chapter{Batch-Skript: \myemph{rotctld-dummy.bat}}
+\chapter{Skript: \myemph{rotctld-dummy.bat}}
 \label{chap:rotctlddummybat}
 
 \begin{center}
@@ -66,7 +101,7 @@
 
 %---------------------------------------------------------------------------------
 
-\chapter{Modifizierte HamLib-Datei: \myemph{gs232.c}}
+\chapter{Modifizierte Datei: \myemph{gs232.c}}
 \label{chap:hamlibmodification}
 
 \begin{center}
