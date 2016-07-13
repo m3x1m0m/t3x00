@@ -4,28 +4,26 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			11th July 2016												%%
+%% Date:			13th July 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter*{Kurzfassung}
-Diese Studienarbeit beschreibt die Inbetriebnahme einer freien Software zur Satellitenbahnvorhersage und Ansteuerung einer Hochleistungsantenne. 
-Dies schließt die Nachführung der Antenne und damit die Steuerung von Rotoren mit ein. Die freie Software soll die bestehende Software 
-SatPC32 ersetzen. SatPC32 ist eine proprietäre Software und dient der Bodenstation als Referenz. Da SatPC32 nicht mehr weiterentwickelt wird 
-und es darüber hinaus keinen Support für diese Software gibt, wurde der alternative Weg, einer freien Software für die Bodenstation in 
-Friedrichshafen, gewählt. Diese freie Software ist GPredict. GPredict ist quelloffen und beherrscht es mit Hilfe der \ac{TLE} die Satellitenposition 
-vorherzusagen und diese auf einer grafischen Oberfläche anzuzeigen. Des Weiteren wird von GPerdict bzw. der darunter liegenden HamLib eine Vielzahl 
-verschiedener Hardware-Einheiten zur Ausrichtung der Antenne und zur Kommunikation unterstützt. Eine Kommunikation mit Transpondern im Orbit 
-aufzubauen ist somit durch GPredict realisierbar.
- 
+Diese Studienarbeit umfasst die Inbetriebnahme und Beschreibung einer freien Software zur Satellitenverfolgung und Orbitvorhersage namens GPredict, die Beschreibung der Bodenstation und die Aufarbeitung der theoretischen Hintergründe.\newpar
+Zu Beginn der Arbeit werden Themen des Projektmanagments zur strukurierten Herangehensweise des Projekts erläutert. Anschließend wird im Kapitel \ref{chap:einfuehrung} eine Einführung zu den Themen Amateurfunksatelliten und dem Aufbau der Bodenstation der \ac{DHBW} Ravensburg Campus Friedrichshafen dargestellt.\newpar
+Im Kapitel \ref{hintergruende} wird daraufhin eine umfassende Aufarbeitung der theoretischen Hintergründe zur Bahnmechanik, dem Doppler-Effekt und der Dopplerverschiebung vorgenommen. Zentrales Augenmerk wird hierbei auf die Herleitung der Kepplerschen Bahnelemente und das Lösen des Keppler-Problems gelegt. Außerdem wird auf die Bestimmung des Vektors zwischen Bodenstation und Satelliten und die von GPredict verwendeten Bahnmodelle näher eingegangen.\newpar
+Im nächsten Kapitel wird zunächst die Software GPredict vorgestellt, wobei die Bedienung und die Fähigkeiten genauer erläutert werden. Anschließend wird die Funktion und der Aufbau der Hardware-Bibliothek HamLib beschrieben. Zuletzt erlangt der Leser einen Einblick in die Inbetriebnahme und die damit verbunden Tests und Modifikationen der Software GPredict (und HamLib), bevor im letzten Kapitel eine Zusammenfassung der vorliegenden Arbeit und ein Ausblick für zukünftige Studienarbeiten gegeben wird.
+
+\chapter*{Abstract}
+
+\iffalse
 \vspace{3em}
 \begin{Huge}
 	\textbf{Abstract}
 \end{Huge}
 \vspace{1.5em}
+\fi
 
 Translation of ,,Kurzfassung'' comes here...
-
-\clearpage
