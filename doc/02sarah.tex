@@ -21,13 +21,13 @@
 \clearpage
 \section{Aufbau der Bodenstation}
 
-In diesem Abschnitt werden die von der Bodenstation der \ac{DHBW} Ravensburg zur Verfügung stehende Komponenten vorgestellt.
+In diesem Abschnitt werden die von der Bodenstation der \ac{DHBW} Ravensburg zur Verfügung stehenden Komponenten vorgestellt.
 \subsection{Antennen}
 Die Sendeleistung der Satelliten liegt typischerweise unter 1 Watt. Im 2-m-Band wäre es möglich mit einer Rundstrahlantenne ein Signal zu empfangen, 
 doch auf den höheren Bändern wird aufgrund der kürzeren Wellenlänge und damit einhergehende höheren Streckendämpfung eine Richtantenne benötigt. 
 Da für die Kommunikation über Satelliten beide Polarisationsarten, vertikal und horizontal, benötigt werden, kommen Kreuzyagi-Antennen zum Einsatz.  
 In der unteren Grafik ist von links nach rechts eine Kreuzyagi-Antenne für das 70-cm-Band, eine Kreuzyagi-Antenne für das 2-m-Band und zwei 
-Yagiantennen, welche von 90$^\circ$ um eine $\frac{\lambda}{4}$ Wellenlänge auf dem Tragrohr versetzt sind, für das 23-cm-Band, zu sehen. 
+Yagiantennen, welche im 90$^\circ$-Winkel zu einander stehen, für das 23-cm-Band, zu sehen. 
 \begin{figure}[h]
 	\centering
 	\begin{minipage}[t]{0.3\textwidth}
@@ -54,7 +54,7 @@ bereitgestellt: 436CP42UG (70-cm): 18.90 dBic, 23CM35 (23-cm): 20.94 dBi und WX2
 
 \subsection{Rotoren}
 \label{chap:rotoren}
-Um die Richtantennen steuern zu können werden Rotoren sowie dessen Steuergeräte von der Bodenstation zur Verfügung gestellt.
+Um die Richtantennen steuern zu können, werden Rotoren sowie deren Steuergeräte von der Bodenstation zur Verfügung gestellt.
 \begin{figure}[h]
 	\centering
 	\input{./images/azel.tex}
@@ -79,12 +79,7 @@ das Antennen-Rotor System ARS-USB von EA4TX.
 \clearpage
 \subsection{Funkgerät ICOM IC-9100}
 \label{chap:funkgerät}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\textwidth]{images/radio}
-	\caption[Funkgerät ICOM IC-9100]{Funkgerät ICOM IC-9100, Quelle: \cite{dk0te}}
-	\label{fig:radio}
-\end{figure}
+
 Die letzte zentrale Komponente der Bodenstation ist das Funkgerät und ermöglicht den Funkbetrieb. Das IC-9100 Funkgerät der Firma ICOM ist ein 
 Multiband Transceiver mit Doppelempfangsmöglichkeit, da der IC-9100 über drei unabhängige Empfängerschaltungen verfügt.Die Sendebandbreite ist durch 
 wählbare Hochpass- und Tiefpassfrequenz einstellbar und das Funkgerät verfügt über eine Sendeleistung von 100 Watt. Eine für die Bodenstation 
@@ -96,7 +91,12 @@ Soundkarte auch eine Netzwerkschnittstelle über die man mit dem Netcom Manager 
 stellt) mit dem Funkgerät kommunizieren kann. Das IC-9100 kann die wichtigsten Amateurfunkbänder, von Kurzwelle bis \ac{UHF}, 
 erfassen. 
 
-
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/radio}
+	\caption[Funkgerät ICOM IC-9100]{Funkgerät ICOM IC-9100, Quelle: \cite{dk0te}}
+	\label{fig:radio}
+\end{figure}
 
 % 	\item Funkgerät Icom IC-9100
 % 	\begin{itemize}

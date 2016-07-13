@@ -54,25 +54,25 @@ Die Strecke \ensuremath{\overline{MS_{1}}} ist gleich der Strecke \ensuremath{\o
 \newpar
 Die numerische Exzentrizität e' ist ein Maß für die Schlankheit der Ellipse. Sie ist definiert als
 \begin{equation}
-	e'=\frac{e}{a}
+	e'=\frac{e}{a}.
 \end{equation}
 Je größer die lineare Exzentrizität e im Verhältnis zu der großen Halbachse a wird, desto schlanker wird die Ellipse, da die Brennpunkte weiter vom Mittelpunkt entfernt sind. Das Wort numerisch gibt bei der Exzentrizität e' an, dass diese sich auf eine andere Größe (die große Halbachse) bezieht. Für eine Ellipse gilt \ensuremath{0 < e' < 1}. Für den Fall \ensuremath{e'=e=0} hat die Ellipse die selbe Erscheinung wie ein Kreis, da die Brennpunkte \ensuremath{F_1} und \ensuremath{F_2} im Mittelpunkt \ensuremath{M} liegen. Für \ensuremath{e'=1} entartet die Ellipse zu einer Geraden, da die kleine Halbachse b zu 0 wird. Um das zu zeigen wird die obige Gleichung noch mal herangezogen.
 \begin{equation}
 	e'^2=\frac{e^2}{a^2}=\frac{a^2-b^2}{a^2}=1-\left(\frac{b}{a}\right)^2 
 	\label{equation_kepler_b}
 \end{equation} 
-\\Des Weiteren besitzt jede Ellipse einen Halbparameter \ensuremath{p}. Geht man davon aus, dass es einen Abstand \ensuremath{p'} gibt, welcher \ensuremath{p} bis zu einer die Ellipse umschließende Kreislinie verlängert, so gelten folgende Gleichungen
+\\Des Weiteren besitzt jede Ellipse einen Halbparameter \ensuremath{p}. Geht man davon aus, dass es einen Abstand \ensuremath{p'} gibt, welcher \ensuremath{p} bis zu einer die Ellipse umschließende Kreislinie verlängert, so gelten folgende Gleichungen:
 \begin{equation}
 	\frac{p}{p'}=\frac{b}{a}
 	\label{equation_kepler_p}
 \end{equation}
-Mit dem Satz dem Satz des Pythagoras lääst sich leich zeigen, dass
+Mit dem Satz des Pythagoras lässt sich leicht zeigen, dass
 \begin{equation}
-p' = \sqrt{a^2-e^2}
+p' = \sqrt{a^2-e^2}.
 \end{equation}
 Jetzt ist klar, dass auch die folgende Gleichung gilt
 \begin{equation}
-p=\frac{b}{a} \cdot p'= \frac{b}{a} \sqrt{a^2-e^2} = \frac{b^2}{a}
+p=\frac{b}{a} \cdot p'= \frac{b}{a} \sqrt{a^2-e^2} = \frac{b^2}{a}.
 \label{equation_kepler_simple_p}
 \end{equation}
 
@@ -89,7 +89,7 @@ Die Neigung der Schnittebene zur Kegelgrundfläche sei \ensuremath{\alpha}. Der 
 \newpar
 Man sieht nun, dass die Größen \ensuremath{r}, \ensuremath{s} und \ensuremath{\theta} von P abhängig sind. Es interessiere nun die mathematische Funktion \ensuremath{r(\theta)}, welche die Ellipsenbahn beschreibe (vgl. S.23 in \cite{Raumflugm}). Betrachtet wird nun zunächst die zweidimensionale Zeichnung rechts oben in Abbildung \ref{fig:kegelsch_1}. Mit ein bisschen Nachdenken sieht man, dass
 \begin{equation}
-	(s_0-s) \cdot cos(\epsilon) = r \cdot cos (\theta) \cdot cos(\alpha)
+	(s_0-s) \cdot cos(\epsilon) = r \cdot cos (\theta) \cdot cos(\alpha).
 	\label{equation1_kepler}
 \end{equation} 
 Doch woher kommt der Ausdruck \ensuremath{r \cdot cos(\theta)}? Hierzu werfe man einen Blick auf die zweidimensionale Abbildung der Schnittfläche/Ellipse links unten im Bild. Dieses Bild setze man nun in Relation zum Bild darüber. Der Abstand \ensuremath{r \cdot cos(\theta)} lässt sich nun auf die Hauptachse der Ellipse projizieren. \ensuremath{r}, die Projektionslinie für P auf die Hauptachse und F bilden nun eine rechtwinkliges Dreieck aus. Der Rest ist Trigonometrie. 
@@ -104,15 +104,15 @@ Das bedeutet, dass \ensuremath{s} durch \ensuremath{r} in Gleichung \ref{equatio
 \end{equation}
 Ausmultiplizieren ergibt
 \begin{equation}
-s_0 cos(\epsilon) - r cos(\epsilon) = r cos (\theta) cos(\alpha)
+s_0 cos(\epsilon) - r cos(\epsilon) = r cos (\theta) cos(\alpha).
 \end{equation}
 Sortieren führt zu 
 \begin{equation}
-s_0 cos(\epsilon) = r cos (\theta) cos(\alpha) + r cos(\epsilon)
+s_0 cos(\epsilon) = r cos (\theta) cos(\alpha) + r cos(\epsilon).
 \end{equation}
 Ausklammern und auflösen bringt
 \begin{equation}
-	r = \frac{s_0 cos(\epsilon) }{cos (\theta) cos(\alpha) + cos(\epsilon)}
+	r = \frac{s_0 cos(\epsilon) }{cos (\theta) cos(\alpha) + cos(\epsilon)}.
 		\label{equation2_kepler}
 \end{equation}
 Die entstandene Gleichung \ref{equation2_kepler} kann nun noch durch die Zusammenhänge \ensuremath{p=s_0} (Halbparameter) und \ensuremath{e'=\frac{cos(\alpha)}{cos(\epsilon)}} vereinfacht werden (vgl. S. 24 in \cite{Raumflugm}). Hierzu dividiert man Gleichung \ref{equation2_kepler} durch \ensuremath{cos(\epsilon)}. 
@@ -133,9 +133,9 @@ Fertig ist die mathematische Version des ersten Keplerschen Gesetzes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
 Gleichung \ref{equation3_kepler} liefert noch keine Aussage über die zeitliche Änderung von \ensuremath{r} und \ensuremath{\theta}. Um eine Aussage über die zeitliche Änderung dieser Variablen treffen zu können, kann Keplers zweites Gesetz herangezogen werden: Die Fläche, welche die Verbindungslinie zwischen Sonne und einem Planet überstreicht ist zeitlich konstant. Die Fläche \ensuremath{\Delta A}, die in einem Zeitintervall \ensuremath{\Delta t} durch strichen wird ist genau
 \begin{equation}
-	\Delta A = \frac{1}{2}\left| \vec{r} \times \dot{\vec{r}} \right|\Delta t + F(\Delta t^2)
+	\Delta A = \frac{1}{2}\left| \vec{r} \times \dot{\vec{r}} \right|\Delta t + F(\Delta t^2).
 \end{equation}   
-Die beiden Vektoren \ensuremath{r} und \ensuremath{\dot{r} \Delta t} spannen eine Fläche auf, welche ein Parallelogramm beschreibt. Das Kreuzprodukt ergibt einen Vektor dessen Länge dieser Fläche entspricht. Die Hälfte davon ist die Fläche des Dreiecks, die gesucht wird. Der Ausdruck \ensuremath{\dot{r} \Delta t} ist dabei sehr ungenau und beschreibt eigentlich nur die Änderung des Vektors \ensuremath{r}. Aus diesem Grund kommt noch der Fehlerterm \ensuremath{F} hinzu, der die Krümmung der Ellipse berücksichtigt. Bezieht man sich im nächsten Schritt auf infinitesimale Elemente, die wirklich gegen Null gehen, so erreicht man die gewünschte Genauigkeit. Der Fehlerterm wird überflüssig.  
+Die beiden Vektoren \ensuremath{r} und \ensuremath{\dot{r} \Delta t} spannen eine Fläche auf, welche ein Parallelogramm beschreibt. Das Kreuzprodukt ergibt einen Vektor, dessen Länge dieser Fläche entspricht. Die Hälfte davon ist die Fläche des Dreiecks, die gesucht wird. Der Ausdruck \ensuremath{\dot{r} \Delta t} ist dabei sehr ungenau und beschreibt eigentlich nur die Änderung des Vektors \ensuremath{r}. Aus diesem Grund kommt noch der Fehlerterm \ensuremath{F} hinzu, der die Krümmung der Ellipse berücksichtigt. Bezieht man sich im nächsten Schritt auf infinitesimale Elemente, die wirklich gegen Null gehen, so erreicht man die gewünschte Genauigkeit. Der Fehlerterm wird überflüssig.  
 \begin{equation}
 dA = \frac{1}{2}\left| \vec{r} \times \dot{\vec{r}} \right|d t 
 \label{equation_dA_kepler}
@@ -158,34 +158,35 @@ wobei folgendes generell über Zylinderkoordinatensysteme bekannt ist:
 \end{center}
 Die Vektoren stehen allesamt senkrecht aufeinander, was man sieht, wenn man das Skalarprodukt bildet. Das liegt daran, dass das Skalarprodukt über die Summe der Längen der Vektoren multipliziert mit dem Kosinus des Winkels den sie einschließen definiert wird, welcher bei \ensuremath{\frac{\pi}{2}} bekanntlich Null ist. Da auch die Ableitung des Vektors \ensuremath{\vec{r}} (Geschwindigkeit) gesucht ist beginnt man zu differenzieren. Man wende hier zunächst die Summenregel, dann auf den ersten Ausdruck noch die Produkt- und die Kettenregel, da \ensuremath{\vec{e_{r}}} von \ensuremath{\theta} abhängt und \ensuremath{\theta} wiederum von \ensuremath{t}. Es folgt
 \begin{equation}
-	\dot{\vec{r}} = \dot{r}\,\vec{e_r} + r\,\dot{\vec{e_r}} + \dot{z}\,\vec{e_z}
+	\dot{\vec{r}} = \dot{r}\,\vec{e_r} + r\,\dot{\vec{e_r}} + \dot{z}\,\vec{e_z}.
 	\label{equation4_kepler}
 \end{equation}
+\newpage
 Setzt man nun   
 \begin{center}	
 	\ensuremath{\dot{\vec{e_{r}}}=\dot{\theta}\,\left(\begin{array}{c}-sin(\theta)\\ cos(\theta)\\0\end{array}\right)=\dot{\theta}\,\vec{e_{\theta}}}
 \end{center}
 in Gleichung \ref{equation4_kepler} ein, so ergibt sich  
 \begin{equation}
-\dot{\vec{r}} = \dot{r}\,\vec{e_r} + r\,\dot{\theta}\,\vec{e_{\theta}} + \dot{z}\,\vec{e_z}
+\dot{\vec{r}} = \dot{r}\,\vec{e_r} + r\,\dot{\theta}\,\vec{e_{\theta}} + \dot{z}\,\vec{e_z}.
 \label{equation5_kepler}
 \end{equation}
-Man wählt nun die z-Achse geschickt, so dass diese senkrecht auf der Trägerebene der Ellipse steht (vgl. S.26 in \cite{Raumflugm}). Durch diesen Schachzug gilt für die zu betrachtenden Gleichungen \ensuremath{z=0}. Jetzt fällt Gleichung \ref{equation_dA_kepler} in sich zusammen
+Man wählt nun die z-Achse geschickt, so dass diese senkrecht auf der Trägerebene der Ellipse steht (vgl. S.26 in \cite{Raumflugm}). Durch diesen Schachzug gilt für die zu betrachtenden Gleichungen \ensuremath{z=0}. Jetzt fällt Gleichung \ref{equation_dA_kepler} in sich zusammen:
 \begin{equation}
-\frac{dA}{dt} = \frac{1}{2}\left| \vec{r} \times \dot{\vec{r}} \right| = \frac{1}{2}\left| r\,\vec{e_r} \times \left(\dot{r}\,\vec{e_r} + r\,\dot{\theta}\,\vec{e_{\theta}}\right) \right| 
+\frac{dA}{dt} = \frac{1}{2}\left| \vec{r} \times \dot{\vec{r}} \right| = \frac{1}{2}\left| r\,\vec{e_r} \times \left(\dot{r}\,\vec{e_r} + r\,\dot{\theta}\,\vec{e_{\theta}}\right) \right|
 \end{equation}  
 Durch die Bilinearität des Kreuzprodukts folgt
 \begin{equation}
-\frac{dA}{dt} = \frac{1}{2}\left| \dot{r}\,r\,\left(\vec{e_r} \times \vec{e_r}\right) + r\,r\,\dot{\theta}\,\left(\vec{e_r} \times \vec{e_{\theta}}\right) \right| 
+\frac{dA}{dt} = \frac{1}{2}\left| \dot{r}\,r\,\left(\vec{e_r} \times \vec{e_r}\right) + r\,r\,\dot{\theta}\,\left(\vec{e_r} \times \vec{e_{\theta}}\right) \right|.
 \end{equation}
 Die Tatsache, dass das Kreuzprodukt eines Vektors mit sich selbst den Nullvektor ergibt und dem Umstand, dass \ensuremath{\vec{e_r}\perp\vec{e_\theta}\perp\vec{e_z}} ist, führt zu
 \begin{equation}
-\frac{dA}{dt} = \frac{1}{2}\left|r^2\,\dot{\theta}\,\vec{e_z} \right| =  \frac{1}{2}\,r^2\,\dot{\theta}=h=konstant
+\frac{dA}{dt} = \frac{1}{2}\left|r^2\,\dot{\theta}\,\vec{e_z} \right| =  \frac{1}{2}\,r^2\,\dot{\theta}=h=konstant.
 \label{equation6_kepler}
 \end{equation}
 
 \subsubsection{Das dritte Keplersche Gesetz}
-Auf sein drittes Gesetz soll Kepler besonders stolz gewesen sein (vgl. S.27 in \cite{Raumflugm}). Nach seinem Gesetz stehen die Halbachsen \ensuremath{a_1} und \ensuremath{a_2} und die Umlaufzeiten \ensuremath{T_1} und \ensuremath{T_2} in dem Zusammenhang
+Auf sein drittes Gesetz soll Kepler besonders stolz gewesen sein (vgl. S.27 in \cite{Raumflugm}). Nach seinem Gesetz stehen die Halbachsen \ensuremath{a_1} und \ensuremath{a_2} und die Umlaufzeiten \ensuremath{T_1} und \ensuremath{T_2} in dem Zusammenhang:
 \begin{equation}
 	\frac{T_1^2}{T_2^2}=\frac{a_1^3}{a_2^3}
 	\label{equation7_kepler}
@@ -205,7 +206,7 @@ Eingesetzt in Gleichung \ref{equation7_kepler} ergibt sich
 \end{equation}
 Bringt man nun \ensuremath{a_1^2b_1} und \ensuremath{a_2^2b_2^2} einmal durch Division und einmal durch Multiplikation eins weiter nach links, so kann man die Beziehung aus Gleichung \ref{equation_kepler_simple_p} ausnutzen und schreiben
 \begin{equation}
-\frac{a_1b_2^2}{a_2b_1^2}=\frac{h_2^2}{h_1^2}
+\frac{a_1b_2^2}{a_2b_1^2}=\frac{h_2^2}{h_1^2}.
 \end{equation}
 Oben und unten multipliziert man jetzt noch jeweils mit \ensuremath{1/a_1} und \ensuremath{1/a_2}.
 \begin{equation}
@@ -221,15 +222,15 @@ Die Bewegungskonstante \ensuremath{h} ist eine wichtige Größe, um die Umlaufze
 	m_{Sat}\cdot n^2 \cdot a= G \cdot \frac{m_{Sat}\,M_{Erde}}{a^2}
 \end{equation} 
 \begin{equation}
-	 a^3\,\left(\frac{2\pi}{T}\right)^2= G\,M_{Erde}
+	 a^3\,\left(\frac{2\pi}{T}\right)^2= G\,M_{Erde}.
 \end{equation}     
-Aus dieser Gleichung folgt durch ein paar geschickte Umformungen und Umstellen nach \ensuremath{T}
+Aus dieser Gleichung folgt durch ein paar geschickte Umformungen und Umstellen nach \ensuremath{T}:
 \begin{equation}
 	T=\frac{2\,a^2\,\pi}{\sqrt{G\,M_{Erde}\,a}}
 \end{equation}
 Im Zähler steht die doppelte von der Verbindungslinie zwischen Schwerezentrum und Satellit in einer Umlaufperiode \ensuremath{T} überschrittenen Fläche. Durch die Verwandschaft der obigen Gleichung mit Gleichung \ref{equation8_kepler}, kann man schlussfolgern, dass die Bewegungskonstante in diesem Fall sich zu 
 \begin{equation}
-	h=\sqrt{G\,M_{Erde}\,a}
+	h=\sqrt{G\,M_{Erde}\,a}.
 \end{equation}   
 ergibt. Die Berechnung der mittleren Anomalie \ensuremath{M(t)} stellt nun kein Problem mehr da.
 \subsection{Die Bahnelemente}
@@ -282,16 +283,16 @@ Bis jetzt ist alles recht schön und anschaulich. Es ist klar wo die Bahnebene i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 Wie schon bei früheren Betrachtungen wird die Ellipse (Orbit) in einen Umkreis eingeschrieben. Ein fiktiver (mittlerer) Satellit \ensuremath{Y} laufe entlang des Umkreises um den Punkt \ensuremath{C} (Mittelpunkt der Ellipse und des Kreises, nicht der Ellipsenbrennpunkt). Der wahre Satellit \ensuremath{P} bewege sich entlang der Ellipse. Die Lage des fiktiven Satelliten \ensuremath{Y} wird zum Zeitpunkt \ensuremath{t} mittels des Winkels \ensuremath{M} dargestellt. Hierbei wird unterstellt, dass der Satellit zum Zeitpunkt \ensuremath{t_P} im Perigäum (oft auch Periapsis genannt) \ensuremath{M=0} war. Es gilt nun
 \begin{equation}
-	M=2\pi\,\frac{t-t_P}{T}=n\,(t-t_P)
+	M=2\pi\,\frac{t-t_P}{T}=n\,(t-t_P).
 \end{equation}   
 Hierbei ist \ensuremath{n} die Winkelgeschwindigkeit und \ensuremath{T} die Umlaufzeit des Satelliten um das Schwerezentrum. \ensuremath{S} ist der Erdmittelpunkt (Schwerezentrum). 
 Um nun auf die Ellipse und auf den tatsächlichen Satellit überzugehen wird das zweite Keplersche Gesetz für diesen konkreten Fall herangezogen. In gleichen Zeiträumen werden gleiche Flächen von den Fahrstrählen der Satelliten unabhängig von der Bahnform (egal ob elliptisch oder kreisförmig mit \ensuremath{e'=e=0}) überstrichen. Hier spricht man von einer bijektiven Abbildung der Ellipsen- und Kreisflächensegmente. Letztere sind leicht zu berechnen. Es wird also praktisch ein Umweg über den Umkreis gegangen. Das zweite Keplersche Gesetz angewandt auf den vorliegenden Fall, führt bezüglich der Zeitspanne einer Überstreichung der gesamten Fläche zu
 \begin{equation}
-	\frac{A_{Kreis}}{A_{Ellipse}}=\frac{\pi\,a^2}{\pi\,a\,b}
+	\frac{A_{Kreis}}{A_{Ellipse}}=\frac{\pi\,a^2}{\pi\,a\,b}.
 \end{equation}
 Nach dem zweiten Keplerschen Gesetz ist dieses Vehätlnis dasselbe für eine infinitesimale Fläche. So gilt
 \begin{equation}
-	\frac{A_{CYZ}}{A_{SPZ}}=\frac{A_{Kreis}}{A_{Ellipse}}=\frac{a}{b}
+	\frac{A_{CYZ}}{A_{SPZ}}=\frac{A_{Kreis}}{A_{Ellipse}}=\frac{a}{b}.
 	\label{equation1_kepler_equ}
 \end{equation}
 \newpar
@@ -302,20 +303,20 @@ Kepler führte als eine Hilfsgröße die exzentrische Anomalie \ensuremath{E} ei
 \end{equation}  
 Setzt man Gleichung \ref{equation1_kepler_equ} in Gleichung \ref{equation2_kepler_equ} ein, so ergibt sich
 \begin{equation}
-	A_{SXZ}=A_{CYZ}	
+	A_{SXZ}=A_{CYZ}.
 	\label{equation3_kepler_equ}
 \end{equation}
 Mit der Gleichung \ref{equation3_kepler_equ} ist ein indirekter Zusammenhang zwischen der mittleren Anomalie (Punkt \ensuremath{Y}) und der exzentrischen Anomalie (Punkt \ensuremath{X}) gefunden. Wenn der Fahrstrahl \ensuremath{\overline{CY}} in der Zeit einer Periode \ensuremath{T} eine Fläche von \ensuremath{\pi\,a^2} überstreicht, so überstreicht er in einer Zeit \ensuremath{t} eine Fläche, die um den Faktor \ensuremath{\frac{M}{2\,\pi}} kleiner ist. Es folgt 
 \begin{equation}
-	A_{CYZ}=\frac{M}{2\,\pi}\,\pi\,a^2=\frac{a^2}{2}M	
+	A_{CYZ}=\frac{M}{2\,\pi}\,\pi\,a^2=\frac{a^2}{2}M.
 	\label{equation4_kepler_equ}
 \end{equation}  
-Analog gilt dies für den Fahrstrahl \ensuremath{\overline{CX}}.
+Analog gilt dies für den Fahrstrahl \ensuremath{\overline{CX}}
 \begin{equation}
-	A_{CXZ}=\frac{a^2}{2}E	
+	A_{CXZ}=\frac{a^2}{2}E.
 	\label{equation5_kepler_equ}
 \end{equation}
-Weiter geht's mit noch mehr Geometrie. Die Fläche \ensuremath{A_{CXZ}} kann in zwei Teilflächen zerlegt werden.
+Weiter geht es mit noch mehr Geometrie. Die Fläche \ensuremath{A_{CXZ}} kann in zwei Teilflächen zerlegt werden.
 \begin{equation}
 	A_{CXZ}=A_{CSX}+A_{SXZ}
 	\label{equation6_kepler_equ}
@@ -367,7 +368,7 @@ ist. Für \ensuremath{y'} muss man etwas tiefer in die Trickkiste greifen. Man g
 \end{equation} 
 Für \ensuremath{p'} kann der Term \ensuremath{sin(E)\,a} eingesetzt werden. Mit dem Satz des Pythagoras kann \ensuremath{b} auch mit den größen \ensuremath{a} und \ensuremath{e} ausgedrückt werden. Es folgt  
 \begin{equation}
-	p=y'=sin(E)\,a\,\frac{\sqrt{a^2-e^2}}{a}=sin(E)\,a\,\sqrt{1-e'^2}
+	p=y'=sin(E)\,a\,\frac{\sqrt{a^2-e^2}}{a}=sin(E)\,a\,\sqrt{1-e'^2}.
 \end{equation} 
 Aus diesen beiden Größen kann unmittelbar die wahre Anomalie \ensuremath{\theta} zu einem gegebenen Zeitpunkt bestimmt werden.
 \begin{equation}
@@ -409,7 +410,7 @@ Als Zusammenfassung hier nochmal eine Übersicht aller Bahnelemente.
 	\smartdiagram[bubble diagram]{
 		Bahnelemente, \ensuremath{a}, \ensuremath{e'}, \ensuremath{\omega}, \ensuremath{\Omega}, \ensuremath{i}, \ensuremath{t_P}
 	}	
-	\caption[Bahnelemente]{Bahnelemente, Quelle: Eigene Darstellung}              
+	\caption[Bahnelemente]{Bahnelemente}              
 	\label{fig:bahnelemente_ueb_ii} 
 \end{figure}
 \begin{figure}[h]
@@ -419,17 +420,17 @@ Als Zusammenfassung hier nochmal eine Übersicht aller Bahnelemente.
 		use predefined color list
 	}
 	\smartdiagram[circular diagram:clockwise]{\ensuremath{t} gegeben, \ensuremath{M=n\cdot (t-t_P)} bestimmen, \ensuremath{E} bestimmen, \ensuremath{x'} und \ensuremath{y'} bestimmen, \ensuremath{\theta} und \ensuremath{r} bestimmen} 
-	\caption[Vorgehen]{Vorgehen, Quelle: Eigene Darstellung}              
+	\caption[Vorgehen]{Vorgehen}              
 	\label{fig:bahnelemente_ueb_i} 
 \end{figure}
 \subsection{Von den Bahnelementen zum Vektor}
 Im nächsten Schritt trägt man alle Informationen aus den Bahnelementen zusammen, um einen Vektor \ensuremath{\vec{r}} im dreidimensionalen kartesischen Koordinatensystem zu erhalten. Der Ursprung des Koordinatensystems soll im Erdzentrum liegen und der Vektor \ensuremath{\vec{r}} soll ein Ortsvektor des Satelliten sein. Die x-y-Ebene dieses Koordinatensystems ist der Äquator. Das Ergebnis der bisherigen Berechnungen ist der Vektor
 \begin{equation}
-	\vec{r'}=a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right)
+	\vec{r'}=a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right).
 \end{equation}
 Die Satellitenbahn liegt nach der obigen Gleichung in der äquatorialen Ebene. Der Erdmittelpunkt liegt im Brennpunkt der Ellipse. Anstatt die Bahnebene zu drehen. Dreht man nun das Koordinatensystem. Allerdings in die mathematisch entgegengesetzte Richtung. Hierfür können natürlich nur die Winkel verwendet werden, welche in den Bahnelementen für die Lage der Bahn mitgeliefert werden. Bei der Drehung wird auf Drehmatrizen zurückgegriffen. Eine gute Veranschaulichung dieser Drehungen findet man \href{https://www.youtube.com/watch?v=QZrYaKwZwhI}{\textit{in dieser Animation}}. Der gesuchte Vektor ergibt sich nun zu
 \begin{equation}
-	\vec{r}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right) 
+	\vec{r}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot a\cdot\left(\begin{array}{c}cos(E)-e'\\ sin(E)\,\sqrt{1-e'^2} \\0\end{array}\right).
 \end{equation}  
 Hierbei stellen \ensuremath{\mathbf{R_X}} und \ensuremath{\mathbf{R_Z}} folgende Drehmatrizen dar (nachzuschlagen auf S.89 in \cite{HandRaum}). 
 \begin{equation}
@@ -463,12 +464,12 @@ Nach \cite{HandRaum} ergibt sich nach der Ausführung der Drehungen der Vektor
 				cos(\omega+\theta)\,sin(\Omega)+sin(\omega+\theta)\,cos(i)\,cos(\Omega)\\
 				sin(\omega+\theta)\,sin(i)				
 		\end{array}
-	\right)
+	\right).
 	\label{equation1_kep_elements}
 \end{equation}
 Durch Ableitung nach der Zeit kommt man wie in \cite{HandRaum} angegeben auf
 \begin{equation}
-	\vec{v}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot\frac{\sqrt{GM_{Erde}\,a}}{r}\cdot\left(\begin{array}{c}-sin(E)\\ cos(E)\,\sqrt{1-e'^2} \\0\end{array}\right) 
+	\vec{v}=\mathbf{R_Z}(-\Omega)\,\mathbf{R_X}(-i)\,\mathbf{R_Z}(-\omega)\cdot\frac{\sqrt{GM_{Erde}\,a}}{r}\cdot\left(\begin{array}{c}-sin(E)\\ cos(E)\,\sqrt{1-e'^2} \\0\end{array}\right).
 	\label{equation2_kep_elements}
 \end{equation} 
 Gleichung \ref{equation1_kep_elements} lässt sich so interpretieren, dass der Term \ensuremath{\sqrt{\frac{GM_{Erde}}{r^2\,a}}} die zeitliche Ableitung der exzentrischen Anomalie \ensuremath{E} sein muss, da die Kettenregel der Differentialrechnung greift und die Rotationsmatrizen keine zetilichen Abhängigkeiten aufweisen.
@@ -492,7 +493,7 @@ In dieser Gleichung stellt \ensuremath{d} die Tage seit dem 1. Januar 2000 dar. 
 \end{equation} 
 Dadurch ist die erdfeste Position des Satelliten aus den inertialen Koordinaten bestimmt worden. Nach \cite{HandRaum} ergibt sich die erste zeitliche Ableitung zu
 \begin{equation}
-	\vec{v}_{Greenwich}=\mathbf{R_Z}(\Theta)\cdot\vec{v}-\left(\begin{array}{c}0\\0\\\omega_{Erde}\end{array}\right)\times\vec{r}_{Greenwich}
+	\vec{v}_{Greenwich}=\mathbf{R_Z}(\Theta)\cdot\vec{v}-\left(\begin{array}{c}0\\0\\\omega_{Erde}\end{array}\right)\times\vec{r}_{Greenwich}.
 	\label{equation3_kep_elements}
 \end{equation}   
 Die Interpretation von Gleichung \ref{equation3_kep_elements} ist, das sich die Geschwindigkeit \ensuremath{\vec{v}_{Greenwich}} im erdfesten System vom inertialen System durch einen Term unterscheidet, der von der Drehgeschwindigkeit \ensuremath{\omega_{Erde}=7,29212\cdot 10^{-5}\frac{rad}{s}} und dem Abstand des Satelliten von der Erde abhängt. 
@@ -582,15 +583,15 @@ einmal für die Wellenlänge des Rennwagens und einmal für die Wellenlänge des
 Das Ergebnis ist dann         
 \begin{equation}
 \label{freq_b}
-f_B=\frac{f_R}{1-\frac{v_R}{c_S}}
+f_B=\frac{f_R}{1-\frac{v_R}{c_S}}.
 \end{equation}
 Entfernt sich der Rennwagen ist für die Geschwindigkeit des selbigen einfach ein negativer Wert einzusetzen. \textbf{Achtung:} Soll der Doppler-Effekt auf eine sich in einem Medium fortbewegende
 Welle angewandt werden, ist von den Gleichungen her immer zwischen bewegtem Sender, bewegtem Empfänger und bewegtem Sender, sowie bewegtem Empfänger zu unterscheiden. 
 Die oben aufgeführten Gleichungen beziehen sich ausschließlich auf den Fall, dass sich der Sender bewegt. 
 \newpar
-Elektromagnetische Wellen brauchen wie seit dem 20. Jahrhundert allgemein bekannt kein Medium, um sich fortzupflanzen. Bewegen sich Sender oder Empfänger relativ zueinander, so kommt es auch bei elektromagnetischen Wellen zum Dopplereffekt. Aufgrund dessen, dass die Ausbreitung nicht auf das Medium angewiesen ist, spielt es keine Rolle, ob sich Empfänger, Sender oder beide bewegen. Die Frequenzverschiebung ist nur noch von der Relativgeschwindigkeit abhängig. Das Relativitätsprinzip besagt nun, dass sich jeder Übertragungsteilnehmer als ruhend betrachten darf. (Aus physikalischer Sicht kann man tatsächlich behaupten, dass jemand einem vor der Diskothek "`in die Faust gelaufen"' ist). Dank diesen Prinzips ist der obige akustische Fall (siehe Gleichung \ref{freq_b}) universell direkt auf eine Übertragung mit elektromagnetischen Wellen umsetzbar. 
-\\Das ist allerdings nur die halbe Wahrheit. Es gibt leider keine absolute Zeit. Die Gleichzeitigkeit von räumlich getrennten Ereignissen ist eine Frage der Relativgeschwindigkeit des Beobachters. 
-\\Der relativistische Effekt der Zeitdillitation ist beim Doppler-Effekt mitzubetrachten, da die Periodendauer des emittierten Signals aus Sicht des Beobachters auf der Erde aufgedehnt wird. Somit wird die Wellenlänge des Sendesignals \begin{math}{\lambda_S}\end{math} größer und die Frequenz des selbigen \begin{math}{f_S}\end{math} kleiner. Mit dieser Erkenntnis folgt nun die tatsächliche Gleichung für den Dopplereffekt.  
+Elektromagnetische Wellen brauchen wie seit dem 20. Jahrhundert allgemein bekannt kein Medium, um sich fortzupflanzen. Bewegen sich Sender oder Empfänger relativ zueinander, so kommt es auch bei elektromagnetischen Wellen zum Dopplereffekt. Aufgrund dessen, dass die Ausbreitung nicht auf das Medium angewiesen ist, spielt es keine Rolle, ob sich Empfänger, Sender oder beide bewegen. Die Frequenzverschiebung ist nur noch von der Relativgeschwindigkeit abhängig. Das Relativitätsprinzip besagt nun, dass sich jeder Übertragungsteilnehmer als ruhend betrachten darf. (Aus physikalischer Sicht kann man tatsächlich behaupten, dass jemand einem vor der Diskothek "`in die Faust gelaufen"' ist). Dank diesen Prinzips ist der obige akustische Fall (siehe Gleichung \ref{freq_b}) universell direkt auf eine Übertragung mit elektromagnetischen Wellen umsetzbar.\newpar
+Das ist allerdings nur die halbe Wahrheit. Es gibt leider keine absolute Zeit. Die Gleichzeitigkeit von räumlich getrennten Ereignissen ist eine Frage der Relativgeschwindigkeit des Beobachters.\newpar
+Der relativistische Effekt der Zeitdillitation ist beim Doppler-Effekt mitzubetrachten, da die Periodendauer des emittierten Signals aus Sicht des Beobachters auf der Erde aufgedehnt wird. Somit wird die Wellenlänge des Sendesignals \begin{math}{\lambda_S}\end{math} größer und die Frequenz des selbigen \begin{math}{f_S}\end{math} kleiner. Mit dieser Erkenntnis folgt nun die tatsächliche Gleichung für den Dopplereffekt.  
 \begin{equation}
 \label{freq_e1}
 f_E=\frac{f_S}{1-\frac{v_r}{c_L}}\cdot \frac{1}{\gamma}=\frac{f_S\sqrt{1-\left(\frac{v}{c_L}\right)^2}}{1-\frac{v_r}{c_L}}
@@ -607,7 +608,7 @@ Bewegt sich nun der Sender rein tangential zum Empfänger würde man keinen Dopp
 \begin{figure}[h]                                                                           %%
 	\centering                                                                            	%%
 	\includegraphics[width=0.4\textwidth]{./images/doppler.jpg}              			    %%
-	\caption[Dopplerverschiebung]{Dopplerverschiebung, Quelle: Eigene  Darstellung}                        													%%
+	\caption[Dopplerverschiebung]{Dopplerverschiebung}                        													%%
 	\label{fig:doppler}                                                                        %%
 \end{figure}                                                                              	%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

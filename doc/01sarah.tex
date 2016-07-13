@@ -21,14 +21,14 @@ OSCAR-Projekt melden.
 In dieser Studienarbeit soll die Bodenstation erdnahe Satelliten verfolgen können. 
 Allgemein teilt man die Satelliten in GEO, MEO, HEO und LEO Satellitenbahnen ein \cite{orbit}.
 \begin{itemize}
-  \item GEO (Geostationary Orbit): Umlaufbahn in 35790 km Höhe und Umlaufzeit von einem Tag. Empfangsfenster für die Bodenstation: Immer. Dazu 
+  \item GEO (Geostationary Orbit): Umlaufbahn in 35.790 km Höhe und Umlaufzeit von einem Tag. Empfangsfenster für die Bodenstation: Immer. Dazu 
 gehören unter anderen die Satelliten Astra und Meteosat.
-  \item MEO (Medium Earth Orbit): Umlaufbahn in 6000-36000 km Höhe und Umlaufzeit von 5-12 Stunden. Empfangsfenster für die Bodenstation: 2–4 
+  \item MEO (Medium Earth Orbit): Umlaufbahn in 6.000-36.000 km Höhe und Umlaufzeit von 5-12 Stunden. Empfangsfenster für die Bodenstation: 2–4 
 Stunden. Darunter fallen die Navigationssatelliten wie GPS, Galileo und GLONASS.
   \item HEO (Highly Elliptical Orbit): Umlaufbahn in 200-15.000 km bzw. 50.000-400.000 km und Umlaufzeit von $\sim 12$ Stunden. Empfangsfenster für 
 die Bodenstation: 8 Stunden. Satelliten in diesem Orbit eigenen sich zur Versorgung von Polargebieten, da die geostationären Satelliten oberhalb von 
 $82^\circ$ Elevation nicht mehr zu empfangen sind. Beispiele für HEO Satelliten sind AO10, AO13, AO40.
-  \item LEO (Low Earth Orbit): Umlaufbahn in 200-1500 km Höhe und Umlaufzeit von 1.5-2 Stunden. Empfangsfenster für die Bodenstation: unter 15 
+  \item LEO (Low Earth Orbit): Umlaufbahn in 200-1.500 km Höhe und Umlaufzeit von 1,5-2 Stunden. Empfangsfenster für die Bodenstation: unter 15 
 Minuten. Dazu gehören die Amateurfunksatelliten, welche der Satellitenkommunikation zwischen Funkamateuren und auch zu experimentellen Zwecken 
 dienen, wie AO-7 und AO-51. Außerdem befindet sich die ISS auf dieser niedrigen Erdumlaufbahn.
 \end{itemize}
@@ -54,7 +54,7 @@ empfangen und wieder abzustrahlen. Dabei wird der Datenstrom ohne qualitative Ve
 Transpodermodi der Amateurfunksatelliten gelistet. 
 \begin{table}[h]
 	\centering
-	\caption{Abkürzungen der Transpondermodi, Quelle: \cite{amateursat}}
+	\caption[Abkürzungen der Transpondermodi]{Abkürzungen der Transpondermodi, Quelle: \cite{amateursat}}
 	\begin{tabular}{c|l}
 		Bezeichnung & Band\\ 
 		V & 2-m-Band 	\\
@@ -87,17 +87,19 @@ zwischen Amateurfunksatelliten und den Bodenstationen wird vorwiegend das Packet
 
 \newpage
 Die 1969 gegründete Organisation AMSAT ist eine Vereinigung von Funkamateuren, welche Raumfahrtsatelliten entwickeln und kostengünstige 
-Raumfahrtmissionen realisieren. Unter anderem dokumentiert AMSAT auch alle Amateurfunksatelliten und deren Status. 
-\begin{figure}[h]
- \centering
- \includegraphics[width=0.65\linewidth]{./images/amsatlist}
- \caption[AMSAT Live OSCAR Satellite Status]{AMSAT Live OSCAR Satellite Status, Quelle: \cite{amsat}}
- \label{fig:amsat}
-\end{figure}
+Raumfahrtmissionen realisieren. Unter anderem dokumentiert AMSAT auch alle Amateurfunksatelliten und deren Status.\newpar
 In der Abbildung \ref{fig:amsat} sind die Satelliten mit dem aktuellen Statusbericht (04. Juni 2016) gelistet. Diejenigen Satelliten mit blauer 
 Markierung sind aktiv, wohingegen die roten Satelliten kein Signal zu dem jeweiligen Zeitpunkt von sich gegeben haben. Gelb bedeutet, dass nur die 
 Telemetriedaten empfangen wurden und orange, dass Konflikte bestehen. Für die Studienarbeit sind diese Informationen sehr nützlich, um Satelliten 
 tracken zu verfolgen. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{./images/amsatlist}
+	\caption[AMSAT Live OSCAR Satellite Status]{AMSAT Live OSCAR Satellite Status, Quelle: \cite{amsat}}
+	\label{fig:amsat}
+\end{figure}
+
 %betriebsarten
 %http://www.hobbyfunk.de/cb/betriebsarten.html
 %http://www.ov-lennestadt.de/amateurfunk/auf-ultrakurzwelle

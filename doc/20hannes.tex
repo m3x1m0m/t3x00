@@ -28,7 +28,7 @@ In Abbildung \ref{fig:gpredict-principle} ist das Prinzip eines Satellitenverfol
 
 \clearpage
 
-Zur Berechnung der Satellitenposition wird auf das NORAD SGP4/SDP4 Modell zurückgegriffen (siehe Abschnitt \ref{chap:models}). Um hierfür zu jedem Zeitpunkt die aktuellen Kepler-Elemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.\newpar
+Zur Berechnung der Satellitenposition wird auf das NORAD SGP4/SDP4 Modell zurückgegriffen (siehe Abschnitt \ref{chap:models}). Um hierfür zu jedem Zeitpunkt die aktuellen Keplerelemente des zu verfolgenden Satelliten zu kennen, gibt es unter GPredict die Möglichkeit einer automatischen Aktualisierung über HTTP, FTP oder aus dem lokalen Verzeichnis.\newpar
 Bei GPredict ist im Gegensatz zu anderen Satellitenverfolgungsprogrammen wie SatPC32 kein Limit an zu verfolgenden Satelliten und Bodenstationen gegeben. Durch die Verwendung von Modulen kann außerdem unkompliziert zwischen verschiedenen Konfigurationen gewechselt werden. Die Orbitvorhersage eines Satelliten lässt sich sowohl grafisch als auch tabellarisch darstellen, wobei durch die Einstellungen verschiedenster Parameter eine sehr individuelle Anzeige erreicht werden kann.
 
 \section{Grafische Oberfläche}
@@ -171,7 +171,7 @@ Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der 
 In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der Schaltflächen \myemph{Track} und \myemph{Engage} und deren Auswirkung beschrieben.
 
 \begin{table}[h]
-	\caption{Betriebsmodi des \myemph{Antenna Control}-Bedienfelds, Quelle: \cite{gpredictmanual}\vspace{-0.5em}}
+	\caption[Betriebsmodi des \myemph{Antenna Control}-Bedienfelds]{Betriebsmodi des \myemph{Antenna Control}-Bedienfelds, Quelle: \cite{gpredictmanual}\vspace{-0.5em}}
 	\begin{tabularx}{\textwidth}{|l|l|X|}
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
@@ -210,7 +210,7 @@ Neben einer Anzeige die die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} darste
 In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschiedenen Betriebsmodi des \myemph{Radio Control}-Bedienfelds zu sehen.
 
 \begin{table}[h]
-	\caption{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
+	\caption[Betriebsmodi des \myemph{Radio Control}-Bedienfelds]{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
 	\begin{tabularx}{\textwidth}{|l|l|X|}
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
@@ -246,7 +246,7 @@ Die Kategorie \myemph{General} ist in folgende vier Reiter untergliedert:
 	\parskip0pt
 	\item \textbf{Number Formats:} Hier lassen sich Einstellungen zum Zeitformat, zu den geografischen Koordinaten und zu den Längen- und Geschwindigkeits-Einheiten vornehmen.
 	\item \textbf{Ground Stations:} Unter diesem Reiter können beliebig viele Bodenstationen eingerichtet werden. Mindestens eine muss jedoch zu jeder Zeit vorhanden sein.
-	\item \textbf{TLE Update:} Hier können Einstellungen zur Aktualisierung der Kepler-Elemente vorgenommen werden.
+	\item \textbf{TLE Update:} Hier können Einstellungen zur Aktualisierung der Keplerelemente vorgenommen werden.
 	\item \textbf{Message Logs:} Hier können Einstellungen bzgl. des GPredict-Protokolls vorgenommen werden. Unter \myemph{Log browser} im Menü \myemph{File} kann dieses dargestellt werden.
 \end{itemize}
 
