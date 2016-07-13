@@ -4,7 +4,7 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			10th July 2016												%%
+%% Date:			13th July 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
@@ -137,7 +137,7 @@ Wie in Abbildung \ref{fig:theskyataglance} zu sehen, bietet die Funktion \myemph
 	\label{fig:timecontroller} 
 \end{figure}
 
-Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \ref{fig:editmodule} zu sehen. Hier lassen sich die zu verfolgenden Satelliten und die Bodenstation für das aktuelle Modul auswählen. Außerdem gelangt man mit einem Klick auf das Feld \myemph{Properties} in die Modul-Einstellungen. Diese gelten im Gegensatz zu den in den allgemeinen GPredict-Einstellungen zu findenden Modul-Einstellungen nur für das aktuelle Modul. Auf Seite \pageref{modulesettingsgeneral} sind nähere Infos zu den Modul-Einstellungen zu finden.
+Klickt man auf \myemph{Configure}, öffnet sich ein Fenster wie in Abbildung \ref{fig:editmodule} zu sehen. Hier lassen sich die zu verfolgenden Satelliten und die Bodenstation für das aktuelle Modul auswählen. Außerdem gelangt man mit einem Klick auf das Feld \myemph{Properties} in die Modul-Einstellungen. Diese gelten im Gegensatz zu den in den allgemeinen GPredict-Einstellungen zu findenden Modul-Einstellungen nur für das aktuelle Modul. In Abschnitt \ref{chap:gpredictsettings} sind nähere Infos zu den Modul-Einstellungen zu finden.
 \label{modulesettingsspecific}
 
 \begin{figure}[h]
@@ -171,6 +171,7 @@ Das Bedienfeld beinhaltet zum Einen eine Polaransicht, auf der die Spur und der 
 In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der Schaltflächen \myemph{Track} und \myemph{Engage} und deren Auswirkung beschrieben.
 
 \begin{table}[h]
+	\caption{Betriebsmodi des \myemph{Antenna Control}-Bedienfelds, Quelle: \cite{gpredictmanual} \vspace{-2em}}	
 	\begin{tabularx}{\textwidth}{|l|l|X|}
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
@@ -181,7 +182,6 @@ In Tabelle \ref{tab:rotatorcontrolmodes} sind alle möglichen Kombinationen der 
 		Inaktiv            	& Aktiv   			& Die Winkel, die in den Winkelsteuerungs-Eingabefelder eingestellt sind, werden an die Rotoren gesendet und die aktuelle Ausrichtung der Antenne wird ausgelesen.\\
 		\hline		
 	\end{tabularx}
-	\caption{Betriebsmodi des \myemph{Antenna Control}-Bedienfelds, Quelle: \cite{gpredictmanual} \vspace{-2em}}
 	\label{tab:rotatorcontrolmodes}
 \end{table}
 
@@ -200,16 +200,17 @@ Neben einer Anzeige die die Zeit bis zum nächsten \ac{AOS} bzw. \ac{LOS} darste
 
 \begin{itemize}
 	\parskip0pt
-	\item \textbf{Downlink:} In diesem Bereich kann die Frequenzeinstellung für die Downlink-Frequenz vorgenommen werden. Außerdem ist die aktuelle Dopplerfrequenz und ein Feld names \myemph{LO}, welches für eine Offsetfrequenz steht, die im Funkgerät eingestellt werden kann, steht. Die korrigierte Frequenz welche nach \myemph{Radio} angezeigt wird, setzt sich damit beispielsweise wie folgt zusammen: $f_{Radio} = f_{Satellite} + f_{Doppler} - f_{LO}$
+	\item \textbf{Downlink:} In diesem Bereich kann die Frequenzeinstellung für die Downlink-Frequenz vorgenommen werden. Außerdem ist die aktuelle Dopplerfrequenz und ein Feld names \myemph{LO (Local Oscillator)}, welches für eine Offsetfrequenz steht, die im Funkgerät eingestellt werden kann, steht. Die korrigierte Frequenz welche nach \myemph{Radio} angezeigt wird, setzt sich damit beispielsweise wie folgt zusammen: \\ $f_{Radio} = f_{Satellite} + f_{Doppler} - f_{LO}$
 	\item \textbf{Uplink:} Dieser Bereich beinhaltet die Frequenzeinstellungen für die Uplink-Frequenz und besitzt die gleichen Eigenschaften wie der Downlink-Bereich.
 	\item \textbf{Target:} Hier kann der zu verfolgende Satellit und der zu verwendente Transponder eingestellt werden. Mit einem Klick auf \myemph{Track} wird die Doppler-Verschiebung des ausgewählten Satelliten bei den Frequenzeinstellungen im Downlink- und Uplink-Bereich korrigiert. Eine wichtige Rolle spielt hierbei die Schaltfläche \myemph{T} (\myemph{Tune}), da die Frequenzen des Transponders nur durch einen Klick auf diese in die Frequenzeinstellungen übertragen werden. Sollte der Transponder beispielsweise nur einen Down\-link besitzen, wird auch nur die Frequenz im Downlink-Bereich eingestellt.
 	Mit der Schaltfläche \myemph{L} (\myemph{Lock}) lässt sich die Differenz der Downlink- und Uplink-Frequenz sperren, das heißt Änderungen an der einen wirken sich auch auf die andere Frequenz aus. Dies ist nicht für Transponder möglich, die nur einen Up- oder Downlink besitzen.
-	\item \textbf{Settings:} In diesem Bereich lassen sich bis zu zwei Funkgeräte auswählen die in den GPredict-Einstellungen unter \myemph{Interfaces} eingerichtet wurden. Das obere Gerät stellt das Primäre dar und kann für Up- und Downlink verwendet werden. Das Untere kann als sekundäres Gerät verwendet werden, welches nur für den Uplink verwendet werden kann. Mit einem Klick auf \myemph{Engage} wird die Kommunikation zwischen GPredict und Funkgerät(en) aufgebaut. Hierbei kann im Feld neben \myemph{Cycle} der Zyklus eingetragen werden, nach welchem Kommandos an das Funkgerät geschickt werden sollen.
+	\item \textbf{Settings:} In diesem Bereich lassen sich bis zu zwei Funkgeräte auswählen, die in den GPredict-Einstellungen unter \myemph{Interfaces} eingerichtet wurden. Das obere Gerät stellt das Primäre dar und kann für Up- und Downlink verwendet werden. Das Untere kann als sekundäres Gerät verwendet werden, welches nur für den Uplink verwendet werden kann. Mit einem Klick auf \myemph{Engage} wird die Kommunikation zwischen GPredict und Funkgerät(en) aufgebaut. Hierbei kann im Feld neben \myemph{Cycle} der Zyklus eingetragen werden, nach welchem Kommandos an das Funkgerät geschickt werden sollen.
 \end{itemize}
 
 In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschiedenen Betriebsmodi des \myemph{Radio Control}-Bedienfelds zu sehen.
 
 \begin{table}[h]
+	\caption{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
 	\begin{tabularx}{\textwidth}{|l|l|X|}
 		\hline
 		\textbf{Track} 	    & \textbf{Engage}	&\textbf{Beschreibung}\\
@@ -220,7 +221,6 @@ In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschieden
 		Inaktiv            	& Aktiv   			& Die Korrektur der Doppler-Verschiebung wird nicht ausgeführt. Die eingestellte Frequenz wird an das Funkgerät geschickt und die dort eingestellte Frequenz wird ausgelesen.\\
 		\hline		
 	\end{tabularx}
-	\caption{Betriebsmodi des \myemph{Radio Control}-Bedienfelds, Quelle: \cite{gpredictmanual}}
 	\label{tab:radiocontrolmodes}
 \end{table}
 
@@ -229,6 +229,7 @@ In Tabelle \ref{tab:radiocontrolmodes} ist eine Übersicht über die verschieden
 Wenn die \myemph{Engage}-Schaltfläche aktiviert ist, wird die Korrektur der Doppler-Verschiebung durchgeführt, egal ob der ausgewählte Satellit sichtbar ist oder nicht.
 
 \subsection{GPredict-Einstellungen}
+\label{chap:gpredictsettings}
 
 Um in die GPredict-Einstellungen zu gelangen, klickt man links oben unterhalb der Titelleiste auf \myemph{Edit} und anschließend auf \myemph{Preferences}. Nun öffnet sich ein Fenster bei dem standardmäßig die Erste der vier Kategorien zu sehen ist, die Kategorie \myemph{General} (siehe Abbildung \ref{fig:generalsettings}). Nach einer Veränderung in den GPredict-Einstellungen muss GPredict zunächst neugestartet werden, damit diese Änderung wirksam wird. Überall wo die Schaltfläche \myemph{Reset} zu finden ist, können mit einem Klick auf diese, die Standard-Einstellungen wiederhergestellt werden. Bei den meisten Optionen erscheint ein kleines Informations-Fenster, sobald man mit dem Mauszeiger einige Sekunden über der entsprechenden Option verharrt.
 
@@ -250,9 +251,7 @@ Die Kategorie \myemph{General} ist in folgende vier Reiter untergliedert:
 \end{itemize}
 
 Zur Kategorie \myemph{Modules} gelangt man über zwei Wege. Der erste führt über die allgemeinen GPredict-Einstellungen, wie in diesem Abschnitt beschrieben. Der Zweite führt über das Modul Pop-Up Menü, wie auf Seite \pageref{modulesettingsspecific} beschrieben. Der Unterschied ist, dass bei den Modul-Einstellungen in den GPredict-Einstellungen die Standardwerte für alle Module eingestellt werden können und beim zweiten Weg nur die für das entsprechende Modul.
-\label{modulesettingsgeneral}
 
-%(siehe Abbildung \ref{fig:modulesettings})
 \iffalse
 \begin{figure}[h]
 	\centering
@@ -328,13 +327,13 @@ Die erste zentrale Information ist die \myemph{Hamlib ID}. Hierfür gibt man fol
 
 Im Folgenden sind die beiden Zeilen dargestellt, die für das in diesem Projekt verwendete Funkgerät, sowie für die verwendete Rotorschnittstelle relevant sind. Hierbei steht der erste Eintrag für die \myemph{Hamlib ID}, der Zweite für den Hersteller, der Dritte für die Version und der Vierte für den Test-Status:
 
+\label{hamlibbackend}
 \vspace{-1em}
 \begin{shaded}
 	\texttt{368\qquad Icom\qquad\ IC-9100\qquad 0.7\qquad Untested}\\%[-0.5em]
 	\texttt{601\qquad Yaesu\qquad GS-232A\qquad 0.3\qquad Beta}
 \end{shaded}
 \vspace{-1em}
-\label{hamlibbackend}
 
 Als Nächstes muss die Schnittstelle zum Funkgerät bzw. zur Rotorensteuerung angegeben werden. Bei der im Rahmen diesen Projekts verwendeten Software (siehe Abschnitt \ref{chap:software}) werden hierfür serielle Schnittstellen verwendet. Wie diese konfiguriert werden, ist im folgenden Auszug aus der Hilfe, die bei Eingabe der Option \texttt{-h} oder \texttt{-\,-help} erscheint (für \myemph{rigctl.exe}), zu sehen:
 
@@ -346,7 +345,7 @@ Als Nächstes muss die Schnittstelle zum Funkgerät bzw. zur Rotorensteuerung an
 \end{shaded}
 \vspace{-1em}
 
-Um eine Liste der möglichen Konfigurationsparameter (\texttt{config parameters}) auszugeben, führt man \myemph{rigctl(d).exe} bzw. \myemph{rotctl(d).exe} mit der Option \texttt{-L} oder \texttt{-\,-show-conf} aus. Die genauen Werte sind in Abschnitt \ref{chap:software} aufgeführt.\newpar
+Um eine Liste der möglichen Konfigurationsparameter (\texttt{config parameters}) auszugeben, führt man \myemph{rigctl(d).exe} bzw. \myemph{rotctl(d).exe} mit der Option \texttt{-L} oder \texttt{-\,-show-conf} aus.\newpar
 Im Testbetrieb ist die Ausgabe von Statusmeldungen (z.B. Warnungen oder Fehler) oft sehr hilfreich. Hierfür lässt sich mit der Option \texttt{-v} die Intensität der Ausgabe einstellen. Bei \texttt{-v} werden nur grobe Fehler ausgegeben, wohingegen bei \texttt{-vvvvv} alle verfügbaren Statusmeldungen der \ac{API} ausgegeben werden. Bei Weglassen der Option erfolgt keine Ausgabe. Mit diesem Wissen sieht die Ausführung des Programms \myemph{rotctl.exe} im Rahmen dieses Projekts wie folgt aus:
 
 \vspace{-1em}
@@ -367,7 +366,7 @@ Da beim Funkgerät IC-9100 das Icom-spezifische Protokoll \acsu{CI-V} (das ,,V''
 \label{chap:hamlibusage}
 
 Nachdem das Programm \myemph{rigctl.exe} bzw. \myemph{rotctl.exe} mit den unter Abschnitt \ref{chap:hamlibconfig} dargestellten Parametern gestartet wurde, hat man die Möglichkeit Befehle an das Funkgerät bzw. an die Rotorensteuerung zu senden. Eine Übersicht der Befehle lässt sich der Ausgabe der Programmausführung mit dem Parameter \texttt{-h} bzw. \texttt{-\,-help} entnehmen.\newpar
-Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befehle unterstützt, ist es wissenswert welche Befehle von den in diesem Projekt verwendeten Geräten unterstützt werden. Unter Angabe der \myemph{Hamlib ID} und der Option \texttt{-u} bzw. \texttt{-\,-dump-caps} kann eine Übersicht der \myemph{capabilities} (Fähigkeiten), z.B. der unterstützten Befehle oder der Standard-Parameter ausgegeben werden:
+Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befehle unterstützt, ist es wissenswert welche Befehle von den in diesem Projekt verwendeten Geräten unterstützt werden. Unter Angabe der \myemph{Hamlib ID} und der Option \texttt{-u} bzw. \texttt{-\,-dump-caps} kann eine Übersicht der Fähigkeiten (\myemph{capabilities}), z.B. der unterstützten Befehle oder der Standard-Parameter ausgegeben werden:
 
 \vspace{-1em}
 \begin{shaded}
@@ -376,16 +375,17 @@ Da nicht jedes Funkgerät bzw. nicht jede Rotorensteuerung alle möglichen Befeh
 \end{shaded}
 \vspace{-1em}
 
-Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe Anhang \ref{chap:rigctldbat}, \ref{chap:rigctlbat}, \ref{chap:rotctldbat} und \ref{chap:rotctlbat}). Bei der Verwendung unter Linux können diese ohne großen Aufwand in Bash-Skripte umgeschrieben werden. 
-
-\clearpage
+Um die Verwendung dieser Kommandozeilenprogramme zu vereinfachen und um gleichzeitig die notwendige Konfiguration festzuhalten, wurde für die Programme \myemph{rigctl}, \myemph{rigctld}, \myemph{rotctl} und \myemph{rotctld} jeweils ein Batch-Skript erstellt (siehe \ref{chap:rigctldbat}, \ref{chap:rigctlbat}, \ref{chap:rotctldbat} und \ref{chap:rotctlbat}). Bei der Verwendung unter Linux können diese ohne großen Aufwand in Bash-Skripte umgeschrieben werden. 
 
 \section{Inbetriebnahme unter Windows}
 
 \subsection{Zusätzliche Software}
 \label{chap:software}
 
-Sowohl das Funkgerät als auch die Rotorensteuerung werden über das Hochschul-Netzwerk angesteuert. Für die Kommunikation mit den notwendigen Hardwarekomponenten (Banana Pi und \myemph{NetCOM 211}) stehen bereits Programme für Windows zur Verfügung. In Abbildung \ref{fig:swhwcom} ist eine Übersicht zu sehen, wie GPredict mit dem Funkgerät und den Rotoren kommuniziert. Hierbei sind reine Software-Komponenten in blau und Hardware-Komponenten in rot dargestellt. Der Banana Pi liegt zwar als Hardware-Komponente vor, jedoch ist die Software selbst erstellt worden und kann jederzeit angepasst werden, deshalb ist er in blau-rot dargestellt.
+Sowohl das Funkgerät als auch die Rotorensteuerung werden über das Hochschul-Netzwerk angesteuert. Für die Kommunikation mit den notwendigen Hardwarekomponenten (Banana Pi und \myemph{NetCOM 211}) stehen bereits Programme für Windows zur Verfügung. In Abbildung \ref{fig:swhwcom} ist eine Übersicht zu sehen, wie GPredict mit dem Funkgerät und den Rotoren kommuniziert. Hierbei sind reine Software-Komponenten in blau und Hardware-Komponenten in rot dargestellt. Der Banana Pi liegt zwar als Hardware-Komponente vor, jedoch ist die Software selbst erstellt worden und kann jederzeit angepasst werden, deshalb ist er in blau-rot dargestellt.\newpar
+GPredict kommuniziert über eine IP-basierte Schnittstelle nur mit den HamLib-Programmen \myemph{rigctld.exe} und \myemph{rotctld.exe}. Diese werden unter Berücksichtigung der notwendigen Parameter als Batch-Skripte ausgeführt und müssen solange eine Kommunikation zwischen GPredict und Funkgeräten bzw. Rotoren bestehen soll, ausgeführt werden.
+
+\newpage
 
 \begin{figure}[h]
 	\centering
@@ -394,13 +394,14 @@ Sowohl das Funkgerät als auch die Rotorensteuerung werden über das Hochschul-N
 	\label{fig:swhwcom} 
 \end{figure}
 
-Hierbei kommuniziert GPredict über eine IP-basierte Schnittstelle nur mit den HamLib-Programmen \myemph{rigctld.exe} und \myemph{rotctld.exe}. Diese werden unter Berücksichtigung der notwendigen Parameter als Batch-Skripte ausgeführt und müssen solange eine Kommunikation zwischen GPredict und Funkgeräten bzw. Rotoren bestehen soll, aktiv sein.\newpar
 Die Software \myemph{NetCOM Manager} stellt eine virtuelle serielle Schnittstelle (COM5) zur Verfügung, auf die von \myemph{rigctl(d).exe} zugegriffen werden kann. Das \myemph{NetCOM 211}-Modul ist wiederum per serieller Schnittstelle mit dem Funkgerät verbunden und ermöglicht die Kommunikation über das Netzwerk mit der Software \myemph{NetCOM Manager}. Somit muss man sich lediglich im Hochschul-Netzwerk befinden, um mit dem Funkgerät kommunizieren zu können. Wird hierbei die Möglichkeit einer VPN-Verbindung wahrgenommen, kann quasi von jedem beliebigen Ort mit Internetanbindung mit dem Funkgerät kommuniziert werden.\newpar
 Für die Kommunikation mit den Rotoren, wird auf die Software \myemph{ARSVCOM} zurückgegriffen. Diese emuliert eine Rotorensteuerung vom Typ \myemph{Yaeso RS232A}, wofür ebenfalls ein virtueller, beliebig einstellbarer COM-Port erstellt wird. Der COM-Port und der Rotorensteurungs-Typ werden als Parameter bei \myemph{rotctl(d).exe} angegeben. Die Software \myemph{ARSVCOM} kommuniziert über das Netzwerk mit dem Banana Pi, an welchem wiederum die Steuerungseinheiten des Azimut- und Elevations-Rotors angeschlossen sind (siehe Abschnitt \ref{chap:rotoren}).
 
+\newpage
+
 \subsection{Test der Bedienfelder}
 
-Um sich mit den Bedienfeldern zur Funkgerät- bzw. Rotorensteuerung vertraut zu machen, kann auf zwei sogenannte \myemph{Dummy}-Schnittstellen zugegriffen werden. Diese sind sowohl bei \myemph{rigctl.exe}, als auch bei \myemph{rotctl.exe} unter der \myemph{Hamlib ID} 1 erreichbar. In Abbildung \ref{fig:dummysettings} ist eine beispielhafte Konfiguration zu sehen, die in den \myemph{Interface}-Einstellungen zur Kommunikation mit den \myemph{Dummy}-Schnittstellen vorgenommen werden kann.
+Um sich mit den Bedienfeldern zur Funkgerät- bzw. Rotorensteuerung vertraut zu machen, kann auf zwei sogenannte \myemph{Dummy}-Schnittstellen zugegriffen werden. Diese sind sowohl bei \myemph{rigctl(d).exe}, als auch bei \myemph{rotctl(d).exe} unter der \myemph{Hamlib ID} 1 erreichbar. In Abbildung \ref{fig:dummysettings} ist eine beispielhafte Konfiguration zu sehen, die in den \myemph{Interface}-Einstellungen zur Kommunikation mit den \myemph{Dummy}-Schnittstellen vorgenommen werden kann.
 
 \begin{figure}[h]
 	\centering
@@ -409,14 +410,16 @@ Um sich mit den Bedienfeldern zur Funkgerät- bzw. Rotorensteuerung vertraut zu 
 	\label{fig:dummysettings} 
 \end{figure}
 
-Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotctld.exe} ebenfalls eigene Batch-Skripte erstellt (siehe Anhang \ref{chap:rigctlddummybat} und \ref{chap:rotctlddummybat}). Die hierfür verwendeten Optionen unterscheiden sich lediglich im Port, für \myemph{rigctld.exe} ist standardmäßig der Port 4532 und für \myemph{rotctld.exe} der Port 4533 vorgesehen. Dieser kann jedoch nach Belieben angepasst werden.
-\clearpage
+Für diesen Test wurden für die Programme \myemph{rigctld.exe} und \myemph{rotctld.exe} ebenfalls eigene Batch-Skripte erstellt (siehe \ref{chap:rigctlddummybat} und \ref{chap:rotctlddummybat}). Die hierfür verwendeten Optionen unterscheiden sich lediglich im Port, für \myemph{rigctld.exe} ist standardmäßig der Port 4532 und für \myemph{rotctld.exe} der Port 4533 vorgesehen. Dieser kann jedoch nach Belieben angepasst werden.\newpar
 Sobald ein Fehler bei der Kommunikation zwischen den Bedienfeldern und den HamLib-Programmen fünf Mal in Folge aufgetreten ist, wird aus Sicherheitsgründen die Kommunikation automatisch abgebrochen.
 
 \subsection{Test der Kommunikation zum Funkgerät}
 \label{chap:rigtest}
 
-Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen, werden zunächst einzelne Kommandos mit Hilfe des Skripts \myemph{rigctl.bat} an das Funkgerät geschickt. Somit kann sichergestellt werden, ob das HamLib-\acl{BE} für das Funkgerät IC-9100 richtig implementiert wurde. Hierbei kann nicht davon ausgegangen werden, dass ein reibungsloser Betrieb möglich ist, da als Test-Status des HamLib-\acl{BE}s für das Funkgerät IC-9100 ,,Untested'' angegeben ist (siehe Seite \pageref{hamlibbackend}).\newpar
+Um die Kommunikation zwischen HamLib und dem Funkgerät zu testen, werden zunächst einzelne Kommandos mit Hilfe des Skripts \myemph{rigctl.bat} an das Funkgerät geschickt. Somit kann sichergestellt werden, ob das HamLib-\acl{BE} für das Funkgerät IC-9100 richtig implementiert wurde. Hierbei kann nicht davon ausgegangen werden, dass ein reibungsloser Betrieb möglich ist, da als Test-Status des HamLib-\acl{BE}s für das Funkgerät IC-9100 ,,Untested'' angegeben ist (siehe Seite \pageref{hamlibbackend}).
+
+\newpage
+
 In der Betriebsanleitung des Funkgeräts IC-9100 (siehe \cite{radiomanual}) ist auf Seite 183ff eine Übersicht der Befehlsstruktur und der zulässigen Kommandos des ICOM-spezifischen Protokolls CI-V dargestellt. Zur Kontrolle, ob die HamLib-Befehle auch den richtigen CI-V-Kommandos entsprechen, wird mit dem Windows-Programm \myemph{Serial Port Monitor} (hierfür kann auch ein anderes Programm verwendet werden) der serielle Port COM5 abgehört, während über \myemph{rigctl.bat} verschiedene Befehle an das Funkgerät geschickt werden.\newpar
 Für die folgenden grundlegenden Befehle konnte eine Übereinstimmung der von HamLib verwendeten mit den in \cite{radiomanual} zu findenden CI-V Befehlen festgestellt und damit eine korrekte Funktionalität sichergestellt werden:
 
@@ -428,13 +431,11 @@ Für die folgenden grundlegenden Befehle konnte eine Übereinstimmung der von Ha
 	\item \texttt{m: get\_mode} (Auslesen des Modus und der zugehörigen Bandbreite)
 \end{itemize}
 
-Eine Übersicht der gültigen Eingabeparameter von \myemph{rigctl(d).exe} kann über die Option \texttt{-\,-dump-caps} ausgegeben werden (siehe Abschnitt \ref{chap:hamlibusage}).
-
-\clearpage
-
+Eine Übersicht der gültigen Eingabeparameter von \myemph{rigctl(d).exe} kann über die Option \texttt{-\,-dump-caps} ausgegeben werden (siehe Abschnitt \ref{chap:hamlibusage}).\newpar
 Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im Satellitenmodus betrieben werden muss, ist es essentiell, dass dieser über \myemph{rigctl(d).exe} aktiviert werden kann.\label{satmode} Beim Test des entsprechenden Befehls (siehe Tabelle \ref{tab:civcommands}), wurde jedoch festgestellt, dass das CI-V-Kommando, dass an das Funkgerät geschickt wird, nicht dem Korrekten aus \cite{radiomanual} entspricht. Für das fertig kompilierte Programm \myemph{rigctl(d).exe} gibt es zwar den Befehl \texttt{send\_cmd} mit dem laut \cite{hamlibmanual} ASCII-Zeichen geschickt werden können, dieser konnte im Rahmen dieses Projektes jedoch nicht erfolgreich verwendet werden. Es konnte hierbei auch nach Testen verschiedener Teile des CI-V-Kommandos der Satellitenmodus am Funkgerät nicht aktiviert werden. Somit ist es nicht möglich einen ,,rohen'' Befehl zu versenden, ohne einen Eingriff in den Quellcode von HamLib vorzunehmen. In Tabelle \ref{tab:civcommands} ist der HamLib-Befehl zur Aktivierung des Satellitenmodus, das verwendete CI-V-Kommando und das tatsächliche CI-V-Kommando dargestellt. Die Ausschnitte, die nicht übereinstimmen, sind rot markiert.
 
-\begin{table}[h]	 
+\begin{table}[h]
+	\caption{Fehlerhaftes CI-V Kommando beim Aktivieren des Satellitenmodus}	 
 	\small\begin{tabularx}{\textwidth}{|X|l|l|}
 		\hline
 		\textbf{HamLib-Befehl \myemph{rigctl(d).exe}}	& \textbf{CI-V (Verwendet)}			&\textbf{CI-V (Tatsächlich)}\\
@@ -442,15 +443,12 @@ Da das Funkgerät in den meisten Fällen bei der Kommunikation mit Satelliten im
 		\texttt{U SATMODE 1}	& \texttt{FE FE 7C E0 \myredtext{1A 07} 01 FD}	& \texttt{FE FE 7C E0 16 5A 01 FD}\\
 		\hline		
 	\end{tabularx}
-	\caption{Fehlerhaftes CI-V Kommando beim Aktivieren des Satellitenmodus}
 	\label{tab:civcommands}
 \end{table}
 
 \subsection{Test der Kommunikation zu den Rotoren}
 
 Beim Test der Bedienelemente kann der Ausgabe des Skripts \myemph{rotctld-dummy.bat} bei Verwendung der höchsten Ausgabeintensität \texttt{-vvvvv} entnommen werden, dass lediglich die Befehle \texttt{set\_pos} und \texttt{get\_pos} beim Verfolgen eines Satelliten verwendet werden. Diese beiden Befehle konnten mit dem Skript \myemph{rotctl.bat} erfolgreich für die Steuerung der beiden Rotoren getestet werden. Grundsätzlich sind bei der Steuerung der Rotoren einige Aspekte zu beachten, beispielsweise, dass die Rotorgeschwindigkeit reduziert wird, sobald sich der Ist-Winkel in gewisser Nähe zum Soll-Winkel befindet. Diese Punkte werden jedoch alle entweder von den Steuerungsmodulen oder von der Software \myemph{ARSVCOM} übernommen, sodass in GPredict lediglich die jeweiligen Winkel ausgelesen und gesetzt werden müssen.
-
-\clearpage
 
 \subsection{Konfiguration des Funkgeräts}
 \label{chap:radioconfig}
@@ -464,9 +462,9 @@ Dem Abschnitt \ref{chap:funkgerät} kann entnommen werden, dass das Funkgerät I
 	\label{fig:radioconfig} 
 \end{figure}
 
-Bei \myemph{Host} muss die IP-Adresse angegeben werden unter der aktive \myemph{rigctld.exe}-Prozess zu erreichen ist. Hier ist standardmäßig \myemph{localhost} eingetragen, was für den Computer steht, auf dem GPredict ausgeführt wird. Da im Rahmen dieses Projekts GPredict und \myemph{rigctld.bat} immer auf dem gleichen Computer ausgeführt werden, wird sowohl unter GPredict als auch beim Skript \myemph{rigctld.bat} die IP-Adresse 127.0.0.1 (\myemph{localhost}) eingestellt. Hierbei ist darauf zu achten, dass die Verwendung der Zeichenkette \myemph{localhost} unter Windows bei der Verwendung von \myemph{rigctld.exe} nicht funktioniert. Die Angabe des Ports der \myemph{Interface}-Einstellungen muss ebenfalls dem in \myemph{rigctld.bat} eingestellten Port entsprechen. Die Felder \myemph{LO Down} und \myemph{LO Up} ermöglichen die Berücksichtigung eines Transverters, welcher zur Veränderung der Empfangs- oder Sendefrequenz eingesetzt wird. Somit kann beispielsweise mit einem 28\,MHz-Empfänger ein Signal von einem Satellit der mit 144\,MHz sendet, empfangen werden, in dem 144\,MHz -- 28\,MHz = 116\,MHz bei \myemph{LO Down} eingetragen wird. Beim Feld \myemph{PTT status} wird \myemph{None} eingetragen, da bei vollduplexfähigen Funkgeräten die Abfrage des \ac{PTT}-Status nicht nötig ist (siehe \cite{gpredictmanual} Seite 58).
+\newpage
 
-\clearpage
+Bei \myemph{Host} muss die IP-Adresse angegeben werden unter der aktive \myemph{rigctld.exe}-Prozess zu erreichen ist. Hier ist standardmäßig \myemph{localhost} eingetragen, was für den Computer steht, auf dem GPredict ausgeführt wird. Da im Rahmen dieses Projekts GPredict und \myemph{rigctld.bat} immer auf dem gleichen Computer ausgeführt werden, wird sowohl unter GPredict als auch beim Skript \myemph{rigctld.bat} die IP-Adresse 127.0.0.1 (\myemph{localhost}) eingestellt. Die Angabe des Ports der \myemph{Interface}-Einstellungen muss ebenfalls dem in \myemph{rigctld.bat} eingestellten Port entsprechen. Die Felder \myemph{LO Down} und \myemph{LO Up} ermöglichen die Berücksichtigung eines Transverters, welcher zur Veränderung der Empfangs- oder Sendefrequenz eingesetzt wird. Somit kann beispielsweise mit einem 28\,MHz-Empfänger ein Signal von einem Satellit der mit 144\,MHz sendet, empfangen werden, in dem 144\,MHz -- 28\,MHz = 116\,MHz bei \myemph{LO Down} eingetragen wird. Beim Feld \myemph{PTT status} wird \myemph{None} eingetragen, da bei vollduplexfähigen Funkgeräten die Abfrage des \ac{PTT}-Status nicht nötig ist (siehe \cite{gpredictmanual} Seite 58).
 
 \subsection{Konfiguration der Rotoren}
 \label{chap:rotatorconfig}	
@@ -490,14 +488,12 @@ Passiert ein Satellit, wie in Abbildung \ref{fig:rotatorflip} beispielhaft zu se
 	\label{fig:rotatorflip} 
 \end{figure}
 
-\newpage
-
 Bei einem Rotorflip wird der Elevations-Rotor über die 90\mydegree-Schwelle gekippt, womit der Anschlag des Azimut-Rotors um 180\mydegree, also nach Norden, verlegt wird. Somit ist es möglich einen Satelliten mit dem in Abbildung \ref{fig:rotatorflip} zu sehenden Verlauf zu verfolgen.
 
 \subsection{Modifizierung des HamLib-Quellcodes}
 \label{chap:hamlibmod}
 
-Um fehlerlos einen Rotorflip durchführen zu können, ist es notwendig die Quelldatei, in der das Backend für die verwendete Rotorschnittstelle implementiert ist, anzupassen. Dafür wurden insgesamt drei Änderungen in der Datei \myemph{gs232.c}, die unter dem Pfad \texttt{hamlib-3.0.1/gs232a/} des HamLib-Quellcodes zu finden ist, vorgenommen. Die modifizierte Datei ist im Anhang \ref{chap:hamlibmodification} zu finden.\newpar
+Um fehlerlos einen Rotorflip durchführen zu können, ist es notwendig die Quelldatei, in der das Backend für die verwendete Rotorschnittstelle implementiert ist, anzupassen. Dafür wurden insgesamt drei Änderungen in der Datei \myemph{gs232.c}, die unter dem Pfad \texttt{hamlib-3.0.1/gs232a/} des HamLib-Quellcodes zu finden ist, vorgenommen. Die modifizierte Datei ist unter \ref{chap:hamlibmodification} zu finden.\newpar
 Die erste Änderung wurde in der Funktion \texttt{gs232\_rot\_set\_position()} in Zeile 141 vorgenommen. Hier wurde die folgende Zeile eingefügt um sicherzustellen, dass der Azimutwert, der an den Rotor geschickt wird, immer zwischen 0\mydegree\ und 360\mydegree\ liegt:
 
 \vspace{-1em}
@@ -537,7 +533,8 @@ Um diese Anpassungen des Quellcodes im Programm \myemph{rotctl(d).exe} nutzen zu
 		\texttt{\$ sudo apt-get update}\\[-0.5em]
 		\texttt{\$ sudo apt-get install mingw32 wine}
 	\end{shaded}
-	\vspace{-1em}	
+	%\vspace{-1em}	
+	\newpage
 	\item Nun navigiert man in einer Bash-Kommandozeile in den Ordner \myemph{hamlib-3.0.1} der im ersten Schritt erstellt wurde und führt folgenden Befehl aus:
 	\vspace{-1em}
 	\begin{shaded}
@@ -579,7 +576,21 @@ Für den korrekten Betrieb von GPredict ist es notwendig folgende Softwarekompon
 	\item Die Bedienfelder für die Funkgerät- und Rotorensteuerung
 \end{itemize}
 
+\newpage
+
+Außerdem ist es erforderlich bei den Windows-Umgebungsvariablen folgendes Verzeichnis einzutragen, sodass die Batch-Skripte von jedem beliebigen Verzeichnis ausgeführt werden können, hierbei steht \texttt{(...)} für das Verzeichnis in dem der HamLib-Ordner liegt:
+
+\vspace{-1em}
+\begin{shaded}
+	\verb!C:\(...)\hamlib-w32-3.0.1\bin!
+\end{shaded}
+%\vspace{-1em}
+
 Es konnte durch mehrere Probeläufe der grundsätzliche Betrieb von GPredict sichergestellt werden. Dazu gehören das erfolgreiche Ausrichten der Antenne, also des Azimut- und Elevations-Rotors, sowie die Übermittlung der korrekten Frequenz (inklusive Korrektur der Doppler-Verschiebung) zum Funkgerät. Allerdings muss an dieser Stelle auf gewisse Einschränkungen hingewiesen werden, die den reibungslosen Betrieb der Bodenstation mit GPredict noch nicht ganz ermöglichen. Diese sind im Folgenden näher erläutert:\newpar
 Möchte man, nachdem die Kommunikation zwischen GPredict und dem Funkgerät erfolgreich aufgebaut ist und diese auch schon eine gewisse Zeit ohne Unterbrechung läuft, von einem Transponder des aktuellen Satelliten auf einen anderen Transponder wechseln, bei dem die \myemph{Down-} und \myemph{Uplink-}Frequenz genau vertauscht sind, bricht die Kommunikation zum Funkgerät ab. Das hat damit zu tun, dass es nicht erlaubt ist, im Satellitenmodus des Funkgeräts die gleiche Frequenz im \myemph{Sub-} und \myemph{Main-}Band einzustellen. Dafür gibt es beim CI-V Protokoll einen speziellen Befehl, der einen Tausch der Frequenzen im \myemph{Sub-} und \myemph{Main-}Band veranlasst. Dieser Befehl wird nicht von dem HamLib-Programm \myemph{rigctld.exe} geschickt. Beim Test unter SatPC32 ist dieser Wechsel möglich und es konnte nachgewiesen werden, dass dort dieser Befehl gesendet wird. Um diese Funktionalität in GPredict zu implementieren, ist ein Eingriff in den Quellcode nötig.\newpar
-Wie bereits unter Abschnitt \ref{chap:rigtest} auf Seite \pageref{satmode} beschrieben, ist der Befehl zur Aktivierung des Satellitenmodus des Funkgeräts in HamLib fehlerhaft implementiert. Außerdem wurde festgestellt, dass dieser Befehl beim Kommunikationsaufbau auch nicht vom Programm \myemph{rigctld.exe} an das Funkgerät geschickt wird (bei SatPC32 konnte dies nachgewiesen werden). Somit ist es notwendig, das Funkgerät manuell in den Satellitenmodus zu setzen um eine fehlerfreie Kommunikation zu gewährleisten. Um diese Funktionalität zu implementieren, führt ebenfalls kein Weg daran vorbei, den Quellcode von HamLib anzupassen und diesen anschließend neu zu kompilieren.\newpar
-Der letzte Punkt, der einem reibungslosen Betrieb von GPredict im Weg stand, hat mit der Ansteuerung des Azimut-Rotors zu tun. Hier war es notwendig einen Eingriff in den HamLib-Quellcode vorzunehmen (siehe Abschnitt \ref{chap:hamlibmod}) und diesen daraufhin neu zu kompilieren (siehe Abschnitt \ref{chap:winbuild}). Ohne diesen Eingriff kam es zu einer fehlerhaften Ansteuerung des Azimut-Rotors beim Verfolgen eines Satelliten. Ein Test nach der Modifizierung des HamLib-Quellcodes lieferte zufriedenstellende Ergebnisse.\newpar
+Wie bereits unter Abschnitt \ref{chap:rigtest} auf Seite \pageref{satmode} beschrieben, ist der Befehl zur Aktivierung des Satellitenmodus des Funkgeräts in HamLib fehlerhaft implementiert. Außerdem wurde festgestellt, dass dieser Befehl beim Kommunikationsaufbau auch nicht vom Programm \myemph{rigctld.exe} an das Funkgerät geschickt wird (bei SatPC32 konnte dies nachgewiesen werden). Somit ist es notwendig, das Funkgerät manuell in den Satellitenmodus zu setzen um eine fehlerfreie Kommunikation zu gewährleisten. Um diese Funktionalität zu implementieren, führt ebenfalls kein Weg daran vorbei, den Quellcode von HamLib anzupassen und diesen anschließend neu zu kompilieren.
+
+\newpage
+
+Ein weiterer Punkt, der einem reibungslosen Betrieb von GPredict im Weg stand, hat mit der Ansteuerung des Azimut-Rotors zu tun. Hier war es notwendig einen Eingriff in den HamLib-Quellcode vorzunehmen (siehe Abschnitt \ref{chap:hamlibmod}) und diesen daraufhin neu zu kompilieren (siehe Abschnitt \ref{chap:winbuild}). Ohne diesen Eingriff kam es zu einer fehlerhaften Ansteuerung des Azimut-Rotors beim Verfolgen eines Satelliten. Ein Test nach der Modifizierung des HamLib-Quellcodes lieferte zufriedenstellende Ergebnisse.\newpar
+Zuletzt soll noch darauf hingewiesen werden, dass die Funktion \myemph{Time Controller} (siehe Abbildung \ref{fig:timecontroller} auf Seite \pageref{fig:timecontroller}) unter Windows nicht funktioniert. Sobald man die aktuelle Zeit ändern möchte, egal in welche Richtung, meldet Windows einen Fehler bei der Ausführung von GPredict und das Programm muss neugestartet werden. Unter Linux funktioniert der \myemph{Time Controller} fehlerfrei. Als provisorische Lösung dieses Problems soll an dieser Stelle folgender Hinweis gegeben werden. Da sich GPredict auf die Windows-Systemzeit bezieht, kann durch eine Änderung dieser eine Orbitvorhersage erreicht werden.
