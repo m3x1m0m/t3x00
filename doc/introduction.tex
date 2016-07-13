@@ -4,52 +4,14 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%
-%% Date:			07th June 2016												%%
+%% Date:			13th July 2016												%%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Einleitung}
-In der Vergangenheit wurden teure Satelliten nur zu Forschungs-- und Verteidigungszwecken entwickelt und gebaut. Heutzutage nimmt der 
-Geschäftsanteil mit kommerziellen Satelliten stetig zu. Möchte der Fussball--Fan ein Europameisterschaftsspiel in Echtzeit verfolgen können oder der 
-Reisende sich zu seinem Ziel navigieren lassen, so sind Satellitensysteme unverzichtbar.
-\newpar
-Eine entscheidende Rolle bei der Satellitenforschung haben die Amateurfunksatelliten 
-gespielt. Neue Techniken konnten ohne ein kommerzielles Geschäft oder eine wissenschaftliche bzw. militärische Mission zu gefährden mit 
-Amateurfunksatelliten getestet werden. Die ständige Beobachtung der Satelliten wurde durch die 
-Vielzahl der Amateurfunker weltweit sichergestellt. Nicht nur Amateurfunkern ist die Faszination Satellitenverfolgung vorbehalten. Die Anzahl von 
-sogenannten Cubesat-Projekten hat an Universitäten zugenommen. Nicht nur der Bau solcher Cubesats, sondern auch die Verfolgung und 
-Kommunikation mit Satelliten sind Bestandteil von Studienarbeiten.
-\newpar
-Auch die Studenten des Technikcampus Friedrichshafen der DHBW Ravensburg wollen mit Satelliten kommunizieren können. Um dies zu ermöglichen, ist 
-eine Bodenstation von Nöten. Mit entsprechender Hard- und Software können Satelliten verfolgt werden. Auch eine Kommunikation über und mit Objekten 
-im Orbit ist durch ein entsprechendes Equipment möglich. 
-\newpar
-Dieses Equipment für eine Bodenstation stellt die DHBW Ravensburg für Studienarbeiten zur Verfügung. Diese Studienarbeit, Inbetriebnahme einer freien 
-Software zur Satellitenbahnvorhersage und Ansteuerung einer Hochleistungsantenne, befasst sich mit dieser Thematik. Dies schließt die Nachführung 
-der Antenne und damit die Steuerung von Rotoren sowie die Kommunikation mittels einem Funkgerät, mit ein. In dieser Arbeit wird die Inbetriebnahme 
-der freien Software beschrieben und soll dem Leser einen leichten Einstieg in die Bedienung dieser Software ermöglichen. Außerdem beleuchtet diese 
-Arbeit den physikalischen Hintergrund der Satellitenbahn-Vorhersage und damit einhergehend die Ursache der Dopplerverschiebung der Mittenfrequenz bei 
-der Kommunikation mit einem Satelliten. Ein weiterer inhaltlicher Grundpfeiler dieser Studienarbeit ist die Dokumentation des gesamten Projektprozess. 
-   
-% Diese Studienarbeit beschreibt die Inbetriebnahme einer freien Software 
-% zur Satellitenbahnvorhersage und Ansteuerung einer Hochleistungsantenne. Dies schließt die Nachführung der Antenne und damit die Steuerung von 
-% Rotoren mit ein. Die freie Software soll die bestehende Software 
-% SatPC32 ersetzen. SatPC32 ist eine proprietäre Software und dient der Bodenstation als Referenz. Da SatPC32 nicht mehr weiterentwickelt wird 
-% und es darüber hinaus keinen Support für diese Software gibt, wurde der alternative Weg, einer freien Software für die Bodenstation in 
-% Friedrichshafen, gewählt. Diese freie Software ist GPredict. GPredict ist quelloffen und beherrscht es mit Hilfe der \ac{TLE} die Satellitenposition 
-% vorherzusagen. Des Weiteren wird von GPerdict bzw. der darunter liegenden HamLib eine Vielzahl verschiedener Hardware-Einheiten zur Ausrichtung der 
-% Antenne und zur Kommunikation unterstützt. Die Ausgabe der Satellitenposition auf einer grafischen Oberfläche beherrscht GPredict problemlos. Eine 
-% Kommuniktaion mit Transpondern im Orbit aufzubauen ist mit GPredict kinderleicht.
-% \newpar
-% Diese Studienarbeit beschreibt GPredict und soll dem Leser einen 
-% leichten Einstieg in die Bedienung dieser Software ermöglichen. Außerdem beleuchtet diese Arbeit den physikalischen Hintergrund der 
-% Satellitenbahn-Vorhersage und damit einhergehend die Ursache der Dopplerverschiebung der Mittenfrequenz bei der Kommunikation mit einem Satelliten. 
-% Ein weiterer inhaltlicher Grundpfeiler dieser Studienarbeit ist die Dokumentation des gesamten Projektprozess. 
-%  In der heutigen Gesellschaft ... Satelliten kaum mehr wegzudenken ... mobile Kommunikation, Navigation, Forschung, Satellitenfernsehen ...\\
-%  Bei der Entwicklung und dem Test der Kommunikation zwischen Erde und Satellit haben Amateurfunksatelliten und Amateurfunkbodenstationen eine entscheidende Rolle gespielt (Quelle Amsat-Website)...\\
-%  An der Dualen Hochschule Baden-Württemberg am Campus Friedrichshafen soll eine solche Bodenstation errichtet werden.\\
-%  Die Software SatPC32 soll ersetzt werden und dient dabei als Referenz.
-
-\clearpage
+In der Vergangenheit wurden teure Satelliten nur zu Forschungs-- und Verteidigungszwecken entwickelt und gebaut. Heutzutage nimmt der Geschäftsanteil mit kommerziellen Satelliten stetig zu. Möchte der Fussball--Fan ein Europameisterschaftsspiel in Echtzeit verfolgen können oder der Reisende sich zu seinem Ziel navigieren lassen, so sind Satellitensysteme unverzichtbar.\newpar
+Eine entscheidende Rolle bei der Satellitenforschung haben die Amateurfunksatelliten gespielt. Neue Techniken konnten ohne ein kommerzielles Geschäft oder eine wissenschaftliche bzw. militärische Mission zu gefährden mit Amateurfunksatelliten getestet werden. Die ständige Beobachtung der Satelliten wurde durch die Vielzahl der Amateurfunker weltweit sichergestellt. Nicht nur Amateurfunkern ist die Faszination Satellitenverfolgung vorbehalten. Die Anzahl von sogenannten Cubesat-Projekten hat an Universitäten zugenommen. Nicht nur der Bau solcher Cubesats, sondern auch die Verfolgung und Kommunikation mit Satelliten sind Bestandteil von Studienarbeiten.\newpar
+Auch die Studenten des Technikcampus Friedrichshafen der DHBW Ravensburg wollen mit Satelliten kommunizieren können. Um dies zu ermöglichen, ist eine Bodenstation von Nöten. Mit entsprechender Hard- und Software können Satelliten verfolgt werden. Auch eine Kommunikation über und mit Objekten im Orbit ist durch ein entsprechendes Equipment möglich.\newpar
+Dieses Equipment für eine Bodenstation stellt die DHBW Ravensburg für Studienarbeiten zur Verfügung. Diese Studienarbeit, Inbetriebnahme einer freien Software zur Satellitenbahnvorhersage und Ansteuerung einer Hochleistungsantenne, befasst sich mit dieser Thematik. Dies schließt die Nachführung der Antenne und damit die Steuerung von Rotoren sowie die Kommunikation mittels einem Funkgerät, mit ein. In dieser Arbeit wird die Inbetriebnahme der freien Software beschrieben und soll dem Leser einen leichten Einstieg in die Bedienung dieser Software ermöglichen. Außerdem beleuchtet diese Arbeit den physikalischen Hintergrund der Satellitenbahn-Vorhersage und damit einhergehend die Ursache der Dopplerverschiebung der Mittenfrequenz bei der Kommunikation mit einem Satelliten. Ein weiterer inhaltlicher Grundpfeiler dieser Studienarbeit ist die Dokumentation des gesamten Projektprozess.
