@@ -21,7 +21,7 @@
 \clearpage
 \section{Aufbau der Bodenstation}
 
-In diesem Abschnitt werden die von der Bodenstation der DHBW Ravensburg zur Verfügung stehende Komponenten vorgestellt.
+In diesem Abschnitt werden die von der Bodenstation der \ac{DHBW} Ravensburg zur Verfügung stehende Komponenten vorgestellt.
 \subsection{Antennen}
 Die Sendeleistung der Satelliten liegt typischerweise unter 1 Watt. Im 2-m-Band wäre es möglich mit einer Rundstrahlantenne ein Signal zu empfangen, 
 doch auf den höheren Bändern wird aufgrund der kürzeren Wellenlänge und damit einhergehende höheren Streckendämpfung eine Richtantenne benötigt. 
@@ -61,10 +61,10 @@ Um die Richtantennen steuern zu können werden Rotoren sowie dessen Steuergerät
 	\caption{Rotorsteuerung}
 	\label{fig:azel}
 \end{figure}\\
-In dem Organigramm \ref{fig:azel} stellt der BananaPi, ein Einplatinencomputer, die Rotorsteuerung als Einheit in dem DHBW Netzwerk bereit. Über die 
+In der Abbildung \ref{fig:azel} stellt der BananaPi, ein Einplatinencomputer, die Rotorsteuerung als Einheit in dem DHBW Netzwerk bereit. Über die 
 ARSVCOM Schnittstelle kann auf ihn zugegriffen werden. Die Bodenstation verfügt über zwei unterschiedliche Steuergeräte für den Elevationsrotor und 
 den Azimutrotor. Dieser BananaPi emuliert zwei einheitliche Steuergeräte und setzt die Kommandos des ARS Protokolls um. Über USB sind die 
-Steuergeräte für den Azimut- und Eleavtions-Rotor an den BananaPi angeschlossen. Das Steuegerät RC2800PXEL für den 
+Steuergeräte für den Azimut- und Eleavtions-Rotor an den BananaPi angeschlossen. Das Steuergerät RC2800PXEL für den 
 Elevationsrotor von der Firma M$^2$ arbeitet mit der seriellen Schnittstelle RS-232. Daher wird ein USB $\rightarrow$ RS232 Adapter benötigt. Das 
 analoge Steuergerät RC5B-3-P von Create für den Azimutrotor benötigt einen Umsetzer von dem digitalen in den analogen Bereich. Dies geschieht über 
 das Antennen-Rotor System ARS-USB von EA4TX. 
@@ -92,8 +92,8 @@ wichtige Funktion ist der Funkbetrieb über Amateurfunksatelliten. Im einstellba
 Empfangsfrequenz und stimmt beide mit der gleichen Abstimmschrittweite ab. Das Funkgerät kann in den Satelliten Modi B (435 MHz Uplink, 145 MHz 
 Downlink) und J ( 145 MHz Uplink, 435 MHz Downlink) betrieben werden. Die Kommunikation über den PC mit dem Funkgerät erfolgt über die Software 
 Netcom.  Das Netcom-Modul ist mit dem ICOM IC-V Bus verbunden und bietet neben einer USB-Schnittstelle mit emulierter 
-Soundkarte auch eine Netzwerkschnittstelle über die man mit dem Netcom Manager (der wiederum eine virutelle serielle Schnittstelle zur Verfügung 
-stellt) mit dem Funkgerät kommunizieren kann. Das IC-9100 kann die wichtigsten Amateurfunkbänder, von Kurzwelle bis Ultra-High-Frequency (UHF), 
+Soundkarte auch eine Netzwerkschnittstelle über die man mit dem Netcom Manager (der wiederum eine virtuelle serielle Schnittstelle zur Verfügung 
+stellt) mit dem Funkgerät kommunizieren kann. Das IC-9100 kann die wichtigsten Amateurfunkbänder, von Kurzwelle bis \ac{UHF}, 
 erfassen. 
 
 
