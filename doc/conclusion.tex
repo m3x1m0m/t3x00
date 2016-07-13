@@ -4,23 +4,22 @@
 %% Project name:	Hochleistungsantenne										%%
 %% Type of work:	T3X00 project work											%%
 %% Author:			Sarah Brückner, Maximilian Stiefel, Hannes Bohnengel		%%    
-%% Date:			01st May 2016											    %%
+%% Date:			13th July 2016											    %%
 %% University:		DHBW Ravensburg Campus Friedrichshafen						%%
 %% Comments:		Created in gedit with tab width = 4							%%
 %%																				%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Zusammenfassung und Ausblick}
-Im Verlauf dieser Studienarbeit "`Inbetriebnahme einer freien Software zur Satellitenbahnvorhersage und Ansteuerung einer Hochleistungsantenne"' wurde eine freie Software validiert und in Betrieb genommen. Zusammenfassend kann man sagen, dass die Studiearbeit nach umfangreichen Tests zu dem Ergebnis kam, dass die freie Software GPredict eine sehr gute Alternative zu der Referenzsoftware SatPC32 ist. 
-\newpar
+Im Verlauf dieser Studienarbeit "`Inbetriebnahme einer freien Software zur Satellitenbahnvorhersage und Ansteuerung einer Hochleistungsantenne"' wurde eine freie Software validiert und in Betrieb genommen. Zusammenfassend kann man sagen, dass die Studiearbeit nach umfangreichen Tests zu dem Ergebnis kam, dass die freie Software GPredict eine sehr gute Alternative zu bisher verwendeten Software SatPC32 ist.\newpar
 GPredict ist ein Satelliten-Tracking Programm und ermöglicht eine Anbindung an die Antennenrotoren sowie 
-an das Funkgerät. Unter der Verwendung der \ac{TLE} berechnet GPredict die jeweilige Satellitenbahn und veranschaulicht diese mit einer Vielzahl an Extras in der grafischen Oberfläche des Programms. Um grob verstehen zu können, wie GPredict eine Bahnvorhersage durchführt und was sich physikalisch dahinter verbirgt, wurden die physikalischen Hintergründe in möglichst kompakter auf das Thema zugeschnittener Weise aufbereitet. Dieses physikalische Verständnis ist notwendig, damit man als an der Bodenstation arbeitender Wissenschaftler "`weiss was man tut"'. Eine auf dieser Studienarbeit aufbauenden wissenschaftlichen Arbeit muss somit wichtige Grundlagenrecherchen zum Kepler-Problem etc. nicht mehr abhandeln. Für die an der Arbeit des Aufbaus der Bodenstation involvierten Wissenschaftler bietet die Ihnen vorliegende Studienarbeit einen schnellen Einstieg.     
-\newpar
-Um GPredict an die Hardwareumgebung anzubinden, wurde eine entsprechende Konfiguration von GPredict vorgenommen. Die Funkgerätansteuerung und Antennenausrichtung erfolgt mittels der Hamlib--Bibliothek. Dafür wurden eigene Batch-Skripte geschrieben um die Verwendung der verfügbaren Kommandozeilenprogramme zu vereinfachen. 
-\newpar
-Für die Validierung der Anforderungsdefinition, wurden vorher festgelegte Tests durchgeführt. Dabei handelte es sich um Modultests, Integrationstests und Systemtests. 
-\newpar
-Als Fazit ist festzuhalten, dass die Studienarbeit gemäß dem V-Modell bearbeitet und strukturiert wurde. Das Ergebnis der Studienarbeit korreliert mit der Anforderungsdefinition und bietet eine Grundlage für weitere Studienarbeiten an der Bodenstation der DHBW Ravensburg Campus Friedrichshafen. Dabei wäre eine weitere Aufgabe die Implementierung eines Befehls zum Tausch von Sub-- und Main--Band.
-\newpar
-Im Rahmen dieser Studienarbeit wurden die Inhalte der Nachrichtentechnik und des technischen Managements reflektiert und aus Sicht von Nachrcihtentechnikern ein neues Gebiet der Bahnmechanik erschlossen. 
+an das Funkgerät. Unter der Verwendung der \ac{TLE} berechnet GPredict die jeweilige Satellitenbahn und veranschaulicht diese mit einer Vielzahl an Extras in der grafischen Oberfläche des Programms. Um grob verstehen zu können, wie GPredict eine Bahnvorhersage durchführt und was sich physikalisch dahinter verbirgt, wurden die physikalischen Hintergründe in möglichst kompakter auf das Thema zugeschnittener Weise aufbereitet. Dieses physikalische Verständnis ist notwendig, damit man als an der Bodenstation arbeitender Wissenschaftler "`weiss was man tut"'. Eine auf dieser Studienarbeit aufbauenden wissenschaftlichen Arbeit muss somit wichtige Grundlagenrecherchen zum Kepler-Problem etc. nicht mehr abhandeln. Für die an der Arbeit des Aufbaus der Bodenstation involvierten Wissenschaftler bietet die Ihnen vorliegende Studienarbeit einen schnellen Einstieg.\newpar
+Um GPredict an die Hardwareumgebung anzubinden, wurde eine entsprechende Konfiguration von GPredict vorgenommen. Die Funkgerätansteuerung und Antennenausrichtung erfolgt mittels der Hamlib--Bibliothek. Dafür wurden eigene Batch-Skripte geschrieben um die Verwendung der verfügbaren Kommandozeilenprogramme zu vereinfachen.\newpar
+Für die Validierung der Anforderungsdefinition, wurden vorher festgelegte Tests durchgeführt. Dabei handelte es sich um Modultests, Integrationstests und Systemtests.\newpar
+Als Fazit ist festzuhalten, dass die Studienarbeit gemäß dem V-Modell bearbeitet und strukturiert wurde. Das Ergebnis der Studienarbeit korreliert mit der Anforderungsdefinition und bietet eine Grundlage für weitere Studienarbeiten an der Bodenstation der DHBW Ravensburg Campus Friedrichshafen. Dabei wäre eine weitere Aufgabe eine umfassende Anpassung des Quell-Codes von HamLib um eine ordnungsgemäße Kommunikation mit dem Funkgerät ICOM IC-9100 zu ermöglichen.\newpar
+Im Rahmen dieser Studienarbeit wurden die Inhalte der Nachrichtentechnik und des technischen Managements reflektiert und aus Sicht von Nachrcihtentechnikern ein neues Gebiet der Bahnmechanik erschlossen.\newpar
+Sowohl für GPredict (siehe \cite{gpredictmailman}), als auch für HamLib (siehe \cite{hamlibmailman}) existiert ein E-Mail-Verteiler zum Austausch und zur Diskussion unter den Nutzern. Über das Suchfeld auf der jeweiligen Seite kann bequem nach Stichwörtern gesucht werden, um so die Erkenntnisse der anderen Nutzer zu auf das eigene Projekt anzuwenden. Bezüglich des Problems bei der Ansteuerung des Azimut-Rotors, welches unter Abschnitt \ref{chap:hamlibmod} beschrieben ist, soll an dieser Stelle noch auf folgende Diskussion verwiesen werden:
+
+\url{https://sourceforge.net/p/gpredict/mailman/message/35211258/}
+
 \clearpage
